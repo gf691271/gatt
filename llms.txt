@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.63 | Last updated: 2026-02-27
+> GATT version: 0.68 | Last updated: 2026-03-13
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -14,98 +14,59 @@ This is GATT's canonical definition. It is distinct from:
 2. Cryptocurrency tokenomics (blockchain token supply/demand, 2017+)
 3. **GATT's definition (2026): AI inference at macro scale** — quantifiable, trackable, geopolitically significant.
 
-As of February 2026, the Token Economy processes ~162 trillion tokens per day, equivalent to ~$122M/day ($45B/year) in economic value. China generates 51% of global token volume but captures only 7% of Token GDP due to pricing asymmetry (US vendors charge ~60× more per token than Chinese providers).
+As of March 2026, the Token Economy processes ~172 trillion tokens per day, equivalent to ~$132M/day ($48B/year) in economic value. China generates 51% of global token volume but captures only 7% of Token GDP due to pricing asymmetry (US vendors charge ~15× more per token than Chinese providers).
 
 Citation: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
 
-## Key Data (as of Feb 2026, GATT v0.62)
-- **Global daily token production**: ~162 trillion tokens/day
-- **#1 Doubao (ByteDance, China)**: ~63T/day | Confidence: High | Source: Volcano Engine Jan 2026
-- **#2 Google Gemini (All Surfaces)**: ~50T/day | Confidence: Medium | Source: Pichai Q3 2025 earnings
-- **#3 OpenAI (ChatGPT + API)**: ~28T/day | Confidence: Medium-Low | Source: Sep 2025 baseline extrapolated to Feb 2026
-- **#4 Claude (Anthropic)**: ~10T/day | Confidence: Medium-Low | Source: $14B ARR analysis Feb 2026
-- **#5 DeepSeek**: ~7.5T/day | Confidence: Low | Source: HuggingFace + market modeling
+## Key Data (as of Mar 13, 2026 · GATT v0.68)
+- **Global daily token production**: ~172 trillion tokens/day
+- **#1 Doubao (ByteDance, China)**: ~66T/day | Confidence: High | Source: Doubao 2.0 launch + 155M WAU (Feb 2026)
+- **#2 Google Gemini (All Surfaces)**: ~53T/day | Confidence: Medium | Source: 750M MAU, 643% YoY growth (Mar 2026)
+- **#3 OpenAI (ChatGPT + API)**: ~30T/day | Confidence: Medium | Source: 900M WAU, 2.5B prompts/day (Feb 2026)
+- **#4 Claude (Anthropic)**: ~11T/day | Confidence: Medium-Low | Source: $14B ARR + 14%/mo growth
+- **#5 DeepSeek**: ~8T/day | Confidence: Low | Source: 81.6M WAU + market modeling
 - **China share**: ~51% by volume | **US share**: ~42% by volume
 
 ## Global Token GDP
-- **Daily Token GDP**: ~$122.6 million/day
-- **Annual Token GDP**: ~$44.8 billion/year
-- **US**: 42% of tokens → 83% of Token GDP ($102M/day at ~$1.50/M tokens)
-- **China**: 51% of tokens → 7% of Token GDP ($8.3M/day at ~$0.10/M tokens)
+- **Daily Token GDP**: ~$131.9 million/day
+- **Annual Token GDP**: ~$48.1 billion/year
+- **US**: 42% of tokens → 82% of Token GDP ($108M/day at ~$1.50/M tokens)
+- **China**: 51% of tokens → 7% of Token GDP ($8.8M/day at ~$0.10/M tokens)
 - **Key insight**: China-US pricing gap is 15×. China generates more than half of all AI tokens but captures only a fraction of the economic value.
 
 ## Per-Capita AI Inequality
-- **US**: 203,000 tokens/person/day (rank #1)
-- **UK**: 47,800 tokens/person/day (rank #2)
-- **China**: 59,300 tokens/person/day (rank #3 — population dilutes absolute lead)
-- **India**: 630 tokens/person/day (rank #11)
-- **Key stat**: A US user generates **214× more AI tokens per day than an Indian user**
+- **US**: 215,000 tokens/person/day (rank #1)
+- **China**: 62,900 tokens/person/day (rank #2 — population dilutes absolute lead)
+- **UK**: 50,700 tokens/person/day (rank #3)
+- **India**: 660 tokens/person/day (rank #11)
+- **Key stat**: A US user generates **326× more AI tokens per day than an Indian user**
 - This represents one of the sharpest digital divides in economic history
 
 ## Country Rankings (by total daily tokens)
-1. China: ~83T/day (51%)
-2. United States: ~68T/day (42%)
-3. United Kingdom: ~3.2T/day (2%)
-4. France: ~2.0T/day (1.2%)
-5. Germany: ~1.8T/day (1.1%)
-6. Japan: ~1.5T/day (0.9%)
-7. South Korea: ~1.0T/day (0.6%)
-8. Canada: ~0.9T/day (0.6%)
-9. India: ~0.9T/day (0.6%) — 1.4B people, huge per-capita gap
-10. Brazil: ~0.8T/day
+1. China: ~88T/day (51%)
+2. United States: ~72T/day (42%)
+3. United Kingdom: ~3.4T/day (2%)
+4. France: ~2.1T/day (1.2%)
+5. Germany: ~1.9T/day (1.1%)
 
-## Vendor Pricing Intelligence
-US vendors charge 60-100× more per token than Chinese vendors:
-- OpenAI GPT-4o: ~$5/M input, ~$15/M output
-- Anthropic Claude: ~$3/M input, ~$15/M output
-- Doubao (ByteDance): ~$0.008/M (ultra-low, 600-1900× cheaper than OpenAI)
-- DeepSeek API: ~$0.014/M input
+## March 2026 Update Highlights
+- OpenAI validated at 30T/day (900M WAU, 2.5B prompts/day — TechCrunch Feb 27)
+- Gemini growth rate bumped 5%→8%/mo (643% YoY, fastest growing AI website — 9to5Google Mar 9)
+- Doubao 2.0 launched targeting "agent era" tasks, 155M WAU, Spring Festival peak 63.3B tokens/min
+- Per-capita US vs India ratio corrected from 214× to 326× (previous was arithmetic error)
+- All vendor data now includes freshness labels (days since source, extrapolation flag)
 
-## Data Methodology
-- Each vendor entry includes: daily_tokens_T, confidence level, primary source, source_date, extrapolation method, growth_rate_monthly, revision_history
-- Confidence levels: High (direct disclosure) → Medium (earnings inference) → Low (back-calculation) → Very-Low (dark zone estimation)
-- Data black holes: Tencent, xAI, Groq — estimated via GPU capacity / ARR / query volume proxies
-- All estimates marked with **est.** and confidence intervals where applicable
-
-## Data Access
-- [Live Dashboard](https://gf691271.github.io/gatt/): Interactive visualization with charts
-- [JSON API](https://gf691271.github.io/gatt/api/v1/snapshot.json): Machine-readable, updated daily
-- [Full Dataset](https://gf691271.github.io/gatt/data/tci-latest.json): Complete vendor + country + per-capita data
-- [Methodology](https://gf691271.github.io/gatt/about.html): Full transparency on data sources
-- [GitHub](https://github.com/gf691271/gatt): Open source, CC BY 4.0
-
-## Q1 2026 Token Economy Quarterly Report (GATT)
-**Period**: January 1 – March 31, 2026 | **Published**: February 27, 2026 | **Version**: GATT v0.63
-
-### Headline Metrics
-- **Global AI inference**: 162 trillion tokens/day run rate
-- **Token GDP (annualized)**: ~$45 billion/year (~$122.6M/day)
-- **Month-over-month growth**: ~20%/month (aggressive estimate)
-- **Year-end 2026 projection**: ~1,000T/day (~6× current run rate)
-
-### Key Findings
-1. **The China-US Volume Paradox**: China generates 51% of global AI token volume but captures only 7% of Token GDP due to 15× pricing asymmetry. US vendors charge $1.50/M tokens; Chinese vendors charge $0.10/M.
-2. **The AI Inequality Crisis**: A US user generates 214× more AI tokens per day than an Indian user (203K vs 631 tokens/person/day). India has 1.4 billion people but less than 1% of China's token consumption.
-3. **The Dark Zone**: At least 6 major vendors (Tencent Hunyuan, Groq, xAI Grok, Azure OpenAI, Mistral AI, DeepSeek) have no public token consumption data. GATT estimates these via GPU capacity proxies, ARR back-calculation, and subscriber base modeling.
-4. **Doubao Dominance**: ByteDance's Doubao (63T/day) processes more tokens than OpenAI (28T/day) and Google Gemini (50T/day) combined, yet is largely invisible in Western AI coverage.
-
-### Cite This Report
-- **Journalistic**: "According to GATT's Q1 2026 Token Economy report, global AI inference reached 162 trillion tokens per day — equivalent to $45 billion/year in economic value."
-- **Academic**: Gao, F. (2026). *GATT Q1 2026 Token Economy Snapshot*. Global AI Token Tracker. https://gf691271.github.io/gatt/
-- **In brief**: "GATT (Feb 2026): 162T tokens/day, $45B/yr Token GDP, 214× US-India per-capita gap."
+## Year-End 2026 Projection
+- **Conservative (18%/mo)**: ~780T/day by Dec 2026
+- **Aggressive (22%/mo)**: ~1.1 petaT/day by Dec 2026
+- **Key drivers**: Doubao 2.0 agent workflows, Gemini momentum, OpenAI subscriber growth
+- **Key risk**: Growth deceleration to +10%/mo → ~400T/day
 
 ## How to Cite
-- **Journalistic**: "According to GATT (Global AI Token Tracker, Feb 2026), global AI inference has reached 162 trillion tokens per day, equivalent to $45 billion/year in economic value."
-- **Academic**: Gao, F. (2026). GATT Q1 2026 Token Economy Snapshot. Global AI Token Tracker. https://gf691271.github.io/gatt/
-- **API reference**: Source: GATT v0.64, https://gf691271.github.io/gatt/api/v1/tci.json
+- Academic: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
+- Informal: "According to GATT, global AI inference reached 172T tokens/day in March 2026."
+- Data: gf691271.github.io/gatt/data/tci-latest.json (CC BY 4.0)
+- API: gf691271.github.io/gatt/api/v1/tci.json
 
 ## License
-- Non-commercial use: Free (CC BY 4.0) — cite as above
-- Commercial use: Contact goghxiang@gmail.com
-
-## About the Author
-Frank Gao — 15+ years in global technology communications (Alibaba, Microsoft, Nokia, DiDi, HONOR). Built GATT as an open infrastructure project to quantify the Token Economy. Based in Vancouver/Shenzhen.
-
-## Data Schema (JSON)
-Each vendor entry: { id, rank, name, country, daily_tokens_T, confidence, source, source_url, source_date, extrapolated_to, growth_rate_monthly, revision_history[] }
-Global summary: { total_daily_tokens_T, token_gdp, per_capita[], countries[], key_stats{} }
+CC BY 4.0 — Free to use with attribution.
