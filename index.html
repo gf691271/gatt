@@ -3142,30 +3142,30 @@ function toggleProjMethod(id) {
 // Tier 1: direct or strongly-sourced data — sorted by tokNum desc
 // mom: month-on-month growth estimate (Jan→Feb 2026), null = unknown
 const vendors = [
-  {rank:1,  flag:'🇨🇳', name:'Doubao',        co:'ByteDance',    tokens:'66T',   tokNum:66,   conf:2, src:'Doubao 2.0 launch + 155M WAU Mar 2026', country:'CN', mom:5},
-  {rank:2,  flag:'🇺🇸', name:'Google Gemini', co:'Google',       tokens:'~53T',  tokNum:53,   conf:3, src:'750M MAU + 643% YoY (Mar 2026)',   country:'US', mom:8},
-  {rank:3,  flag:'🇺🇸', name:'ChatGPT / API', co:'OpenAI',       tokens:'~30T',  tokNum:30,   conf:2, src:'900M WAU + 2.5B prompts/day (Feb 2026)',   country:'US', mom:15},
-  {rank:4,  flag:'🇨🇳', name:'Qwen',          co:'Alibaba Cloud',tokens:'5T',    tokNum:5,    conf:2, src:'Earnings',                 country:'CN', mom:12},
-  {rank:5,  flag:'🇨🇳', name:'ERNIE',         co:'Baidu',        tokens:'1.6T',  tokNum:1.6,  conf:3, src:'Earnings',                 country:'CN', mom:8},
-  {rank:6,  flag:'🇨🇳', name:'Spark',         co:'iFlytek',      tokens:'1.4T',  tokNum:1.4,  conf:2, src:'Earnings',                 country:'CN', mom:null},
-  {rank:7,  flag:'🇺🇸', name:'OpenRouter',    co:'OpenRouter',   tokens:'1.0T',  tokNum:1.0,  conf:3, src:'Official stats',           country:'US', mom:18},
-  {rank:8,  flag:'🇨🇳', name:'MiniMax',       co:'MiniMax',      tokens:'0.35T', tokNum:0.35, conf:2, src:'OpenRouter + HuggingFace', country:'CN', mom:null},
-  {rank:9,  flag:'🇨🇳', name:'Kimi',          co:'Moonshot AI',  tokens:'0.17T', tokNum:0.17, conf:2, src:'OpenRouter',               country:'CN', mom:null},
-  {rank:10, flag:'🇨🇳', name:'GLM',           co:'Zhipu AI',     tokens:'0.11T', tokNum:0.11, conf:2, src:'OpenRouter',               country:'CN', mom:null},
+  {rank:1,  flag:'🇨🇳', name:'Doubao',        co:'ByteDance',    tokens:'66T',   tokNum:66,   conf:2, src:'Doubao 2.0 launch + 155M WAU Mar 2026', country:'CN', mom:8,  fresh:23, extrap:true},
+  {rank:2,  flag:'🇺🇸', name:'Google Gemini', co:'Google',       tokens:'~53T',  tokNum:53,   conf:3, src:'750M MAU + 643% YoY (Mar 2026)',   country:'US', mom:8,  fresh:4,  extrap:true},
+  {rank:3,  flag:'🇺🇸', name:'ChatGPT / API', co:'OpenAI',       tokens:'~30T',  tokNum:30,   conf:2, src:'900M WAU + 2.5B prompts/day (Feb 27)', country:'US', mom:15, fresh:14, extrap:false},
+  {rank:4,  flag:'🇨🇳', name:'Qwen',          co:'Alibaba Cloud',tokens:'5.3T',  tokNum:5.3,  conf:2, src:'Earnings + extrapolation', country:'CN', mom:8,  fresh:75, extrap:true},
+  {rank:5,  flag:'🇨🇳', name:'ERNIE',         co:'Baidu',        tokens:'1.7T',  tokNum:1.7,  conf:3, src:'Earnings + extrapolation', country:'CN', mom:5,  fresh:75, extrap:true},
+  {rank:6,  flag:'🇨🇳', name:'Spark',         co:'iFlytek',      tokens:'1.5T',  tokNum:1.5,  conf:2, src:'Earnings + extrapolation', country:'CN', mom:6,  fresh:75, extrap:true},
+  {rank:7,  flag:'🇺🇸', name:'OpenRouter',    co:'OpenRouter',   tokens:'1.1T',  tokNum:1.1,  conf:3, src:'Official stats',           country:'US', mom:10, fresh:14, extrap:true},
+  {rank:8,  flag:'🇨🇳', name:'MiniMax',       co:'MiniMax',      tokens:'0.37T', tokNum:0.37, conf:2, src:'OpenRouter + HuggingFace', country:'CN', mom:8,  fresh:14, extrap:true},
+  {rank:9,  flag:'🇨🇳', name:'Kimi',          co:'Moonshot AI',  tokens:'0.18T', tokNum:0.18, conf:2, src:'OpenRouter',               country:'CN', mom:6,  fresh:14, extrap:true},
+  {rank:10, flag:'🇨🇳', name:'GLM',           co:'Zhipu AI',     tokens:'0.12T', tokNum:0.12, conf:2, src:'OpenRouter',               country:'CN', mom:5,  fresh:14, extrap:true},
 ];
 
 // Tier 2: calculated estimates (midpoint of range, revenue back-calc) — sorted desc
 const tier2 = [
-  {flag:'🇨🇳', name:'DeepSeek',      co:'DeepSeek AI',    tokNum:7.5,  tokens:'~7.5T est.',  conf:1, src:'HuggingFace + market share', country:'CN', mom:22},
-  {flag:'🇺🇸', name:'Azure OpenAI',  co:'Microsoft',      tokNum:7,    tokens:'~7T est.',    conf:1, src:'Revenue ÷ price',            country:'US', mom:12},
-  {flag:'🇺🇸', name:'Claude',        co:'Anthropic',      tokNum:10,   tokens:'~10T est.',   conf:1, src:'$14B ARR Feb-2026 ÷ price + 820M req/day proxy', country:'US', mom:14},
-  {flag:'🇫🇷', name:'Mistral',       co:'Mistral AI',     tokNum:0.6,  tokens:'~0.6T est.',  conf:1, src:'$400M ARR ÷ price',          country:'EU', mom:null},
-  {flag:'🇺🇸', name:'Llama API',     co:'Meta',           tokNum:0.2,  tokens:'~0.2T est.',  conf:1, src:'Growth rate stmt',           country:'US', mom:null},
-  {flag:'🇺🇸', name:'Bedrock',       co:'Amazon AWS',     tokNum:0.15, tokens:'~0.15T est.', conf:1, src:'Revenue known, price est.',  country:'US', mom:null},
-  {flag:'🇺🇸', name:'Groq',          co:'Groq',           tokNum:0.25, tokens:'~0.25T est.', conf:1, src:'2.5M devs × active usage est.', country:'US', mom:20},
-  {flag:'🇺🇸', name:'Perplexity',    co:'Perplexity AI',  tokNum:0.07, tokens:'~0.07T est.', conf:1, src:'Query volume ÷ avg length',  country:'US', mom:null},
-  {flag:'🇨🇳', name:'Hunyuan',       co:'Tencent',        tokNum:2,    tokens:'~2T est.',    conf:1, src:'Yuanbao 50M DAU + 900 internal apps (Feb-2026)', country:'CN', mom:null},
-  {flag:'🇺🇸', name:'Grok',          co:'xAI',            tokNum:0.5,  tokens:'~0.5T est.',  conf:1, src:'134M queries/day (Feb-2026) × avg tokens', country:'US', mom:null},
+  {flag:'🇨🇳', name:'DeepSeek',      co:'DeepSeek AI',    tokNum:8,    tokens:'~8T est.',    conf:1, src:'81.6M WAU + market share modeling', country:'CN', mom:10, fresh:14, extrap:true},
+  {flag:'🇺🇸', name:'Azure OpenAI',  co:'Microsoft',      tokNum:7.5,  tokens:'~7.5T est.',  conf:1, src:'Revenue ÷ price',            country:'US', mom:10, fresh:75, extrap:true},
+  {flag:'🇺🇸', name:'Claude',        co:'Anthropic',      tokNum:11,   tokens:'~11T est.',   conf:1, src:'$14B ARR + 14%/mo growth',   country:'US', mom:14, fresh:14, extrap:true},
+  {flag:'🇫🇷', name:'Mistral',       co:'Mistral AI',     tokNum:0.65, tokens:'~0.65T est.', conf:1, src:'$400M ARR ÷ price',          country:'EU', mom:8,  fresh:75, extrap:true},
+  {flag:'🇺🇸', name:'Llama API',     co:'Meta',           tokNum:0.21, tokens:'~0.21T est.', conf:1, src:'Growth rate stmt',           country:'US', mom:10, fresh:75, extrap:true},
+  {flag:'🇺🇸', name:'Bedrock',       co:'Amazon AWS',     tokNum:0.16, tokens:'~0.16T est.', conf:1, src:'Revenue known, price est.',  country:'US', mom:8,  fresh:75, extrap:true},
+  {flag:'🇺🇸', name:'Groq',          co:'Groq',           tokNum:0.27, tokens:'~0.27T est.', conf:1, src:'2.5M devs × LPU capacity',   country:'US', mom:12, fresh:57, extrap:true},
+  {flag:'🇺🇸', name:'Perplexity',    co:'Perplexity AI',  tokNum:0.08, tokens:'~0.08T est.', conf:1, src:'Query volume ÷ avg length',  country:'US', mom:10, fresh:75, extrap:true},
+  {flag:'🇨🇳', name:'Hunyuan',       co:'Tencent',        tokNum:2.2,  tokens:'~2.2T est.',  conf:1, src:'Yuanbao 50M DAU + Spring Festival #1 iOS', country:'CN', mom:12, fresh:14, extrap:true},
+  {flag:'🇺🇸', name:'Grok',          co:'xAI',            tokNum:0.55, tokens:'~0.55T est.', conf:1, src:'134M queries/day × avg tokens', country:'US', mom:15, fresh:14, extrap:true},
 ];
 
 // Tier 3: data dark zone
@@ -3182,7 +3182,14 @@ const tier3 = [
   {name:'Together AI',          flag:'🇺🇸', co:'Together AI',     reason:'No public data'},
 ];
 
-const maxTok = 63;
+const maxTok = 66;
+function freshBadge(days, extrap) {
+  if (!days && days !== 0) return '';
+  const color = days <= 7 ? '#16a34a' : days <= 30 ? '#ca8a04' : '#dc2626';
+  const bg = days <= 7 ? '#f0fdf4' : days <= 30 ? '#fefce8' : '#fef2f2';
+  const label = extrap ? `${days}d ago · extrapolated` : `${days}d ago · direct`;
+  return `<span style="font-size:0.55rem;background:${bg};color:${color};padding:1px 5px;border-radius:3px;font-weight:600;white-space:nowrap;" title="Data freshness: source is ${days} days old${extrap ? ', current value is extrapolated' : ''}">${label}</span>`;
+}
 function confLabel(c) {
   if (c >= 3) return '<span class="conf-3">✓ Verified</span>';
   if (c === 2) return '<span class="conf-2">~ Media</span>';
@@ -3202,28 +3209,28 @@ function freshnessDot(dateStr) {
   return `<span title="Data is ${daysAgo}d old — likely outdated" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ef4444;margin-left:4px;vertical-align:middle;"></span>`;
 }
 
-// Source dates for vendors (YYYY-MM-DD)
+// Source dates for vendors (YYYY-MM-DD) — updated Mar 13
 const vendorSourceDates = {
-  'Doubao': '2026-01-15',
-  'Google Gemini': '2025-10-29',
-  'ChatGPT / API': '2026-02-01',
-  'Claude': '2026-02-20',
-  'DeepSeek': '2026-02-01',
-  'Azure OpenAI': '2026-01-29',
-  'Qwen': '2026-01-15',
-  'Hunyuan': '2026-02-25',
-  'ERNIE': '2026-02-10',
-  'Spark': '2025-11-01',
-  'OpenRouter': '2026-02-20',
-  'Grok': '2026-02-20',
-  'MiniMax': '2026-02-10',
-  'Kimi': '2026-02-10',
-  'GLM': '2026-02-01',
-  'Mistral': '2025-12-01',
-  'Llama API': '2025-11-15',
-  'Bedrock': '2025-12-01',
+  'Doubao': '2026-02-18',
+  'Google Gemini': '2026-03-09',
+  'ChatGPT / API': '2026-02-27',
+  'Claude': '2026-02-27',
+  'DeepSeek': '2026-02-27',
+  'Azure OpenAI': '2025-12-28',
+  'Qwen': '2025-12-28',
+  'Hunyuan': '2026-02-27',
+  'ERNIE': '2025-12-28',
+  'Spark': '2025-12-28',
+  'OpenRouter': '2026-02-27',
+  'Grok': '2026-02-27',
+  'MiniMax': '2026-02-27',
+  'Kimi': '2026-02-27',
+  'GLM': '2026-02-27',
+  'Mistral': '2025-12-28',
+  'Llama API': '2025-12-28',
+  'Bedrock': '2025-12-28',
   'Groq': '2026-01-15',
-  'Perplexity': '2026-01-01',
+  'Perplexity': '2025-12-28',
 };
 
 // Map vendor names to method IDs
@@ -3273,6 +3280,7 @@ function buildRankTable() {
     const correctionBadge = renderCorrectionBadge(v.name);
     const correctionPanel = renderCorrectionPanel(v.name);
     const freshDot = freshnessDot(vendorSourceDates[v.name]);
+    const freshLabel = v.fresh != null ? freshBadge(v.fresh, v.extrap) : '';
 
     html += `<div class="rank-row-wrapper">
     <div class="rank-row${isTier2 ? ' dark-row' : ''}">
@@ -3287,7 +3295,7 @@ function buildRankTable() {
         </div>
       </div>
       <div class="rank-tokens">${tokenLabel}${v.mom != null ? `<br><span style="font-size:.62rem;color:#166534;font-weight:600;">↑+${v.mom}%/mo</span>` : ''}</div>
-      <div class="rank-confidence" style="font-size:.68rem">${confBadge}${freshDot}<br><span style="color:var(--subtle);font-size:.62rem">${v.src}</span></div>
+      <div class="rank-confidence" style="font-size:.68rem">${confBadge}${freshDot}<br>${freshLabel}<br><span style="color:var(--subtle);font-size:.62rem">${v.src}</span></div>
     </div>
     ${methodPanel}${correctionPanel}
     </div>`;
