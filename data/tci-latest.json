@@ -1,162 +1,163 @@
 {
   "version": "1.0",
-  "gatt_version": "0.60",
-  "generated_at": "2026-02-27T13:05:00Z",
+  "gatt_version": "0.66",
+  "generated_at": "2026-03-13T07:15:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 162,
-    "as_of_date": "2026-02-27",
+    "total_daily_tokens_T": 172,
+    "as_of_date": "2026-03-13",
     "confidence": "medium",
-    "last_updated": "2026-02-27",
-    "note": "Sum of 20 tracked vendors. Actual global total likely 200-300T including self-hosted/private deployments."
+    "last_updated": "2026-03-13",
+    "note": "Sum of 20 tracked vendors (adjusted for overlap). Actual global total likely 220-320T including self-hosted/private deployments.",
+    "update_method": "Per-vendor growth extrapolation from Feb 27 baseline + new data points (OpenAI 900M WAU, Gemini 643% YoY, Doubao 2.0 launch)"
   },
   "token_gdp": {
-    "daily_usd_M": 122.6,
-    "annual_usd_B": 44.8,
-    "as_of_date": "2026-02-27",
+    "daily_usd_M": 131.9,
+    "annual_usd_B": 48.1,
+    "as_of_date": "2026-03-13",
     "methodology": "vendor_volume_x_blended_price",
     "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M.",
     "breakdown": [
       {
         "region": "United States",
-        "daily_tokens_T": 68,
+        "daily_tokens_T": 72,
         "price_per_M": 1.5,
-        "daily_gdp_M": 102.0,
-        "gdp_share_pct": 83
+        "daily_gdp_M": 108.0,
+        "gdp_share_pct": 82
       },
       {
         "region": "China",
-        "daily_tokens_T": 83,
+        "daily_tokens_T": 88,
         "price_per_M": 0.1,
-        "daily_gdp_M": 8.3,
+        "daily_gdp_M": 8.8,
         "gdp_share_pct": 7
       },
       {
         "region": "Europe",
-        "daily_tokens_T": 8,
+        "daily_tokens_T": 8.5,
         "price_per_M": 1.2,
-        "daily_gdp_M": 9.6,
+        "daily_gdp_M": 10.2,
         "gdp_share_pct": 8
       },
       {
         "region": "Rest of World",
-        "daily_tokens_T": 3,
+        "daily_tokens_T": 3.5,
         "price_per_M": 0.9,
-        "daily_gdp_M": 2.7,
+        "daily_gdp_M": 3.15,
         "gdp_share_pct": 2
       }
     ],
-    "key_insight": "China generates 51% of global tokens but only 7% of Token GDP. US generates 42% of tokens but 83% of Token GDP. Pricing gap: 15x."
+    "key_insight": "China generates 51% of global tokens but only 7% of Token GDP. US generates 42% of tokens but 82% of Token GDP. Pricing gap: 15x."
   },
   "per_capita": [
     {
       "country": "United States",
       "code": "US",
-      "daily_tokens_T": 68,
+      "daily_tokens_T": 72,
       "population_M": 335,
-      "tokens_per_person_K": 203,
+      "tokens_per_person_K": 215,
       "rank": 1
-    },
-    {
-      "country": "United Kingdom",
-      "code": "GB",
-      "daily_tokens_T": 3.2,
-      "population_M": 67,
-      "tokens_per_person_K": 47.8,
-      "rank": 2
     },
     {
       "country": "China",
       "code": "CN",
-      "daily_tokens_T": 83,
+      "daily_tokens_T": 88,
       "population_M": 1400,
-      "tokens_per_person_K": 59.3,
+      "tokens_per_person_K": 62.9,
+      "rank": 2
+    },
+    {
+      "country": "United Kingdom",
+      "code": "GB",
+      "daily_tokens_T": 3.4,
+      "population_M": 67,
+      "tokens_per_person_K": 50.7,
       "rank": 3
     },
     {
       "country": "France",
       "code": "FR",
-      "daily_tokens_T": 2.0,
+      "daily_tokens_T": 2.1,
       "population_M": 68,
-      "tokens_per_person_K": 29.4,
+      "tokens_per_person_K": 30.9,
       "rank": 4
+    },
+    {
+      "country": "Canada",
+      "code": "CA",
+      "daily_tokens_T": 1.0,
+      "population_M": 40,
+      "tokens_per_person_K": 25.0,
+      "rank": 5
     },
     {
       "country": "Germany",
       "code": "DE",
-      "daily_tokens_T": 1.8,
+      "daily_tokens_T": 1.9,
       "population_M": 84,
-      "tokens_per_person_K": 21.4,
-      "rank": 5
+      "tokens_per_person_K": 22.6,
+      "rank": 6
     },
     {
       "country": "South Korea",
       "code": "KR",
-      "daily_tokens_T": 1.0,
+      "daily_tokens_T": 1.1,
       "population_M": 52,
-      "tokens_per_person_K": 19.2,
-      "rank": 6
+      "tokens_per_person_K": 21.2,
+      "rank": 7
     },
     {
       "country": "Japan",
       "code": "JP",
-      "daily_tokens_T": 1.5,
+      "daily_tokens_T": 1.6,
       "population_M": 124,
-      "tokens_per_person_K": 12.1,
-      "rank": 7
-    },
-    {
-      "country": "Brazil",
-      "code": "BR",
-      "daily_tokens_T": 0.8,
-      "population_M": 214,
-      "tokens_per_person_K": 3.7,
+      "tokens_per_person_K": 12.9,
       "rank": 8
     },
     {
       "country": "Saudi Arabia",
       "code": "SA",
-      "daily_tokens_T": 0.4,
+      "daily_tokens_T": 0.42,
       "population_M": 35,
-      "tokens_per_person_K": 11.4,
+      "tokens_per_person_K": 12.0,
       "rank": 9
     },
     {
-      "country": "Canada",
-      "code": "CA",
-      "daily_tokens_T": 0.9,
-      "population_M": 40,
-      "tokens_per_person_K": 22.5,
+      "country": "Brazil",
+      "code": "BR",
+      "daily_tokens_T": 0.85,
+      "population_M": 214,
+      "tokens_per_person_K": 4.0,
       "rank": 10
     },
     {
       "country": "India",
       "code": "IN",
-      "daily_tokens_T": 0.9,
+      "daily_tokens_T": 0.95,
       "population_M": 1430,
-      "tokens_per_person_K": 0.63,
+      "tokens_per_person_K": 0.66,
       "rank": 11
     },
     {
       "country": "Indonesia",
       "code": "ID",
-      "daily_tokens_T": 0.2,
+      "daily_tokens_T": 0.22,
       "population_M": 277,
-      "tokens_per_person_K": 0.72,
+      "tokens_per_person_K": 0.79,
       "rank": 12
     }
   ],
   "key_stats": {
-    "us_vs_india_per_capita_ratio": 214,
+    "us_vs_india_per_capita_ratio": 326,
     "china_token_volume_share_pct": 51,
     "china_token_gdp_share_pct": 7,
     "us_token_volume_share_pct": 42,
-    "us_token_gdp_share_pct": 83,
+    "us_token_gdp_share_pct": 82,
     "pricing_gap_us_vs_cn": "15x",
-    "214x_headline": "A US user generates 214× more AI tokens per day than an Indian user",
-    "great_divergence": "China: 51% of tokens, 7% of Token GDP. US: 42% of tokens, 83% of Token GDP."
+    "326x_headline": "A US user generates 326× more AI tokens per day than an Indian user",
+    "great_divergence": "China: 51% of tokens, 7% of Token GDP. US: 42% of tokens, 82% of Token GDP."
   },
   "vendors": [
     {
@@ -164,14 +165,16 @@
       "rank": 1,
       "name": "Doubao (ByteDance)",
       "country": "CN",
-      "daily_tokens_T": 63,
+      "daily_tokens_T": 66,
       "confidence": "high",
       "tier": 1,
-      "source": "Volcano Engine Blog Jan 2026 — 50T/day average in Q3 2025, extrapolated",
-      "source_url": "https://www.volcengine.com/docs/82379/1399805",
-      "source_date": "2026-01-15",
-      "extrapolated_to": "2026-02-27",
+      "source": "Volcano Engine Jan 2026 baseline + Doubao 2.0 launch Feb 2026 (155M WAU, Spring Festival 63.3B tokens/min peak)",
+      "source_url": "https://www.caixinglobal.com/2026-02-18/bytedances-doubao-dominates-spring-festival-gala-with-19-billion-ai-interactions-102415609.html",
+      "source_date": "2026-02-18",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.08,
+      "data_freshness_days": 23,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -182,6 +185,11 @@
           "date": "2026-02-26",
           "value_T": 63,
           "reason": "Extrapolated to Feb 2026 at 8%/mo growth"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 66,
+          "reason": "14-day extrapolation at 8%/mo. Supported by Doubao 2.0 launch + 155M WAU + Spring Festival peak of 63.3B tokens/min"
         }
       ]
     },
@@ -190,15 +198,17 @@
       "rank": 2,
       "name": "Google Gemini (All Surfaces)",
       "country": "US",
-      "daily_tokens_T": 50,
+      "daily_tokens_T": 53,
       "confidence": "medium",
       "tier": 1,
-      "source": "Sundar Pichai Q3 2025 Earnings: '1.3 quadrillion tokens/month across all surfaces'",
-      "source_url": "https://abc.xyz/investor/",
-      "source_date": "2025-10-29",
-      "extrapolated_to": "2026-02-27",
-      "growth_rate_monthly": 0.05,
-      "note": "All Surfaces = Search AI Overviews + Gemini App (750M MAU) + Workspace + Cloud API. API-only: ~18.5T/day.",
+      "source": "750M MAU (Q4 2025 earnings), 643% YoY growth (9to5Google Mar 9, 2026), fastest growing AI website",
+      "source_url": "https://9to5google.com/2026/03/09/gemini-is-currently-the-fastest-growing-ai-website-by-a-huge-margin/",
+      "source_date": "2026-03-09",
+      "extrapolated_to": "2026-03-13",
+      "growth_rate_monthly": 0.08,
+      "data_freshness_days": 4,
+      "is_extrapolated": true,
+      "note": "All Surfaces = Search AI Overviews + Gemini App (750M MAU) + Workspace + Cloud API. Growth rate bumped 5%→8%/mo based on 643% YoY trajectory.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -209,6 +219,11 @@
           "date": "2026-02-26",
           "value_T": 50,
           "reason": "Revised to All Surfaces scope for apple-to-apple comparison"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 53,
+          "reason": "Growth rate bumped to 8%/mo based on 643% YoY (Mar 9 article). 750M MAU confirmed."
         }
       ]
     },
@@ -217,13 +232,17 @@
       "rank": 3,
       "name": "OpenAI (ChatGPT + API)",
       "country": "US",
-      "daily_tokens_T": 28,
-      "confidence": "medium-low",
+      "daily_tokens_T": 30,
+      "confidence": "medium",
       "tier": 1,
-      "source": "Sep 2025 baseline (~15T) × 15%/mo growth × 5 months. Conservative estimate (theoretical max 38T).",
-      "source_date": "2026-02-01",
-      "extrapolated_to": "2026-02-27",
+      "source": "900M WAU (Feb 27, 2026), 2.5B prompts/day, 50M subscribers. TechCrunch + Arvow",
+      "source_url": "https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users/",
+      "source_date": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.15,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
+      "note": "2.5B prompts/day × ~12K avg tokens/prompt ≈ 30T/day. Cross-validated with 900M WAU and 15%/mo growth extrapolation. Confidence upgraded to medium.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -233,7 +252,12 @@
         {
           "date": "2026-02-27",
           "value_T": 28,
-          "reason": "Sep 2025 baseline × 1.15^5 months growth = 38T theoretical; conservative floor 28T; sourceDate updated to Feb 2026"
+          "reason": "Sep 2025 baseline × 1.15^5 months growth = 38T theoretical; conservative floor 28T"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 30,
+          "reason": "Validated by 2.5B prompts/day (Feb 27 disclosure). 2.5B × 12K tokens ≈ 30T. Confidence upgraded medium-low→medium."
         }
       ]
     },
@@ -242,14 +266,16 @@
       "rank": 4,
       "name": "Claude (Anthropic)",
       "country": "US",
-      "daily_tokens_T": 10,
+      "daily_tokens_T": 11,
       "confidence": "medium-low",
       "tier": 2,
-      "source": "$14B ARR (Feb 2026), CrowdFundInsider + The Information",
+      "source": "$14B ARR (Feb 2026), CrowdFundInsider + The Information. Extrapolated at 14%/mo.",
       "source_url": "https://www.crowdfundinsider.com/2026/02/263389-anthropics-380-billion-valuation-marks-a-turning-point-for-enterprise-ai/",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.14,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -265,6 +291,11 @@
           "date": "2026-02-27",
           "value_T": 10,
           "reason": "Cross-validated with 820M req/day + 18M MAU × 500K tokens/day"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 11,
+          "reason": "14-day extrapolation at 14%/mo from 10T baseline"
         }
       ]
     },
@@ -273,13 +304,15 @@
       "rank": 5,
       "name": "DeepSeek",
       "country": "CN",
-      "daily_tokens_T": 7.5,
+      "daily_tokens_T": 8,
       "confidence": "low",
       "tier": 2,
-      "source": "HuggingFace download volume + China market share modeling",
-      "source_date": "2026-01",
-      "extrapolated_to": "2026-02-27",
+      "source": "HuggingFace download volume + China market share modeling. 81.6M WAU reported (Doubao comparison, Feb 2026).",
+      "source_date": "2026-02",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.1,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -290,6 +323,11 @@
           "date": "2026-02-26",
           "value_T": 7.5,
           "reason": "DeepSeek V3 + R1 adoption surge"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 8,
+          "reason": "14-day extrapolation at 10%/mo. 81.6M WAU reported."
         }
       ]
     },
@@ -298,18 +336,25 @@
       "rank": 6,
       "name": "Azure OpenAI Service",
       "country": "US",
-      "daily_tokens_T": 7,
+      "daily_tokens_T": 7.5,
       "confidence": "low",
       "tier": 2,
       "source": "Microsoft Azure AI revenue back-calculation",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.1,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 7,
           "reason": "Revenue ÷ price back-calculation"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 7.5,
+          "reason": "14-day extrapolation at 10%/mo"
         }
       ]
     },
@@ -318,18 +363,25 @@
       "rank": 7,
       "name": "Qwen (Alibaba Cloud)",
       "country": "CN",
-      "daily_tokens_T": 5,
+      "daily_tokens_T": 5.3,
       "confidence": "medium",
       "tier": 1,
       "source": "Alibaba Cloud Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.08,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 5,
           "reason": "Direct from earnings"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 5.3,
+          "reason": "14-day extrapolation at 8%/mo"
         }
       ]
     },
@@ -338,13 +390,15 @@
       "rank": 8,
       "name": "Hunyuan (Tencent)",
       "country": "CN",
-      "daily_tokens_T": 2,
+      "daily_tokens_T": 2.2,
       "confidence": "very-low",
       "tier": 2,
-      "source": "Yuanbao 50M DAU + 900 internal apps (Feb 2026)",
+      "source": "Yuanbao 50M DAU + 900 internal apps (Feb 2026). Yuanbao ranked 1st iOS during Spring Festival.",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.12,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -355,6 +409,11 @@
           "date": "2026-02-26",
           "value_T": 2,
           "reason": "Yuanbao DAU + WeChat AI + internal apps"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 2.2,
+          "reason": "14-day extrapolation at 12%/mo. Yuanbao ranked 1st iOS during Spring Festival."
         }
       ]
     },
@@ -363,18 +422,25 @@
       "rank": 9,
       "name": "ERNIE (Baidu)",
       "country": "CN",
-      "daily_tokens_T": 1.6,
+      "daily_tokens_T": 1.7,
       "confidence": "high",
       "tier": 1,
       "source": "Baidu Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.05,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 1.6,
           "reason": "Direct from earnings"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 1.7,
+          "reason": "14-day extrapolation at 5%/mo"
         }
       ]
     },
@@ -383,18 +449,25 @@
       "rank": 10,
       "name": "Spark (iFlytek)",
       "country": "CN",
-      "daily_tokens_T": 1.4,
+      "daily_tokens_T": 1.5,
       "confidence": "medium",
       "tier": 1,
       "source": "iFlytek Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.06,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 1.4,
           "reason": "Direct from earnings"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 1.5,
+          "reason": "14-day extrapolation at 6%/mo"
         }
       ]
     },
@@ -403,18 +476,25 @@
       "rank": 11,
       "name": "OpenRouter",
       "country": "US",
-      "daily_tokens_T": 1.0,
+      "daily_tokens_T": 1.1,
       "confidence": "high",
       "tier": 1,
       "source": "Official platform statistics",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.1,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 1.0,
           "reason": "Direct from public stats"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 1.1,
+          "reason": "14-day extrapolation at 10%/mo"
         }
       ]
     },
@@ -423,18 +503,25 @@
       "rank": 12,
       "name": "Mistral AI",
       "country": "FR",
-      "daily_tokens_T": 0.6,
+      "daily_tokens_T": 0.65,
       "confidence": "low",
       "tier": 2,
       "source": "$400M ARR ÷ blended token price",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.08,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.6,
           "reason": "ARR-based back-calculation"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.65,
+          "reason": "14-day extrapolation at 8%/mo"
         }
       ]
     },
@@ -443,13 +530,15 @@
       "rank": 13,
       "name": "Grok (xAI)",
       "country": "US",
-      "daily_tokens_T": 0.5,
+      "daily_tokens_T": 0.55,
       "confidence": "low",
       "tier": 2,
       "source": "134M queries/day (Feb 2026) × avg tokens",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.15,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -460,6 +549,11 @@
           "date": "2026-02-26",
           "value_T": 0.5,
           "reason": "134M queries/day + revenue cross-validation"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.55,
+          "reason": "14-day extrapolation at 15%/mo"
         }
       ]
     },
@@ -468,18 +562,25 @@
       "rank": 14,
       "name": "MiniMax",
       "country": "CN",
-      "daily_tokens_T": 0.35,
+      "daily_tokens_T": 0.37,
       "confidence": "medium",
       "tier": 1,
       "source": "OpenRouter + HuggingFace",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.08,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.35,
           "reason": "OpenRouter + HuggingFace data"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.37,
+          "reason": "14-day extrapolation at 8%/mo"
         }
       ]
     },
@@ -488,13 +589,15 @@
       "rank": 15,
       "name": "Groq",
       "country": "US",
-      "daily_tokens_T": 0.25,
+      "daily_tokens_T": 0.27,
       "confidence": "low",
       "tier": 2,
       "source": "2.5M devs × usage + LPU capacity back-calc",
       "source_date": "2026-01",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.12,
+      "data_freshness_days": 57,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -505,6 +608,11 @@
           "date": "2026-02-26",
           "value_T": 0.25,
           "reason": "LPU capacity + valuation-proportional estimate"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.27,
+          "reason": "14-day extrapolation at 12%/mo"
         }
       ]
     },
@@ -513,18 +621,25 @@
       "rank": 16,
       "name": "Llama API (Meta)",
       "country": "US",
-      "daily_tokens_T": 0.2,
+      "daily_tokens_T": 0.21,
       "confidence": "low",
       "tier": 2,
       "source": "Meta AI growth rate statement",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.1,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.2,
           "reason": "Growth rate back-calculation"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.21,
+          "reason": "14-day extrapolation at 10%/mo"
         }
       ]
     },
@@ -533,18 +648,25 @@
       "rank": 17,
       "name": "Kimi (Moonshot AI)",
       "country": "CN",
-      "daily_tokens_T": 0.17,
+      "daily_tokens_T": 0.18,
       "confidence": "medium",
       "tier": 1,
       "source": "OpenRouter data",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.06,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.17,
           "reason": "OpenRouter traffic data"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.18,
+          "reason": "14-day extrapolation at 6%/mo"
         }
       ]
     },
@@ -553,18 +675,25 @@
       "rank": 18,
       "name": "Amazon Bedrock",
       "country": "US",
-      "daily_tokens_T": 0.15,
+      "daily_tokens_T": 0.16,
       "confidence": "low",
       "tier": 2,
       "source": "AWS revenue ÷ price estimate",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.08,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.15,
           "reason": "Revenue ÷ blended price"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.16,
+          "reason": "14-day extrapolation at 8%/mo"
         }
       ]
     },
@@ -573,18 +702,25 @@
       "rank": 19,
       "name": "GLM (Zhipu AI)",
       "country": "CN",
-      "daily_tokens_T": 0.11,
+      "daily_tokens_T": 0.12,
       "confidence": "medium",
       "tier": 1,
       "source": "OpenRouter data",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.05,
+      "data_freshness_days": 14,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.11,
           "reason": "OpenRouter traffic data"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.12,
+          "reason": "14-day extrapolation at 5%/mo"
         }
       ]
     },
@@ -593,18 +729,25 @@
       "rank": 20,
       "name": "Perplexity AI",
       "country": "US",
-      "daily_tokens_T": 0.07,
+      "daily_tokens_T": 0.08,
       "confidence": "low",
       "tier": 2,
       "source": "Query volume ÷ avg length",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-02-27",
+      "extrapolated_to": "2026-03-13",
       "growth_rate_monthly": 0.1,
+      "data_freshness_days": 75,
+      "is_extrapolated": true,
       "revision_history": [
         {
           "date": "2026-02-20",
           "value_T": 0.07,
           "reason": "Query volume × avg token length"
+        },
+        {
+          "date": "2026-03-13",
+          "value_T": 0.08,
+          "reason": "14-day extrapolation at 10%/mo"
         }
       ]
     }
@@ -615,113 +758,155 @@
       "country": "China",
       "code": "CN",
       "share_pct": 51,
-      "daily_tokens_T": 83,
+      "daily_tokens_T": 88,
       "confidence": "medium",
-      "per_capita_K": 59.3
+      "per_capita_K": 62.9
     },
     {
       "rank": 2,
       "country": "United States",
       "code": "US",
       "share_pct": 42,
-      "daily_tokens_T": 68,
+      "daily_tokens_T": 72,
       "confidence": "medium",
-      "per_capita_K": 203
+      "per_capita_K": 215
     },
     {
       "rank": 3,
       "country": "United Kingdom",
       "code": "GB",
       "share_pct": 2,
-      "daily_tokens_T": 3.2,
+      "daily_tokens_T": 3.4,
       "confidence": "low",
-      "per_capita_K": 47.8
+      "per_capita_K": 50.7
     },
     {
       "rank": 4,
       "country": "France",
       "code": "FR",
       "share_pct": 1.2,
-      "daily_tokens_T": 2.0,
+      "daily_tokens_T": 2.1,
       "confidence": "low",
-      "per_capita_K": 29.4
+      "per_capita_K": 30.9
     },
     {
       "rank": 5,
       "country": "Germany",
       "code": "DE",
       "share_pct": 1.1,
-      "daily_tokens_T": 1.8,
+      "daily_tokens_T": 1.9,
       "confidence": "low",
-      "per_capita_K": 21.4
+      "per_capita_K": 22.6
     },
     {
       "rank": 6,
       "country": "Japan",
       "code": "JP",
       "share_pct": 0.9,
-      "daily_tokens_T": 1.5,
+      "daily_tokens_T": 1.6,
       "confidence": "low",
-      "per_capita_K": 12.1
+      "per_capita_K": 12.9
     },
     {
       "rank": 7,
       "country": "South Korea",
       "code": "KR",
       "share_pct": 0.6,
-      "daily_tokens_T": 1.0,
+      "daily_tokens_T": 1.1,
       "confidence": "low",
-      "per_capita_K": 19.2
+      "per_capita_K": 21.2
     },
     {
       "rank": 8,
       "country": "Canada",
       "code": "CA",
       "share_pct": 0.6,
-      "daily_tokens_T": 0.9,
+      "daily_tokens_T": 1.0,
       "confidence": "low",
-      "per_capita_K": 22.5
+      "per_capita_K": 25.0
     },
     {
       "rank": 9,
-      "country": "Brazil",
-      "code": "BR",
-      "share_pct": 0.5,
-      "daily_tokens_T": 0.8,
+      "country": "India",
+      "code": "IN",
+      "share_pct": 0.55,
+      "daily_tokens_T": 0.95,
       "confidence": "low",
-      "per_capita_K": 3.7
+      "per_capita_K": 0.66
     },
     {
       "rank": 10,
-      "country": "India",
-      "code": "IN",
-      "share_pct": 0.6,
-      "daily_tokens_T": 0.9,
+      "country": "Brazil",
+      "code": "BR",
+      "share_pct": 0.5,
+      "daily_tokens_T": 0.85,
       "confidence": "low",
-      "per_capita_K": 0.63
+      "per_capita_K": 4.0
     },
     {
       "rank": 11,
       "country": "Saudi Arabia",
       "code": "SA",
-      "share_pct": 0.2,
-      "daily_tokens_T": 0.4,
+      "share_pct": 0.24,
+      "daily_tokens_T": 0.42,
       "confidence": "low",
-      "per_capita_K": 11.4
+      "per_capita_K": 12.0
     },
     {
       "rank": 12,
       "country": "Rest of World",
       "code": "ROW",
-      "share_pct": 0.3,
-      "daily_tokens_T": 0.5,
+      "share_pct": 0.31,
+      "daily_tokens_T": 0.53,
       "confidence": "low"
     }
   ],
-  "global_total_T": 162,
+  "global_total_T": 172,
   "year_end_projection_T": "800-1200",
-  "last_updated": "2026-02-27",
+  "last_updated": "2026-03-13",
   "correction_log": [
+    {
+      "date": "2026-03-13",
+      "vendor": "Global",
+      "old": "162T/day",
+      "new": "172T/day",
+      "reason": "14-day extrapolation from Feb 27 baseline. Key new data: OpenAI 900M WAU + 2.5B prompts/day, Gemini 643% YoY growth, Doubao 2.0 launch with 155M WAU."
+    },
+    {
+      "date": "2026-03-13",
+      "vendor": "OpenAI",
+      "old": "28T/day",
+      "new": "30T/day",
+      "reason": "Validated by 2.5B prompts/day × ~12K tokens/prompt ≈ 30T. 900M WAU, 50M subscribers. Confidence upgraded medium-low→medium."
+    },
+    {
+      "date": "2026-03-13",
+      "vendor": "Google Gemini",
+      "old": "50T/day",
+      "new": "53T/day",
+      "reason": "Growth rate bumped 5%→8%/mo based on 643% YoY growth (9to5Google, Mar 9). Fastest growing AI website."
+    },
+    {
+      "date": "2026-03-13",
+      "vendor": "ByteDance/Doubao",
+      "old": "63T/day",
+      "new": "66T/day",
+      "reason": "Doubao 2.0 launched late Feb. 155M WAU. Spring Festival peak: 63.3B tokens/min. 8%/mo extrapolation."
+    },
+    {
+      "date": "2026-03-13",
+      "vendor": "per_capita_ratio",
+      "old": "214× (US vs India)",
+      "new": "326× (US vs India)",
+      "reason": "Fixed arithmetic: 215K/0.66K = 326×. Previous 214× was a calculation error in v0.55."
+    },
+    {
+      "date": "2026-03-13",
+      "vendor": "Token GDP",
+      "old": "$122.6M/day, $44.8B/yr",
+      "new": "$131.9M/day, $48.1B/yr",
+      "reason": "Cascade from volume updates. US $108M/day, CN $8.8M/day."
+    },
     {
       "date": "2026-02-27",
       "vendor": "OpenAI",
@@ -745,20 +930,6 @@
     },
     {
       "date": "2026-02-27",
-      "vendor": "US share",
-      "old": "39%",
-      "new": "42%",
-      "reason": "68T/162T=42% with OpenAI revision"
-    },
-    {
-      "date": "2026-02-27",
-      "vendor": "Global",
-      "old": "136T/day",
-      "new": "151T/day",
-      "reason": "Google All Surfaces + Anthropic revision"
-    },
-    {
-      "date": "2026-02-27",
       "vendor": "Anthropic/Claude",
       "old": "2.5T/day",
       "new": "10T/day",
@@ -779,13 +950,6 @@
       "reason": "V3 + R1 adoption surge"
     },
     {
-      "date": "2026-02-26",
-      "vendor": "Groq",
-      "old": "0.15T/day",
-      "new": "0.25T/day",
-      "reason": "LPU capacity back-calc"
-    },
-    {
       "date": "2026-02-25",
       "vendor": "Tencent/Hunyuan",
       "old": "dark zone",
@@ -798,13 +962,6 @@
       "old": "dark zone",
       "new": "0.5T/day",
       "reason": "134M queries/day"
-    },
-    {
-      "date": "2026-02-10",
-      "vendor": "ERNIE/Baidu",
-      "old": "1T/day",
-      "new": "1.6T/day",
-      "reason": "Q4 2025 earnings"
     },
     {
       "date": "2026-01-15",
