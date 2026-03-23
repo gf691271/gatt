@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.68 | Last updated: 2026-03-13
+> GATT version: 0.72 | Last updated: 2026-03-23
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -14,57 +14,59 @@ This is GATT's canonical definition. It is distinct from:
 2. Cryptocurrency tokenomics (blockchain token supply/demand, 2017+)
 3. **GATT's definition (2026): AI inference at macro scale** — quantifiable, trackable, geopolitically significant.
 
-As of March 2026, the Token Economy processes ~172 trillion tokens per day, equivalent to ~$132M/day ($48B/year) in economic value. China generates 51% of global token volume but captures only 7% of Token GDP due to pricing asymmetry (US vendors charge ~15× more per token than Chinese providers).
+As of March 2026, the Token Economy processes ~179 trillion tokens per day, equivalent to ~$136.9M/day ($50.0B/year) in economic value. China generates 50% of global token volume but captures only 7% of Token GDP due to pricing asymmetry (US vendors charge ~15× more per token than Chinese providers).
 
 Citation: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
 
-## Key Data (as of Mar 13, 2026 · GATT v0.68)
-- **Global daily token production**: ~172 trillion tokens/day
-- **#1 Doubao (ByteDance, China)**: ~66T/day | Confidence: High | Source: Doubao 2.0 launch + 155M WAU (Feb 2026)
-- **#2 Google Gemini (All Surfaces)**: ~53T/day | Confidence: Medium | Source: 750M MAU, 643% YoY growth (Mar 2026)
-- **#3 OpenAI (ChatGPT + API)**: ~30T/day | Confidence: Medium | Source: 900M WAU, 2.5B prompts/day (Feb 2026)
-- **#4 Claude (Anthropic)**: ~11T/day | Confidence: Medium-Low | Source: $14B ARR + 14%/mo growth
+## Key Data (as of Mar 23, 2026 · GATT v0.72)
+- **Global daily token production**: ~179 trillion tokens/day
+- **#1 Doubao (ByteDance, China)**: ~68T/day | Confidence: High | Source: Doubao 2.0 launch + 155M WAU (Feb 2026), 7-day extrapolation
+- **#2 Google Gemini (All Surfaces)**: ~54T/day | Confidence: Medium | Source: 750M active users, 85B API req/month Jan 2026, 200%+ YoY growth
+- **#3 OpenAI (ChatGPT + API)**: ~31T/day | Confidence: Medium | Source: 900M WAU, 2.5B prompts/day (Feb 2026), #1 app Apple+Google stores Mar 2026
+- **#4 Claude (Anthropic)**: ~14T/day | Confidence: Medium | Source: $14B ARR (CFO court filing Mar 19); Claude Code $2.5B+ ARR; biz subs +4.9% MoM
 - **#5 DeepSeek**: ~8T/day | Confidence: Low | Source: 81.6M WAU + market modeling
-- **China share**: ~51% by volume | **US share**: ~42% by volume
+- **China share**: ~50% by volume | **US share**: ~42% by volume
 
 ## Global Token GDP
-- **Daily Token GDP**: ~$131.9 million/day
-- **Annual Token GDP**: ~$48.1 billion/year
-- **US**: 42% of tokens → 82% of Token GDP ($108M/day at ~$1.50/M tokens)
-- **China**: 51% of tokens → 7% of Token GDP ($8.8M/day at ~$0.10/M tokens)
-- **Key insight**: China-US pricing gap is 15×. China generates more than half of all AI tokens but captures only a fraction of the economic value.
+- **Daily Token GDP**: ~$136.9 million/day
+- **Annual Token GDP**: ~$50.0 billion/year
+- **US**: 42% of tokens → 83% of Token GDP ($114M/day at ~$1.50/M tokens)
+- **China**: 50% of tokens → 7% of Token GDP ($9.0M/day at ~$0.10/M tokens)
+- **Key insight**: China-US pricing gap is 15×. China generates half of all AI tokens but captures only a fraction of the economic value.
 
 ## Per-Capita AI Inequality
-- **US**: 215,000 tokens/person/day (rank #1)
-- **China**: 62,900 tokens/person/day (rank #2 — population dilutes absolute lead)
+- **US**: 227,000 tokens/person/day (rank #1)
+- **China**: 64,300 tokens/person/day (rank #2 — population dilutes absolute lead)
 - **UK**: 50,700 tokens/person/day (rank #3)
 - **India**: 660 tokens/person/day (rank #11)
-- **Key stat**: A US user generates **326× more AI tokens per day than an Indian user**
+- **Key stat**: A US user generates **344× more AI tokens per day than an Indian user**
 - This represents one of the sharpest digital divides in economic history
 
 ## Country Rankings (by total daily tokens)
-1. China: ~88T/day (51%)
-2. United States: ~72T/day (42%)
+1. China: ~90T/day (50%)
+2. United States: ~76T/day (42%)
 3. United Kingdom: ~3.4T/day (2%)
 4. France: ~2.1T/day (1.2%)
 5. Germany: ~1.9T/day (1.1%)
 
-## March 2026 Update Highlights
-- OpenAI validated at 30T/day (900M WAU, 2.5B prompts/day — TechCrunch Feb 27)
-- Gemini growth rate bumped 5%→8%/mo (643% YoY, fastest growing AI website — 9to5Google Mar 9)
-- Doubao 2.0 launched targeting "agent era" tasks, 155M WAU, Spring Festival peak 63.3B tokens/min
-- Per-capita US vs India ratio corrected from 214× to 326× (previous was arithmetic error)
-- All vendor data now includes freshness labels (days since source, extrapolation flag)
+## March 23, 2026 Update Highlights (v0.72)
+- Claude upgraded 13T→14T (The Register Mar 19: $14B ARR company-wide; Claude Code $2.5B+ ARR; enterprise biz subs +4.9% MoM; new businesses choose Anthropic 70% of the time)
+- Gemini bumped 53T→54T (85B API requests in January 2026; 750M active users confirmed; Google replacing Assistant with Gemini across Android in 2026; 200%+ YoY traffic growth)
+- OpenAI 30T→31T (7-day extrapolation; now #1 app on Apple+Google stores March 2026)
+- Doubao 67T→68T (7-day extrapolation at 8%/mo; ByteDance halted Seedance 2.0 global rollout due to copyright dispute — no impact on Doubao LLM volume)
+- Token GDP crosses $50B/year milestone: $48.7B → $50.0B annual
+- US-India per-capita gap: 335× → 344× (US 76T/335M pop = 227K tokens/person)
+- Global total: 175T → 179T/day
 
 ## Year-End 2026 Projection
-- **Conservative (18%/mo)**: ~780T/day by Dec 2026
+- **Conservative (18%/mo)**: ~800T/day by Dec 2026
 - **Aggressive (22%/mo)**: ~1.1 petaT/day by Dec 2026
-- **Key drivers**: Doubao 2.0 agent workflows, Gemini momentum, OpenAI subscriber growth
+- **Key drivers**: Doubao 2.0 agent workflows, Gemini momentum, OpenAI subscriber growth, Claude enterprise acceleration
 - **Key risk**: Growth deceleration to +10%/mo → ~400T/day
 
 ## How to Cite
 - Academic: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
-- Informal: "According to GATT, global AI inference reached 172T tokens/day in March 2026."
+- Informal: "According to GATT, global AI inference reached 179T tokens/day in March 2026."
 - Data: gf691271.github.io/gatt/data/tci-latest.json (CC BY 4.0)
 - API: gf691271.github.io/gatt/api/v1/tci.json
 
