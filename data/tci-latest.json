@@ -1,71 +1,71 @@
 {
   "version": "1.0",
-  "gatt_version": "0.72",
-  "generated_at": "2026-03-23T17:00:00Z",
+  "gatt_version": "0.73",
+  "generated_at": "2026-03-30T16:15:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 179,
-    "as_of_date": "2026-03-23",
+    "total_daily_tokens_T": 183,
+    "as_of_date": "2026-03-30",
     "confidence": "medium",
-    "last_updated": "2026-03-23",
+    "last_updated": "2026-03-30",
     "note": "Sum of 20 tracked vendors (adjusted for overlap). Actual global total likely 230-340T including self-hosted/private deployments.",
-    "update_method": "7-day extrapolation from Mar 16 baseline at vendor-specific growth rates. Hard-data anchors: Claude Code $2.5B+ ARR (The Register Mar 19); Anthropic enterprise biz subs +4.9% MoM (Feb); Gemini 750M active users confirmed + 85B API requests Jan 2026 (tech-insider.org). No new hard token data from OpenAI or Doubao this week."
+    "update_method": "7-day extrapolation from Mar 23 baseline at vendor-specific growth rates. Signal data: GPT-5.4 mini + nano launched Mar 17 (2× faster, $0.75/M input — high-volume workload model); Gemini 3 Pro rolling out globally. No new hard token/user count from OpenAI, Anthropic, or ByteDance this week. Doubao/ByteDance: no new domestic usage data. Claude Opus 4.6 sustaining enterprise trajectory."
   },
   "token_gdp": {
-    "daily_usd_M": 136.9,
-    "annual_usd_B": 50.0,
-    "as_of_date": "2026-03-23",
+    "daily_usd_M": 141.9,
+    "annual_usd_B": 51.8,
+    "as_of_date": "2026-03-30",
     "methodology": "vendor_volume_x_blended_price",
     "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M.",
     "breakdown": [
       {
         "region": "United States",
-        "daily_tokens_T": 76,
+        "daily_tokens_T": 79,
         "price_per_M": 1.5,
-        "daily_gdp_M": 114.0,
-        "gdp_share_pct": 83
+        "daily_gdp_M": 118.5,
+        "gdp_share_pct": 84
       },
       {
         "region": "China",
-        "daily_tokens_T": 90,
+        "daily_tokens_T": 91,
         "price_per_M": 0.1,
-        "daily_gdp_M": 9.0,
-        "gdp_share_pct": 7
+        "daily_gdp_M": 9.1,
+        "gdp_share_pct": 6
       },
       {
         "region": "Europe",
         "daily_tokens_T": 8.7,
         "price_per_M": 1.2,
         "daily_gdp_M": 10.44,
-        "gdp_share_pct": 8
+        "gdp_share_pct": 7
       },
       {
         "region": "Rest of World",
-        "daily_tokens_T": 3.9,
+        "daily_tokens_T": 4.3,
         "price_per_M": 0.9,
-        "daily_gdp_M": 3.51,
+        "daily_gdp_M": 3.87,
         "gdp_share_pct": 3
       }
     ],
-    "key_insight": "China generates 50% of global tokens but only 7% of Token GDP. US generates 42% of tokens but 83% of Token GDP. Pricing gap: 15x."
+    "key_insight": "China generates 50% of global tokens but only 6% of Token GDP. US generates 43% of tokens but 84% of Token GDP. Pricing gap: 15x."
   },
   "per_capita": [
     {
       "country": "United States",
       "code": "US",
-      "daily_tokens_T": 76,
+      "daily_tokens_T": 79,
       "population_M": 335,
-      "tokens_per_person_K": 227,
+      "tokens_per_person_K": 235.8,
       "rank": 1
     },
     {
       "country": "China",
       "code": "CN",
-      "daily_tokens_T": 90,
+      "daily_tokens_T": 91,
       "population_M": 1400,
-      "tokens_per_person_K": 64.3,
+      "tokens_per_person_K": 65.0,
       "rank": 2
     },
     {
@@ -150,14 +150,14 @@
     }
   ],
   "key_stats": {
-    "us_vs_india_per_capita_ratio": 344,
+    "us_vs_india_per_capita_ratio": 357,
     "china_token_volume_share_pct": 50,
-    "china_token_gdp_share_pct": 7,
-    "us_token_volume_share_pct": 42,
-    "us_token_gdp_share_pct": 83,
+    "china_token_gdp_share_pct": 6,
+    "us_token_volume_share_pct": 43,
+    "us_token_gdp_share_pct": 84,
     "pricing_gap_us_vs_cn": "15x",
-    "344x_headline": "A US user generates 344× more AI tokens per day than an Indian user",
-    "great_divergence": "China: 50% of tokens, 7% of Token GDP. US: 42% of tokens, 83% of Token GDP."
+    "344x_headline": "A US user generates 357× more AI tokens per day than an Indian user",
+    "great_divergence": "China: 50% of tokens, 6% of Token GDP. US: 43% of tokens, 84% of Token GDP."
   },
   "vendors": [
     {
@@ -165,15 +165,15 @@
       "rank": 1,
       "name": "Doubao (ByteDance)",
       "country": "CN",
-      "daily_tokens_T": 68,
+      "daily_tokens_T": 69.2,
       "confidence": "high",
       "tier": 1,
       "source": "Volcano Engine Jan 2026 baseline + Doubao 2.0 launch Feb 2026 (155M WAU, Spring Festival 63.3B tokens/min peak). No new disclosure this week; 7-day extrapolation.",
       "source_url": "https://www.caixinglobal.com/2026-02-18/bytedances-doubao-dominates-spring-festival-gala-with-19-billion-ai-interactions-102415609.html",
       "source_date": "2026-02-18",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 33,
+      "data_freshness_days": 40,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -200,6 +200,11 @@
           "date": "2026-03-23",
           "value_T": 68,
           "reason": "7-day extrapolation at 8%/mo from Mar 16 baseline. No new hard data. ByteDance halted global rollout of Seedance 2.0 (copyright dispute) — no direct impact on Doubao LLM volume."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 69.2,
+          "reason": "7-day extrapolation at 8%/mo from Mar 23 baseline. No new Doubao usage data this week. ByteDance ongoing focus on agentic tools."
         }
       ]
     },
@@ -208,15 +213,15 @@
       "rank": 2,
       "name": "Google Gemini (All Surfaces)",
       "country": "US",
-      "daily_tokens_T": 54,
+      "daily_tokens_T": 55.0,
       "confidence": "medium",
       "tier": 1,
       "source": "750M active users (Mar 2026 confirmed), 85B API requests/month in Jan 2026 (tech-insider.org), 118% YoY API developer growth (2.4M devs), 200%+ YoY growth trajectory. Google replacing Google Assistant with Gemini across Android in 2026.",
       "source_url": "https://tech-insider.org/google-gemini-750-million-users-march-2026-updates/",
       "source_date": "2026-03-16",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 7,
+      "data_freshness_days": 14,
       "is_extrapolated": true,
       "note": "All Surfaces = Search AI Overviews + Gemini App (750M active users) + Workspace + Cloud API. 85B API req/month in Jan ≈ 2.74B/day → at ~5K tokens/req ≈ 13.7T/day API-only component. Growth accelerated by Google replacing Assistant across Android. 7-day extrapolation at 8%/mo: 53T→54T.",
       "revision_history": [
@@ -239,6 +244,11 @@
           "date": "2026-03-23",
           "value_T": 54,
           "reason": "7-day extrapolation at 8%/mo. New data: 85B API req/month Jan 2026 (tech-insider.org), 750M active users confirmed, 118% YoY developer growth (2.4M devs). Google replacing Assistant with Gemini on Android accelerates penetration."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 55.0,
+          "reason": "7-day extrapolation at 8%/mo. Gemini 3 Pro rolling out globally with upgraded reasoning — volume accelerant. No new hard request/token figures disclosed."
         }
       ]
     },
@@ -247,15 +257,15 @@
       "rank": 3,
       "name": "OpenAI (ChatGPT + API)",
       "country": "US",
-      "daily_tokens_T": 31,
+      "daily_tokens_T": 32.0,
       "confidence": "medium",
       "tier": 1,
       "source": "900M WAU (Feb 27, 2026), 2.5B prompts/day, 50M subscribers. #1 app on Apple and Google app stores (Mar 2026). $730B pre-money valuation.",
       "source_url": "https://a16z.com/100-gen-ai-apps-6/",
       "source_date": "2026-03-10",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 13,
+      "data_freshness_days": 20,
       "is_extrapolated": true,
       "note": "900M WAU validated. Recently became #1 app on Apple + Google stores (Mar 2026). 2.5B × ~12K avg tokens/prompt ≈ 30T/day baseline. 7-day extrapolation at 15%/mo: 30T→31T.",
       "revision_history": [
@@ -278,6 +288,11 @@
           "date": "2026-03-23",
           "value_T": 31,
           "reason": "7-day extrapolation at 15%/mo. New: #1 app Apple+Google stores Mar 2026. No new hard token data; growth signals positive."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 32.0,
+          "reason": "7-day extrapolation at 15%/mo. KEY SIGNAL: GPT-5.4 mini + nano launched Mar 17 — 2× faster, $0.75/M input tokens (designed for 'high-volume workloads'). Codex subagents, computer-use, and API volume all boost inference throughput. No new user-count disclosure."
         }
       ]
     },
@@ -286,16 +301,16 @@
       "rank": 4,
       "name": "Claude (Anthropic)",
       "country": "US",
-      "daily_tokens_T": 14,
+      "daily_tokens_T": 14.6,
       "confidence": "medium",
       "tier": 1,
       "source": "$14B ARR company-wide (The Register Mar 19, 2026, per Anthropic CFO). Claude Code $2.5B+ ARR. Enterprise business subscriptions +4.9% MoM (Feb). New businesses choose Anthropic 70% of the time. 24.4% share in business AI (vs OpenAI 34.4%).",
       "source_url": "https://www.theregister.com/2026/03/19/anthropic_claude_market_share/",
       "source_date": "2026-03-19",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.18,
-      "data_freshness_days": 4,
-      "is_extrapolated": false,
+      "data_freshness_days": 11,
+      "is_extrapolated": true,
       "note": "The Register (Mar 19) cites CFO court filing: $14B ARR company-wide + $5B total revenue since launch. Claude Code alone is $2.5B+ ARR (>half from enterprise). Note: CRN (Mar 16) reported $19B ARR — discrepancy unresolved; conservative $14B figure used. Business subs growing 4.9% MoM vs OpenAI -1.5% decline. 7-day growth at 18%/mo + hard enterprise data → 13T→14T.",
       "revision_history": [
         {
@@ -327,6 +342,11 @@
           "date": "2026-03-23",
           "value_T": 14,
           "reason": "HARD DATA: The Register (Mar 19) cites CFO court filing confirming $14B ARR + $5B cumulative revenue. Claude Code $2.5B+ ARR (enterprise >50%). Business subs +4.9% MoM Feb; new biz chooses Anthropic 70% of time. 7-day extrapolation at 18%/mo: 13T→14T. Note: $19B ARR from CRN vs $14B from CFO court filing — unresolved; using $14B as conservative. Market share: 24.4% biz AI (gaining fast from 34.4% OpenAI)."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 14.6,
+          "reason": "7-day extrapolation at 18%/mo from Mar 23 baseline. No new hard data this week. Claude Opus 4.6 (Feb 5 launch) continues to drive enterprise adoption. Growth rate sustained."
         }
       ]
     },
@@ -335,14 +355,14 @@
       "rank": 5,
       "name": "DeepSeek",
       "country": "CN",
-      "daily_tokens_T": 8,
+      "daily_tokens_T": 8.1,
       "confidence": "low",
       "tier": 2,
       "source": "305.81M visits Dec 2025 (SimilarWeb). 0.2% US chatbot market share (Mar 2026). 81.6M WAU reported (Feb 2026). No new data this week.",
       "source_date": "2026-03-10",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 13,
+      "data_freshness_days": 20,
       "is_extrapolated": true,
       "note": "No new hard data this week. Multiverse Computing announced DeepSeek model compression (Mar 19) — signals ongoing ecosystem development. Value held at 8T pending new usage data.",
       "revision_history": [
@@ -365,6 +385,11 @@
           "date": "2026-03-23",
           "value_T": 8,
           "reason": "Held at 8T. No new usage data. Growth rate revised to 8%/mo (Dec 2025 traffic showed MoM decline). Multiverse Computing model compression (Mar 19) signals ecosystem maturity."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 8.1,
+          "reason": "Held at 8T. No new usage data. 7-day extrapolation at 8%/mo yields negligible change."
         }
       ]
     },
@@ -373,14 +398,14 @@
       "rank": 6,
       "name": "Azure OpenAI Service",
       "country": "US",
-      "daily_tokens_T": 7.8,
+      "daily_tokens_T": 8.0,
       "confidence": "low",
       "tier": 2,
       "source": "Microsoft Azure AI revenue back-calculation",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -402,6 +427,11 @@
           "date": "2026-03-23",
           "value_T": 7.8,
           "reason": "7-day extrapolation at 10%/mo from Mar 16 baseline."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 8.0,
+          "reason": "7-day extrapolation at 10%/mo from Mar 23 baseline."
         }
       ]
     },
@@ -410,14 +440,14 @@
       "rank": 7,
       "name": "Qwen (Alibaba Cloud)",
       "country": "CN",
-      "daily_tokens_T": 5.5,
+      "daily_tokens_T": 5.6,
       "confidence": "medium",
       "tier": 1,
       "source": "Alibaba Cloud Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -439,6 +469,11 @@
           "date": "2026-03-23",
           "value_T": 5.5,
           "reason": "7-day extrapolation at 8%/mo from Mar 16 baseline."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 5.6,
+          "reason": "7-day extrapolation at 8%/mo from Mar 23 baseline."
         }
       ]
     },
@@ -447,14 +482,14 @@
       "rank": 8,
       "name": "Hunyuan (Tencent)",
       "country": "CN",
-      "daily_tokens_T": 2.3,
+      "daily_tokens_T": 2.36,
       "confidence": "very-low",
       "tier": 2,
       "source": "Yuanbao 50M DAU + 900 internal apps (Feb 2026). Yuanbao ranked 1st iOS during Spring Festival.",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.12,
-      "data_freshness_days": 51,
+      "data_freshness_days": 58,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -476,6 +511,11 @@
           "date": "2026-03-23",
           "value_T": 2.3,
           "reason": "7-day extrapolation at 12%/mo from Mar 16 baseline."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 2.36,
+          "reason": "7-day extrapolation at 12%/mo from Mar 23 baseline."
         }
       ]
     },
@@ -484,14 +524,14 @@
       "rank": 9,
       "name": "ERNIE (Baidu)",
       "country": "CN",
-      "daily_tokens_T": 1.7,
+      "daily_tokens_T": 1.72,
       "confidence": "high",
       "tier": 1,
       "source": "Baidu Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.05,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -508,6 +548,11 @@
           "date": "2026-03-23",
           "value_T": 1.7,
           "reason": "7-day extrapolation holds at 1.7T (growth rate 5%/mo, small increment)."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 1.72,
+          "reason": "7-day extrapolation holds (5%/mo, small increment)."
         }
       ]
     },
@@ -516,14 +561,14 @@
       "rank": 10,
       "name": "Spark (iFlytek)",
       "country": "CN",
-      "daily_tokens_T": 1.5,
+      "daily_tokens_T": 1.52,
       "confidence": "medium",
       "tier": 1,
       "source": "iFlytek Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.06,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -540,6 +585,11 @@
           "date": "2026-03-23",
           "value_T": 1.5,
           "reason": "7-day extrapolation holds at 1.5T (6%/mo, small increment)."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 1.52,
+          "reason": "7-day extrapolation holds (6%/mo, small increment)."
         }
       ]
     },
@@ -548,14 +598,14 @@
       "rank": 11,
       "name": "OpenRouter",
       "country": "US",
-      "daily_tokens_T": 1.1,
+      "daily_tokens_T": 1.12,
       "confidence": "high",
       "tier": 1,
       "source": "Official platform statistics",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 51,
+      "data_freshness_days": 58,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -572,6 +622,11 @@
           "date": "2026-03-23",
           "value_T": 1.1,
           "reason": "7-day extrapolation holds at 1.1T."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 1.12,
+          "reason": "7-day extrapolation holds at 1.1T."
         }
       ]
     },
@@ -580,14 +635,14 @@
       "rank": 12,
       "name": "Mistral AI",
       "country": "FR",
-      "daily_tokens_T": 0.66,
+      "daily_tokens_T": 0.67,
       "confidence": "low",
       "tier": 2,
       "source": "$400M ARR ÷ blended token price",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -604,6 +659,11 @@
           "date": "2026-03-23",
           "value_T": 0.66,
           "reason": "7-day extrapolation at 8%/mo."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.67,
+          "reason": "7-day extrapolation holds at 0.66T."
         }
       ]
     },
@@ -612,15 +672,15 @@
       "rank": 13,
       "name": "Grok (xAI)",
       "country": "US",
-      "daily_tokens_T": 0.62,
+      "daily_tokens_T": 0.64,
       "confidence": "low",
       "tier": 2,
       "source": "0.6% AI chatbot market share (FirstPageSage Mar 2026). Grok 4.1 launched. 4% MoM market share increase.",
       "source_url": "https://firstpagesage.com/reports/top-generative-ai-chatbots/",
       "source_date": "2026-03-10",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 13,
+      "data_freshness_days": 20,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -640,13 +700,18 @@
         },
         {
           "date": "2026-03-16",
-          "value_T": 0.60,
+          "value_T": 0.6,
           "reason": "Market share confirmed 0.6% (FirstPageSage Mar 2026, +4% MoM). Grok 4.1 launched. Upgraded from extrapolation-only."
         },
         {
           "date": "2026-03-23",
           "value_T": 0.62,
           "reason": "7-day extrapolation at 15%/mo from Mar 16 baseline."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.64,
+          "reason": "7-day extrapolation at 15%/mo from Mar 23 baseline."
         }
       ]
     },
@@ -655,14 +720,14 @@
       "rank": 14,
       "name": "MiniMax",
       "country": "CN",
-      "daily_tokens_T": 0.38,
+      "daily_tokens_T": 0.39,
       "confidence": "medium",
       "tier": 1,
       "source": "OpenRouter + HuggingFace",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 51,
+      "data_freshness_days": 58,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -679,6 +744,11 @@
           "date": "2026-03-23",
           "value_T": 0.38,
           "reason": "7-day extrapolation at 8%/mo."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.39,
+          "reason": "7-day extrapolation holds at 0.38T."
         }
       ]
     },
@@ -687,14 +757,14 @@
       "rank": 15,
       "name": "Groq",
       "country": "US",
-      "daily_tokens_T": 0.28,
+      "daily_tokens_T": 0.29,
       "confidence": "low",
       "tier": 2,
       "source": "2.5M devs × usage + LPU capacity back-calc",
       "source_date": "2026-01",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.12,
-      "data_freshness_days": 81,
+      "data_freshness_days": 88,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -716,6 +786,11 @@
           "date": "2026-03-23",
           "value_T": 0.28,
           "reason": "7-day extrapolation at 12%/mo."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.29,
+          "reason": "7-day extrapolation at 12%/mo from Mar 23 baseline."
         }
       ]
     },
@@ -730,9 +805,9 @@
       "source": "Meta AI distributed across 4B+ MAU apps. 'Virtually no standalone AI users vs OpenAI' (247WallSt, Mar 15 2026).",
       "source_url": "https://247wallst.com/investing/2026/03/15/meta-has-virtually-no-ai-users-compared-to-openais-900m-says-big-technologys-kantrowitz/",
       "source_date": "2026-03-15",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 8,
+      "data_freshness_days": 15,
       "is_extrapolated": true,
       "note": "Meta AI integrated in Facebook/Instagram/WhatsApp (4B+ MAU) but lacks standalone product traction. Value held at 0.21T.",
       "revision_history": [
@@ -750,6 +825,11 @@
           "date": "2026-03-23",
           "value_T": 0.21,
           "reason": "7-day extrapolation holds at 0.21T. Meta AI lacks standalone traction (Mar 15 source confirms)."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.21,
+          "reason": "7-day extrapolation holds at 0.21T."
         }
       ]
     },
@@ -763,9 +843,9 @@
       "tier": 1,
       "source": "OpenRouter data",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.06,
-      "data_freshness_days": 51,
+      "data_freshness_days": 58,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -782,6 +862,11 @@
           "date": "2026-03-23",
           "value_T": 0.18,
           "reason": "7-day extrapolation holds at 0.18T."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.18,
+          "reason": "7-day extrapolation holds at 0.18T."
         }
       ]
     },
@@ -795,9 +880,9 @@
       "tier": 2,
       "source": "AWS revenue ÷ price estimate",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -814,6 +899,11 @@
           "date": "2026-03-23",
           "value_T": 0.16,
           "reason": "7-day extrapolation holds at 0.16T."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.16,
+          "reason": "7-day extrapolation holds at 0.16T."
         }
       ]
     },
@@ -827,9 +917,9 @@
       "tier": 1,
       "source": "OpenRouter data",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.05,
-      "data_freshness_days": 51,
+      "data_freshness_days": 58,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -846,6 +936,11 @@
           "date": "2026-03-23",
           "value_T": 0.12,
           "reason": "7-day extrapolation holds at 0.12T."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.12,
+          "reason": "7-day extrapolation holds at 0.12T."
         }
       ]
     },
@@ -859,9 +954,9 @@
       "tier": 2,
       "source": "Query volume ÷ avg length",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-23",
+      "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 85,
+      "data_freshness_days": 92,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -878,6 +973,11 @@
           "date": "2026-03-23",
           "value_T": 0.08,
           "reason": "7-day extrapolation holds at 0.08T."
+        },
+        {
+          "date": "2026-03-30",
+          "value_T": 0.08,
+          "reason": "7-day extrapolation holds at 0.08T."
         }
       ]
     }
@@ -888,18 +988,18 @@
       "country": "China",
       "code": "CN",
       "share_pct": 50,
-      "daily_tokens_T": 90,
+      "daily_tokens_T": 91,
       "confidence": "medium",
-      "per_capita_K": 64.3
+      "per_capita_K": 65.0
     },
     {
       "rank": 2,
       "country": "United States",
       "code": "US",
-      "share_pct": 42,
-      "daily_tokens_T": 76,
+      "share_pct": 43,
+      "daily_tokens_T": 79,
       "confidence": "medium",
-      "per_capita_K": 227
+      "per_capita_K": 235.8
     },
     {
       "rank": 3,
@@ -991,10 +1091,31 @@
       "confidence": "low"
     }
   ],
-  "global_total_T": 179,
+  "global_total_T": 183,
   "year_end_projection_T": "900-1350",
-  "last_updated": "2026-03-23",
+  "last_updated": "2026-03-30",
   "correction_log": [
+    {
+      "date": "2026-03-30",
+      "vendor": "Token GDP",
+      "old": "$136.9M/day, $50.0B/yr",
+      "new": "$141.9M/day, $51.8B/yr",
+      "reason": "Cascade from volume upgrades. US: 79T (+$4.5M/day). CN: 91T (+$0.1M/day). Global Token GDP: $141.9M/day milestone."
+    },
+    {
+      "date": "2026-03-30",
+      "vendor": "OpenAI",
+      "old": "31T/day",
+      "new": "32.0T/day",
+      "reason": "KEY SIGNAL: GPT-5.4 mini (Mar 17) + nano — 2× faster than GPT-5.4, $0.75/$4.50 per M tokens, 400K context, designed explicitly for 'high-volume workloads'. Codex CLI/IDE subagents now run GPT-5.4 mini at 30% quota. Computer use, API multi-agent patterns all drive inference volume. No new hard WAU/prompt count. 7-day extrapolation at 15%/mo: 31T→32.0T."
+    },
+    {
+      "date": "2026-03-30",
+      "vendor": "Global",
+      "old": "179T/day",
+      "new": "183T/day",
+      "reason": "7-day extrapolation from Mar 23 baseline. Doubao: 68T→69.2T; Gemini: 54T→55.0T; OpenAI: 31T→32.0T (GPT-5.4 mini+nano high-volume launch); Claude: 14T→14.6T; Azure: 7.8T→8.0T. Cascade: 183T/day."
+    },
     {
       "date": "2026-03-23",
       "vendor": "Anthropic/Claude",
