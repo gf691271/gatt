@@ -431,11 +431,12 @@
       "daily_tokens_T": 8.0,
       "confidence": "low",
       "tier": 2,
-      "source": "Microsoft Azure AI revenue back-calculation",
-      "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-30",
+      "source": "Azure OpenAI Service revenue back-calculation. Microsoft Copilot ($5.4B ARR, 15M paid seats, 33M active users as of Q2 FY2026). GitHub Copilot 4.7M paid subs. Azure AI revenue growing 157% YoY (Jan 2026 earnings). $81.3B quarterly revenue.",
+      "source_url": "https://techcrunch.com/2026/01/29/satya-nadella-insists-people-are-using-microsofts-copilot-ai-a-lot/",
+      "source_date": "2026-01-29",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 92,
+      "data_freshness_days": 63,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -462,6 +463,11 @@
           "date": "2026-03-30",
           "value_T": 8.0,
           "reason": "7-day extrapolation at 10%/mo from Mar 23 baseline."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 8.0,
+          "reason": "Source updated: Microsoft Copilot $5.4B ARR (Motley Fool Feb 9), 15M paid M365 seats (+160% YoY), 33M active users, GitHub Copilot 4.7M paid subs. Azure AI revenue growing 157% YoY. $81.3B Q2 FY2026 revenue. Source_date updated from Q4 2025 to Jan 2026 earnings. Value held at 8T."
         }
       ]
     },
