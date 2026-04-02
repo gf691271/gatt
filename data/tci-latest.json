@@ -473,11 +473,12 @@
       "daily_tokens_T": 5.6,
       "confidence": "medium",
       "tier": 1,
-      "source": "Alibaba Cloud Q4 2025 earnings",
-      "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-30",
+      "source": "China enterprise AI 37T tokens/day H2 2025, Qwen #1 market share (CNR Feb 24, 2026). OpenRouter global #4 with 10.4% share. Qwen3.5-Plus (397B params) + Qwen3-Max-Thinking (1T+ params, 36T training tokens) launched 2026.",
+      "source_url": "https://tech.cnr.cn/techph/20260224/t20260224_527534692.shtml",
+      "source_date": "2026-02-24",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 92,
+      "data_freshness_days": 37,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -504,6 +505,12 @@
           "date": "2026-03-30",
           "value_T": 5.6,
           "reason": "7-day extrapolation at 8%/mo from Mar 23 baseline."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 5.6,
+          "reason": "HARD DATA: China enterprise AI daily token volume hit 37T/day in H2 2025 (CNR Feb 24, 2026), with Qwen #1 market share. Qwen ranked #4 globally on OpenRouter (10.4% share, surpassing OpenAI). Qwen3.5-Plus (397B) and Qwen3-Max-Thinking (1T+ params) launched. Source_date updated to Feb 2026. Value held at 5.6T — conservative given #1 CN enterprise share of 37T.",
+          "source": "https://tech.cnr.cn/techph/20260224/t20260224_527534692.shtml"
         }
       ]
     },
