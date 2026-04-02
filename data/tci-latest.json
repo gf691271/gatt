@@ -868,15 +868,16 @@
       "rank": 17,
       "name": "Kimi (Moonshot AI)",
       "country": "CN",
-      "daily_tokens_T": 0.18,
+      "daily_tokens_T": 1.5,
       "confidence": "medium",
       "tier": 1,
-      "source": "OpenRouter data",
-      "source_date": "2026-02",
-      "extrapolated_to": "2026-03-30",
-      "growth_rate_monthly": 0.06,
-      "data_freshness_days": 58,
-      "is_extrapolated": true,
+      "source": "OpenRouter Feb 2026: K2.5 consumed 4.02T tokens/month = 0.134T/day on OpenRouter alone. Kimi app + API platform total estimated 10-15×. $100M ARR (technews.tw Mar 31). $18B valuation. 20 days revenue > 2025 full year (Sohu Mar 30).",
+      "source_url": "https://technews.tw/2026/03/31/moonshot-ai-arr-surpasses-100-million/",
+      "source_date": "2026-03-31",
+      "extrapolated_to": null,
+      "growth_rate_monthly": 0.25,
+      "data_freshness_days": 2,
+      "is_extrapolated": false,
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -897,6 +898,12 @@
           "date": "2026-03-30",
           "value_T": 0.18,
           "reason": "7-day extrapolation holds at 0.18T."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 1.5,
+          "reason": "MAJOR REVISION: OpenRouter Feb data shows K2.5 consumed 4.02T tokens/month = 0.134T/day on OpenRouter alone (TTV/HKEJ). K2.5 briefly ranked #1 globally surpassing Gemini (Zhihu Mar 15). $100M ARR confirmed (technews.tw Mar 31). 20 days revenue surpassed 2025 full year (Sohu Mar 30). $18B valuation (4× in 3 months). Previous 0.18T was massive undercount — OpenRouter is small fraction of total Kimi usage. Conservative 1.5T estimate.",
+          "source": "https://technews.tw/2026/03/31/moonshot-ai-arr-surpasses-100-million/"
         }
       ]
     },
