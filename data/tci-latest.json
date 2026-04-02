@@ -271,16 +271,16 @@
       "name": "OpenAI (ChatGPT + API)",
       "country": "US",
       "daily_tokens_T": 32.0,
-      "confidence": "medium",
+      "confidence": "medium-high",
       "tier": 1,
-      "source": "900M WAU (Feb 27, 2026), 2.5B prompts/day, 50M subscribers. #1 app on Apple and Google app stores (Mar 2026). $730B pre-money valuation.",
-      "source_url": "https://a16z.com/100-gen-ai-apps-6/",
-      "source_date": "2026-03-10",
-      "extrapolated_to": "2026-03-30",
+      "source": "900M WAU (Feb 27, 2026), 2.5B prompts/day, 50M subscribers. #1 app (Mar 2026). $852B valuation, $24B ARR ($2B/mo revenue as of Mar 31, 2026 per TechCrunch/Reuters). $122B funding round closed Mar 31.",
+      "source_url": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/",
+      "source_date": "2026-03-31",
+      "extrapolated_to": null,
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 20,
-      "is_extrapolated": true,
-      "note": "900M WAU validated. Recently became #1 app on Apple + Google stores (Mar 2026). 2.5B × ~12K avg tokens/prompt ≈ 30T/day baseline. 7-day extrapolation at 15%/mo: 30T→31T.",
+      "data_freshness_days": 2,
+      "is_extrapolated": false,
+      "note": "HARD DATA: $24B ARR confirmed Mar 31, 2026 ($2B/mo). Revenue back-calc at blended ~$1.5/M: 24B/1.5/365=43.8T/day theoretical max. But 2.5B prompts × 12K tokens = 30T/day consumer+API baseline remains more conservative anchor. Revenue growth $5B→$24B ARR in 6 months reflects enterprise pricing uplift, not just volume. 32T conservative floor maintained.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -306,6 +306,12 @@
           "date": "2026-03-30",
           "value_T": 32.0,
           "reason": "7-day extrapolation at 15%/mo. KEY SIGNAL: GPT-5.4 mini + nano launched Mar 17 — 2× faster, $0.75/M input tokens (designed for 'high-volume workloads'). Codex subagents, computer-use, and API volume all boost inference throughput. No new user-count disclosure."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 32.0,
+          "reason": "HARD DATA: $24B ARR confirmed Mar 31, 2026 ($2B/mo revenue, TechCrunch/Reuters). $852B valuation, $122B funding round closed. Revenue back-calc suggests 44T/day theoretical max at blended $1.5/M, but 2.5B prompts × 12K tokens = 30T consumer baseline remains conservative anchor. Revenue growth partly from pricing uplift (enterprise >40% of revenue). Confidence upgraded medium→medium-high. Value held at 32T pending direct token data.",
+          "source": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/"
         }
       ]
     },
