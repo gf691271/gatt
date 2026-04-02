@@ -789,7 +789,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;">
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Daily Token Volume</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#60a5fa;">235T</div>
+      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">235T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
       <div style="font-size:0.65rem;color:#64748b;">tokens/day · global aggregate</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
@@ -1265,7 +1265,31 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
 <script>
 // ── LIVE TOKEN COUNTER ──
 (function() {
-  const RATE = 2719907; // tokens per second (235T/day = 235e12/86400)
+  // ── LIVE EXTRAPOLATION ENGINE ──
+  // Each vendor value is extrapolated from its source_date using its monthly growth rate.
+  // Formula: liveValue = source_value_T × (1 + growth_rate_monthly)^(daysSinceSource/30)
+  function computeLiveGlobalT() {
+    try {
+      const req = new XMLHttpRequest();
+      req.open('GET', 'data/tci-latest.json', false); // sync
+      req.send();
+      const data = JSON.parse(req.responseText);
+      const today = new Date();
+      let total = 0;
+      data.vendors.forEach(v => {
+        const srcDate = new Date(v.source_date || '2026-04-02');
+        const days = (today - srcDate) / 86400000;
+        const rate = v.growth_rate_monthly || 0.08;
+        const src = v.source_value_T || v.daily_tokens_T;
+        total += src * Math.pow(1 + rate, days / 30);
+      });
+      return total; // in T
+    } catch(e) {
+      return 235; // fallback
+    }
+  }
+  const liveGlobalT = computeLiveGlobalT();
+  const RATE = (liveGlobalT * 1e12) / 86400; // tokens per second, live-computed
   const startTime = Date.now();
 
   const equivalences = [
@@ -1334,6 +1358,15 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   }
 
   requestAnimationFrame(updateCounter);
+
+  // ── UPDATE LIVE GLOBAL HEADLINE ──
+  (function() {
+    const el = document.getElementById('gatt-live-global');
+    if (el && liveGlobalT) {
+      const rounded = Math.round(liveGlobalT);
+      el.innerHTML = '~' + rounded + 'T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;" title="Extrapolated from each vendor\'s official source date using their monthly growth rate">⟳ live</span>';
+    }
+  })();
 })();
 </script>
 

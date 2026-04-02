@@ -4,14 +4,14 @@
   "generated_at": "2026-04-02T00:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
-  "license": "CC BY 4.0 — free to use with attribution",
+  "license": "CC BY 4.0 \u2014 free to use with attribution",
   "global_summary": {
     "total_daily_tokens_T": 235,
     "as_of_date": "2026-04-02",
     "confidence": "medium",
     "last_updated": "2026-04-02",
     "note": "Sum of 20 tracked vendors (adjusted for overlap). Actual global total likely 280-400T including self-hosted/private deployments.",
-    "update_method": "MAJOR UPDATE: Volcengine official disclosure at Wuhan AI Innovation Expo (Apr 1, 2026) — Doubao 120T/day confirmed. This is the first direct official figure since Jan 2026. Previous 69.2T was extrapolated from Jan 2026 baseline. Revision cascades global total from 183T to 234T (+28%)."
+    "update_method": "MAJOR UPDATE: Volcengine official disclosure at Wuhan AI Innovation Expo (Apr 1, 2026) \u2014 Doubao 120T/day confirmed. This is the first direct official figure since Jan 2026. Previous 69.2T was extrapolated from Jan 2026 baseline. Revision cascades global total from 183T to 234T (+28%)."
   },
   "token_gdp": {
     "daily_usd_M": 147.0,
@@ -156,7 +156,7 @@
     "us_token_volume_share_pct": 34,
     "us_token_gdp_share_pct": 81,
     "pricing_gap_us_vs_cn": "15x",
-    "344x_headline": "A US user generates 357× more AI tokens per day than an Indian user",
+    "344x_headline": "A US user generates 357\u00d7 more AI tokens per day than an Indian user",
     "great_divergence": "China: 61% of tokens, 10% of Token GDP. US: 34% of tokens, 81% of Token GDP.",
     "doubao_global_share_pct": 51,
     "doubao_note": "Doubao alone accounts for 51% of global token volume as of Apr 2026 (official Volcengine disclosure)"
@@ -170,7 +170,7 @@
       "daily_tokens_T": 120,
       "confidence": "high",
       "tier": 1,
-      "source": "OFFICIAL: Volcengine disclosure at Wuhan AI Innovation Expo (Apr 1, 2026) — 120T/day confirmed by ByteDance. Reported by Xinzhiyuan (新智元). This supersedes all prior extrapolations.",
+      "source": "OFFICIAL: Volcengine disclosure at Wuhan AI Innovation Expo (Apr 1, 2026) \u2014 120T/day confirmed by ByteDance. Reported by Xinzhiyuan (\u65b0\u667a\u5143). This supersedes all prior extrapolations.",
       "source_url": "https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w",
       "source_date": "2026-04-01",
       "extrapolated_to": null,
@@ -201,7 +201,7 @@
         {
           "date": "2026-03-23",
           "value_T": 68,
-          "reason": "7-day extrapolation at 8%/mo from Mar 16 baseline. No new hard data. ByteDance halted global rollout of Seedance 2.0 (copyright dispute) — no direct impact on Doubao LLM volume."
+          "reason": "7-day extrapolation at 8%/mo from Mar 16 baseline. No new hard data. ByteDance halted global rollout of Seedance 2.0 (copyright dispute) \u2014 no direct impact on Doubao LLM volume."
         },
         {
           "date": "2026-03-30",
@@ -211,10 +211,11 @@
         {
           "date": "2026-04-02",
           "value_T": 120,
-          "reason": "OFFICIAL DISCLOSURE: Volcengine announced 120T/day at Wuhan AI Innovation Expo (Apr 1, 2026). Source: Xinzhiyuan report https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w. Previous estimate 69.2T was extrapolation from Jan 2026 baseline — actual figure is 73% higher. This makes Doubao alone responsible for 51% of global token volume.",
+          "reason": "OFFICIAL DISCLOSURE: Volcengine announced 120T/day at Wuhan AI Innovation Expo (Apr 1, 2026). Source: Xinzhiyuan report https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w. Previous estimate 69.2T was extrapolation from Jan 2026 baseline \u2014 actual figure is 73% higher. This makes Doubao alone responsible for 51% of global token volume.",
           "source": "https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w"
         }
-      ]
+      ],
+      "source_value_T": 120
     },
     {
       "id": "google-gemini",
@@ -256,14 +257,15 @@
         {
           "date": "2026-03-30",
           "value_T": 55.0,
-          "reason": "7-day extrapolation at 8%/mo. Gemini 3 Pro rolling out globally with upgraded reasoning — volume accelerant. No new hard request/token figures disclosed."
+          "reason": "7-day extrapolation at 8%/mo. Gemini 3 Pro rolling out globally with upgraded reasoning \u2014 volume accelerant. No new hard request/token figures disclosed."
         },
         {
           "date": "2026-04-02",
           "value_T": 55.0,
-          "reason": "ANCHORED BY OFFICIAL DATA: Pichai Q4 2025 earnings (Feb 4, 2026) confirmed 10B tokens/min via direct API = 14.4T/day API-only (up from 7B/min prior quarter). All Surfaces (API + App 750M MAU + Search AI Overviews + Workspace) estimated 55T. Confidence upgraded medium→medium-high based on official API throughput anchor. Gemini 3 Flash processing 1T+ daily API requests since Jan 2026."
+          "reason": "ANCHORED BY OFFICIAL DATA: Pichai Q4 2025 earnings (Feb 4, 2026) confirmed 10B tokens/min via direct API = 14.4T/day API-only (up from 7B/min prior quarter). All Surfaces (API + App 750M MAU + Search AI Overviews + Workspace) estimated 55T. Confidence upgraded medium\u2192medium-high based on official API throughput anchor. Gemini 3 Flash processing 1T+ daily API requests since Jan 2026."
         }
-      ]
+      ],
+      "source_value_T": 55.0
     },
     {
       "id": "openai-chatgpt",
@@ -280,7 +282,7 @@
       "growth_rate_monthly": 0.15,
       "data_freshness_days": 2,
       "is_extrapolated": false,
-      "note": "HARD DATA: $24B ARR confirmed Mar 31, 2026 ($2B/mo). Revenue back-calc at blended ~$1.5/M: 24B/1.5/365=43.8T/day theoretical max. But 2.5B prompts × 12K tokens = 30T/day consumer+API baseline remains more conservative anchor. Revenue growth $5B→$24B ARR in 6 months reflects enterprise pricing uplift, not just volume. 32T conservative floor maintained.",
+      "note": "HARD DATA: $24B ARR confirmed Mar 31, 2026 ($2B/mo). Revenue back-calc at blended ~$1.5/M: 24B/1.5/365=43.8T/day theoretical max. But 2.5B prompts \u00d7 12K tokens = 30T/day consumer+API baseline remains more conservative anchor. Revenue growth $5B\u2192$24B ARR in 6 months reflects enterprise pricing uplift, not just volume. 32T conservative floor maintained.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -290,12 +292,12 @@
         {
           "date": "2026-02-27",
           "value_T": 28,
-          "reason": "Sep 2025 baseline × 1.15^5 months growth = 38T theoretical; conservative floor 28T"
+          "reason": "Sep 2025 baseline \u00d7 1.15^5 months growth = 38T theoretical; conservative floor 28T"
         },
         {
           "date": "2026-03-13",
           "value_T": 30,
-          "reason": "Validated by 2.5B prompts/day (Feb 27 disclosure). 2.5B × 12K tokens ≈ 30T. Confidence upgraded medium-low→medium."
+          "reason": "Validated by 2.5B prompts/day (Feb 27 disclosure). 2.5B \u00d7 12K tokens \u2248 30T. Confidence upgraded medium-low\u2192medium."
         },
         {
           "date": "2026-03-23",
@@ -305,15 +307,16 @@
         {
           "date": "2026-03-30",
           "value_T": 32.0,
-          "reason": "7-day extrapolation at 15%/mo. KEY SIGNAL: GPT-5.4 mini + nano launched Mar 17 — 2× faster, $0.75/M input tokens (designed for 'high-volume workloads'). Codex subagents, computer-use, and API volume all boost inference throughput. No new user-count disclosure."
+          "reason": "7-day extrapolation at 15%/mo. KEY SIGNAL: GPT-5.4 mini + nano launched Mar 17 \u2014 2\u00d7 faster, $0.75/M input tokens (designed for 'high-volume workloads'). Codex subagents, computer-use, and API volume all boost inference throughput. No new user-count disclosure."
         },
         {
           "date": "2026-04-02",
           "value_T": 32.0,
-          "reason": "HARD DATA: $24B ARR confirmed Mar 31, 2026 ($2B/mo revenue, TechCrunch/Reuters). $852B valuation, $122B funding round closed. Revenue back-calc suggests 44T/day theoretical max at blended $1.5/M, but 2.5B prompts × 12K tokens = 30T consumer baseline remains conservative anchor. Revenue growth partly from pricing uplift (enterprise >40% of revenue). Confidence upgraded medium→medium-high. Value held at 32T pending direct token data.",
+          "reason": "HARD DATA: $24B ARR confirmed Mar 31, 2026 ($2B/mo revenue, TechCrunch/Reuters). $852B valuation, $122B funding round closed. Revenue back-calc suggests 44T/day theoretical max at blended $1.5/M, but 2.5B prompts \u00d7 12K tokens = 30T consumer baseline remains conservative anchor. Revenue growth partly from pricing uplift (enterprise >40% of revenue). Confidence upgraded medium\u2192medium-high. Value held at 32T pending direct token data.",
           "source": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/"
         }
-      ]
+      ],
+      "source_value_T": 32.0
     },
     {
       "id": "anthropic-claude",
@@ -330,7 +333,7 @@
       "growth_rate_monthly": 0.18,
       "data_freshness_days": 9,
       "is_extrapolated": true,
-      "note": "ARR timeline: $9B (end 2025) → $14B (mid-Feb, CFO court filing) → $19B (end-Feb/early-Mar per The Information/Yahoo/Forbes) → $25B+ (Apr 1 per SemiAnalysis). Claude Code $2.5B ARR in Feb. Revenue growth 19×/14mo. Revenue-to-token back-calc at $3/M blended: $19B/3/365=17.4T/day. Conservative 14.6T held pending direct token data.",
+      "note": "ARR timeline: $9B (end 2025) \u2192 $14B (mid-Feb, CFO court filing) \u2192 $19B (end-Feb/early-Mar per The Information/Yahoo/Forbes) \u2192 $25B+ (Apr 1 per SemiAnalysis). Claude Code $2.5B ARR in Feb. Revenue growth 19\u00d7/14mo. Revenue-to-token back-calc at $3/M blended: $19B/3/365=17.4T/day. Conservative 14.6T held pending direct token data.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -345,7 +348,7 @@
         {
           "date": "2026-02-27",
           "value_T": 10,
-          "reason": "Cross-validated with 820M req/day + 18M MAU × 500K tokens/day"
+          "reason": "Cross-validated with 820M req/day + 18M MAU \u00d7 500K tokens/day"
         },
         {
           "date": "2026-03-13",
@@ -355,12 +358,12 @@
         {
           "date": "2026-03-16",
           "value_T": 13,
-          "reason": "HARD DATA: Anthropic disclosed $19B ARR run-rate (mid-Mar 2026 per CRN). Revenue ratio 19/14=1.36× → 15T theoretical; conservative 13T. Claude Code WAU doubled since Jan 1; enterprise $100K+ customers grew 7×. Growth rate revised to 18%/mo."
+          "reason": "HARD DATA: Anthropic disclosed $19B ARR run-rate (mid-Mar 2026 per CRN). Revenue ratio 19/14=1.36\u00d7 \u2192 15T theoretical; conservative 13T. Claude Code WAU doubled since Jan 1; enterprise $100K+ customers grew 7\u00d7. Growth rate revised to 18%/mo."
         },
         {
           "date": "2026-03-23",
           "value_T": 14,
-          "reason": "HARD DATA: The Register (Mar 19) cites CFO court filing confirming $14B ARR + $5B cumulative revenue. Claude Code $2.5B+ ARR (enterprise >50%). Business subs +4.9% MoM Feb; new biz chooses Anthropic 70% of time. 7-day extrapolation at 18%/mo: 13T→14T. Note: $19B ARR from CRN vs $14B from CFO court filing — unresolved; using $14B as conservative. Market share: 24.4% biz AI (gaining fast from 34.4% OpenAI)."
+          "reason": "HARD DATA: The Register (Mar 19) cites CFO court filing confirming $14B ARR + $5B cumulative revenue. Claude Code $2.5B+ ARR (enterprise >50%). Business subs +4.9% MoM Feb; new biz chooses Anthropic 70% of time. 7-day extrapolation at 18%/mo: 13T\u219214T. Note: $19B ARR from CRN vs $14B from CFO court filing \u2014 unresolved; using $14B as conservative. Market share: 24.4% biz AI (gaining fast from 34.4% OpenAI)."
         },
         {
           "date": "2026-03-30",
@@ -370,10 +373,11 @@
         {
           "date": "2026-04-02",
           "value_T": 14.6,
-          "reason": "ARR RESOLVED: $14B vs $19B — both correct at different time points. Timeline: $9B (end 2025) → $14B (mid-Feb, CFO court filing) → $19B (end-Feb per The Information Mar 24/Yahoo Finance Mar 4) → $25B+ (SemiAnalysis Apr 1). Revenue back-calc at $3/M: 17.4T/day. Conservative 14.6T held. Confidence upgraded medium→medium-high with multiple corroborating sources.",
+          "reason": "ARR RESOLVED: $14B vs $19B \u2014 both correct at different time points. Timeline: $9B (end 2025) \u2192 $14B (mid-Feb, CFO court filing) \u2192 $19B (end-Feb per The Information Mar 24/Yahoo Finance Mar 4) \u2192 $25B+ (SemiAnalysis Apr 1). Revenue back-calc at $3/M: 17.4T/day. Conservative 14.6T held. Confidence upgraded medium\u2192medium-high with multiple corroborating sources.",
           "source": "https://uk.finance.yahoo.com/news/anthropic-arr-surges-19-billion-151210607.html"
         }
-      ]
+      ],
+      "source_value_T": 14.6
     },
     {
       "id": "deepseek",
@@ -389,7 +393,7 @@
       "growth_rate_monthly": 0.08,
       "data_freshness_days": 23,
       "is_extrapolated": true,
-      "note": "130M MAU by early 2026 (up from 81.6M WAU). V4 Lite launched Mar 2026 — accelerant. No official token throughput data. DeepSeek remains free/open-source with no disclosed API volume metrics. Value held at 8.1T pending hard data.",
+      "note": "130M MAU by early 2026 (up from 81.6M WAU). V4 Lite launched Mar 2026 \u2014 accelerant. No official token throughput data. DeepSeek remains free/open-source with no disclosed API volume metrics. Value held at 8.1T pending hard data.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -421,7 +425,8 @@
           "value_T": 8.1,
           "reason": "No new hard token data. 130M MAU by early 2026 (BusinessOfApps). V4 Lite launched Mar 2026 as growth accelerant. Still no direct token throughput disclosure from DeepSeek. Value held."
         }
-      ]
+      ],
+      "source_value_T": 8.1
     },
     {
       "id": "microsoft-azure",
@@ -442,7 +447,7 @@
         {
           "date": "2026-02-20",
           "value_T": 7,
-          "reason": "Revenue ÷ price back-calculation"
+          "reason": "Revenue \u00f7 price back-calculation"
         },
         {
           "date": "2026-03-13",
@@ -469,7 +474,8 @@
           "value_T": 8.0,
           "reason": "Source updated: Microsoft Copilot $5.4B ARR (Motley Fool Feb 9), 15M paid M365 seats (+160% YoY), 33M active users, GitHub Copilot 4.7M paid subs. Azure AI revenue growing 157% YoY. $81.3B Q2 FY2026 revenue. Source_date updated from Q4 2025 to Jan 2026 earnings. Value held at 8T."
         }
-      ]
+      ],
+      "source_value_T": 8.0
     },
     {
       "id": "alibaba-qwen",
@@ -515,10 +521,11 @@
         {
           "date": "2026-04-02",
           "value_T": 5.6,
-          "reason": "HARD DATA: China enterprise AI daily token volume hit 37T/day in H2 2025 (CNR Feb 24, 2026), with Qwen #1 market share. Qwen ranked #4 globally on OpenRouter (10.4% share, surpassing OpenAI). Qwen3.5-Plus (397B) and Qwen3-Max-Thinking (1T+ params) launched. Source_date updated to Feb 2026. Value held at 5.6T — conservative given #1 CN enterprise share of 37T.",
+          "reason": "HARD DATA: China enterprise AI daily token volume hit 37T/day in H2 2025 (CNR Feb 24, 2026), with Qwen #1 market share. Qwen ranked #4 globally on OpenRouter (10.4% share, surpassing OpenAI). Qwen3.5-Plus (397B) and Qwen3-Max-Thinking (1T+ params) launched. Source_date updated to Feb 2026. Value held at 5.6T \u2014 conservative given #1 CN enterprise share of 37T.",
           "source": "https://tech.cnr.cn/techph/20260224/t20260224_527534692.shtml"
         }
-      ]
+      ],
+      "source_value_T": 5.6
     },
     {
       "id": "tencent-hunyuan",
@@ -528,7 +535,7 @@
       "daily_tokens_T": 2.36,
       "confidence": "low",
       "tier": 2,
-      "source": "Yuanbao DAU 50M peak (Spring Festival 2026). 10亿元红包补贴. Dual-model (Hunyuan + DeepSeek). 900 internal Tencent apps. 768万+ Juejin MAU (Mar 2026). Low retention vs Doubao/Qwen (industry consensus).",
+      "source": "Yuanbao DAU 50M peak (Spring Festival 2026). 10\u4ebf\u5143\u7ea2\u5305\u8865\u8d34. Dual-model (Hunyuan + DeepSeek). 900 internal Tencent apps. 768\u4e07+ Juejin MAU (Mar 2026). Low retention vs Doubao/Qwen (industry consensus).",
       "source_url": "https://post.smzdm.com/p/a8w42930",
       "source_date": "2026-03-05",
       "extrapolated_to": "2026-04-02",
@@ -564,10 +571,11 @@
         {
           "date": "2026-04-02",
           "value_T": 2.36,
-          "reason": "Multiple CN sources confirm 50M DAU peak (Spring Festival). Dual-model strategy (Hunyuan + DeepSeek). ¥1B red packet subsidy. But low retention vs Doubao/Qwen per industry analysis (Moomoo/Sina Mar 25). Confidence upgraded very-low→low with corroborating sources. Source_date updated to Mar 2026.",
+          "reason": "Multiple CN sources confirm 50M DAU peak (Spring Festival). Dual-model strategy (Hunyuan + DeepSeek). \u00a51B red packet subsidy. But low retention vs Doubao/Qwen per industry analysis (Moomoo/Sina Mar 25). Confidence upgraded very-low\u2192low with corroborating sources. Source_date updated to Mar 2026.",
           "source": "https://post.smzdm.com/p/a8w42930"
         }
-      ]
+      ],
+      "source_value_T": 2.36
     },
     {
       "id": "baidu-ernie",
@@ -608,9 +616,10 @@
         {
           "date": "2026-04-02",
           "value_T": 1.72,
-          "reason": "Source updated: Ernie 5.0 launched Jan 2026 with 200M MAU (SCMP). 2.4T-parameter multimodal model. Ernie 4.5 open-sourced (Apache 2.0). Q2 2024 hard data: 1T tokens/day, 600M API calls/day. Feb 2025: 16.5B daily calls (33× YoY growth). Value held at 1.72T — Ernie 5.0 likely boost growth rate but no new hard token count. Source_date updated to Jan 2026 for Ernie 5.0 reference."
+          "reason": "Source updated: Ernie 5.0 launched Jan 2026 with 200M MAU (SCMP). 2.4T-parameter multimodal model. Ernie 4.5 open-sourced (Apache 2.0). Q2 2024 hard data: 1T tokens/day, 600M API calls/day. Feb 2025: 16.5B daily calls (33\u00d7 YoY growth). Value held at 1.72T \u2014 Ernie 5.0 likely boost growth rate but no new hard token count. Source_date updated to Jan 2026 for Ernie 5.0 reference."
         }
-      ]
+      ],
+      "source_value_T": 1.72
     },
     {
       "id": "iflytek-spark",
@@ -647,7 +656,8 @@
           "value_T": 1.52,
           "reason": "7-day extrapolation holds (6%/mo, small increment)."
         }
-      ]
+      ],
+      "source_value_T": 1.52
     },
     {
       "id": "openrouter",
@@ -684,7 +694,8 @@
           "value_T": 1.12,
           "reason": "7-day extrapolation holds at 1.1T."
         }
-      ]
+      ],
+      "source_value_T": 1.12
     },
     {
       "id": "mistral-ai",
@@ -694,7 +705,7 @@
       "daily_tokens_T": 0.67,
       "confidence": "low",
       "tier": 2,
-      "source": "$400M ARR ÷ blended token price",
+      "source": "$400M ARR \u00f7 blended token price",
       "source_date": "2025-Q4",
       "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
@@ -721,7 +732,8 @@
           "value_T": 0.67,
           "reason": "7-day extrapolation holds at 0.66T."
         }
-      ]
+      ],
+      "source_value_T": 0.67
     },
     {
       "id": "xai-grok",
@@ -769,7 +781,8 @@
           "value_T": 0.64,
           "reason": "7-day extrapolation at 15%/mo from Mar 23 baseline."
         }
-      ]
+      ],
+      "source_value_T": 0.64
     },
     {
       "id": "minimax",
@@ -806,7 +819,8 @@
           "value_T": 0.39,
           "reason": "7-day extrapolation holds at 0.38T."
         }
-      ]
+      ],
+      "source_value_T": 0.39
     },
     {
       "id": "groq",
@@ -816,7 +830,7 @@
       "daily_tokens_T": 0.29,
       "confidence": "low",
       "tier": 2,
-      "source": "2.5M devs × usage + LPU capacity back-calc",
+      "source": "2.5M devs \u00d7 usage + LPU capacity back-calc",
       "source_date": "2026-01",
       "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.12,
@@ -848,7 +862,8 @@
           "value_T": 0.29,
           "reason": "7-day extrapolation at 12%/mo from Mar 23 baseline."
         }
-      ]
+      ],
+      "source_value_T": 0.29
     },
     {
       "id": "meta-llama",
@@ -887,7 +902,8 @@
           "value_T": 0.21,
           "reason": "7-day extrapolation holds at 0.21T."
         }
-      ]
+      ],
+      "source_value_T": 0.21
     },
     {
       "id": "moonshot-kimi",
@@ -897,7 +913,7 @@
       "daily_tokens_T": 1.5,
       "confidence": "medium",
       "tier": 1,
-      "source": "OpenRouter Feb 2026: K2.5 consumed 4.02T tokens/month = 0.134T/day on OpenRouter alone. Kimi app + API platform total estimated 10-15×. $100M ARR (technews.tw Mar 31). $18B valuation. 20 days revenue > 2025 full year (Sohu Mar 30).",
+      "source": "OpenRouter Feb 2026: K2.5 consumed 4.02T tokens/month = 0.134T/day on OpenRouter alone. Kimi app + API platform total estimated 10-15\u00d7. $100M ARR (technews.tw Mar 31). $18B valuation. 20 days revenue > 2025 full year (Sohu Mar 30).",
       "source_url": "https://technews.tw/2026/03/31/moonshot-ai-arr-surpasses-100-million/",
       "source_date": "2026-03-31",
       "extrapolated_to": null,
@@ -928,10 +944,11 @@
         {
           "date": "2026-04-02",
           "value_T": 1.5,
-          "reason": "MAJOR REVISION: OpenRouter Feb data shows K2.5 consumed 4.02T tokens/month = 0.134T/day on OpenRouter alone (TTV/HKEJ). K2.5 briefly ranked #1 globally surpassing Gemini (Zhihu Mar 15). $100M ARR confirmed (technews.tw Mar 31). 20 days revenue surpassed 2025 full year (Sohu Mar 30). $18B valuation (4× in 3 months). Previous 0.18T was massive undercount — OpenRouter is small fraction of total Kimi usage. Conservative 1.5T estimate.",
+          "reason": "MAJOR REVISION: OpenRouter Feb data shows K2.5 consumed 4.02T tokens/month = 0.134T/day on OpenRouter alone (TTV/HKEJ). K2.5 briefly ranked #1 globally surpassing Gemini (Zhihu Mar 15). $100M ARR confirmed (technews.tw Mar 31). 20 days revenue surpassed 2025 full year (Sohu Mar 30). $18B valuation (4\u00d7 in 3 months). Previous 0.18T was massive undercount \u2014 OpenRouter is small fraction of total Kimi usage. Conservative 1.5T estimate.",
           "source": "https://technews.tw/2026/03/31/moonshot-ai-arr-surpasses-100-million/"
         }
-      ]
+      ],
+      "source_value_T": 1.5
     },
     {
       "id": "amazon-bedrock",
@@ -941,7 +958,7 @@
       "daily_tokens_T": 0.16,
       "confidence": "low",
       "tier": 2,
-      "source": "AWS revenue ÷ price estimate",
+      "source": "AWS revenue \u00f7 price estimate",
       "source_date": "2025-Q4",
       "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.08,
@@ -951,7 +968,7 @@
         {
           "date": "2026-02-20",
           "value_T": 0.15,
-          "reason": "Revenue ÷ blended price"
+          "reason": "Revenue \u00f7 blended price"
         },
         {
           "date": "2026-03-13",
@@ -968,7 +985,8 @@
           "value_T": 0.16,
           "reason": "7-day extrapolation holds at 0.16T."
         }
-      ]
+      ],
+      "source_value_T": 0.16
     },
     {
       "id": "zhipu-glm",
@@ -1005,7 +1023,8 @@
           "value_T": 0.12,
           "reason": "7-day extrapolation holds at 0.12T."
         }
-      ]
+      ],
+      "source_value_T": 0.12
     },
     {
       "id": "perplexity",
@@ -1015,7 +1034,7 @@
       "daily_tokens_T": 0.08,
       "confidence": "low",
       "tier": 2,
-      "source": "Query volume ÷ avg length",
+      "source": "Query volume \u00f7 avg length",
       "source_date": "2025-Q4",
       "extrapolated_to": "2026-03-30",
       "growth_rate_monthly": 0.1,
@@ -1025,7 +1044,7 @@
         {
           "date": "2026-02-20",
           "value_T": 0.07,
-          "reason": "Query volume × avg token length"
+          "reason": "Query volume \u00d7 avg token length"
         },
         {
           "date": "2026-03-13",
@@ -1042,7 +1061,8 @@
           "value_T": 0.08,
           "reason": "7-day extrapolation holds at 0.08T."
         }
-      ]
+      ],
+      "source_value_T": 0.08
     }
   ],
   "countries": [
@@ -1163,14 +1183,14 @@
       "vendor": "Doubao (ByteDance)",
       "old": "69.2T/day (extrapolated)",
       "new": "120T/day (OFFICIAL)",
-      "reason": "OFFICIAL DISCLOSURE: Volcengine announced 120T/day at Wuhan AI Innovation Expo (Apr 1, 2026). Reported by Xinzhiyuan. Previous estimate was extrapolated from Jan 2026 baseline — actual is +73% higher. Source: https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w"
+      "reason": "OFFICIAL DISCLOSURE: Volcengine announced 120T/day at Wuhan AI Innovation Expo (Apr 1, 2026). Reported by Xinzhiyuan. Previous estimate was extrapolated from Jan 2026 baseline \u2014 actual is +73% higher. Source: https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w"
     },
     {
       "date": "2026-04-02",
       "vendor": "Global + China country",
       "old": "183T/day global, 91T/day China, $141.9M/day Token GDP, $51.8B/yr",
       "new": "234T/day global (+28%), 142T/day China (+56%), $147.0M/day Token GDP, $53.7B/yr",
-      "reason": "Cascade from Doubao official 120T disclosure. China now 61% of global volume (up from 50%). Doubao alone = 51% of global total. CN Token GDP share: 6%→10%."
+      "reason": "Cascade from Doubao official 120T disclosure. China now 61% of global volume (up from 50%). Doubao alone = 51% of global total. CN Token GDP share: 6%\u219210%."
     },
     {
       "date": "2026-03-30",
@@ -1184,42 +1204,42 @@
       "vendor": "OpenAI",
       "old": "31T/day",
       "new": "32.0T/day",
-      "reason": "KEY SIGNAL: GPT-5.4 mini (Mar 17) + nano — 2× faster than GPT-5.4, $0.75/$4.50 per M tokens, 400K context, designed explicitly for 'high-volume workloads'. Codex CLI/IDE subagents now run GPT-5.4 mini at 30% quota. Computer use, API multi-agent patterns all drive inference volume. No new hard WAU/prompt count. 7-day extrapolation at 15%/mo: 31T→32.0T."
+      "reason": "KEY SIGNAL: GPT-5.4 mini (Mar 17) + nano \u2014 2\u00d7 faster than GPT-5.4, $0.75/$4.50 per M tokens, 400K context, designed explicitly for 'high-volume workloads'. Codex CLI/IDE subagents now run GPT-5.4 mini at 30% quota. Computer use, API multi-agent patterns all drive inference volume. No new hard WAU/prompt count. 7-day extrapolation at 15%/mo: 31T\u219232.0T."
     },
     {
       "date": "2026-03-30",
       "vendor": "Global",
       "old": "179T/day",
       "new": "183T/day",
-      "reason": "7-day extrapolation from Mar 23 baseline. Doubao: 68T→69.2T; Gemini: 54T→55.0T; OpenAI: 31T→32.0T (GPT-5.4 mini+nano high-volume launch); Claude: 14T→14.6T; Azure: 7.8T→8.0T. Cascade: 183T/day."
+      "reason": "7-day extrapolation from Mar 23 baseline. Doubao: 68T\u219269.2T; Gemini: 54T\u219255.0T; OpenAI: 31T\u219232.0T (GPT-5.4 mini+nano high-volume launch); Claude: 14T\u219214.6T; Azure: 7.8T\u21928.0T. Cascade: 183T/day."
     },
     {
       "date": "2026-03-23",
       "vendor": "Anthropic/Claude",
       "old": "13T/day",
       "new": "14T/day",
-      "reason": "HARD DATA: The Register (Mar 19) cites Anthropic CFO court filing: $14B ARR company-wide, $5B cumulative revenue. Claude Code alone $2.5B+ ARR (>50% enterprise). Business subscriptions +4.9% MoM (Feb); new businesses choose Anthropic 70% of the time; 24.4% biz AI market share (growing vs OpenAI's declining 34.4%). 7-day extrapolation at 18%/mo + enterprise acceleration: 13T→14T. Note: CRN $19B vs The Register $14B ARR discrepancy — using conservative $14B."
+      "reason": "HARD DATA: The Register (Mar 19) cites Anthropic CFO court filing: $14B ARR company-wide, $5B cumulative revenue. Claude Code alone $2.5B+ ARR (>50% enterprise). Business subscriptions +4.9% MoM (Feb); new businesses choose Anthropic 70% of the time; 24.4% biz AI market share (growing vs OpenAI's declining 34.4%). 7-day extrapolation at 18%/mo + enterprise acceleration: 13T\u219214T. Note: CRN $19B vs The Register $14B ARR discrepancy \u2014 using conservative $14B."
     },
     {
       "date": "2026-03-23",
       "vendor": "Google Gemini",
       "old": "53T/day",
       "new": "54T/day",
-      "reason": "New supporting data: 85B API requests in January 2026 (tech-insider.org), 118% YoY API developer growth to 2.4M devs, 200%+ YoY traffic growth. Google replacing Google Assistant with Gemini across Android in 2026 accelerating penetration. 7-day extrapolation at 8%/mo: 53T→54T."
+      "reason": "New supporting data: 85B API requests in January 2026 (tech-insider.org), 118% YoY API developer growth to 2.4M devs, 200%+ YoY traffic growth. Google replacing Google Assistant with Gemini across Android in 2026 accelerating penetration. 7-day extrapolation at 8%/mo: 53T\u219254T."
     },
     {
       "date": "2026-03-23",
       "vendor": "OpenAI",
       "old": "30T/day",
       "new": "31T/day",
-      "reason": "7-day extrapolation at 15%/mo. New context: OpenAI hit #1 app on Apple+Google stores (Mar 2026). No new hard token data. 30T→31T."
+      "reason": "7-day extrapolation at 15%/mo. New context: OpenAI hit #1 app on Apple+Google stores (Mar 2026). No new hard token data. 30T\u219231T."
     },
     {
       "date": "2026-03-23",
       "vendor": "Doubao (ByteDance)",
       "old": "67T/day",
       "new": "68T/day",
-      "reason": "7-day extrapolation at 8%/mo from Mar 16 baseline. No new Doubao usage data. Note: ByteDance halted global Seedance 2.0 rollout (copyright dispute, Mar 17) — no impact on domestic LLM volume."
+      "reason": "7-day extrapolation at 8%/mo from Mar 16 baseline. No new Doubao usage data. Note: ByteDance halted global Seedance 2.0 rollout (copyright dispute, Mar 17) \u2014 no impact on domestic LLM volume."
     },
     {
       "date": "2026-03-23",
@@ -1233,21 +1253,21 @@
       "vendor": "Token GDP",
       "old": "$133.5M/day, $48.7B/yr",
       "new": "$136.9M/day, $50.0B/yr",
-      "reason": "Cascade from volume upgrades. US region: 74T→76T (+$4.5M/day). CN: 89T→90T (+$0.1M/day). Global daily GDP crosses $136M milestone."
+      "reason": "Cascade from volume upgrades. US region: 74T\u219276T (+$4.5M/day). CN: 89T\u219290T (+$0.1M/day). Global daily GDP crosses $136M milestone."
     },
     {
       "date": "2026-03-23",
       "vendor": "per_capita_ratio",
-      "old": "335× (US vs India)",
-      "new": "344× (US vs India)",
-      "reason": "US per-capita updated: 76T/335M pop = 227K tokens/person. 227K/0.66K = 344×."
+      "old": "335\u00d7 (US vs India)",
+      "new": "344\u00d7 (US vs India)",
+      "reason": "US per-capita updated: 76T/335M pop = 227K tokens/person. 227K/0.66K = 344\u00d7."
     },
     {
       "date": "2026-03-16",
       "vendor": "Anthropic/Claude",
       "old": "11T/day",
       "new": "13T/day",
-      "reason": "HARD DATA: Anthropic disclosed $19B ARR run-rate (mid-Mar 2026 per CRN). Previous $14B ARR → 11T. Revenue ratio 19/14=1.357 → 15T theoretical; conservative 13T. Claude Code WAU doubled since Jan 1; enterprise $100K+ customers grew 7×. Growth rate revised to 18%/mo."
+      "reason": "HARD DATA: Anthropic disclosed $19B ARR run-rate (mid-Mar 2026 per CRN). Previous $14B ARR \u2192 11T. Revenue ratio 19/14=1.357 \u2192 15T theoretical; conservative 13T. Claude Code WAU doubled since Jan 1; enterprise $100K+ customers grew 7\u00d7. Growth rate revised to 18%/mo."
     },
     {
       "date": "2026-03-16",
@@ -1268,7 +1288,7 @@
       "vendor": "OpenAI",
       "old": "19T/day",
       "new": "28T/day",
-      "reason": "Sep 2025 baseline × 15%/mo growth × 5 months, conservative floor. Source date updated to Feb 2026."
+      "reason": "Sep 2025 baseline \u00d7 15%/mo growth \u00d7 5 months, conservative floor. Source date updated to Feb 2026."
     },
     {
       "date": "2026-02-27",
