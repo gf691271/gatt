@@ -520,13 +520,14 @@
       "name": "Hunyuan (Tencent)",
       "country": "CN",
       "daily_tokens_T": 2.36,
-      "confidence": "very-low",
+      "confidence": "low",
       "tier": 2,
-      "source": "Yuanbao 50M DAU + 900 internal apps (Feb 2026). Yuanbao ranked 1st iOS during Spring Festival.",
-      "source_date": "2026-02",
-      "extrapolated_to": "2026-03-30",
+      "source": "Yuanbao DAU 50M peak (Spring Festival 2026). 10亿元红包补贴. Dual-model (Hunyuan + DeepSeek). 900 internal Tencent apps. 768万+ Juejin MAU (Mar 2026). Low retention vs Doubao/Qwen (industry consensus).",
+      "source_url": "https://post.smzdm.com/p/a8w42930",
+      "source_date": "2026-03-05",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.12,
-      "data_freshness_days": 58,
+      "data_freshness_days": 28,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -553,6 +554,12 @@
           "date": "2026-03-30",
           "value_T": 2.36,
           "reason": "7-day extrapolation at 12%/mo from Mar 23 baseline."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 2.36,
+          "reason": "Multiple CN sources confirm 50M DAU peak (Spring Festival). Dual-model strategy (Hunyuan + DeepSeek). ¥1B red packet subsidy. But low retention vs Doubao/Qwen per industry analysis (Moomoo/Sina Mar 25). Confidence upgraded very-low→low with corroborating sources. Source_date updated to Mar 2026.",
+          "source": "https://post.smzdm.com/p/a8w42930"
         }
       ]
     },
