@@ -383,13 +383,13 @@
       "daily_tokens_T": 8.1,
       "confidence": "low",
       "tier": 2,
-      "source": "305.81M visits Dec 2025 (SimilarWeb). 0.2% US chatbot market share (Mar 2026). 81.6M WAU reported (Feb 2026). No new data this week.",
+      "source": "130M MAU by early 2026 (BusinessOfApps). V4 Lite launched Mar 2026. 0.2% US chatbot market share. 175M+ downloads. No direct token throughput disclosure.",
       "source_date": "2026-03-10",
-      "extrapolated_to": "2026-03-30",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 20,
+      "data_freshness_days": 23,
       "is_extrapolated": true,
-      "note": "No new hard data this week. Multiverse Computing announced DeepSeek model compression (Mar 19) — signals ongoing ecosystem development. Value held at 8T pending new usage data.",
+      "note": "130M MAU by early 2026 (up from 81.6M WAU). V4 Lite launched Mar 2026 — accelerant. No official token throughput data. DeepSeek remains free/open-source with no disclosed API volume metrics. Value held at 8.1T pending hard data.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -415,6 +415,11 @@
           "date": "2026-03-30",
           "value_T": 8.1,
           "reason": "Held at 8T. No new usage data. 7-day extrapolation at 8%/mo yields negligible change."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 8.1,
+          "reason": "No new hard token data. 130M MAU by early 2026 (BusinessOfApps). V4 Lite launched Mar 2026 as growth accelerant. Still no direct token throughput disclosure from DeepSeek. Value held."
         }
       ]
     },
