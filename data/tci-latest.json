@@ -6,7 +6,7 @@
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 234,
+    "total_daily_tokens_T": 235,
     "as_of_date": "2026-04-02",
     "confidence": "medium",
     "last_updated": "2026-04-02",
@@ -1154,7 +1154,7 @@
       "confidence": "low"
     }
   ],
-  "global_total_T": 234,
+  "global_total_T": 235,
   "year_end_projection_T": "900-1350",
   "last_updated": "2026-04-02",
   "correction_log": [
