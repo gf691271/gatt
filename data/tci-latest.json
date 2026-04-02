@@ -222,16 +222,16 @@
       "name": "Google Gemini (All Surfaces)",
       "country": "US",
       "daily_tokens_T": 55.0,
-      "confidence": "medium",
+      "confidence": "medium-high",
       "tier": 1,
-      "source": "750M active users (Mar 2026 confirmed), 85B API requests/month in Jan 2026 (tech-insider.org), 118% YoY API developer growth (2.4M devs), 200%+ YoY growth trajectory. Google replacing Google Assistant with Gemini across Android in 2026.",
-      "source_url": "https://tech-insider.org/google-gemini-750-million-users-march-2026-updates/",
-      "source_date": "2026-03-16",
-      "extrapolated_to": "2026-03-30",
+      "source": "OFFICIAL: Pichai Q4 2025 earnings (Feb 4, 2026): 'Gemini now processes over 10 billion tokens per minute via direct API use by our customers' = 14.4T/day API-only. 750M MAU (TechCrunch Feb 4, 2026). 85B API requests/month Jan 2026 (tech-insider.org). 2.4M API developers, 118% YoY growth.",
+      "source_url": "https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/",
+      "source_date": "2026-02-04",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 14,
+      "data_freshness_days": 57,
       "is_extrapolated": true,
-      "note": "All Surfaces = Search AI Overviews + Gemini App (750M active users) + Workspace + Cloud API. 85B API req/month in Jan ≈ 2.74B/day → at ~5K tokens/req ≈ 13.7T/day API-only component. Growth accelerated by Google replacing Assistant across Android. 7-day extrapolation at 8%/mo: 53T→54T.",
+      "note": "All Surfaces = Search AI Overviews + Gemini App (750M MAU) + Workspace + Cloud API. HARD DATA: Pichai confirmed 10B tokens/min via direct API (Feb 4) = 14.4T/day API-only. Up from 7B tokens/min prior quarter (+43%). 85B API req/month Jan 2026. All Surfaces total estimated 55T. Gemini 3 Flash processing 1T+ daily API requests (Business Analytics Jan 25).",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -257,6 +257,11 @@
           "date": "2026-03-30",
           "value_T": 55.0,
           "reason": "7-day extrapolation at 8%/mo. Gemini 3 Pro rolling out globally with upgraded reasoning — volume accelerant. No new hard request/token figures disclosed."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 55.0,
+          "reason": "ANCHORED BY OFFICIAL DATA: Pichai Q4 2025 earnings (Feb 4, 2026) confirmed 10B tokens/min via direct API = 14.4T/day API-only (up from 7B/min prior quarter). All Surfaces (API + App 750M MAU + Search AI Overviews + Workspace) estimated 55T. Confidence upgraded medium→medium-high based on official API throughput anchor. Gemini 3 Flash processing 1T+ daily API requests since Jan 2026."
         }
       ]
     },
