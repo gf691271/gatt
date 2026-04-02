@@ -321,16 +321,16 @@
       "name": "Claude (Anthropic)",
       "country": "US",
       "daily_tokens_T": 14.6,
-      "confidence": "medium",
+      "confidence": "medium-high",
       "tier": 1,
-      "source": "$14B ARR company-wide (The Register Mar 19, 2026, per Anthropic CFO). Claude Code $2.5B+ ARR. Enterprise business subscriptions +4.9% MoM (Feb). New businesses choose Anthropic 70% of the time. 24.4% share in business AI (vs OpenAI 34.4%).",
-      "source_url": "https://www.theregister.com/2026/03/19/anthropic_claude_market_share/",
-      "source_date": "2026-03-19",
-      "extrapolated_to": "2026-03-30",
+      "source": "CONFIRMED: $19B ARR as of end-Feb 2026 (The Information Mar 24, Yahoo Finance Mar 4, Forbes Mar 25). SemiAnalysis (Apr 1) reports $25B+ ARR now. Claude Code $2.5B ARR (Feb 2026). Enterprise subs +4.9% MoM. 24.4% biz AI share.",
+      "source_url": "https://uk.finance.yahoo.com/news/anthropic-arr-surges-19-billion-151210607.html",
+      "source_date": "2026-03-24",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.18,
-      "data_freshness_days": 11,
+      "data_freshness_days": 9,
       "is_extrapolated": true,
-      "note": "The Register (Mar 19) cites CFO court filing: $14B ARR company-wide + $5B total revenue since launch. Claude Code alone is $2.5B+ ARR (>half from enterprise). Note: CRN (Mar 16) reported $19B ARR — discrepancy unresolved; conservative $14B figure used. Business subs growing 4.9% MoM vs OpenAI -1.5% decline. 7-day growth at 18%/mo + hard enterprise data → 13T→14T.",
+      "note": "ARR timeline: $9B (end 2025) → $14B (mid-Feb, CFO court filing) → $19B (end-Feb/early-Mar per The Information/Yahoo/Forbes) → $25B+ (Apr 1 per SemiAnalysis). Claude Code $2.5B ARR in Feb. Revenue growth 19×/14mo. Revenue-to-token back-calc at $3/M blended: $19B/3/365=17.4T/day. Conservative 14.6T held pending direct token data.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -366,6 +366,12 @@
           "date": "2026-03-30",
           "value_T": 14.6,
           "reason": "7-day extrapolation at 18%/mo from Mar 23 baseline. No new hard data this week. Claude Opus 4.6 (Feb 5 launch) continues to drive enterprise adoption. Growth rate sustained."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 14.6,
+          "reason": "ARR RESOLVED: $14B vs $19B — both correct at different time points. Timeline: $9B (end 2025) → $14B (mid-Feb, CFO court filing) → $19B (end-Feb per The Information Mar 24/Yahoo Finance Mar 4) → $25B+ (SemiAnalysis Apr 1). Revenue back-calc at $3/M: 17.4T/day. Conservative 14.6T held. Confidence upgraded medium→medium-high with multiple corroborating sources.",
+          "source": "https://uk.finance.yahoo.com/news/anthropic-arr-surges-19-billion-151210607.html"
         }
       ]
     },
