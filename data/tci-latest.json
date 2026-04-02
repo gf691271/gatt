@@ -557,11 +557,12 @@
       "daily_tokens_T": 1.72,
       "confidence": "high",
       "tier": 1,
-      "source": "Baidu Q4 2025 earnings",
-      "source_date": "2025-Q4",
-      "extrapolated_to": "2026-03-30",
+      "source": "Ernie 5.0 launched Jan 2026 (SCMP), 200M MAU. Q2 2024: 1T tokens/day, 600M API calls/day (EET-China). Feb 2025: 16.5B daily API calls (TechNode). Ernie 4.5 open-source (Apache 2.0). Juejin Mar 2026: 13M+ C-end active users.",
+      "source_url": "https://www.scmp.com/tech/tech-trends/article/3340866/baidu-launches-ernie-50-firms-ai-assistant-users-reach-200-million-month",
+      "source_date": "2026-01-25",
+      "extrapolated_to": "2026-04-02",
       "growth_rate_monthly": 0.05,
-      "data_freshness_days": 92,
+      "data_freshness_days": 67,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -583,6 +584,11 @@
           "date": "2026-03-30",
           "value_T": 1.72,
           "reason": "7-day extrapolation holds (5%/mo, small increment)."
+        },
+        {
+          "date": "2026-04-02",
+          "value_T": 1.72,
+          "reason": "Source updated: Ernie 5.0 launched Jan 2026 with 200M MAU (SCMP). 2.4T-parameter multimodal model. Ernie 4.5 open-sourced (Apache 2.0). Q2 2024 hard data: 1T tokens/day, 600M API calls/day. Feb 2025: 16.5B daily calls (33× YoY growth). Value held at 1.72T — Ernie 5.0 likely boost growth rate but no new hard token count. Source_date updated to Jan 2026 for Ernie 5.0 reference."
         }
       ]
     },
