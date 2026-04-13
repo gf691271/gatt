@@ -1,36 +1,36 @@
 {
   "version": "1.0",
-  "gatt_version": "0.75",
-  "generated_at": "2026-04-06T16:30:00Z",
+  "gatt_version": "0.76",
+  "generated_at": "2026-04-13T16:10:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 245,
-    "as_of_date": "2026-04-06",
+    "total_daily_tokens_T": 250,
+    "as_of_date": "2026-04-13",
     "confidence": "medium",
-    "last_updated": "2026-04-06",
-    "note": "MAJOR UPDATE: OpenAI official disclosure (Mar 31, 2026) — 'APIs now process more than 15 billion tokens per minute' = 21.6T/day API-only. Combined with 2.5B consumer prompts/day, total revised from 32T → 40T (+25%). This cascades global total from 235T → 245T. Google Gemini reconfirmed 10B+ tokens/min via API (Apr 1 week). Anthropic subscription crisis (Apr 1-4) + third-party tool cutoff signals compute strain from extreme demand growth. $25B+ ARR."
+    "last_updated": "2026-04-13",
+    "note": "WEEKLY UPDATE: Past-7-day source sweep found (1) OpenAI enterprise post reconfirming >15B API tokens/min and lifting Codex to 3M WAU, (2) fresh follow-up coverage on ByteDance Doubao holding above 120T/day, and (3) continued Anthropic compute-strain signals. Google had no new hard disclosure, so Gemini was rolled forward conservatively. Global total: 245T→250T/day."
   },
   "token_gdp": {
-    "daily_usd_M": 161.0,
-    "annual_usd_B": 58.8,
-    "as_of_date": "2026-04-06",
+    "daily_usd_M": 166.0,
+    "annual_usd_B": 60.4,
+    "as_of_date": "2026-04-13",
     "methodology": "vendor_volume_x_blended_price",
     "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M.",
     "breakdown": [
       {
         "region": "United States",
-        "daily_tokens_T": 87,
+        "daily_tokens_T": 90,
         "price_per_M": 1.5,
-        "daily_gdp_M": 130.5,
+        "daily_gdp_M": 135.0,
         "gdp_share_pct": 81
       },
       {
         "region": "China",
-        "daily_tokens_T": 143,
+        "daily_tokens_T": 145,
         "price_per_M": 0.1,
-        "daily_gdp_M": 14.3,
+        "daily_gdp_M": 14.5,
         "gdp_share_pct": 9
       },
       {
@@ -48,23 +48,23 @@
         "gdp_share_pct": 3
       }
     ],
-    "key_insight": "China generates 58% of global tokens but only 9% of Token GDP. US generates 35% of tokens but 81% of Token GDP. Pricing gap: 15x. OpenAI's official 15B tokens/min API disclosure (Mar 31) upgrades US volume significantly. Doubao accounts for 49% of global token volume."
+    "key_insight": "China still generates 58% of global tokens but only 9% of Token GDP. US generates 36% of tokens but 81% of Token GDP. OpenAI and Anthropic continue to add higher-priced enterprise/agentic volume; Doubao remains the volume king at 123T/day."
   },
   "per_capita": [
     {
       "country": "United States",
       "code": "US",
-      "daily_tokens_T": 87,
+      "daily_tokens_T": 90,
       "population_M": 335,
-      "tokens_per_person_K": 259.7,
+      "tokens_per_person_K": 268.7,
       "rank": 1
     },
     {
       "country": "China",
       "code": "CN",
-      "daily_tokens_T": 143,
+      "daily_tokens_T": 145,
       "population_M": 1400,
-      "tokens_per_person_K": 102.1,
+      "tokens_per_person_K": 103.6,
       "rank": 2
     },
     {
@@ -149,17 +149,17 @@
     }
   ],
   "key_stats": {
-    "us_vs_india_per_capita_ratio": 394,
+    "us_vs_india_per_capita_ratio": 407,
     "china_token_volume_share_pct": 58,
     "china_token_gdp_share_pct": 9,
-    "us_token_volume_share_pct": 35,
+    "us_token_volume_share_pct": 36,
     "us_token_gdp_share_pct": 81,
     "pricing_gap_us_vs_cn": "15x",
-    "344x_headline": "A US user generates 394× more AI tokens per day than an Indian user",
-    "great_divergence": "China: 58% of tokens, 9% of Token GDP. US: 35% of tokens, 81% of Token GDP.",
+    "344x_headline": "A US user generates 407× more AI tokens per day than an Indian user",
+    "great_divergence": "China: 58% of tokens, 9% of Token GDP. US: 36% of tokens, 81% of Token GDP.",
     "doubao_global_share_pct": 49,
-    "doubao_note": "Doubao accounts for 49% of global token volume as of Apr 2026 (share dips from 51% as OpenAI official API data upgrades US volume)",
-    "openai_api_milestone": "OpenAI APIs crossed 15 billion tokens/minute (Mar 31, 2026) — official disclosure in $122B funding announcement"
+    "doubao_note": "Doubao accounts for roughly 49% of global token volume as of Apr 13, 2026 (123T / 250T).",
+    "openai_api_milestone": "OpenAI continues to report >15B API tokens/minute as of Apr 13, 2026; Codex reached 3M weekly active users."
   },
   "vendors": [
     {
@@ -167,15 +167,15 @@
       "rank": 1,
       "name": "Doubao (ByteDance)",
       "country": "CN",
-      "daily_tokens_T": 121,
+      "daily_tokens_T": 123,
       "confidence": "high",
       "tier": 1,
-      "source": "OFFICIAL: Volcengine disclosure at Wuhan AI Innovation Expo (Apr 1, 2026) — 120T/day confirmed by ByteDance. Reported by Xinzhiyuan (新智元). 4-day extrapolation at 8%/mo applied.",
-      "source_url": "https://mp.weixin.qq.com/s/uc6NWmhNBzmsChN9xJdz_w",
-      "source_date": "2026-04-01",
-      "extrapolated_to": "2026-04-06",
+      "source": "FOLLOW-UP COVERAGE: TechNode / Tech in Asia (Apr 7, 2026) confirm ByteDance Doubao is above 120T/day and that usage doubled in three months. No new hard number beyond 120T/day official Apr 1 baseline; 12-day extrapolation at 8%/mo applied.",
+      "source_url": "https://technode.com/2026/04/07/doubao-surpasses-120-trillion-daily-tokens-as-usage-doubles-in-three-months/",
+      "source_date": "2026-04-07",
+      "extrapolated_to": "2026-04-13",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 5,
+      "data_freshness_days": 6,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -192,26 +192,33 @@
           "date": "2026-04-06",
           "value_T": 121,
           "reason": "4-day extrapolation at 8%/mo from Apr 1 official baseline of 120T. No new hard data this week. ByteDance continues aggressive agentic tool expansion."
+        },
+        {
+          "date": "2026-04-13",
+          "value_T": 123,
+          "reason": "Past-7-day follow-up coverage (TechNode / Tech in Asia, Apr 7) reconfirms 120T/day official baseline and three-month doubling. No newer hard count. 12-day extrapolation at 8%/mo from Apr 1 baseline: 120T→123T.",
+          "source": "https://technode.com/2026/04/07/doubao-surpasses-120-trillion-daily-tokens-as-usage-doubles-in-three-months/"
         }
       ],
-      "source_value_T": 120
+      "source_value_T": 120,
+      "note": "Official baseline remains 120T/day (Volcengine Apr 1). TechNode and Tech in Asia follow-up reporting in the past week confirmed the same scale and said usage doubled in three months. No newer hard token figure surfaced, so GATT rolls forward the Apr 1 baseline to 123T/day at 8%/mo."
     },
     {
       "id": "google-gemini",
       "rank": 2,
       "name": "Google Gemini (All Surfaces)",
       "country": "US",
-      "daily_tokens_T": 57.0,
+      "daily_tokens_T": 58,
       "confidence": "medium-high",
       "tier": 1,
-      "source": "RECONFIRMED: Sundar Pichai (Apr 1, 2026 week) — 'Gemini models now process over 10 billion tokens per minute via API' = 14.4T/day API-only. Identical to Feb 4 disclosure. All Surfaces estimate: 57T. Gemma 4 launched Apr 1 (new open model, accelerant for developer usage). Google Cloud revenue +48% YoY (Alphabet Q1 2026).",
+      "source": "NO NEW HARD DISCLOSURE THIS WEEK. Last confirmed signal remains 10B+ tokens/min via API and 750M Gemini app users. Weekly extrapolation from Apr 1 reconfirmation.",
       "source_url": "https://www.ibtimes.com.au/alphabet-shares-climb-analysts-affirm-long-term-buy-ai-momentum-cloud-surge-1865104",
       "source_date": "2026-04-01",
-      "extrapolated_to": "2026-04-06",
+      "extrapolated_to": "2026-04-13",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 5,
+      "data_freshness_days": 12,
       "is_extrapolated": true,
-      "note": "All Surfaces = Search AI Overviews + Gemini App (750M MAU) + Workspace + Cloud API. HARD DATA: Pichai confirmed 10B+ tokens/min via direct API (both Feb 4 and Apr 1 disclosures). All Surfaces estimated 57T. Gemma 4 launch (Apr 1) + Gemini API Docs MCP adds developer volume. Google Cloud +48% YoY.",
+      "note": "No new official Google token-throughput disclosure in the past 7 days. GATT holds the Apr 1 reconfirmation (10B+ tokens/min via API) and rolls the estimate one more week. Conservative all-surfaces estimate: 58T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -228,6 +235,12 @@
           "value_T": 57.0,
           "reason": "FRESH RECONFIRMATION: Pichai reaffirmed 'over 10 billion tokens per minute via API' (Apr 1 week, Alphabet Q1 context). Gemma 4 launched Apr 1 — 'most capable open models to date' with agentic focus + Gemini API Docs MCP for developers. Google Cloud revenue +48% YoY. 4-day extrapolation at 8%/mo: 55T→57T.",
           "source": "https://www.ibtimes.com.au/alphabet-shares-climb-analysts-affirm-long-term-buy-ai-momentum-cloud-surge-1865104"
+        },
+        {
+          "date": "2026-04-13",
+          "value_T": 58.0,
+          "reason": "No fresh hard source in past 7 days. Weekly roll-forward at 8%/mo from Apr 6 value: 57T→58T.",
+          "source": "https://www.ibtimes.com.au/alphabet-shares-climb-analysts-affirm-long-term-buy-ai-momentum-cloud-surge-1865104"
         }
       ],
       "source_value_T": 57.0
@@ -237,17 +250,17 @@
       "rank": 3,
       "name": "OpenAI (ChatGPT + API)",
       "country": "US",
-      "daily_tokens_T": 40.0,
+      "daily_tokens_T": 41,
       "confidence": "high",
       "tier": 1,
-      "source": "OFFICIAL: openai.com $122B funding announcement (Mar 31, 2026) — 'Our APIs now process more than 15 billion tokens per minute' = 21.6T/day API-only. Plus consumer ChatGPT: 900M WAU, 2.5B prompts/day, 50M subscribers. $2B/month revenue ($24B ARR). Enterprise >40% of revenue. Codex serves 2M+ developers.",
-      "source_url": "https://openai.com/index/accelerating-the-next-phase-ai/",
-      "source_date": "2026-03-31",
+      "source": "FRESH OFFICIAL RECONFIRMATION: OpenAI enterprise update (Apr 13, 2026) says APIs process more than 15B tokens/min, Codex hit 3M weekly active users, enterprise is now >40% of revenue, and GPT-5.4 is driving record engagement across agentic workflows. Conservative total nudged to 41T/day.",
+      "source_url": "https://openai.com/index/next-phase-of-enterprise-ai/",
+      "source_date": "2026-04-13",
       "extrapolated_to": null,
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 6,
+      "data_freshness_days": 0,
       "is_extrapolated": false,
-      "note": "HARD DATA: Official openai.com statement confirms 15B tokens/min = 21.6T/day for APIs/Codex/enterprise. Consumer ChatGPT (2.5B prompts/day × ~8K avg tokens) adds ~20T/day. Conservative total 40T (overlap-adjusted). Previous 32T was based on consumer-side back-calc alone — the new API figure confirms higher enterprise volume. Revenue: $24B ARR ($2B/mo). Enterprise now >40% of revenue, on track to equal consumer by end 2026.",
+      "note": "API hard data is unchanged at >15B tokens/min = 21.6T/day API-only. New enterprise post adds Codex 3M WAU (vs 2M on Mar 31) and record GPT-5.4 agentic engagement. GATT keeps a conservative overlap-adjusted total and nudges OpenAI 40T→41T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -269,26 +282,32 @@
           "value_T": 40.0,
           "reason": "OFFICIAL HARD DATA: openai.com $122B raise announcement (Mar 31) explicitly states 'Our APIs now process more than 15 billion tokens per minute' = 21.6T/day API/Codex/enterprise. Combined with consumer ChatGPT (2.5B prompts/day × ~8K tokens ≈ 20T) and overlap correction, conservative total: 40T. Previous 32T was consumer-side estimate only. Confidence upgraded medium-high → high. Source: https://openai.com/index/accelerating-the-next-phase-ai/",
           "source": "https://openai.com/index/accelerating-the-next-phase-ai/"
+        },
+        {
+          "date": "2026-04-13",
+          "value_T": 41.0,
+          "reason": "OpenAI enterprise update (Apr 13) reconfirms >15B tokens/min API throughput and raises Codex weekly actives from 2M→3M. Consumer + enterprise demand still accelerating; conservative total revised 40T→41T.",
+          "source": "https://openai.com/index/next-phase-of-enterprise-ai/"
         }
       ],
-      "source_value_T": 40.0
+      "source_value_T": 41.0
     },
     {
       "id": "anthropic-claude",
       "rank": 4,
       "name": "Claude (Anthropic)",
       "country": "US",
-      "daily_tokens_T": 15.0,
+      "daily_tokens_T": 16,
       "confidence": "medium-high",
       "tier": 1,
-      "source": "DEMAND SIGNALS: Claude Code subscription crisis (Apr 1, 2026) — Anthropic admits users hitting limits 'way faster than expected' (DevClass Apr 1). Anthropic cut off third-party tools (OpenClaw etc.) from subscriptions Apr 4, citing compute strain. $25B+ ARR (SemiAnalysis Apr 1). $19B ARR confirmed end-Feb (Yahoo Finance Mar 4 / Forbes Mar 25). Claude Code $2.5B ARR.",
-      "source_url": "https://www.devclass.com/ai-ml/2026/04/01/anthropic-admits-claude-code-users-hitting-usage-limits-way-faster-than-expected/5213575",
+      "source": "DEMAND / MONETIZATION SIGNALS: Anthropic tightened third-party subscription usage (Apr 4), users continue reporting fast quota burn and peak-hour throttling, while external coverage pegs Claude Code ARR above $2.5B. No new hard token count; weekly extrapolation applied.",
+      "source_url": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
       "source_date": "2026-04-04",
-      "extrapolated_to": "2026-04-06",
+      "extrapolated_to": "2026-04-13",
       "growth_rate_monthly": 0.18,
-      "data_freshness_days": 2,
+      "data_freshness_days": 9,
       "is_extrapolated": true,
-      "note": "Multiple demand signals this week: (1) Claude Code users exhausting quotas at unprecedented rate — cache bugs inflating costs 10-20x, (2) Anthropic cut off third-party tool subscriptions Apr 4 due to compute strain ('third party services are not optimized... hard to do sustainably'), (3) $25B+ ARR per SemiAnalysis Apr 1. ARR back-calc at $3/M: $25B/3/365 = 22.8T/day theoretical max. Conservative 15T held. The subscription crisis + infrastructure strain signals actual usage is at the high end of estimates.",
+      "note": "No direct Anthropic token-throughput disclosure this week. But service-throttling, third-party paywall changes, and ongoing reports of quota exhaustion still point to extreme demand. Weekly roll-forward from 15T to 16T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -305,6 +324,12 @@
           "value_T": 15.0,
           "reason": "DEMAND SIGNALS: Claude Code subscription crisis (DevClass Apr 1) — users hitting limits 'way faster than expected', cache bugs inflating costs 10-20×, Anthropic imposed 5h peak-hour session limits. Anthropic cut off OpenClaw + third-party tools from subscriptions Apr 4 due to compute strain (Boris Cherny: 'our subscriptions weren't built for the usage patterns of these third-party tools'). $25B+ ARR (SemiAnalysis Apr 1). All signals point to demand exceeding capacity. Conservative 4-day extrapolation at 18%/mo: 14.6→15.0T.",
           "source": "https://www.devclass.com/ai-ml/2026/04/01/anthropic-admits-claude-code-users-hitting-usage-limits-way-faster-than-expected/5213575"
+        },
+        {
+          "date": "2026-04-13",
+          "value_T": 16.0,
+          "reason": "No new hard token count. Continued compute-strain signals after Apr 4 policy shift justify weekly roll-forward at 18%/mo: 15T→16T.",
+          "source": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/"
         }
       ],
       "source_value_T": 15.0
@@ -757,18 +782,18 @@
       "country": "China",
       "code": "CN",
       "share_pct": 58,
-      "daily_tokens_T": 143,
+      "daily_tokens_T": 145,
       "confidence": "high",
-      "per_capita_K": 102.1
+      "per_capita_K": 103.6
     },
     {
       "rank": 2,
       "country": "United States",
       "code": "US",
-      "share_pct": 35,
-      "daily_tokens_T": 87,
+      "share_pct": 36,
+      "daily_tokens_T": 90,
       "confidence": "medium-high",
-      "per_capita_K": 259.7
+      "per_capita_K": 268.7
     },
     {
       "rank": 3,
@@ -860,10 +885,17 @@
       "confidence": "low"
     }
   ],
-  "global_total_T": 245,
+  "global_total_T": 250,
   "year_end_projection_T": "950-1400",
-  "last_updated": "2026-04-06",
+  "last_updated": "2026-04-13",
   "correction_log": [
+    {
+      "date": "2026-04-13",
+      "vendor": "Weekly roll-forward (OpenAI / Doubao / Gemini / Claude)",
+      "old": "245T/day global, Doubao 121T, Gemini 57T, OpenAI 40T, Claude 15T",
+      "new": "250T/day global, Doubao 123T, Gemini 58T, OpenAI 41T, Claude 16T",
+      "reason": "Past-7-day scan: OpenAI enterprise post (Apr 13) reconfirms >15B API tokens/min and lifts Codex to 3M WAU; TechNode/Tech in Asia (Apr 7) reconfirm Doubao >120T/day; Anthropic compute-strain signals persist after Apr 4 subscription changes; no new hard Google disclosure, so Gemini was rolled forward conservatively."
+    },
     {
       "date": "2026-04-06",
       "vendor": "OpenAI (ChatGPT + API)",

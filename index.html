@@ -637,7 +637,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
       <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">中</button>
     </div>
-    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-04-06</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.75</span></div>
+    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-04-13</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.76</span></div>
     <div>
       <span id="stat-vendors">29</span> <span class="i18n" data-en="Vendors" data-zh="厂商">Vendors</span> &nbsp;·&nbsp;
       <span id="stat-countries">18</span> <span class="i18n" data-en="Countries" data-zh="国家">Countries</span> &nbsp;·&nbsp;
@@ -650,8 +650,8 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
 <div style="background:#fef3c7;border:1px solid #fde68a;border-radius:var(--radius);padding:12px 16px;margin-bottom:24px;font-family:-apple-system,sans-serif;font-size:0.8rem;display:flex;align-items:flex-start;gap:10px;">
   <span style="font-size:1.1rem;flex-shrink:0;">🔔</span>
   <div>
-    <strong style="color:#92400e;">🚨 MAJOR UPDATE (Apr 2 · v0.75):</strong>
-    <span style="color:#78350f;"> Doubao 120T (Volcengine Apr 1) · OpenAI <strong>OFFICIAL</strong> 15B tokens/min API (Mar 31) · Global: 235T→<strong>245T</strong>/day · Token GDP: <strong>$58.8B/yr</strong> · US share 34%→<strong>35%</strong></span>
+    <strong style="color:#92400e;">🔄 WEEKLY UPDATE (Apr 13 · v0.76):</strong>
+    <span style="color:#78350f;"> OpenAI reconfirmed <strong>&gt;15B tokens/min API</strong> and Codex hit <strong>3M WAU</strong> · Doubao held <strong>120T+ official baseline</strong> in fresh Apr 7 coverage · Gemini/Claude conservatively rolled forward · Global: <strong>245T→250T</strong>/day · Token GDP: <strong>$60.4B/yr</strong></span>
     <a href="#changelog" style="color:#92400e;font-weight:600;margin-left:8px;text-decoration:underline;" onclick="document.querySelector('.section-label + .method-box').scrollIntoView({behavior:'smooth'});return false;">See full log →</a>
   </div>
 </div>
@@ -661,7 +661,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
     <div>
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtle);margin-bottom:2px;">Token Economy Weekly Digest</div>
-      <div style="font-size:1rem;font-weight:700;color:var(--text);">Week of Mar 10–13, 2026</div>
+      <div style="font-size:1rem;font-weight:700;color:var(--text);">Week of Apr 7–13, 2026</div>
     </div>
     <span style="font-size:1.2rem;">📰</span>
   </div>
@@ -669,29 +669,29 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">🚀</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">GPT-5.4 launched (Mar 9) — 1M context, computer-use, 33% fewer hallucinations</div>
-        <div style="font-size:0.65rem;color:var(--muted);">Implication: OpenAI token volume likely to spike as Plus/Pro users migrate. GATT will track in next update.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">OpenAI reconfirms &gt;15B API tokens/min; Codex hits 3M weekly active users</div>
+        <div style="font-size:0.65rem;color:var(--muted);">OpenAI enterprise post (Apr 13) keeps the hard API throughput floor intact and adds a new Codex usage milestone. GATT nudges OpenAI 40T→41T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">📈</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini now fastest-growing AI website — 643% YoY traffic growth</div>
-        <div style="font-size:0.65rem;color:var(--muted);">9to5Google (Mar 9). Outpacing ChatGPT's 37% YoY. GATT bumped Gemini growth rate 5%→8%/mo.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini: no new hard throughput disclosure this week</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Google still sits on the Apr 1 reconfirmation of 10B+ API tokens/min and ~750M Gemini app users. GATT rolls Gemini 57T→58T/day conservatively.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">⚖️</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Microsoft backs Anthropic in Pentagon dispute — $5B investment at stake</div>
-        <div style="font-size:0.65rem;color:var(--muted);">Anthropic designated "supply chain risk" by Pentagon. 130+ Silicon Valley devs filed supporting briefs. Could impact enterprise AI token flows.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Anthropic strain persists after Apr 4 subscription tightening</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Third-party tool usage now pay-as-you-go, while quota-exhaustion complaints and peak-hour throttling continue. GATT rolls Claude 15T→16T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">💼</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Dario Amodei: AI could automate 50% of entry-level white-collar jobs</div>
-        <div style="font-size:0.65rem;color:var(--muted);">One autonomous coding firm's revenue surged 100× in 12 months. Token demand driven increasingly by agent-to-agent workflows.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Doubao follow-up coverage confirms 120T/day baseline is holding</div>
+        <div style="font-size:0.65rem;color:var(--muted);">TechNode / Tech in Asia (Apr 7) repeated ByteDance's 120T/day figure and said usage doubled in three months. GATT rolls Doubao 121T→123T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
@@ -782,19 +782,19 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Period: Jan 1 – Apr 2, 2026 · Updated Apr 2, 2026 · GATT v0.75</div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <button onclick="navigator.clipboard.writeText('Q1 2026 Global Token Economy (GATT Report — v0.75 OFFICIAL):\n• 245T tokens/day global run rate (Apr 6)\n• $58.8B/year Token GDP (annualized)\n• China: 58% volume, 10% GDP (Doubao 120T official!)\n• 394× per-capita gap (US vs India)\n• Doubao = 49% of global tokens; OpenAI API confirmed 15B tokens/min\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Q1 Summary</button>
+      <button onclick="navigator.clipboard.writeText('Q2 2026 weekly update (GATT — v0.76):\n• 250T tokens/day global run rate (Apr 13)\n• $60.4B/year Token GDP (annualized)\n• China: 58% volume, 9% GDP (Doubao 123T est. on 120T official baseline)\n• 407× per-capita gap (US vs India)\n• OpenAI still >15B API tokens/min; Codex now 3M WAU\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Weekly Summary</button>
       <a href="https://twitter.com/intent/tweet?text=OFFICIAL%3A+Doubao+120T+tokens%2Fday+%28Volcengine+Apr+1+2026%29+%E2%80%94+OpenAI+API+official+15B+tokens%2Fmin+%28Mar+31%29+%E2%80%94+global+AI+token+economy%3A+245T%2Fday.+US+share+35%25%2C+China+58%25.+%40gatt_index+https%3A%2F%2Fgf691271.github.io%2Fgatt%2F+%23TokenEconomy" target="_blank" rel="noopener" style="background:#1d9bf0;color:#fff;border-radius:6px;padding:6px 12px;font-size:0.68rem;font-weight:600;text-decoration:none;display:inline-block;">𝕏 Share Breaking News</a>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;">
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Daily Token Volume</div>
-      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">245T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
+      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">250T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
       <div style="font-size:0.65rem;color:#64748b;">tokens/day · global aggregate</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Token GDP (annualized)</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$58.8B</div>
+      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$60.4B</div>
       <div style="font-size:0.65rem;color:#64748b;">retail-priced inference value</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
@@ -815,11 +815,11 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     </div>
     <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:6px;padding:12px;">
       <div style="font-size:0.65rem;font-weight:700;color:#93c5fd;margin-bottom:6px;">📊 Q1 AI Inequality Stat</div>
-      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">A US user generates <strong style="color:#60a5fa;">357×</strong> more AI tokens per day than an Indian user (236K vs 660 tokens/person/day). The AI divide is wider than the income divide.</div>
+      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">A US user generates <strong style="color:#60a5fa;">407×</strong> more AI tokens per day than an Indian user (269K vs ~660 tokens/person/day). The AI divide is still widening.</div>
     </div>
   </div>
   <div style="font-size:0.62rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;">
-    📌 How to cite: <em>"According to GATT's Q1 2026 Token Economy report, global AI inference reached 172 trillion tokens/day — equivalent to $50 billion/year in economic value."</em> · Source: <a href="https://gf691271.github.io/gatt/" style="color:#60a5fa;">gf691271.github.io/gatt</a> · CC BY 4.0
+    📌 How to cite: <em>"According to GATT's weekly Apr 13 2026 update, global AI inference reached 250 trillion tokens/day — equivalent to $60.4 billion/year in economic value."</em> · Source: <a href="https://gf691271.github.io/gatt/" style="color:#60a5fa;">gf691271.github.io/gatt</a> · CC BY 4.0
   </div>
 </div>
 
@@ -2736,7 +2736,7 @@ function copyEmbed(type) {
   <div>GATT · Global AI Token Tracker · Open Data · CC BY 4.0 · <a href="https://github.com/gf691271/gatt" style="color:inherit">GitHub</a></div>
   <div style="margin:6px 0;">Cite: Gao, F. (2026). GATT: Global AI Token Tracker. <a href="https://gf691271.github.io/gatt/" style="color:inherit">gf691271.github.io/gatt</a></div>
   <div style="margin:4px 0;"><a href="about.html" style="color:inherit">About &amp; Methodology</a> · <a href="CHANGELOG.md" style="color:inherit">Data Changelog</a> · <span style="color:var(--subtle)">API docs coming soon</span></div>
-  <div style="margin-top:6px;">All figures are estimates. Not financial advice. Last updated 2026-02-27.</div>
+  <div style="margin-top:6px;">All figures are estimates. Not financial advice. Last updated 2026-04-13.</div>
 </footer>
 
 </div><!-- /page -->
