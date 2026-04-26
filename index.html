@@ -902,7 +902,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <!-- 1. Daily volume — precise -->
   <div class="headline-card">
     <div class="hl-label">Global daily tokens</div>
-    <div class="hl-number">~<span id="hl-global-tokens">162</span>T <button class="show-method" onclick="toggleMethod('global')" title="How we calculated this">ⓘ</button></div>
+    <div class="hl-number">~<span id="hl-global-tokens">162</span>T <span id="hl-global-live-badge" style="font-size:0.6rem;color:#34d399;font-weight:600;vertical-align:middle;">⟳ live</span> <button class="show-method" onclick="toggleMethod('global')" title="How we calculated this">ⓘ</button></div>
     <div class="hl-sub">trillion tokens / day · Feb 2026 est. (revised)</div>
     <div class="hl-badge">↑ from ~14T in Feb 2025 · revised from 136T</div>
     <div style="font-size:.63rem;color:var(--muted);margin-top:4px;">Source: GATT synthesis · Epoch AI · ByteDance disclosures</div>
@@ -924,12 +924,12 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div class="headline-card">
     <div class="hl-label">China vs US</div>
     <div class="hl-number" style="font-size:1.5rem; line-height:1.2;">
-      <span class="cn">~55%</span><span style="color:var(--muted);font-size:1rem;font-weight:400;"> vol</span>
+      <span class="cn" id="hl-cn-share">~55%</span><span style="color:var(--muted);font-size:1rem;font-weight:400;"> vol</span>
       &nbsp;<span style="color:var(--muted);font-weight:300;">vs</span>&nbsp;
-      <span class="us">~14%</span><span style="color:var(--muted);font-size:1rem;font-weight:400;"> val</span>
+      <span class="us" id="hl-us-share">~30%</span><span style="color:var(--muted);font-size:1rem;font-weight:400;"> vol</span>
     </div>
-    <div class="hl-sub">China leads volume · US leads compute value</div>
-    <div class="hl-badge">tokenizer gap: CN models count more tokens/char</div>
+    <div class="hl-sub" id="hl-share-sub">China vs US share of global live tokens today</div>
+    <div class="hl-badge" id="hl-share-badge">computed from live vendor extrapolation</div>
     <div style="font-size:.63rem;color:var(--muted);margin-top:4px;">Source: OpenRouter State of AI · China NDB estimates</div>
   </div>
 
@@ -966,12 +966,12 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;">
     <div style="flex:1;min-width:200px;">
       <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.06em;color:#93c5fd;margin-bottom:4px;">Annual Token GDP (2026 est.)</div>
-      <div style="font-size:2.4rem;font-weight:700;color:#fff;line-height:1;">~$45<span style="font-size:1.2rem;font-weight:400;color:#93c5fd;">B</span></div>
+      <div id="token-gdp-annual" style="font-size:2.4rem;font-weight:700;color:#fff;line-height:1;">~$45<span style="font-size:1.2rem;font-weight:400;color:#93c5fd;">B</span></div>
       <div style="font-size:0.72rem;color:#bfdbfe;margin-top:4px;">Total economic value of global AI inference<br>at blended market pricing · Feb 2026</div>
     </div>
     <div style="flex:1;min-width:180px;">
       <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.06em;color:#93c5fd;margin-bottom:6px;">Daily run rate</div>
-      <div style="font-size:1.6rem;font-weight:700;color:#fff;">~$122<span style="font-size:0.9rem;font-weight:400;color:#93c5fd;">M/day</span></div>
+      <div id="token-gdp-daily" style="font-size:1.6rem;font-weight:700;color:#fff;">~$122<span style="font-size:0.9rem;font-weight:400;color:#93c5fd;">M/day</span></div>
       <div style="font-size:0.72rem;color:#bfdbfe;margin-top:4px;">Growing at +20%/mo · doubling every ~4 months</div>
     </div>
     <div style="flex:1;min-width:180px;">
@@ -1255,7 +1255,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       ">
         <span id="live-eq-text" style="text-align:right;"></span>
       </div>
-      <div style="font-family:'Courier New',monospace;font-size:0.68rem;color:#2a4a2a;margin-top:8px;letter-spacing:0.06em;">
+      <div id="live-rate-text" style="font-family:'Courier New',monospace;font-size:0.68rem;color:#2a4a2a;margin-top:8px;letter-spacing:0.06em;">
         2,835,648 tokens/sec · 245T
       </div>
     </div>
@@ -1265,31 +1265,122 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
 <script>
 // ── LIVE TOKEN COUNTER ──
 (function() {
-  // ── LIVE EXTRAPOLATION ENGINE ──
-  // Each vendor value is extrapolated from its source_date using its monthly growth rate.
-  // Formula: liveValue = source_value_T × (1 + growth_rate_monthly)^(daysSinceSource/30)
-  function computeLiveGlobalT() {
+  function normalizeVendorName(name) {
+    const patterns = [
+      [/Doubao/i, 'Doubao'],
+      [/Google Gemini/i, 'Google Gemini'],
+      [/Azure OpenAI/i, 'Azure OpenAI'],
+      [/OpenAI/i, 'ChatGPT / API'],
+      [/Claude/i, 'Claude'],
+      [/DeepSeek/i, 'DeepSeek'],
+      [/Qwen/i, 'Qwen'],
+      [/Hunyuan/i, 'Hunyuan'],
+      [/ERNIE/i, 'ERNIE'],
+      [/Spark/i, 'Spark'],
+      [/OpenRouter/i, 'OpenRouter'],
+      [/Mistral/i, 'Mistral'],
+      [/Grok/i, 'Grok'],
+      [/MiniMax/i, 'MiniMax'],
+      [/Groq/i, 'Groq'],
+      [/Llama API|Meta/i, 'Llama API'],
+      [/Kimi|Moonshot/i, 'Kimi'],
+      [/Bedrock/i, 'Bedrock'],
+      [/GLM|Zhipu/i, 'GLM'],
+      [/Perplexity/i, 'Perplexity']
+    ];
+    for (const [pattern, normalized] of patterns) {
+      if (pattern.test(name || '')) return normalized;
+    }
+    return name;
+  }
+
+  function parseFlexibleDate(value) {
+    if (!value) return null;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return new Date(value + 'T00:00:00');
+    if (/^\d{4}-\d{2}$/.test(value)) return new Date(value + '-01T00:00:00');
+    if (/^\d{4}-Q([1-4])$/.test(value)) {
+      const [, year, q] = value.match(/^(\d{4})-Q([1-4])$/) || [];
+      const month = { '1': '01', '2': '04', '3': '07', '4': '10' }[q];
+      return new Date(`${year}-${month}-01T00:00:00`);
+    }
+    if (/^\d{4}$/.test(value)) return new Date(value + '-01-01T00:00:00');
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  }
+
+  function computeLiveTokens(vendor) {
+    const sourceDate = parseFlexibleDate(vendor.source_date) || parseFlexibleDate(vendor.extrapolated_to) || new Date('2026-02-27T00:00:00');
+    const today = new Date();
+    const daysDiff = (today - sourceDate) / (1000 * 60 * 60 * 24);
+    const monthlyRate = vendor.growth_rate_monthly || 0.08;
+    const sourceValue = vendor.source_value_T || vendor.daily_tokens_T;
+    return sourceValue * Math.pow(1 + monthlyRate, daysDiff / 30);
+  }
+
+  function regionPrice(code) {
+    if (code === 'US') return 1.5;
+    if (code === 'CN') return 0.1;
+    if (['FR', 'DE', 'GB'].includes(code)) return 1.2;
+    return 0.9;
+  }
+
+  function buildLiveState() {
     try {
       const req = new XMLHttpRequest();
       req.open('GET', 'data/tci-latest.json', false); // sync
       req.send();
       const data = JSON.parse(req.responseText);
-      const today = new Date();
-      let total = 0;
+      const vendorsByPageName = {};
+      const countryTotals = {};
+      let globalLiveT = 0;
+      let tokenGdpDailyM = 0;
       data.vendors.forEach(v => {
-        const srcDate = new Date(v.source_date || '2026-04-02');
-        const days = (today - srcDate) / 86400000;
-        const rate = v.growth_rate_monthly || 0.08;
-        const src = v.source_value_T || v.daily_tokens_T;
-        total += src * Math.pow(1 + rate, days / 30);
+        const liveT = computeLiveTokens(v);
+        if (!Number.isFinite(liveT)) return;
+        const pageName = normalizeVendorName(v.name);
+        const price = regionPrice(v.country);
+        vendorsByPageName[pageName] = {
+          ...v,
+          pageName,
+          liveT,
+          pricePerM: price,
+          tooltip: `Extrapolated from ${v.source_date || v.extrapolated_to || 'unknown'} official figure using ${Math.round((v.growth_rate_monthly || 0.08) * 100)}%/mo growth rate`
+        };
+        countryTotals[v.country] = (countryTotals[v.country] || 0) + liveT;
+        globalLiveT += liveT;
+        tokenGdpDailyM += liveT * price;
       });
-      return total; // in T
+      return {
+        raw: data,
+        vendorsByPageName,
+        countryTotals,
+        globalLiveT,
+        tokenGdpDailyM,
+        tokenGdpAnnualB: tokenGdpDailyM * 365 / 1000,
+        rate: (globalLiveT * 1e12) / 86400,
+        updatedAt: new Date().toISOString()
+      };
     } catch(e) {
-      return 235; // fallback
+      return {
+        raw: null,
+        vendorsByPageName: {},
+        countryTotals: {},
+        globalLiveT: 235,
+        tokenGdpDailyM: 147,
+        tokenGdpAnnualB: 53.7,
+        rate: (235 * 1e12) / 86400,
+        updatedAt: new Date().toISOString()
+      };
     }
   }
-  const liveGlobalT = computeLiveGlobalT();
-  const RATE = (liveGlobalT * 1e12) / 86400; // tokens per second, live-computed
+
+  window.GATT_LIVE_STATE = buildLiveState();
+  window.computeLiveTokens = computeLiveTokens;
+  window.normalizeGattVendorName = normalizeVendorName;
+  window.parseGattDate = parseFlexibleDate;
+
+  const liveGlobalT = window.GATT_LIVE_STATE.globalLiveT;
+  const RATE = window.GATT_LIVE_STATE.rate;
   const startTime = Date.now();
 
   const equivalences = [
@@ -1362,9 +1453,13 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   // ── UPDATE LIVE GLOBAL HEADLINE ──
   (function() {
     const el = document.getElementById('gatt-live-global');
+    const rateEl = document.getElementById('live-rate-text');
     if (el && liveGlobalT) {
-      const rounded = Math.round(liveGlobalT);
+      const rounded = Math.round(liveGlobalT * 10) / 10;
       el.innerHTML = '~' + rounded + 'T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;" title="Extrapolated from each vendor\'s official source date using their monthly growth rate">⟳ live</span>';
+    }
+    if (rateEl) {
+      rateEl.textContent = Math.round(RATE).toLocaleString() + ' tokens/sec · ' + (Math.round(liveGlobalT * 10) / 10) + 'T';
     }
   })();
 })();
@@ -3317,13 +3412,22 @@ const tier3 = [
   {name:'Together AI',          flag:'🇺🇸', co:'Together AI',     reason:'No public data'},
 ];
 
-const maxTok = 66;
-function freshBadge(days, extrap) {
-  if (!days && days !== 0) return '';
-  const color = days <= 7 ? '#16a34a' : days <= 30 ? '#ca8a04' : '#dc2626';
-  const bg = days <= 7 ? '#f0fdf4' : days <= 30 ? '#fefce8' : '#fef2f2';
-  const label = extrap ? `${days}d ago · extrapolated` : `${days}d ago · direct`;
-  return `<span style="font-size:0.55rem;background:${bg};color:${color};padding:1px 5px;border-radius:3px;font-weight:600;white-space:nowrap;" title="Data freshness: source is ${days} days old${extrap ? ', current value is extrapolated' : ''}">${label}</span>`;
+function formatTokenT(value) {
+  if (value >= 100) return `${Math.round(value)}T`;
+  if (value >= 10) return `${value.toFixed(1)}T`;
+  if (value >= 1) return `${value.toFixed(2)}T`;
+  return `${value.toFixed(2)}T`;
+}
+
+function shortDate(dateStr) {
+  const d = window.parseGattDate ? window.parseGattDate(dateStr) : new Date(dateStr);
+  if (!d || Number.isNaN(d.getTime())) return 'n/a';
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+function freshBadge(vendorInfo) {
+  if (!vendorInfo || !vendorInfo.source_date) return '';
+  return `<span style="display:inline-flex;flex-direction:column;gap:2px;align-items:flex-start;font-size:0.55rem;line-height:1.25;background:#f0fdf4;color:#166534;padding:4px 6px;border-radius:4px;font-weight:600;white-space:nowrap;" title="${vendorInfo.tooltip || ''}"><span>Official: ${shortDate(vendorInfo.source_date)}</span><span style="color:#22c55e;">Live est: today</span></span>`;
 }
 function confLabel(c) {
   if (c >= 3) return '<span class="conf-3">✓ Verified</span>';
@@ -3334,10 +3438,11 @@ function confLabel(c) {
 
 // ── DATA FRESHNESS ──
 // Given a source date string (YYYY-MM-DD), return a freshness indicator
-const TODAY_DATE = new Date('2026-02-26');
+const TODAY_DATE = new Date();
 function freshnessDot(dateStr) {
   if (!dateStr) return '';
-  const src = new Date(dateStr);
+  const src = window.parseGattDate ? window.parseGattDate(dateStr) : new Date(dateStr);
+  if (!src || Number.isNaN(src.getTime())) return '';
   const daysAgo = Math.floor((TODAY_DATE - src) / (1000*60*60*24));
   if (daysAgo <= 30) return `<span title="Fresh data (${daysAgo}d old)" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-left:4px;vertical-align:middle;"></span>`;
   if (daysAgo <= 90) return `<span title="Data is ${daysAgo}d old — may be stale" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#f59e0b;margin-left:4px;vertical-align:middle;"></span>`;
@@ -3386,7 +3491,17 @@ const vendorPageLinks = {
 
 function buildRankTable() {
   const table = document.getElementById('rankTable');
+  const liveMap = (window.GATT_LIVE_STATE && window.GATT_LIVE_STATE.vendorsByPageName) || {};
+  [...vendors, ...tier2].forEach(v => {
+    const liveInfo = liveMap[v.name];
+    if (!liveInfo) return;
+    v.tokNum = liveInfo.liveT;
+    v.tokens = `${v.conf === 1 ? '~' : '~'}${formatTokenT(liveInfo.liveT)}`;
+    v.liveInfo = liveInfo;
+    v.country = liveInfo.country || v.country;
+  });
   const allRanked = [...vendors, ...tier2].sort((a,b) => b.tokNum - a.tokNum);
+  const maxTok = Math.max(...allRanked.map(v => v.tokNum), 1);
   let globalRank = 0;
 
   // Header
@@ -3397,7 +3512,10 @@ function buildRankTable() {
     const bar = Math.min((v.tokNum / maxTok * 100), 100).toFixed(1);
     const col = v.country === 'CN' ? 'var(--cn)' : v.country === 'EU' ? '#4f7942' : 'var(--us)';
     const isTier2 = v.conf === 1;
-    const tokenLabel = isTier2 ? `<span style="color:var(--muted)">${v.tokens}</span>` : `<strong>${v.tokens}</strong>`;
+    const liveTag = v.liveInfo
+      ? ` <span style="font-size:.58rem;color:#22c55e;font-weight:700;vertical-align:middle;" title="${v.liveInfo.tooltip}">⟳ live</span>`
+      : '';
+    const tokenLabel = isTier2 ? `<span style="color:var(--muted)">${v.tokens}${liveTag}</span>` : `<strong>${v.tokens}</strong>${liveTag}`;
     const confBadge = isTier2
       ? `<span style="font-size:.65rem;color:var(--muted);font-weight:400">≈ est.</span>`
       : confLabel(v.conf);
@@ -3414,8 +3532,8 @@ function buildRankTable() {
       : `<span class="rank-name">${v.name}</span>`;
     const correctionBadge = renderCorrectionBadge(v.name);
     const correctionPanel = renderCorrectionPanel(v.name);
-    const freshDot = freshnessDot(vendorSourceDates[v.name]);
-    const freshLabel = v.fresh != null ? freshBadge(v.fresh, v.extrap) : '';
+    const freshDot = freshnessDot(v.liveInfo ? v.liveInfo.source_date : vendorSourceDates[v.name]);
+    const freshLabel = freshBadge(v.liveInfo);
 
     html += `<div class="rank-row-wrapper">
     <div class="rank-row${isTier2 ? ' dark-row' : ''}">
@@ -3457,10 +3575,15 @@ function buildRankTable() {
 function buildCountryRank() {
   const el = document.getElementById('countryRank');
   if (!el) return;
+  const liveState = window.GATT_LIVE_STATE || { countryTotals: {}, globalLiveT: 1 };
+  const cnLive = liveState.countryTotals.CN || 67;
+  const usLive = liveState.countryTotals.US || 36;
+  const cnPct = (cnLive / liveState.globalLiveT) * 100;
+  const usPct = (usLive / liveState.globalLiveT) * 100;
 
   const staticCountries = [
-    {flag:'🇨🇳', name:'China',         pct:50, vol:'~67T',  conf:'Medium', note:'Doubao dominant · 155M WAU, Spring Festival peak 63.3B tokens/min',   col:'var(--cn)'},
-    {flag:'🇺🇸', name:'United States', pct:30, vol:'~36T',  conf:'Medium', note:'Google + OpenAI + Microsoft Azure',                col:'var(--us)'},
+    {flag:'🇨🇳', name:'China',         pct:cnPct, vol:'~' + formatTokenT(cnLive),  conf:'Medium', note:'Live extrapolated from tracked CN vendors',   col:'var(--cn)'},
+    {flag:'🇺🇸', name:'United States', pct:usPct, vol:'~' + formatTokenT(usLive),  conf:'Medium', note:'Live extrapolated from tracked US vendors',                col:'var(--us)'},
     {flag:'🇬🇧', name:'United Kingdom',pct:4,  vol:'~4.8T', conf:'Low',    note:'DeepMind + AWS UK · model est.',                   col:'#6b7280'},
     {flag:'🇩🇪', name:'Germany',       pct:3,  vol:'~3.6T', conf:'Low',    note:'Aleph Alpha + enterprise deployments',             col:'#6b7280'},
     {flag:'🇯🇵', name:'Japan',         pct:3,  vol:'~3.6T', conf:'Low',    note:'SoftBank + NTT AI · govt initiatives',            col:'#6b7280'},
@@ -3488,7 +3611,7 @@ function buildCountryRank() {
       <div style="font-weight:700;font-size:.9rem">${c.vol}</div>
       <div style="flex:1;padding-left:12px">
         <div style="height:6px;border-radius:3px;background:${c.col};width:${c.pct}%;opacity:0.75;max-width:100%"></div>
-        <div style="font-size:.68rem;color:var(--muted);margin-top:2px">${c.pct}% est. · <span style="color:${confColor};font-weight:600">${c.conf} confidence</span></div>
+        <div style="font-size:.68rem;color:var(--muted);margin-top:2px">${typeof c.pct === 'number' ? c.pct.toFixed(1) : c.pct}% est. · <span style="color:${confColor};font-weight:600">${c.conf} confidence</span></div>
       </div>
     </div>`;
   });
@@ -3530,12 +3653,16 @@ function animateCounter(el, target, suffix, duration) {
 }
 
 function setupCounterAnimations() {
+  const liveState = window.GATT_LIVE_STATE || { globalLiveT: 151, countryTotals: { CN: 55, US: 30 } };
+  const liveGlobal = liveState.globalLiveT || 151;
+  const cnShare = liveGlobal ? ((liveState.countryTotals.CN || 0) / liveGlobal) * 100 : 55;
+  const usShare = liveGlobal ? ((liveState.countryTotals.US || 0) / liveGlobal) * 100 : 30;
   // Headline numbers
   const animations = [
-    { selector: '#hl-global-tokens', target: 151, suffix: 'T', duration: 1200 },
+    { selector: '#hl-global-tokens', target: liveGlobal, suffix: 'T', duration: 1200 },
     { selector: '#hl-growth', target: 12, suffix: '%', duration: 800 },
-    { selector: '#hl-cn-vol', target: 55, suffix: '%', duration: 900 },
-    { selector: '#hl-us-val', target: 62, suffix: '%', duration: 900 },
+    { selector: '#hl-cn-share', target: cnShare, suffix: '%', duration: 900 },
+    { selector: '#hl-us-share', target: usShare, suffix: '%', duration: 900 },
     { selector: '#hl-year-proj', target: 1000, suffix: 'T', duration: 1500 },
     { selector: '#hl-dark-count', target: 11, suffix: '', duration: 600 },
   ];
@@ -3553,8 +3680,39 @@ function setupCounterAnimations() {
   });
 }
 
+function applyLiveSummary() {
+  const liveState = window.GATT_LIVE_STATE;
+  if (!liveState) return;
+  const globalLive = liveState.globalLiveT;
+  const cnLive = liveState.countryTotals.CN || 0;
+  const usLive = liveState.countryTotals.US || 0;
+  const cnShare = globalLive ? (cnLive / globalLive) * 100 : 0;
+  const usShare = globalLive ? (usLive / globalLive) * 100 : 0;
+
+  const globalEl = document.getElementById('hl-global-tokens');
+  const globalBadgeEl = document.getElementById('hl-global-live-badge');
+  const cnShareEl = document.getElementById('hl-cn-share');
+  const usShareEl = document.getElementById('hl-us-share');
+  const shareSubEl = document.getElementById('hl-share-sub');
+  const shareBadgeEl = document.getElementById('hl-share-badge');
+  const annualEl = document.getElementById('token-gdp-annual');
+  const dailyEl = document.getElementById('token-gdp-daily');
+  const liveRateEl = document.getElementById('live-rate-text');
+
+  if (globalEl) globalEl.textContent = (Math.round(globalLive * 10) / 10).toString();
+  if (globalBadgeEl) globalBadgeEl.title = 'Extrapolated from each vendor source_date using monthly growth assumptions';
+  if (cnShareEl) cnShareEl.textContent = `${cnShare.toFixed(1)}%`;
+  if (usShareEl) usShareEl.textContent = `${usShare.toFixed(1)}%`;
+  if (shareSubEl) shareSubEl.textContent = `China ~${formatTokenT(cnLive)} vs US ~${formatTokenT(usLive)} · share of global live tokens today`;
+  if (shareBadgeEl) shareBadgeEl.textContent = `live extrapolation across ${Object.keys(liveState.vendorsByPageName).length} tracked vendors`;
+  if (annualEl) annualEl.innerHTML = `~$${liveState.tokenGdpAnnualB.toFixed(1)}<span style="font-size:1.2rem;font-weight:400;color:#93c5fd;">B</span>`;
+  if (dailyEl) dailyEl.innerHTML = `~$${liveState.tokenGdpDailyM.toFixed(1)}<span style="font-size:0.9rem;font-weight:400;color:#93c5fd;">M/day</span>`;
+  if (liveRateEl) liveRateEl.textContent = `${Math.round(liveState.rate).toLocaleString()} tokens/sec · ${(Math.round(globalLive * 10) / 10)}T`;
+}
+
 // ── INIT ──
 initChart();
+applyLiveSummary();
 buildRankTable();
 buildCountryRank();
 setupCounterAnimations();
