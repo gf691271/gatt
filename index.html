@@ -637,7 +637,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
       <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">中</button>
     </div>
-    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-04-20</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.77</span></div>
+    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-04-27</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.78</span></div>
     <div>
       <span id="stat-vendors">29</span> <span class="i18n" data-en="Vendors" data-zh="厂商">Vendors</span> &nbsp;·&nbsp;
       <span id="stat-countries">18</span> <span class="i18n" data-en="Countries" data-zh="国家">Countries</span> &nbsp;·&nbsp;
@@ -650,8 +650,8 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
 <div style="background:#fef3c7;border:1px solid #fde68a;border-radius:var(--radius);padding:12px 16px;margin-bottom:24px;font-family:-apple-system,sans-serif;font-size:0.8rem;display:flex;align-items:flex-start;gap:10px;">
   <span style="font-size:1.1rem;flex-shrink:0;">🔔</span>
   <div>
-    <strong style="color:#92400e;">🔄 WEEKLY UPDATE (Apr 20 · v0.77):</strong>
-    <span style="color:#78350f;"> No newer hard usage disclosure beat OpenAI's <strong>Apr 13 official post</strong>, so GATT rolled the leaderboard one more week · OpenAI <strong>41T→42T</strong> · Gemini <strong>58T→59T</strong> · Claude <strong>16T→17T</strong> · Doubao <strong>123T→125T</strong> · Global: <strong>250T→254T</strong>/day · Token GDP: <strong>$62.3B/yr</strong></span>
+    <strong style="color:#92400e;">🔄 WEEKLY UPDATE (Apr 27 · v0.78):</strong>
+    <span style="color:#78350f;"> Past-7-day source sweep found fresh OpenAI / Google / Anthropic demand signals but no newer hard throughput than the existing anchors, so GATT rolled the leaders one more week · OpenAI <strong>42T→43T</strong> · Gemini <strong>59T→60T</strong> · Claude <strong>17T→18T</strong> · Doubao <strong>125T→127T</strong> · Global: <strong>254T→259T</strong>/day · Token GDP: <strong>$63.9B/yr</strong></span>
     <a href="#changelog" style="color:#92400e;font-weight:600;margin-left:8px;text-decoration:underline;" onclick="document.querySelector('.section-label + .method-box').scrollIntoView({behavior:'smooth'});return false;">See full log →</a>
   </div>
 </div>
@@ -661,7 +661,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
     <div>
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtle);margin-bottom:2px;">Token Economy Weekly Digest</div>
-      <div style="font-size:1rem;font-weight:700;color:var(--text);">Week of Apr 7–13, 2026</div>
+      <div style="font-size:1rem;font-weight:700;color:var(--text);">Week of Apr 20–27, 2026</div>
     </div>
     <span style="font-size:1.2rem;">📰</span>
   </div>
@@ -669,29 +669,29 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">🚀</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">OpenAI reconfirms &gt;15B API tokens/min; Codex hits 3M weekly active users</div>
-        <div style="font-size:0.65rem;color:var(--muted);">OpenAI's Apr 13 enterprise post remains the freshest hard source: &gt;15B API tokens/min and Codex at 3M WAU. GATT carries that floor into this week's cut and rolls OpenAI 41T→42T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">OpenAI launches GPT‑5.5; no new throughput number tops the &gt;15B API tokens/min floor</div>
+        <div style="font-size:0.65rem;color:var(--muted);">OpenAI's Apr 23 GPT‑5.5 launch showed stronger real-work adoption — GPT‑5.5 matches GPT‑5.4 latency while using fewer tokens per Codex task, and OpenAI says 85%+ of the company now uses Codex weekly. No harder throughput beat the Apr 13 floor, so GATT rolls OpenAI 42T→43T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">📈</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini: no new hard throughput disclosure this week</div>
-        <div style="font-size:0.65rem;color:var(--muted);">Google still sits on the Apr 1 reconfirmation of 10B+ API tokens/min and ~750M Gemini app users. No newer hard count surfaced this week, so GATT rolls Gemini 58T→59T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini enterprise push deepens, but Google still withholds a new hard token number</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Reuters' Apr 22 Cloud Next report says AI agents are now the primary growth vector in Vertex AI and highlights new TPU scale for inference. Still no newer hard count than 10B+ API tokens/min, so GATT rolls Gemini 59T→60T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">⚖️</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Anthropic strain persists after Apr 4 subscription tightening</div>
-        <div style="font-size:0.65rem;color:var(--muted);">Fresh launch / backlash coverage still points to quota burn and compute strain, but no hard token count surfaced. GATT rolls Claude 16T→17T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Anthropic locks in massive new compute as Claude demand outruns supply</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Anthropic's Apr 20 Amazon deal secured up to 5GW of new compute, said run-rate revenue is now above $30B, and noted 100,000+ Claude customers on Bedrock. No hard token count was disclosed, so GATT rolls Claude 17T→18T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">💼</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Doubao follow-up coverage confirms 120T/day baseline is holding</div>
-        <div style="font-size:0.65rem;color:var(--muted);">No new hard Doubao token count surfaced this week; the latest confirmed 120T/day anchor still stands. GATT rolls Doubao 123T→125T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Doubao still has no fresher hard count than the 120T/day official anchor</div>
+        <div style="font-size:0.65rem;color:var(--muted);">No new hard Doubao token count surfaced in the Apr 20–27 sweep. The latest confirmed 120T/day anchor still stands, so GATT rolls Doubao 125T→127T/day.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
@@ -703,7 +703,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     </div>
   </div>
   <div style="font-size:0.6rem;color:var(--subtle);margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
-    Sources: TechCrunch, 9to5Google, 1news.co.nz · Curated for GATT readers · Next digest: Mar 17
+    Sources: OpenAI, Reuters/WHBL, Anthropic, TechNode · Curated for GATT readers · Next digest: May 4
   </div>
 </div>
 
@@ -782,19 +782,19 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Period: Jan 1 – Apr 2, 2026 · Updated Apr 2, 2026 · GATT v0.75</div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <button onclick="navigator.clipboard.writeText('Q2 2026 weekly update (GATT — v0.77):\n• 254T tokens/day global run rate (Apr 20)\n• $62.3B/year Token GDP (annualized)\n• China: 58% volume, 9% GDP (Doubao 125T est. on 120T official baseline)\n• 421× per-capita gap (US vs India)\n• OpenAI still >15B API tokens/min; Codex at 3M WAU\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Weekly Summary</button>
+      <button onclick="navigator.clipboard.writeText('Q2 2026 weekly update (GATT — v0.78):\n• 259T tokens/day global run rate (Apr 27)\n• $63.9B/year Token GDP (annualized)\n• China: 58% volume, 9% GDP (Doubao 127T est. on 120T official baseline)\n• 434× per-capita gap (US vs India)\n• OpenAI GPT‑5.5 launched; no new throughput above >15B API tokens/min floor\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Weekly Summary</button>
       <a href="https://twitter.com/intent/tweet?text=OFFICIAL%3A+Doubao+120T+tokens%2Fday+%28Volcengine+Apr+1+2026%29+%E2%80%94+OpenAI+API+official+15B+tokens%2Fmin+%28Mar+31%29+%E2%80%94+global+AI+token+economy%3A+245T%2Fday.+US+share+35%25%2C+China+58%25.+%40gatt_index+https%3A%2F%2Fgf691271.github.io%2Fgatt%2F+%23TokenEconomy" target="_blank" rel="noopener" style="background:#1d9bf0;color:#fff;border-radius:6px;padding:6px 12px;font-size:0.68rem;font-weight:600;text-decoration:none;display:inline-block;">𝕏 Share Breaking News</a>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;">
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Daily Token Volume</div>
-      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">254T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
+      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">259T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
       <div style="font-size:0.65rem;color:#64748b;">tokens/day · global aggregate</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Token GDP (annualized)</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$60.4B</div>
+      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$63.9B</div>
       <div style="font-size:0.65rem;color:#64748b;">retail-priced inference value</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
@@ -819,7 +819,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     </div>
   </div>
   <div style="font-size:0.62rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;">
-    📌 How to cite: <em>"According to GATT's weekly Apr 20 2026 update, global AI inference reached 254 trillion tokens/day — equivalent to $62.3 billion/year in economic value."</em> · Source: <a href="https://gf691271.github.io/gatt/" style="color:#60a5fa;">gf691271.github.io/gatt</a> · CC BY 4.0
+    📌 How to cite: <em>"According to GATT's weekly Apr 27 2026 update, global AI inference reached 259 trillion tokens/day — equivalent to $63.9 billion/year in economic value."</em> · Source: <a href="https://gf691271.github.io/gatt/" style="color:#60a5fa;">gf691271.github.io/gatt</a> · CC BY 4.0
   </div>
 </div>
 

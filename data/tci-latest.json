@@ -1,36 +1,36 @@
 {
   "version": "1.0",
-  "gatt_version": "0.77",
-  "generated_at": "2026-04-20T16:08:00Z",
+  "gatt_version": "0.78",
+  "generated_at": "2026-04-27T16:01:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 254,
-    "as_of_date": "2026-04-20",
+    "total_daily_tokens_T": 259,
+    "as_of_date": "2026-04-27",
     "confidence": "medium",
-    "last_updated": "2026-04-20",
-    "note": "WEEKLY UPDATE: Past-7-day source sweep found no newer hard token disclosure than OpenAI's Apr 13 enterprise update, but did find fresh Anthropic launch / performance-strain news and new ByteDance AI-cost coverage consistent with continued demand. GATT therefore keeps OpenAI anchored to the Apr 13 official post and rolls Google, Anthropic, and Doubao forward one more week. Global total: 250T→254T/day."
+    "last_updated": "2026-04-27",
+    "note": "WEEKLY UPDATE: The Apr 20–27 source sweep found fresh product / infrastructure signals from OpenAI, Google, and Anthropic but no newer hard token throughput than the existing anchors. GATT therefore rolls the leaders one more week: OpenAI 42T→43T, Gemini 59T→60T, Claude 17T→18T, Doubao 125T→127T. Global total: 254T→259T/day."
   },
   "token_gdp": {
-    "daily_usd_M": 170.7,
-    "annual_usd_B": 62.3,
-    "as_of_date": "2026-04-20",
+    "daily_usd_M": 175.1,
+    "annual_usd_B": 63.9,
+    "as_of_date": "2026-04-27",
     "methodology": "vendor_volume_x_blended_price",
     "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M.",
     "breakdown": [
       {
         "region": "United States",
-        "daily_tokens_T": 93,
+        "daily_tokens_T": 96,
         "price_per_M": 1.5,
-        "daily_gdp_M": 139.5,
+        "daily_gdp_M": 144.0,
         "gdp_share_pct": 82
       },
       {
         "region": "China",
-        "daily_tokens_T": 147,
+        "daily_tokens_T": 149,
         "price_per_M": 0.1,
-        "daily_gdp_M": 14.7,
+        "daily_gdp_M": 14.9,
         "gdp_share_pct": 9
       },
       {
@@ -48,7 +48,7 @@
         "gdp_share_pct": 3
       }
     ],
-    "key_insight": "China still generates 58% of global tokens but only 9% of Token GDP. US generates 37% of tokens but 82% of Token GDP. OpenAI and Anthropic continue to add higher-priced enterprise/agentic volume; Doubao remains the volume king at 125T/day."
+    "key_insight": "China still generates 58% of global tokens but only 9% of Token GDP. US generates 37% of tokens but 82% of Token GDP. Doubao remains the volume king at 127T/day."
   },
   "per_capita": [
     {
@@ -149,17 +149,17 @@
     }
   ],
   "key_stats": {
-    "us_vs_india_per_capita_ratio": 421,
+    "us_vs_india_per_capita_ratio": 434,
     "china_token_volume_share_pct": 58,
     "china_token_gdp_share_pct": 9,
     "us_token_volume_share_pct": 37,
     "us_token_gdp_share_pct": 82,
     "pricing_gap_us_vs_cn": "15x",
-    "344x_headline": "A US user generates 421× more AI tokens per day than an Indian user",
+    "344x_headline": "A US user generates 434× more AI tokens per day than an Indian user",
     "great_divergence": "China: 58% of tokens, 9% of Token GDP. US: 37% of tokens, 82% of Token GDP.",
     "doubao_global_share_pct": 49,
-    "doubao_note": "Doubao accounts for roughly 49% of global token volume as of Apr 20, 2026 (125T / 254T).",
-    "openai_api_milestone": "OpenAI continued to report >15B API tokens/minute in its Apr 13, 2026 enterprise update; GATT carries that official floor into the Apr 20 weekly cut."
+    "doubao_note": "Doubao accounts for roughly 49% of global token volume as of Apr 27, 2026 (127T / 259T).",
+    "openai_api_milestone": "OpenAI did not disclose a higher API-throughput number in the Apr 23 GPT-5.5 launch, so GATT continues to carry forward the >15B API tokens/min floor while rolling total OpenAI demand to 43T/day."
   },
   "vendors": [
     {
@@ -167,15 +167,15 @@
       "rank": 1,
       "name": "Doubao (ByteDance)",
       "country": "CN",
-      "daily_tokens_T": 125,
+      "daily_tokens_T": 127,
       "confidence": "high",
       "tier": 1,
-      "source": "NO NEW HARD TOKEN DISCLOSURE IN THE PAST 7 DAYS. Fresh Apr 20 coverage says AI spending is pressuring ByteDance profitability, consistent with sustained model demand. GATT keeps the Apr 1 official 120T/day baseline and rolls forward another week.",
+      "source": "No newer hard Doubao token disclosure surfaced in the Apr 20–27 sweep. The latest official anchor remains Volcengine's 120T/day announcement (reported Apr 7 by TechNode), with usage doubled in three months and 140 companies already above 1T cumulative tokens. GATT rolls Doubao 125T→127T/day.",
       "source_url": "https://technode.com/2026/04/07/doubao-surpasses-120-trillion-daily-tokens-as-usage-doubles-in-three-months/",
       "source_date": "2026-04-07",
-      "extrapolated_to": "2026-04-20",
+      "extrapolated_to": "2026-04-27",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 13,
+      "data_freshness_days": 20,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -204,27 +204,33 @@
           "value_T": 125,
           "reason": "No new hard token figure in the Apr 13–20 news sweep. Fresh coverage points to continued AI-cost intensity, so GATT rolls the confirmed 120T/day baseline forward one more week at 8%/mo: 123T→125T.",
           "source": "https://technode.com/2026/04/07/doubao-surpasses-120-trillion-daily-tokens-as-usage-doubles-in-three-months/"
+        },
+        {
+          "date": "2026-04-27",
+          "value_T": 127,
+          "reason": "No fresh hard token count in the past 7 days. GATT keeps the official 120T/day baseline and rolls Doubao 125T→127T/day at 8% monthly growth.",
+          "source": "https://technode.com/2026/04/07/doubao-surpasses-120-trillion-daily-tokens-as-usage-doubles-in-three-months/"
         }
       ],
       "source_value_T": 120,
-      "note": "Latest hard usage anchor remains the Apr 1 / Apr 7 120T-day disclosure. No newer token count surfaced in the Apr 13–20 sweep. One more week of 8% monthly roll-forward lifts Doubao 123T→125T/day."
+      "note": "No fresh hard token count in the past 7 days. GATT keeps the official 120T/day baseline and rolls Doubao 125T→127T/day at 8% monthly growth."
     },
     {
       "id": "google-gemini",
       "rank": 2,
       "name": "Google Gemini (All Surfaces)",
       "country": "US",
-      "daily_tokens_T": 59,
+      "daily_tokens_T": 60,
       "confidence": "medium-high",
       "tier": 1,
-      "source": "NO NEW HARD DISCLOSURE THIS WEEK. Last confirmed signal remains 10B+ API tokens/min plus ~750M Gemini app users; GATT rolls the estimate forward one more week.",
-      "source_url": "https://www.ibtimes.com.au/alphabet-shares-climb-analysts-affirm-long-term-buy-ai-momentum-cloud-surge-1865104",
-      "source_date": "2026-04-01",
-      "extrapolated_to": "2026-04-20",
+      "source": "No new hard throughput disclosure surfaced in the past 7 days. Reuters' Apr 22 Google Cloud report showed AI agents are now the primary growth vector inside Vertex AI and highlighted new TPU scale for agent inference, but did not top the existing 10B+ API tokens/min anchor. GATT rolls Gemini 59T→60T/day.",
+      "source_url": "https://whbl.com/2026/04/22/google-puts-ai-agents-at-heart-of-its-enterprise-money-making-push/",
+      "source_date": "2026-04-22",
+      "extrapolated_to": "2026-04-27",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 19,
+      "data_freshness_days": 5,
       "is_extrapolated": true,
-      "note": "No fresh Google token-throughput disclosure surfaced in the Apr 13–20 sweep. GATT keeps the Apr 1 reconfirmation (10B+ API tokens/min) and rolls Gemini 58T→59T/day.",
+      "note": "Apr 22 enterprise / TPU news reinforces developer and inference momentum, but Google still has not published a newer hard token figure than 10B+ API tokens/min. GATT rolls Gemini 59T→60T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -253,26 +259,32 @@
           "value_T": 59.0,
           "reason": "No fresh hard source in the Apr 13–20 news sweep. Weekly roll-forward at 8%/mo from Apr 13 value: 58T→59T.",
           "source": "https://www.ibtimes.com.au/alphabet-shares-climb-analysts-affirm-long-term-buy-ai-momentum-cloud-surge-1865104"
+        },
+        {
+          "date": "2026-04-27",
+          "value_T": 60,
+          "reason": "Apr 22 enterprise / TPU news reinforces developer and inference momentum, but Google still has not published a newer hard token figure than 10B+ API tokens/min. GATT rolls Gemini 59T→60T/day.",
+          "source": "https://whbl.com/2026/04/22/google-puts-ai-agents-at-heart-of-its-enterprise-money-making-push/"
         }
       ],
-      "source_value_T": 58.0
+      "source_value_T": 59.0
     },
     {
       "id": "openai-chatgpt",
       "rank": 3,
       "name": "OpenAI (ChatGPT + API)",
       "country": "US",
-      "daily_tokens_T": 42,
+      "daily_tokens_T": 43,
       "confidence": "high",
       "tier": 1,
-      "source": "LATEST HARD SOURCE STILL WITHIN THE PAST-7-DAY WINDOW: OpenAI's Apr 13 enterprise update says APIs process more than 15B tokens/min, Codex reached 3M weekly active users, enterprise is >40% of revenue, and GPT-5.4 is driving record agentic engagement. GATT carries that official floor into this weekly cut and modestly rolls total demand forward.",
-      "source_url": "https://openai.com/index/next-phase-of-enterprise-ai/",
-      "source_date": "2026-04-13",
-      "extrapolated_to": "2026-04-20",
+      "source": "OpenAI's Apr 23 GPT-5.5 launch did not disclose a higher throughput figure than the >15B API tokens/min floor from Apr 13, but it did show stronger real-work adoption: GPT-5.5 matches GPT-5.4 latency while using fewer tokens per Codex task, and OpenAI says more than 85% of the company now uses Codex every week. GATT therefore keeps the official API floor and rolls total demand 42T→43T/day.",
+      "source_url": "https://openai.com/index/introducing-gpt-5-5/",
+      "source_date": "2026-04-23",
+      "extrapolated_to": "2026-04-27",
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 7,
+      "data_freshness_days": 4,
       "is_extrapolated": true,
-      "note": "API hard data remains >15B tokens/min = 21.6T/day API-only. The Apr 13 enterprise post is still the freshest hard disclosure in this weekly window. GATT rolls overlap-adjusted total 41T→42T/day into the Apr 20 cut.",
+      "note": "Freshest source is the Apr 23 GPT-5.5 launch. No new hard throughput topped the Apr 13 >15B API tokens/min floor, so GATT rolls overlap-adjusted total demand 42T→43T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -306,26 +318,32 @@
           "value_T": 42.0,
           "reason": "Apr 13 official enterprise update remained the freshest hard source during the Apr 13–20 sweep. Weekly roll-forward at 15%/mo from 41T→42T preserves the >15B tokens/min API floor while carrying forward higher Codex / agentic engagement.",
           "source": "https://openai.com/index/next-phase-of-enterprise-ai/"
+        },
+        {
+          "date": "2026-04-27",
+          "value_T": 43,
+          "reason": "Freshest source is the Apr 23 GPT-5.5 launch. No new hard throughput topped the Apr 13 >15B API tokens/min floor, so GATT rolls overlap-adjusted total demand 42T→43T/day.",
+          "source": "https://openai.com/index/introducing-gpt-5-5/"
         }
       ],
-      "source_value_T": 41.0
+      "source_value_T": 42.0
     },
     {
       "id": "anthropic-claude",
       "rank": 4,
       "name": "Claude (Anthropic)",
       "country": "US",
-      "daily_tokens_T": 17,
+      "daily_tokens_T": 18,
       "confidence": "medium-high",
       "tier": 1,
-      "source": "NO NEW HARD TOKEN COUNT THIS WEEK. Fresh Apr 16–17 Anthropic product launch and user-backlash coverage still point to severe demand pressure and quota burn, so GATT rolls Claude one more week.",
-      "source_url": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
-      "source_date": "2026-04-04",
-      "extrapolated_to": "2026-04-20",
+      "source": "Anthropic's Apr 20 Amazon expansion is the clearest demand signal this week: >100,000 Claude customers on Bedrock, run-rate revenue now above $30B, over 1M Trainium2 chips already in use, and up to 5GW of new compute secured. No fresh hard token count was disclosed, so GATT rolls Claude 17T→18T/day.",
+      "source_url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+      "source_date": "2026-04-20",
+      "extrapolated_to": "2026-04-27",
       "growth_rate_monthly": 0.18,
-      "data_freshness_days": 16,
+      "data_freshness_days": 7,
       "is_extrapolated": true,
-      "note": "The Apr 13–20 sweep found launch/performance-strain news but no fresh token-throughput disclosure. GATT therefore continues the demand-pressure roll-forward: 16T→17T/day.",
+      "note": "Apr 20 Amazon compute deal materially strengthens the demand case but still does not provide a hard token-throughput number. GATT rolls Claude 17T→18T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -354,9 +372,15 @@
           "value_T": 17.0,
           "reason": "No new hard token count in the Apr 13–20 sweep. Continued launch buzz, quota burn complaints, and compute-strain signals justify one more weekly roll-forward at 18%/mo: 16T→17T.",
           "source": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/"
+        },
+        {
+          "date": "2026-04-27",
+          "value_T": 18,
+          "reason": "Apr 20 Amazon compute deal materially strengthens the demand case but still does not provide a hard token-throughput number. GATT rolls Claude 17T→18T/day.",
+          "source": "https://www.anthropic.com/news/anthropic-amazon-compute"
         }
       ],
-      "source_value_T": 16.0
+      "source_value_T": 17.0
     },
     {
       "id": "deepseek",
@@ -806,18 +830,18 @@
       "country": "China",
       "code": "CN",
       "share_pct": 58,
-      "daily_tokens_T": 147,
+      "daily_tokens_T": 149,
       "confidence": "high",
-      "per_capita_K": 105.0
+      "per_capita_K": 106.4
     },
     {
       "rank": 2,
       "country": "United States",
       "code": "US",
       "share_pct": 37,
-      "daily_tokens_T": 93,
+      "daily_tokens_T": 96,
       "confidence": "medium-high",
-      "per_capita_K": 277.6
+      "per_capita_K": 286.6
     },
     {
       "rank": 3,
@@ -832,10 +856,10 @@
       "rank": 4,
       "country": "France",
       "code": "FR",
-      "share_pct": 0.9,
-      "daily_tokens_T": 2.1,
+      "share_pct": 0.24,
+      "daily_tokens_T": 0.68,
       "confidence": "low",
-      "per_capita_K": 30.9
+      "per_capita_K": 10.01
     },
     {
       "rank": 5,
@@ -909,9 +933,9 @@
       "confidence": "low"
     }
   ],
-  "global_total_T": 254,
+  "global_total_T": 259,
   "year_end_projection_T": "950-1400",
-  "last_updated": "2026-04-20",
+  "last_updated": "2026-04-27",
   "correction_log": [
     {
       "date": "2026-04-13",
@@ -968,6 +992,13 @@
       "old": "183T/day global, 91T/day China",
       "new": "234T/day global (+28%), 142T/day China (+56%)",
       "reason": "Cascade from Doubao official 120T disclosure. China now 61% of global volume. Doubao alone = 51% of global total."
+    },
+    {
+      "date": "2026-04-27",
+      "vendor": "Weekly roll-forward (top 4)",
+      "old": "OpenAI 42T, Gemini 59T, Claude 17T, Doubao 125T, Global 254T/day",
+      "new": "OpenAI 43T, Gemini 60T, Claude 18T, Doubao 127T, Global 259T/day",
+      "reason": "Apr 20–27 source sweep found fresh OpenAI GPT-5.5, Google Cloud agent/TPU, and Anthropic compute-expansion signals, but no newer hard throughput disclosure than the existing anchors. GATT therefore rolled the top four vendors forward another week."
     }
   ]
 }
