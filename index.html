@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://gf691271.github.io/gatt/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="GATT Token Economy Index: China 57% volume, US 83% Token GDP, 264T daily tokens — $65.6B annual Token GDP. US vendors charge 15× more per token than Chinese peers.">
+<meta property="og:image:alt" content="GATT Token Economy Index: China 50% volume, US 87% Token GDP, 305T daily tokens — $90.8B annual Token GDP. IDC May 7 confirms Volcengine #1 at 49.5%. US vendors charge 15× more per token.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@goghxiang">
@@ -637,7 +637,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
       <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">中</button>
     </div>
-    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-05-04</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.79</span></div>
+    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-05-09</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.80</span></div>
     <div>
       <span id="stat-vendors">29</span> <span class="i18n" data-en="Vendors" data-zh="厂商">Vendors</span> &nbsp;·&nbsp;
       <span id="stat-countries">18</span> <span class="i18n" data-en="Countries" data-zh="国家">Countries</span> &nbsp;·&nbsp;
@@ -650,96 +650,110 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
 <div style="background:#fef3c7;border:1px solid #fde68a;border-radius:var(--radius);padding:12px 16px;margin-bottom:24px;font-family:-apple-system,sans-serif;font-size:0.8rem;display:flex;align-items:flex-start;gap:10px;">
   <span style="font-size:1.1rem;flex-shrink:0;">🔔</span>
   <div>
-    <strong style="color:#92400e;">🔄 WEEKLY UPDATE (May 4 · v0.79):</strong>
-    <span style="color:#78350f;"> Past-7-day source sweep found no newer hard token-throughput disclosures from OpenAI, Google, Anthropic, or ByteDance, so GATT rolled the leaders one more week · OpenAI <strong>43T→44T</strong> · Gemini <strong>60T→61T</strong> · Claude <strong>18T→19T</strong> · Doubao <strong>127T→129T</strong> · Global: <strong>259T→264T</strong>/day · Token GDP: <strong>$65.6B/yr</strong></span>
+    <strong style="color:#92400e;">🚨 MAJOR UPDATE (May 9 · v0.80):</strong>
+    <span style="color:#78350f;"> Pichai disclosed <strong>Gemini 16B tokens/min</strong> via API at Cloud Next Q1 (+60% QoQ) · Anthropic <strong>Opus 4.7</strong> + MAU <strong>+44%</strong> · Microsoft Q3 FY26 <strong>$37B AI ARR</strong> · Kimi K2.6 + ARR doubled · DeepSeek V4 Pro · <strong>IDC May 7 validates Volcengine 49.5%</strong> · Global: 264T→<strong>305T</strong>/day · Token GDP: <strong>$90.8B/yr</strong> · CN/US volume <strong>50/50</strong> (gap closed)</span>
     <a href="#changelog" style="color:#92400e;font-weight:600;margin-left:8px;text-decoration:underline;" onclick="document.querySelector('.section-label + .method-box').scrollIntoView({behavior:'smooth'});return false;">See full log →</a>
   </div>
 </div>
 
-<!-- ════════════════════ WEEKLY DIGEST — v0.69 ════════════════════ -->
+<!-- ════════════════════ WEEKLY DIGEST — v0.80 ════════════════════ -->
 <div id="section-weekly-digest" style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px;font-family:-apple-system,sans-serif;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
     <div>
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtle);margin-bottom:2px;">Token Economy Weekly Digest</div>
-      <div style="font-size:1rem;font-weight:700;color:var(--text);">Week of Apr 27–May 4, 2026</div>
+      <div style="font-size:1rem;font-weight:700;color:var(--text);">v0.80 Catch-Up · 7 Vendor Anchor Upgrades + IDC Validation · May 9, 2026</div>
     </div>
     <span style="font-size:1.2rem;">📰</span>
   </div>
   <div style="display:flex;flex-direction:column;gap:10px;">
     <div style="display:flex;gap:10px;align-items:flex-start;">
-      <span style="font-size:0.85rem;flex-shrink:0;">🚀</span>
+      <span style="font-size:0.85rem;flex-shrink:0;">🌟</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">OpenAI adds new distribution updates, but still no throughput number above the &gt;15B API tokens/min floor</div>
-        <div style="font-size:0.65rem;color:var(--muted);">OpenAI published new AWS and Microsoft partnership posts on Apr 27–28, but neither disclosed a harder throughput number than the existing >15B API tokens/min floor. With product and distribution momentum still building, GATT rolls OpenAI 43T→44T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini upgraded 61T → 73T — Pichai discloses 16B tokens/min via API at Cloud Next 2026 Q1 (+60% QoQ)</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Single biggest US-side disclosure since GATT launch. API throughput jumped from 10B (Q4 2025) to 16B tokens/min in one quarter = 23T/day API only. All Surfaces estimate revised to 73T using 3.2× multiplier (down from 4× since API outpaced consumer surface attach). 330 organizations now process &gt;1T tokens each annually on Google Cloud.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
-      <span style="font-size:0.85rem;flex-shrink:0;">📈</span>
+      <span style="font-size:0.85rem;flex-shrink:0;">🧠</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini enterprise push deepens, but Google still withholds a new hard token number</div>
-        <div style="font-size:0.65rem;color:var(--muted);">No fresh hard Google token disclosure surfaced in the past 7 days. Cloud Next's Gemini Enterprise Agent Platform and 8th-gen TPU push remain the best scale signal, so GATT rolls Gemini 60T→61T/day.</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:flex-start;">
-      <span style="font-size:0.85rem;flex-shrink:0;">⚖️</span>
-      <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Anthropic locks in massive new compute as Claude demand outruns supply</div>
-        <div style="font-size:0.65rem;color:var(--muted);">No fresh Anthropic usage disclosure surfaced in the past 7 days. The latest strong anchor remains Anthropic's Apr 6 compute expansion and $30B+ run-rate revenue, so GATT rolls Claude 18T→19T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Anthropic upgraded 19T → 22T — Opus 4.7 (Apr 16) + Claude MAU +44% Mar→Apr</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Three previously-uncaptured signals: (1) Opus 4.7 launched April 16 with new tokenizer producing up to 35% more tokens for the same input; (2) Claude MAU surged 44% Mar→Apr to 23M — biggest growth among top AI apps in April (BigGo/Similarweb), beating Gemini's +19%; (3) Continued compute strain. Confidence upgraded medium-high → high.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">💼</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Doubao still has no fresher hard count than the 120T/day official anchor</div>
-        <div style="font-size:0.65rem;color:var(--muted);">No new hard Doubao token count surfaced in the Apr 27–May 4 sweep. A May 4 pricing report signals monetization progress, but the latest confirmed 120T/day anchor still stands, so GATT rolls Doubao 127T→129T/day.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Microsoft upgraded 8.1T → 10T — Q3 FY26 (Apr 29) AI business ARR $37B (+123% YoY)</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Microsoft 365 Copilot crossed <strong>20M paid seats</strong> (vs 15M Jan, +33% in Q3 alone). Azure +40%. Microsoft–OpenAI partnership restructured Apr 27 to non-exclusive license through 2032 (no more revenue share to OpenAI). Capex $190B for FY26. Confidence upgraded low → medium.</div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
-      <span style="font-size:0.85rem;flex-shrink:0;">🏗️</span>
+      <span style="font-size:0.85rem;flex-shrink:0;">🇨🇳</span>
       <div>
-        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">280MW AI data center approved in New Zealand — inference infrastructure goes global</div>
-        <div style="font-size:0.65rem;color:var(--muted);">Datagrid's 78,000 sqm facility = region's 2nd largest electricity consumer. AI compute demand now reshaping energy policy worldwide.</div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Kimi 1.54T → 2.5T (+62%) — fastest-growing vendor; K2.6 (Apr 20) + ARR doubled + $2B funding @ $20B</div>
+        <div style="font-size:0.65rem;color:var(--muted);">K2.6 (1T params, 262K context) ties GPT-5.5 on SWE-Bench Pro at 80% lower cost. ARR doubled <strong>$100M → $200M Mar → Apr</strong>. $2B funding round closing May 6 at $20B post-money valuation. Weekly OpenRouter volume 1.85T tokens (#2 globally on OR). Growth rate raised 25%/mo → 30%/mo. DeepSeek V4 Pro/Flash also launched April 24 with 1M context.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:flex-start;">
+      <span style="font-size:0.85rem;flex-shrink:0;">📊</span>
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">IDC May 7 report independently validates Volcengine #1 in China at 49.5% MaaS market share</div>
+        <div style="font-size:0.65rem;color:var(--muted);">First external validation of GATT methodology. IDC's 2025 China external MaaS total: <strong>1,944T tokens (16× YoY)</strong>; 2026 forecast <strong>40,000T (+20×)</strong>. Volcengine 46.4% (2024) → 49.2% (H1 2025) → <strong>49.5%</strong> (full 2025). Critical scope clarification added: GATT measures all-sources Doubao throughput (external MaaS + internal first-party Douyin/Doubao App/Jimeng); IDC measures external enterprise MaaS only. Math: ≥95% of Volcengine's 120T/day is internal. See methodology_triangulation in <a href="data/tci-latest.json" style="color:var(--accent);">tci-latest.json</a>.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:flex-start;">
+      <span style="font-size:0.85rem;flex-shrink:0;">📉</span>
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Grok DOWNGRADED 0.65T → 0.55T — first negative-growth vendor in GATT history</div>
+        <div style="font-size:0.65rem;color:var(--muted);">MAU dropped 12.5% Mar→Apr to 12.2M (Similarweb); tumbled from 2nd to 5th place in mobile rankings; 80+ staff incl. several co-founders left xAI per Fast Company. Growth rate flipped +15%/mo → -5%/mo.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:flex-start;">
+      <span style="font-size:0.85rem;flex-shrink:0;">🌏</span>
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Global 264T → 305T (+16%); China-US volume gap closes to 50/50</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Cascade from Gemini +12T, Anthropic +3T, Microsoft +1.9T, Kimi +1T, DeepSeek +1T, Qwen +0.5T, Hunyuan +0.3T. Token GDP $65.6B → <strong>$90.8B/yr (+38%)</strong>. China volume share 57% → 50%; US 38% → 50%. Per-capita gap widened 448× → <strong>589×</strong>. The volume gap closing reflects new US hard data, not slowed Chinese growth — pricing gap unchanged at 15× (US still owns 87% Token GDP).</div>
       </div>
     </div>
   </div>
   <div style="font-size:0.6rem;color:var(--subtle);margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
-    Sources: OpenAI News, Google Cloud Next, Anthropic, TechNode · Curated for GATT readers · Next digest: May 11
+    Sources: blog.google · anthropic.com · news.microsoft.com · DeepSeek API Docs · IDC China Report · BigGo Finance · TechCrunch · Caixin · Curated for GATT readers · Next digest: May 16
   </div>
 </div>
 
-<!-- ════════════════════ VENDOR WATCH — v0.75 ════════════════════ -->
+<!-- ════════════════════ VENDOR WATCH — v0.80 ════════════════════ -->
 <div id="section-vendor-watch" style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px;font-family:-apple-system,sans-serif;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
     <div>
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtle);margin-bottom:2px;">GATT Vendor Watch</div>
-      <div style="font-size:1rem;font-weight:700;color:var(--text);">Upcoming Data Points · Q2 2026</div>
+      <div style="font-size:1rem;font-weight:700;color:var(--text);">Upcoming Data Points · Mid-Q2 2026</div>
     </div>
     <span style="font-size:1.2rem;">🔭</span>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;">
     <div style="background:var(--bg);border-radius:6px;padding:12px;">
-      <div style="font-size:0.72rem;font-weight:700;color:var(--us);">🇺🇸 Alphabet Q1 Earnings — Apr 23</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">Expect Gemini MAU update (currently 750M), possible tokens/min disclosure. Could validate or revise GATT's 54T estimate. <strong>High impact.</strong></div>
+      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 Baidu Q1 2026 Earnings — May (TBD)</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">Ernie 5.0 launched Jan 22; 202M MAU last reported (Feb). Source date is now 104 days old. IDC May 7 places Baidu Qianfan #3 in China MaaS at 17%. <span style="color:#dc2626;">⚠️ High refresh priority.</span></div>
     </div>
     <div style="background:var(--bg);border-radius:6px;padding:12px;">
-      <div style="font-size:0.72rem;font-weight:700;color:var(--us);">🇺🇸 OpenAI — Q2 revenue/user update expected</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">With GPT-5.4 launched Mar 9, expect a usage surge. Target 1B WAU in 2026. May disclose tokens/day if trend continues. <strong>High impact.</strong></div>
+      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 Alibaba Q1 2026 Earnings — May (TBD)</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">First earnings post Alibaba Token Hub reorg (Apr 2026). IDC May 7: Bailian #2 in China at 27%. Eddie Wu's consolidated AI division could disclose Qwen total throughput for the first time. <strong>High impact.</strong></div>
     </div>
     <div style="background:var(--bg);border-radius:6px;padding:12px;">
-      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 ByteDance — Doubao Phone Q2 launch</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">2nd-gen Doubao smartphone expected Q2 (ZTE/Nubia partnership). Could drive new token vectors via on-device AI. Doubao 2.0 "agent era" adoption data pending.</div>
+      <div style="font-size:0.72rem;font-weight:700;color:var(--us);">🇺🇸 OpenAI — GPT-5.5 ramp metrics</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">GPT-5.5 (Apr 23) and 5.5 Instant (May 5) just launched. Two more weeks of usage data would let GATT confirm whether ChatGPT-side throughput is materially up vs. the held 15B tokens/min API anchor.</div>
     </div>
     <div style="background:var(--bg);border-radius:6px;padding:12px;">
-      <div style="font-size:0.72rem;font-weight:700;color:var(--us);">🇺🇸 Anthropic — Pentagon resolution TBD</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">If supply chain risk designation is overturned, military AI contracts could boost enterprise token volume. $5B Microsoft investment provides floor.</div>
+      <div style="font-size:0.72rem;font-weight:700;color:var(--us);">🇺🇸 Anthropic — first post-Opus-4.7 ARR signal</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">$25B+ ARR (SemiAnalysis). With MAU +44% Mar→Apr to 23M and Opus 4.7's tokenizer change, the next ARR disclosure could justify pushing Claude past 25T/day.</div>
     </div>
     <div style="background:var(--bg);border-radius:6px;padding:12px;">
-      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 Baidu / Alibaba — Q1 2026 earnings (May)</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">Current ERNIE (1.7T) and Qwen (5.3T) estimates are 75 days stale. Earnings could significantly revise these. <span style="color:#dc2626;">⚠️ Most stale data in GATT.</span></div>
+      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 Volcengine FORCE Conference — Doubao 1.8 era</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">Volcengine has signaled Doubao 1.8 + Seedance 1.5 Pro era. With Doubao at 129T/day (extrapolated) and IDC May 7 confirming 49.5% MaaS share, the next official Volcengine print is the most-watched data point in GATT.</div>
     </div>
     <div style="background:var(--bg);border-radius:6px;padding:12px;">
-      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 DeepSeek — no disclosure expected</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">Private company, no earnings obligation. GATT's 8T estimate remains proxy-based. An official disclosure would be the single largest potential revision in the dataset.</div>
+      <div style="font-size:0.72rem;font-weight:700;color:var(--cn);">🇨🇳 Moonshot AI — post-funding token disclosure</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">$2B funding closing May 6 at $20B valuation. With ARR doubling in one month and K2.6 ranked #2 on OpenRouter (1.85T weekly), Moonshot is the only Chinese vendor that might disclose direct token throughput soon.</div>
     </div>
   </div>
   <div style="font-size:0.6rem;color:var(--subtle);margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
@@ -773,49 +787,49 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   </div>
 </div>
 
-<!-- ════════════════════ Q1 2026 QUARTERLY SNAPSHOT — v0.62 ════════════════════ -->
+<!-- ════════════════════ Q2 2026 QUARTERLY SNAPSHOT — v0.80 ════════════════════ -->
 <div id="section-q1-report" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1.5px solid #334155;border-radius:var(--radius);padding:20px 24px;margin-bottom:28px;font-family:-apple-system,sans-serif;color:#f1f5f9;">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
     <div>
       <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#94a3b8;margin-bottom:4px;">GATT Quarterly Report</div>
-      <div style="font-size:1.15rem;font-weight:700;color:#fff;">Q1 2026 Global Token Economy Snapshot</div>
-      <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Period: Jan 1 – Apr 2, 2026 · Updated Apr 2, 2026 · GATT v0.75</div>
+      <div style="font-size:1.15rem;font-weight:700;color:#fff;">Q2 2026 Mid-Quarter Token Economy Snapshot</div>
+      <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Period: Apr 1 – May 9, 2026 · Updated May 9, 2026 · GATT v0.80</div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <button onclick="navigator.clipboard.writeText('Q2 2026 weekly update (GATT — v0.79):\n• 264T tokens/day global run rate (May 4)\n• $65.6B/year Token GDP (annualized)\n• China: 57% volume, 8% GDP (Doubao 129T est. on 120T official baseline)\n• 448× per-capita gap (US vs India)\n• No new hard throughput disclosure from OpenAI / Google / Anthropic / ByteDance in the past 7 days\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Weekly Summary</button>
-      <a href="https://twitter.com/intent/tweet?text=OFFICIAL%3A+Doubao+120T+tokens%2Fday+%28Volcengine+Apr+1+2026%29+%E2%80%94+OpenAI+API+official+15B+tokens%2Fmin+%28Mar+31%29+%E2%80%94+global+AI+token+economy%3A+245T%2Fday.+US+share+35%25%2C+China+58%25.+%40gatt_index+https%3A%2F%2Fgf691271.github.io%2Fgatt%2F+%23TokenEconomy" target="_blank" rel="noopener" style="background:#1d9bf0;color:#fff;border-radius:6px;padding:6px 12px;font-size:0.68rem;font-weight:600;text-decoration:none;display:inline-block;">𝕏 Share Breaking News</a>
+      <button onclick="navigator.clipboard.writeText('Q2 2026 Mid-Quarter Token Economy Snapshot (GATT v0.80):\n• 305T tokens/day global run rate (May 9) — +16% in 5 days, driven by 7 vendor anchor upgrades\n• $90.8B/year Token GDP (annualized, +38% in 5 days)\n• China 50% / US 50% — volume gap closed (was 57/38 on May 4) as US hard data accumulated\n• 589× US-vs-India per-capita gap (was 448×)\n• Pichai disclosed Gemini 16B tokens/min via API (Cloud Next Q1, +60% QoQ)\n• Microsoft AI business ARR $37B (Q3 FY26, +123% YoY)\n• Anthropic Opus 4.7 + MAU +44% Mar→Apr to 23M\n• IDC May 7: independently validates Volcengine 49.5% #1 in China\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Q2 Snapshot</button>
+      <a href="https://twitter.com/intent/tweet?text=GATT+Q2+2026+mid-quarter+snapshot%3A+global+AI+token+economy+at+%7E305T%2Fday%2C+%2490.8B%2Fyr+Token+GDP.+China+50%25+vs+US+50%25+%E2%80%94+volume+gap+closed.+Pichai+disclosed+Gemini+at+16B+tokens%2Fmin+API+%28%2B60%25+QoQ%29.+IDC+May+7+independently+validates+GATT+%23TokenEconomy+https%3A%2F%2Fgf691271.github.io%2Fgatt%2F" target="_blank" rel="noopener" style="background:#1d9bf0;color:#fff;border-radius:6px;padding:6px 12px;font-size:0.68rem;font-weight:600;text-decoration:none;display:inline-block;">𝕏 Share Q2 Snapshot</a>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;">
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Daily Token Volume</div>
-      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">264T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
+      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">305T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
       <div style="font-size:0.65rem;color:#64748b;">tokens/day · global aggregate</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Token GDP (annualized)</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$63.9B</div>
+      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$90.8B</div>
       <div style="font-size:0.65rem;color:#64748b;">retail-priced inference value</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Growth Rate</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#fb923c;">~20%</div>
-      <div style="font-size:0.65rem;color:#64748b;">per month · doubling every 4mo</div>
+      <div style="font-size:1.5rem;font-weight:700;color:#fb923c;">~22%</div>
+      <div style="font-size:0.65rem;color:#64748b;">per month · doubling every ~3.5mo</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Year-End Forecast</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#c084fc;">~1000T</div>
-      <div style="font-size:0.65rem;color:#64748b;">tokens/day by Dec 2026 (~6×)</div>
+      <div style="font-size:1.5rem;font-weight:700;color:#c084fc;">1.1–1.5P</div>
+      <div style="font-size:0.65rem;color:#64748b;">tokens/day by Dec 2026 (~3.6–5×)</div>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
     <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:6px;padding:12px;">
-      <div style="font-size:0.65rem;font-weight:700;color:#fca5a5;margin-bottom:6px;">⚡ Q1 Headline Finding</div>
-      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">China generates <strong style="color:#f87171;">51%</strong> of global AI tokens but captures only <strong style="color:#fbbf24;">7%</strong> of Token GDP. The 15× pricing gap between US and Chinese vendors is the defining economic asymmetry of the 2026 AI era.</div>
+      <div style="font-size:0.65rem;font-weight:700;color:#fca5a5;margin-bottom:6px;">⚡ Q2 Headline Finding</div>
+      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">China <strong style="color:#f87171;">50%</strong> volume vs <strong style="color:#fbbf24;">6%</strong> Token GDP. US <strong style="color:#60a5fa;">50%</strong> volume vs <strong style="color:#a3e635;">87%</strong> GDP. Volume gap closed in five weeks (was 58/35 on Apr 6) as US disclosures (Gemini 16B/min, GPT-5.5, MS $37B AI ARR, Opus 4.7) accumulated. The 15× pricing gap remains.</div>
     </div>
     <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:6px;padding:12px;">
-      <div style="font-size:0.65rem;font-weight:700;color:#93c5fd;margin-bottom:6px;">📊 Q1 AI Inequality Stat</div>
-      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">A US user generates <strong style="color:#60a5fa;">407×</strong> more AI tokens per day than an Indian user (269K vs ~660 tokens/person/day). The AI divide is still widening.</div>
+      <div style="font-size:0.65rem;font-weight:700;color:#93c5fd;margin-bottom:6px;">📊 IDC Validation</div>
+      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">IDC May 7 China MaaS report independently confirms Volcengine #1 at <strong style="color:#60a5fa;">49.5%</strong>. Critical scope clarification: GATT all-sources Doubao 129T includes internal first-party (Douyin/Doubao App/Jimeng) — IDC's 49.5% applies to external MaaS only. <strong>~95%</strong> of Volcengine throughput is internal.</div>
     </div>
   </div>
   <div style="font-size:0.62rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;">
@@ -3660,10 +3674,10 @@ function setupCounterAnimations() {
   // Headline numbers
   const animations = [
     { selector: '#hl-global-tokens', target: liveGlobal, suffix: 'T', duration: 1200 },
-    { selector: '#hl-growth', target: 12, suffix: '%', duration: 800 },
+    { selector: '#hl-growth', target: 22, suffix: '%', duration: 800 },
     { selector: '#hl-cn-share', target: cnShare, suffix: '%', duration: 900 },
     { selector: '#hl-us-share', target: usShare, suffix: '%', duration: 900 },
-    { selector: '#hl-year-proj', target: 1000, suffix: 'T', duration: 1500 },
+    { selector: '#hl-year-proj', target: 1300, suffix: 'T', duration: 1500 },
     { selector: '#hl-dark-count', target: 11, suffix: '', duration: 600 },
   ];
   const observer = new IntersectionObserver((entries) => {
@@ -3740,7 +3754,7 @@ function handleCorrect() {
 
 // ── COPY SHARE TEXT ──
 function copyShareText() {
-  const text = `China runs 55% of global AI tokens, US runs 30%. But in compute value, it flips. The Token Economy is not what you think.\n\nGATT Token Economy Index → https://gf691271.github.io/gatt/ #TokenEconomy #AIdata`;
+  const text = `China and US are now tied at 50/50 on AI token volume — 305T/day globally. But US still captures 87% of Token GDP. The 15× pricing gap is the persistent asymmetry. IDC May 7 independently validates Volcengine #1 in China at 49.5%.\n\nGATT Token Economy Index → https://gf691271.github.io/gatt/ #TokenEconomy #AIdata`;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('btn-copy-share');
     btn.textContent = '✓ Copied!';

@@ -1,5 +1,68 @@
 # GATT Data Changelog
 
+## 2026-05-09 (v0.80 — IDC Validation + 7 Vendor Anchor Upgrades)
+
+First external validation of GATT methodology + 7 previously-uncaptured vendor anchors layered on top of v0.79's weekly extrapolation. Most ambitious single update since v0.75's live-extrapolation engine.
+
+### Headline metrics (vs v0.79 baseline)
+- **Global**: 264T → **305T/day** (+16% in 5 days, driven by hard data not extrapolation)
+- **Token GDP**: $65.6B → **$90.8B/yr** (+38%)
+- **China share**: 57% → **50%** (volume gap closed)
+- **US share**: 38% → **50%**
+- **US-India per-capita gap**: 448× → **589×**
+- **Doubao global share**: 49% → **42%** (still #1, but US disclosures rebalance the index)
+
+### Vendor changes (7 anchor upgrades)
+- **Google Gemini**: 61T → **73T** — Pichai disclosed 16B tokens/min via direct API at Cloud Next 2026 / Q1 2026 earnings, up from 10B in Q4 2025 (+60% in one quarter). Single biggest US-side disclosure since GATT launch. All Surfaces multiplier reduced 4× → 3.2× since API outpaced consumer surface attach. Source: blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/
+- **Anthropic Claude**: 19T → **22T** — Three previously-uncaptured signals: (1) Opus 4.7 launched April 16 with new tokenizer producing up to 35% more tokens for same input; (2) Claude MAU surged 44% Mar→Apr to 23M, biggest growth among top AI apps in April (BigGo/Similarweb); (3) Continued compute strain. Confidence upgraded medium-high → high.
+- **Microsoft Azure + Copilot**: 8.1T → **10.0T** — Q3 FY2026 (Apr 29): AI business ARR $37B (+123% YoY); Microsoft 365 Copilot 20M paid seats (vs 15M Jan); Azure +40%. Microsoft–OpenAI partnership restructured Apr 27 to non-exclusive license through 2032. Confidence upgraded low → medium.
+- **OpenAI ChatGPT + API**: 44T → **45T** — GPT-5.5 launched April 23, GPT-5.5 Instant launched May 5 (now ChatGPT default). Some developers reportedly hitting 40M tokens/min during launch. $25B ARR confirmed; targeting $29.4B for 2026.
+- **DeepSeek**: 8.2T → **9.2T** — DeepSeek V4 Pro / V4 Flash launched April 24 (1M token context, 1.6T params MoE / 49B active). Now #3 in enterprise developer SDK usage.
+- **Kimi (Moonshot)**: 1.54T → **2.5T** (+62%) — FASTEST-GROWING vendor. K2.6 launched April 20 (1T params, 262K context, ties GPT-5.5 on SWE-Bench Pro at 80% lower cost). ARR doubled $100M → $200M Mar → Apr. $2B funding round closing May 6 at $20B valuation. OpenRouter weekly volume 1.85T tokens (#2 globally on OR). Growth rate raised 25% → 30%/mo.
+- **Alibaba Qwen**: 5.7T → **6.2T** — Qwen 3.6-Plus released April 2 with enhanced coding (Caixin). "Alibaba Token Hub" reorg consolidates Qwen + Tongyi Lab + Wukong under CEO Eddie Wu.
+- **Tencent Hunyuan**: 2.39T → **2.7T** — New flagship Hunyuan launched April 2026 (Shunyu Yao led, agent-focused). Yuanbao integrated DeepSeek for image generation May 7.
+- **Grok (xAI)**: 0.65T → **0.55T** — **FIRST NEGATIVE-GROWTH VENDOR IN GATT HISTORY**. MAU dropped 12.5% Mar→Apr to 12.2M; tumbled from 2nd to 5th place in mobile rankings; 80+ staff incl. several co-founders left xAI. Growth rate flipped +15%/mo → -5%/mo.
+- All other vendors: routine 33-day extrapolation at their respective monthly growth rates.
+
+### IDC Validation (NEW)
+The IDC China Public Cloud Large Model Services report (May 7, 2026) is the first external commercial research firm to publish token-volume data that can be cross-checked against GATT. Key findings:
+- 2024 China external MaaS: 114T tokens
+- 2025: 1,944T tokens (+16× YoY)
+- 2026 forecast: 40,000T tokens (+20× YoY)
+- Volcengine market share: 46.4% (2024) → 49.2% (H1 2025) → **49.5% (full 2025)**
+- Alibaba Bailian #2 (27%, H1 2025); Baidu Qianfan #3 (17%, H1 2025)
+
+**What this validates:**
+- Volcengine #1 ranking in China — independently confirms GATT's Doubao #1 globally
+- Growth: IDC's 16× YoY 2025 + projected 20× for 2026 ≈ ~27%/mo, supports GATT's 22%/mo trajectory assumption
+
+**Critical scope distinction added to data/tci-latest.json:**
+- IDC measures only external enterprise public-cloud MaaS calls (excludes internal first-party Douyin AI Search, Doubao App, Jimeng, Volcengine internal pipelines)
+- GATT measures all-sources inference (external + internal first-party + consumer apps + on-device)
+- Math: IDC 2025 average 5.32T/day total external MaaS × Volcengine 49.5% = 2.64T/day external Volcengine in 2025. The 120T/day Volcengine Apr 1 official disclosure cannot fit IDC's external-only scope under any plausible growth path. Therefore GATT's 129T/day Doubao number is inherently all-sources, with internal usage estimated at ≥95% of total.
+
+### New file structure
+- `data/tci-latest.json`: added top-level `methodology_triangulation` block with IDC + Gartner + a16z cross-source comparison, GATT unique value props, and per-source validates_gatt / differs_from_gatt arrays
+- `data/tci-latest.json`: added `scope_note` field to Doubao vendor entry (all-sources vs IDC external-only clarification)
+- `about.html`: new section "GATT vs IDC, Gartner, a16z — Methodology Triangulation" addressing journalist comparison questions
+- `index.html`: new IDC validation card in Weekly Digest, updated Vendor Watch with IDC-confirmed CN MaaS shares
+
+### Why this matters
+- **Q2 (data credibility)**: First external commercial-research validation of GATT's #1 ranking. Adds material trust signal for journalists.
+- **Q9 (publication authority)**: GATT vs IDC/Gartner triangulation positions GATT as the only global, all-sources, daily-updated, free token-volume index.
+- **Q10 (citation value)**: Now journalists comparing GATT to IDC have a clear scope explainer in both data file and about page — preventing scope-mismatch confusion.
+
+### Files updated
+- data/tci-latest.json (v0.79 → v0.80, +methodology_triangulation block)
+- api/v1/tci.json + api/v1/snapshot.json (synced from data/tci-latest.json — were stuck at v0.72)
+- llms.txt (full rewrite v0.79 → v0.80)
+- index.html (banner, Weekly Digest, Vendor Watch, Q2 Quarterly Snapshot, Key Numbers JS targets, share text, og:image:alt meta)
+- about.html (new "GATT vs IDC, Gartner, a16z — Methodology Triangulation" section)
+- data/snapshots/2026-05-09.json (immutable snapshot)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-02-27 (v0.64 — GATT Weekly Pulse section)
 
 - **New section: 📡 GATT Weekly Pulse** — chronological update log visible to all visitors

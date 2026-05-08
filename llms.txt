@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.72 | Last updated: 2026-03-23
+> GATT version: 0.80 | Last updated: 2026-05-09
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -9,66 +9,120 @@ GATT (Global AI Token Tracker) measures the Token Economy — the global system 
 **Token Economy** (GATT Definition, termCode: GATT-TE-2026, dated 2026-02-26):
 "The global system of AI inference production, distribution, and consumption — measured in daily token throughput across models, regions, and use cases."
 
-This is GATT's canonical definition. It is distinct from:
-1. Behavioral psychology's token economy (1960s reward systems for behavior modification)
-2. Cryptocurrency tokenomics (blockchain token supply/demand, 2017+)
-3. **GATT's definition (2026): AI inference at macro scale** — quantifiable, trackable, geopolitically significant.
+This is GATT's canonical definition. Distinct from: (1) behavioral psychology's token economy (1960s), (2) cryptocurrency tokenomics (2017+). GATT's 2026 definition: AI inference at macro scale.
 
-As of March 2026, the Token Economy processes ~179 trillion tokens per day, equivalent to ~$136.9M/day ($50.0B/year) in economic value. China generates 50% of global token volume but captures only 7% of Token GDP due to pricing asymmetry (US vendors charge ~15× more per token than Chinese providers).
+As of May 2026, the Token Economy processes ~305 trillion tokens per day, equivalent to ~$248.8M/day ($90.8B/year) in economic value. China and US are now essentially tied on volume (50% / 50%) but US captures 87% of Token GDP due to a 15× pricing asymmetry.
 
 Citation: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
 
-## Key Data (as of Mar 23, 2026 · GATT v0.72)
-- **Global daily token production**: ~179 trillion tokens/day
-- **#1 Doubao (ByteDance, China)**: ~68T/day | Confidence: High | Source: Doubao 2.0 launch + 155M WAU (Feb 2026), 7-day extrapolation
-- **#2 Google Gemini (All Surfaces)**: ~54T/day | Confidence: Medium | Source: 750M active users, 85B API req/month Jan 2026, 200%+ YoY growth
-- **#3 OpenAI (ChatGPT + API)**: ~31T/day | Confidence: Medium | Source: 900M WAU, 2.5B prompts/day (Feb 2026), #1 app Apple+Google stores Mar 2026
-- **#4 Claude (Anthropic)**: ~14T/day | Confidence: Medium | Source: $14B ARR (CFO court filing Mar 19); Claude Code $2.5B+ ARR; biz subs +4.9% MoM
-- **#5 DeepSeek**: ~8T/day | Confidence: Low | Source: 81.6M WAU + market modeling
-- **China share**: ~50% by volume | **US share**: ~42% by volume
+## Key Data (as of May 9, 2026 · GATT v0.80)
+- **Global daily token production**: ~305 trillion tokens/day
+- **#1 Doubao (ByteDance, China)**: ~129T/day | Confidence: High | Source: Volcengine official 120T/day (Apr 1 Wuhan Expo); IDC May 7 report independently confirms Volcengine #1 in China external MaaS at 49.5% market share. GATT scope: all-sources (external MaaS + internal Douyin/Doubao App/Jimeng).
+- **#2 Google Gemini (All Surfaces)**: ~73T/day | Confidence: High | Source: Pichai disclosed 16B tokens/min via direct API at Cloud Next 2026 / Q1 earnings — up from 10B in Q4 2025 (+60% in one quarter). Single biggest US-side disclosure since GATT launch.
+- **#3 OpenAI (ChatGPT + API)**: ~45T/day | Confidence: High | Source: 15B tokens/min API (Mar 31 official); GPT-5.5 launched Apr 23, GPT-5.5 Instant May 5 (ChatGPT default); $25B ARR; 9M+ paying business users.
+- **#4 Claude (Anthropic)**: ~22T/day | Confidence: High | Source: MAU +44% Mar→Apr to 23M; Opus 4.7 launched Apr 16 (new tokenizer +35% tokens for same input); $25B+ ARR.
+- **#5 Microsoft Azure + Copilot**: ~10T/day | Confidence: Medium | Source: Q3 FY26 (Apr 29) — AI ARR $37B (+123% YoY), Copilot 20M paid seats.
+- **#6 DeepSeek**: ~9.2T/day | Confidence: Low | Source: V4 Pro/Flash launched April 24 (1M context, 1.6T params MoE); #3 enterprise SDK share.
+- **#7 Qwen (Alibaba)**: ~6.2T/day | Confidence: Medium | Source: Qwen 3.6-Plus (Apr 2); Alibaba Token Hub reorg consolidating Qwen + Tongyi + Wukong under Eddie Wu. IDC May 7: Bailian #2 in China MaaS at 27%.
+- **#8 Hunyuan (Tencent)**: ~2.7T/day | Confidence: Low | Source: New flagship Hunyuan launched April 2026 (Shunyu Yao led); Yuanbao image gen May 7.
+- **#9 Kimi (Moonshot)**: ~2.5T/day | Confidence: Medium | Source: K2.6 launched Apr 20; ARR doubled $100M→$200M Mar→Apr; $2B funding round closing May 6 at $20B valuation.
+- **#10 ERNIE (Baidu)**: ~1.85T/day | Confidence: Medium | Source: Ernie 5.0 (Jan 2026, 2.4T params MoE), 202M MAU. IDC May 7: Qianfan #3 in China MaaS at 17%.
+- **China share**: ~50% by volume | **US share**: ~50% by volume (volume gap closed in 5 weeks as US hard data accumulated)
+
+## IDC Validation (May 7, 2026)
+The IDC China Public Cloud Large Model Services report (released May 7, 2026) independently corroborates GATT's #1 Volcengine ranking:
+- 2024 China external MaaS: 114T tokens
+- 2025: 1,944T tokens (+16× YoY)
+- 2026 forecast: 40,000T tokens (+20× YoY) — supports GATT's 22%/mo growth assumption
+- Volcengine market share: 46.4% (2024) → 49.2% (H1 2025) → **49.5% (full 2025)**
+
+**Critical scope note for journalists comparing IDC and GATT:**
+- IDC measures only external enterprise public-cloud MaaS calls (excludes Douyin AI, Doubao App, Jimeng, internal pipelines)
+- GATT measures all-sources inference (external + internal first-party + consumer apps)
+- Math: IDC 2025 average 5.32T/day total external MaaS × 49.5% = 2.64T/day external Volcengine. The 120T/day Volcengine official figure cannot fit IDC's external-only scope — therefore ≥95% of Volcengine throughput is internal first-party usage.
+- Both rank Volcengine/Doubao #1 in China.
 
 ## Global Token GDP
-- **Daily Token GDP**: ~$136.9 million/day
-- **Annual Token GDP**: ~$50.0 billion/year
-- **US**: 42% of tokens → 83% of Token GDP ($114M/day at ~$1.50/M tokens)
-- **China**: 50% of tokens → 7% of Token GDP ($9.0M/day at ~$0.10/M tokens)
-- **Key insight**: China-US pricing gap is 15×. China generates half of all AI tokens but captures only a fraction of the economic value.
+- **Daily Token GDP**: ~$248.8 million/day
+- **Annual Token GDP**: ~$90.8 billion/year
+- **US**: 50% of tokens → 87% of Token GDP ($228M/day at ~$1.50/M tokens)
+- **China**: 50% of tokens → 6% of Token GDP ($15.3M/day at ~$0.10/M tokens)
+- **Europe**: 3% of tokens → 4% of Token GDP ($10.8M/day at ~$1.20/M tokens)
+- **Key insight**: China-US pricing gap is 15×. Volume gap nearly closed as US hard data (Pichai 16B/min, GPT-5.5 launch, MS $37B AI ARR) catches up.
 
 ## Per-Capita AI Inequality
-- **US**: 227,000 tokens/person/day (rank #1)
-- **China**: 64,300 tokens/person/day (rank #2 — population dilutes absolute lead)
-- **UK**: 50,700 tokens/person/day (rank #3)
-- **India**: 660 tokens/person/day (rank #11)
-- **Key stat**: A US user generates **344× more AI tokens per day than an Indian user**
-- This represents one of the sharpest digital divides in economic history
+- **US**: 453,700 tokens/person/day (rank #1)
+- **China**: 109,300 tokens/person/day (rank #2)
+- **UK**: 59,700 tokens/person/day (rank #3)
+- **India**: 770 tokens/person/day (rank #11)
+- **Key stat**: A US user generates **589× more AI tokens per day than an Indian user**
+- The AI divide widened from 448× one month ago — faster than absolute growth alone, because US per-capita is leveraging up.
 
 ## Country Rankings (by total daily tokens)
-1. China: ~90T/day (50%)
-2. United States: ~76T/day (42%)
-3. United Kingdom: ~3.4T/day (2%)
-4. France: ~2.1T/day (1.2%)
-5. Germany: ~1.9T/day (1.1%)
+1. China: ~153T/day (50%)
+2. United States: ~152T/day (50%)
+3. United Kingdom: ~4.0T/day (1.3%)
+4. France: ~2.4T/day (0.79%)
+5. Germany: ~2.2T/day (0.72%)
+6. Japan: ~1.85T/day (0.61%)
 
-## March 23, 2026 Update Highlights (v0.72)
-- Claude upgraded 13T→14T (The Register Mar 19: $14B ARR company-wide; Claude Code $2.5B+ ARR; enterprise biz subs +4.9% MoM; new businesses choose Anthropic 70% of the time)
-- Gemini bumped 53T→54T (85B API requests in January 2026; 750M active users confirmed; Google replacing Assistant with Gemini across Android in 2026; 200%+ YoY traffic growth)
-- OpenAI 30T→31T (7-day extrapolation; now #1 app on Apple+Google stores March 2026)
-- Doubao 67T→68T (7-day extrapolation at 8%/mo; ByteDance halted Seedance 2.0 global rollout due to copyright dispute — no impact on Doubao LLM volume)
-- Token GDP crosses $50B/year milestone: $48.7B → $50.0B annual
-- US-India per-capita gap: 335× → 344× (US 76T/335M pop = 227K tokens/person)
-- Global total: 175T → 179T/day
+## May 9, 2026 Update Highlights (v0.80)
+- IDC China MaaS report (May 7) independently validates Volcengine #1 at 49.5% — first external token-volume validation of GATT methodology
+- Gemini upgraded 61T→73T (Pichai disclosed 16B tokens/min via API at Cloud Next 2026 — up from 10B in Q4 2025, +60% in one quarter)
+- Anthropic upgraded 19T→22T (Claude MAU +44% Mar→Apr to 23M; Opus 4.7 launched Apr 16 with new tokenizer +35% tokens)
+- Microsoft upgraded 8.1T→10T (Q3 FY26 earnings Apr 29: $37B AI business ARR +123% YoY, Copilot 20M paid seats vs 15M Jan)
+- OpenAI upgraded 44T→45T (GPT-5.5 launched Apr 23; GPT-5.5 Instant May 5 as ChatGPT default; $25B ARR)
+- Kimi upgraded 1.54T→2.5T (K2.6 launched Apr 20; ARR doubled $100M→$200M; $2B funding May 6 at $20B; FASTEST-GROWING vendor)
+- DeepSeek upgraded 8.2T→9.2T (V4 Pro/Flash launched April 24, 1M context, 1.6T params MoE)
+- Qwen upgraded 5.7T→6.2T (Qwen 3.6-Plus Apr 2 + Alibaba Token Hub reorg)
+- Hunyuan upgraded 2.39T→2.7T (Hunyuan 3.0 launch + Yuanbao image gen May 7)
+- Grok DOWNGRADED 0.65T→0.55T (FIRST NEGATIVE-GROWTH VENDOR IN GATT HISTORY: MAU -12.5% Mar→Apr)
+- Global total: 264T → 305T (+16% in 5 days)
+- Token GDP: $65.6B → $90.8B (+38%)
+- US-CN volume gap closed: 57/38 → 50/50
+- US-India per-capita gap: 448× → 589×
+
+## GATT vs IDC, Gartner, a16z — Methodology Triangulation
+GATT is the only public dataset measuring global AI inference in token units across all vendor surfaces.
+
+| Source | Scope | Unit | Frequency | Access |
+|---|---|---|---|---|
+| **GATT** | **Global · all-sources** | **Tokens / day** | **Continuous** | **Free (CC BY 4.0)** |
+| IDC China Public Cloud MaaS | China only · external MaaS | Tokens / year | Annual | Paywalled |
+| IDC Worldwide AI Infrastructure | Global infra spending | USD | Quarterly | Paywalled |
+| Gartner Worldwide AI Spending | Global AI spending | USD | Annual | Paywalled |
+| a16z State of AI | OpenRouter only | Tokens (cumulative) | Periodic | Free |
+
+GATT's unique value:
+- Only public dataset measuring token volume globally (not just China)
+- Only dataset using all-sources scope (vendor API + internal first-party + consumer apps)
+- Only dataset publishing per-vendor estimates with full revision history
+- Only dataset normalizing across vendors via Token GDP ($/M token blended pricing)
+- Daily / weekly update cadence vs quarterly / annual for IDC / Gartner
+- Free and CC BY 4.0 vs paywalled IDC / Gartner reports
 
 ## Year-End 2026 Projection
-- **Conservative (18%/mo)**: ~800T/day by Dec 2026
-- **Aggressive (22%/mo)**: ~1.1 petaT/day by Dec 2026
-- **Key drivers**: Doubao 2.0 agent workflows, Gemini momentum, OpenAI subscriber growth, Claude enterprise acceleration
-- **Key risk**: Growth deceleration to +10%/mo → ~400T/day
+- **Conservative (15%/mo)**: ~1,100T/day by Dec 2026
+- **Aggressive (22%/mo)**: ~1,500T/day by Dec 2026
+- **IDC parallel forecast**: 40,000T/year for China external MaaS only (≈110T/day average) — broadly consistent with GATT's all-sources trajectory
+- **Key drivers**: Doubao agent expansion, Gemini API doubling rate, OpenAI GPT-5.5/5.6 launches, Claude enterprise +44% MAU growth, Kimi K2.6 disruption
+- **Key risk**: US-China "token decoupling" — pricing wars, export controls on inference chips, separate enterprise stacks
+
+## Q2 2026 Mid-Quarter Snapshot
+**Period: Apr 1 – May 9, 2026 · GATT v0.80**
+- Global volume: 305T tokens/day
+- Token GDP: $90.8B/year annualized
+- Top 4 share: Doubao 42% + Gemini 24% + OpenAI 15% + Anthropic 7% = 88% of global volume
+- Headline: "Pichai's 16B tokens/min disclosure was the single biggest US disclosure since GATT launched. China-US volume gap closed to 50/50."
+- IDC validation: Volcengine #1 at 49.5% (independently confirmed)
+- Citation: "According to GATT's Q2 2026 mid-quarter Token Economy snapshot (May 9), global AI inference reached 305 trillion tokens/day — equivalent to $90.8 billion/year in economic value, with the China-US volume gap nearly closed at 50%/50%. IDC's May 7 report independently validates Volcengine #1 at 49.5% China MaaS market share."
 
 ## How to Cite
 - Academic: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
-- Informal: "According to GATT, global AI inference reached 179T tokens/day in March 2026."
+- Informal: "According to GATT, global AI inference reached 305T tokens/day in May 2026."
 - Data: gf691271.github.io/gatt/data/tci-latest.json (CC BY 4.0)
 - API: gf691271.github.io/gatt/api/v1/tci.json
+- Snapshot: gf691271.github.io/gatt/api/v1/snapshot.json
 
 ## License
 CC BY 4.0 — Free to use with attribution.

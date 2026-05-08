@@ -67,6 +67,29 @@ footer{font-family:-apple-system,sans-serif;font-size:.75rem;color:var(--muted);
 <h3>Dollar-Equivalent Compute (DEC)</h3>
 <p>Because a token from Doubao costs ~$0.14/T while a token from Claude costs ~$5/T, raw counts don't tell the full story. DEC reveals that the US leads in compute <em>value</em> despite China leading in token <em>volume</em>.</p>
 
+<h2>GATT vs IDC, Gartner, a16z — Methodology Triangulation</h2>
+<p>GATT is the only public dataset measuring global AI inference in <em>token units</em> across all vendor surfaces. This section positions GATT relative to other research firms so journalists can correctly compare numbers.</p>
+<table>
+<tr><th>Source</th><th>Scope</th><th>Unit</th><th>Frequency</th><th>Access</th></tr>
+<tr><td><strong>GATT</strong></td><td><strong>Global · all-sources (external API + internal first-party + consumer apps + on-device)</strong></td><td><strong>Tokens / day</strong></td><td><strong>Continuously updated</strong></td><td><strong>Free, CC BY 4.0</strong></td></tr>
+<tr><td>IDC China Public Cloud MaaS</td><td>China only · external enterprise calls</td><td>Tokens / year</td><td>Annual / semi-annual</td><td>Paywalled</td></tr>
+<tr><td>IDC Worldwide AI Infrastructure</td><td>Global infrastructure spending</td><td>USD</td><td>Quarterly</td><td>Paywalled</td></tr>
+<tr><td>Gartner Worldwide AI Spending</td><td>Global AI software, services, infra</td><td>USD</td><td>Annual</td><td>Paywalled</td></tr>
+<tr><td>a16z State of AI Token Study</td><td>OpenRouter aggregator only</td><td>Tokens (cumulative)</td><td>Periodic</td><td>Free</td></tr>
+</table>
+
+<h3>What IDC Says (May 2026)</h3>
+<p>The IDC <em>China Public Cloud Large Model Services</em> report (May 7, 2026) finds China's external enterprise MaaS market grew from <strong>114T tokens (2024)</strong> → <strong>1,944T (2025, +16× YoY)</strong>, with a 2026 forecast of <strong>40,000T (+20× YoY)</strong>. Volcengine ranks #1 at <strong>49.5%</strong> market share (full-year 2025), followed by Alibaba Bailian #2 (27%) and Baidu Qianfan #3 (17%, H1 2025).</p>
+
+<h3>How IDC's 49.5% Validates — and Differs From — GATT's 129T/day Doubao</h3>
+<p>IDC <strong>independently confirms</strong> Volcengine's #1 ranking in China — same direction as GATT's Doubao #1 globally.</p>
+<p>But the absolute numbers differ in scope. IDC's 2025 China total of 1,944T tokens averages to <strong>5.32T/day</strong> for the entire external MaaS market. Volcengine's external MaaS share at 49.5% would be roughly <strong>2.64T/day in 2025</strong>. The Volcengine official disclosure of <strong>120T/day</strong> at the April 1, 2026 Wuhan AI Innovation Expo cannot fit IDC's external-only scope under any plausible growth path.</p>
+<p>The reconciliation: GATT's 129T/day Doubao number is inherently <strong>all-sources</strong> — external MaaS calls plus internal first-party usage from Douyin AI Search, Doubao App, Jimeng, and Volcengine internal pipelines. Internal usage is estimated at <strong>≥95% of total Volcengine throughput</strong>.</p>
+<p>Both measures matter. IDC's external MaaS share is the right metric for <em>cloud business competitive position</em>. GATT's all-sources volume is the right metric for <em>total AI inference scale, geopolitical implications, and per-capita AI intensity</em>.</p>
+
+<h3>Why GATT Exists When IDC Does</h3>
+<p>IDC's MaaS report covers China only. There is no equivalent IDC token-volume report for the US, Europe, or rest of world — global research firms publish in USD (infra spending, AI market sizing), not tokens. GATT fills this gap by aggregating per-vendor official disclosures (OpenAI's 15B tokens/min, Pichai's 16B tokens/min, Volcengine's 120T/day) into a single global, daily, comparable index.</p>
+
 <h2>Cite This Data</h2>
 <div class="cite-box"><strong>Academic:</strong><br><code>Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/</code></div>
 <div class="cite-box"><strong>Journalism:</strong><br>"According to the Global AI Token Tracker (GATT), a project by Frank Gao..."</div>
