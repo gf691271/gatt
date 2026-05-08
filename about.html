@@ -90,6 +90,48 @@ footer{font-family:-apple-system,sans-serif;font-size:.75rem;color:var(--muted);
 <h3>Why GATT Exists When IDC Does</h3>
 <p>IDC's MaaS report covers China only. There is no equivalent IDC token-volume report for the US, Europe, or rest of world — global research firms publish in USD (infra spending, AI market sizing), not tokens. GATT fills this gap by aggregating per-vendor official disclosures (OpenAI's 15B tokens/min, Pichai's 16B tokens/min, Volcengine's 120T/day) into a single global, daily, comparable index.</p>
 
+<h2>Academic Validation & Methodology Tension</h2>
+<p>Five arXiv papers from late 2025 / early 2026 directly engage the "token economy as commodity" thesis. GATT v0.82 incorporates this academic literature into its methodology — including a productive tension worth surfacing transparently.</p>
+
+<table>
+<tr><th>Paper</th><th>Date</th><th>Relevance to GATT</th></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.06630"><strong>Photons = Tokens</strong></a> (Litowitz, Polson, Sokolov)</td><td>2026-02-23</td><td><strong>Physics-based global token budget.</strong> Direct conceptual peer to GATT.</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.21690">AI Token Futures Market</a> (Xing)</td><td>2026-03-23</td><td>Validates "Token Economy" as commodity-asset class. Pricing fell 40× in 24 months.</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2510.26136">Beyond Benchmarks: Economics of AI Inference</a> (Zhuang et al.)</td><td>2025-10-30</td><td>Establishes "LLM Inference Production Frontier" — supports Token GDP framework.</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.25220">Cross-Platform User Survey</a></td><td>2026-03</td><td>388 users, 7 platforms. >80% multi-home. Top-3 satisfaction tied. Validates GATT's broad-vendor coverage.</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2604.17431">Inference Bottleneck (vertical foreclosure model)</a></td><td>2026-04</td><td>Methodological template — observed / inferred / judgment-based parameter classification.</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2601.10088">State of AI: 100T Token Study</a> (a16z + OpenRouter)</td><td>2026-01-15</td><td>Drove GATT v0.81 OpenRouter revision (1.27T → 3.0T).</td></tr>
+</table>
+
+<h3>The 2× Tension: GATT vs Photons = Tokens (2603.06630)</h3>
+<p>The Litowitz / Polson / Sokolov paper builds a thermodynamics-grounded token budget. Their headline projection: <strong>under 326 TWh of US AI energy allocation in 2028, the physical ceiling is roughly 225,000 tokens/person/day</strong>.</p>
+
+<table>
+<tr><th>Source</th><th>US per-capita tokens/day</th><th>As-of date</th><th>Methodology</th></tr>
+<tr><td><strong>GATT v0.82 (empirical)</strong></td><td><strong>459,700</strong></td><td>May 2026</td><td>Sum of vendor-attributable + country-residual tokens, divided by population</td></tr>
+<tr><td>Photons = Tokens (physical ceiling)</td><td>225,000</td><td>2028 projection</td><td>326 TWh ÷ Landauer + Shannon thermodynamic minimum</td></tr>
+<tr><td><strong>Ratio</strong></td><td><strong>2.04×</strong></td><td>—</td><td>GATT exceeds physics-ceiling projection by ~2×</td></tr>
+</table>
+
+<h3>Three Reconciliation Interpretations</h3>
+<p><strong>1. GATT may be overestimating top vendors.</strong> Specifically: Gemini's All Surfaces 3.2× multiplier from API throughput could double-count Search AI Overviews + Gemini App; Doubao's all-sources scope (132T including internal) could be inflated by counting cached / repeated agent calls.</p>
+
+<p><strong>2. The paper's physical ceiling is conservative.</strong> Landauer / Shannon assumes uniform compute-per-token at GPT-4-level efficiency. Real 2026 inference is far more efficient via:</p>
+<ul style="margin-left:20px;margin-bottom:14px">
+<li>Mixture-of-Experts architectures (DeepSeek V4 49B-active out of 1.6T total = ~3% activation)</li>
+<li>4-bit quantization (4× memory reduction)</li>
+<li>Speculative decoding (2-3× throughput multiplier)</li>
+<li>Dedicated inference ASICs (Groq LPUs, Tencent / Xiaomi chip stacks, Google TPU 8th-gen)</li>
+</ul>
+<p>Effective tokens-per-Joule may be 5-10× the paper's physics baseline.</p>
+
+<p><strong>3. The two figures measure different things.</strong> GATT measures empirical all-surface output (every token generated, including from cached prefixes, batched inference, and replicated multi-tenant calls). The paper models theoretical physical capacity assuming each token requires fresh compute. These are different units — like comparing "kWh delivered to consumer outlets" vs "kWh of fuel input at the power plant". Both are valid; the 2× ratio reflects efficiency multipliers in the inference stack.</p>
+
+<p><strong>GATT's editorial position:</strong> Interpretations 2 and 3 are most likely the dominant explanation. v0.82 documents the tension explicitly without revising vendor estimates. v0.83 will adopt the methodological template from <a href="https://arxiv.org/abs/2604.17431">Inference Bottleneck (2604.17431)</a> by adding observed / inferred / judgment-based parameter classification and publishing sensitivity bands that bracket per-capita figures with conservative (Landauer-bounded) and aggressive (current empirical) variants.</p>
+
+<h3>Why This Tension Strengthens GATT</h3>
+<p>Acknowledging a 2× discrepancy with academic literature — rather than burying it — is exactly the editorial discipline GATT was built for. Token-economy measurement is new science. The right move is transparent disclosure plus a roadmap to reconciliation, not silent assumption-setting. Both GATT and the Photons = Tokens paper are correct in their own units. The conversation between empirical tracking (GATT) and physical-bound modeling (Litowitz et al.) is precisely how this field should mature.</p>
+
 <h2>Cite This Data</h2>
 <div class="cite-box"><strong>Academic:</strong><br><code>Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/</code></div>
 <div class="cite-box"><strong>Journalism:</strong><br>"According to the Global AI Token Tracker (GATT), a project by Frank Gao..."</div>

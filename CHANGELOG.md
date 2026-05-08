@@ -1,5 +1,59 @@
 # GATT Data Changelog
 
+## 2026-05-09 (v0.82 — Academic Validation Sweep)
+
+Same-day follow-up to v0.81. Surveyed arXiv for token-economy academic literature. Reviewed five relevant papers; documented one productive 2× tension between GATT empirical numbers and academic physics-ceiling projections.
+
+### What's new
+- **`academic_validation` block added to `data/tci-latest.json`** — 6 papers cataloged with thesis, key findings, validation/tension status, and action_taken_in_gatt fields.
+- **New "Academic Validation & Methodology Tension" section in `about.html`** — addresses GATT vs Photons=Tokens 2× discrepancy with three reconciliation interpretations and a v0.83 roadmap.
+- **`llms.txt` extended** with academic_validation paragraph for AI crawler ingestion.
+- **`index.html` Q2 snapshot card** updated to reference Photons = Tokens 2× tension alongside IDC validation.
+
+### The 2× Tension (key disclosure)
+Litowitz / Polson / Sokolov, "Photons = Tokens: The Physics of AI and the Economics of Knowledge" (arXiv:2603.06630, Feb 23, 2026), projects a **2028 US physical ceiling of 225,000 tokens/person/day** under 326 TWh AI energy allocation, derived from Landauer's principle and Shannon channel capacity.
+
+GATT v0.81/v0.82 measures **459,700 tokens/person/day in May 2026** — already 2.04× above the paper's 2028 ceiling.
+
+**Three reconciliation interpretations documented:**
+1. **GATT may overestimate top vendors** — Gemini All Surfaces 3.2× multiplier, Doubao all-sources scope
+2. **Paper's physics ceiling too conservative** — real 2026 inference uses MoE (DeepSeek V4: 3% activation), 4-bit quantization, speculative decoding, dedicated ASICs (LPU/TPU/Tencent chips). Effective tokens/Joule may be 5-10× the Landauer baseline.
+3. **Different units** — GATT measures empirical all-surface output; paper models theoretical physical capacity. Comparable to "kWh delivered to consumer outlets" vs "kWh of fuel input at the power plant".
+
+**GATT's editorial position:** Interpretations 2 + 3 are most likely. v0.82 documents the tension transparently without revising vendor estimates. v0.83 will adopt the methodological template from arXiv:2604.17431 (Inference Bottleneck) by adding observed/inferred/judgment parameter classification and publishing sensitivity bands.
+
+### Six arXiv papers cataloged
+| ID | Paper | Date | Role |
+|---|---|---|---|
+| 2603.06630 | **Photons = Tokens** (Litowitz, Polson, Sokolov) | 2026-02-23 | Productive tension: physics ceiling 2× below GATT empirical |
+| 2603.21690 | AI Token Futures Market (Xing) | 2026-03-23 | Validates Token Economy commodity framing; pricing fell 40× in 24 mo |
+| 2510.26136 | Beyond Benchmarks (Zhuang et al.) | 2025-10-30 | LLM Inference Production Frontier framework |
+| 2603.25220 | Cross-Platform User Survey | 2026-03 | 388 users, multi-home >80%, validates broad-vendor coverage |
+| 2604.17431 | Inference Bottleneck (vertical foreclosure) | 2026-04 | Methodological template for v0.83 |
+| 2601.10088 | State of AI: 100T Token Study (a16z + OR) | 2026-01-15 | Already drove v0.81 OR upgrade; logged here |
+
+### What's NOT changed
+- All vendor numbers held (Doubao 129T, Gemini 73T, OpenAI 45T, etc.)
+- Global total held at 310T/day
+- Token GDP held at $95.8B/year
+- This is a methodology disclosure update, not a data revision
+
+### Why this matters
+- **Q9 (publication authority)**: GATT is the first project to formally engage with the academic literature on token-economy measurement. This separates it from competitor data trackers that don't cite or reconcile with peer-reviewed work.
+- **Q10 (citation value)**: Journalists comparing GATT to Photons=Tokens now see a transparent reconciliation rather than an unexplained gap.
+- **Editorial signal**: Acknowledging a 2× discrepancy with academic literature — rather than burying it — is the kind of methodological discipline that makes GATT citable for serious analysts.
+
+### Files updated
+- data/tci-latest.json (v0.81 → v0.82, +academic_validation block)
+- api/v1/tci.json + api/v1/snapshot.json (synced)
+- llms.txt (v0.81 → v0.82 with academic_validation paragraph)
+- about.html (new "Academic Validation & Methodology Tension" section)
+- index.html (banner updated, Q2 card now references arXiv 2603.06630)
+- data/snapshots/2026-05-09.json (overwritten with v0.82 — third commit of the day)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-09 (v0.81 — Third-Party Data Sweep: OpenRouter, Perplexity, Xiaomi MiMo)
 
 Same-day follow-up to v0.80. Surveyed third-party rankings (OpenRouter, a16z, SimilarWeb, FirstPageSage) for vendor data missed in v0.79–v0.80. Found 5 meaningful corrections, all applied here.

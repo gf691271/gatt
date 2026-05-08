@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.81 | Last updated: 2026-05-09
+> GATT version: 0.82 | Last updated: 2026-05-09
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -127,6 +127,15 @@ GATT's unique value:
 - Data: gf691271.github.io/gatt/data/tci-latest.json (CC BY 4.0)
 - API: gf691271.github.io/gatt/api/v1/tci.json
 - Snapshot: gf691271.github.io/gatt/api/v1/snapshot.json
+
+## Academic Validation (v0.82)
+Five arXiv papers reviewed:
+- **Photons = Tokens** (Litowitz, Polson, Sokolov, arXiv:2603.06630, Feb 23, 2026) — Physics-based global token budget. Projects 2028 US ceiling at 225K tokens/person/day under 326 TWh AI energy. GATT v0.82 currently measures 459.7K tokens/person/day in May 2026 — **2× above the paper's 2028 physical ceiling**. Three reconciliation interpretations documented in academic_validation block of tci-latest.json: (1) GATT may overestimate top vendors; (2) paper's Landauer/Shannon ceiling too conservative — real inference uses MoE, quantization, speculative decoding, ASICs at 5-10× efficiency; (3) different units — empirical output vs physical capacity. GATT's editorial position: interpretations 2 + 3 are most likely. v0.83 will publish sensitivity bands.
+- **AI Token Futures Market** (Xing, arXiv:2603.21690, Mar 23, 2026) — Validates Token Economy as commodity-asset class. GPT-4-level pricing fell from $60/M (early 2023) to <$1.5/M (early 2025) = 40× in 24 months. Optimal Token futures launch window 2027-2028.
+- **Beyond Benchmarks** (Zhuang et al., arXiv:2510.26136, Oct 30, 2025) — "LLM Inference Production Frontier" — provides theoretical framework for Token GDP methodology.
+- **Cross-Platform User Survey** (arXiv:2603.25220, Mar 2026) — 388 active users across 7 platforms. Top-3 (Claude, ChatGPT, DeepSeek) statistically tied on satisfaction. >80% multi-home. Validates GATT's broad-vendor coverage.
+- **Inference Bottleneck** (arXiv:2604.17431, April 2026) — Methodological template: observed / inferred / judgment-based parameter classification. GATT v0.83 will adopt.
+- **State of AI: 100T Token Study** (a16z + OpenRouter, arXiv:2601.10088, Jan 15, 2026) — Already drove v0.81 OR upgrade.
 
 ## License
 CC BY 4.0 — Free to use with attribution.

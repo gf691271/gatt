@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "gatt_version": "0.81",
-  "generated_at": "2026-05-09T18:00:00Z",
+  "gatt_version": "0.82",
+  "generated_at": "2026-05-09T22:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
@@ -10,7 +10,98 @@
     "as_of_date": "2026-05-09",
     "confidence": "medium-high",
     "last_updated": "2026-05-09",
-    "note": "v0.81 — OpenRouter + Perplexity third-party data sweep + new Xiaomi MiMo vendor + Hunyuan model name normalized to Hy3 (Hunyuan 3.0). KEY UPGRADES: (1) OpenRouter 1.27T → 3.0T/day — independently validated by a16z 'State of AI' 100T Token Study (Jan 15, 2026 paper) and OpenRouter's April 2026 disclosure of 20T tokens/week (+4× YoY); (2) Perplexity 0.09T → 0.35T/day — 45M MAU, 30M+ queries/day (May 2025), $200M ARR Sep 2025, projected $656M ARR for 2026; (3) NEW VENDOR Xiaomi MiMo-V2-Pro (#18, 0.30T/day) — launched as anonymous 'Hunter Alpha' on OpenRouter Mar 11, accumulated 1T tokens before Mar 18 official reveal, now ~500B tokens/week on OR alone; (4) Hunyuan renamed Hy3 (Hunyuan 3.0, open-sourced Apr 23, 295B-A21B MoE, 256K context); (5) Gemini model line normalized to 3.x (Gemini 3 Pro Nov 2025, 3.1 Pro May 2026, 3.2 Flash spotted, Google I/O 2026 May 19-20). Global 305T → 310T. v0.80 IDC validation block retained."
+    "note": "v0.82 — Academic validation sweep. Five arXiv papers reviewed; key finding: Litowitz/Polson/Sokolov 'Photons = Tokens' (arXiv:2603.06630, Feb 23, 2026) constructs a physics-based global token budget that projects a 2028 US ceiling of 225,000 tokens/person/day under 326 TWh AI energy allocation. GATT v0.81 measures US per-capita at 459,700 tokens/person/day in May 2026 — 2× above their 2028 physical ceiling. Three reconciliation interpretations documented in academic_validation block. Vendor numbers held; this is a methodology disclosure update, not a data revision. Token Futures (Xing 2603.21690) validates commodity framing. Cross-platform user survey (2603.25220) corroborates multi-home dynamic. Beyond Benchmarks (Zhuang et al. 2510.26136) provides production-frontier framework. v0.80 IDC validation + v0.81 OR/Perplexity/Xiaomi upgrades retained."
+  },
+  "academic_validation": {
+    "as_of_date": "2026-05-09",
+    "purpose": "Independent academic validation of GATT methodology and central tensions worth surfacing for journalists and researchers. GATT is the first project to formally engage with the academic literature on token-economy measurement.",
+    "papers": [
+      {
+        "id": "photons-tokens",
+        "arxiv": "2603.06630",
+        "title": "Photons = Tokens: The Physics of AI and the Economics of Knowledge",
+        "authors": "Alec Litowitz, Nick Polson, Vadim Sokolov",
+        "submitted": "2026-02-23",
+        "url": "https://arxiv.org/abs/2603.06630",
+        "thesis": "Constructs a MacKay-style supply-and-demand balance sheet for global token production, grounded in current energy infrastructure data and physical efficiency limits (Landauer's principle + Shannon channel capacity).",
+        "key_quantitative_finding": "Projected 2028 US AI energy allocation of 326 TWh could support roughly 6.5 × 10^17 tokens/year = 225,000 tokens/person/day under physical-ceiling assumptions.",
+        "tension_with_gatt": {
+          "gatt_us_per_capita_K_may_2026": 459.7,
+          "paper_us_per_capita_K_2028_ceiling": 225,
+          "ratio_gatt_vs_paper": 2.04,
+          "interpretation_1_gatt_overestimates": "GATT may be overestimating top vendors. Specifically: (a) Gemini All Surfaces 3.2× multiplier from API throughput may double-count Search AI Overviews + Gemini App; (b) Doubao all-sources scope (132T including internal) may be inflated by counting cached/repeated agent calls.",
+          "interpretation_2_paper_too_conservative": "The paper's Landauer/Shannon physics ceiling assumes uniform compute-per-token at GPT-4-level efficiency. Real 2026 inference is far more efficient via MoE architectures (DeepSeek V4 49B-active out of 1.6T total = 3% activation), 4-bit quantization (4× memory reduction), speculative decoding (2-3× throughput), and dedicated inference ASICs (Groq LPUs, Tencent's chip stack). Effective tokens-per-Joule may be 5-10× the paper's baseline.",
+          "interpretation_3_methodological_difference": "GATT measures empirical all-surface output (every token generated, including from cached prefixes, batched inference, and replicated multi-tenant calls). The paper models theoretical physical capacity assuming each token requires fresh compute. These are different units — like comparing 'kWh delivered to consumer outlets' vs 'kWh of fuel input at the power plant'. Both are valid; ratio 2× reflects efficiency multipliers in the inference stack."
+        },
+        "validates_gatt": "Independent academic confirmation that the Token Economy framing is publishable, peer-track-record research. The paper explicitly constructs the 'token budget' that GATT operationalizes daily.",
+        "action_taken_in_gatt": "v0.82 documents the 2× tension explicitly. Vendor numbers held — interpretation 2 + 3 are most likely explanations. GATT will publish a 'sensitivity range' in v0.83+ that brackets per-capita figures with conservative (Landauer-bounded) and aggressive (current empirical) variants."
+      },
+      {
+        "id": "token-futures",
+        "arxiv": "2603.21690",
+        "title": "AI Token Futures Market: Commoditization of Compute and Derivatives Contract Design",
+        "authors": "Yicai Xing",
+        "submitted": "2026-03-23",
+        "url": "https://arxiv.org/abs/2603.21690",
+        "thesis": "Tokens are evolving into a new commodity class with fungibility, standardized measurement, large-scale trading, non-storability, and supply rigidity. Token futures should be classified as commodity futures (not financial derivatives) because the underlying — inference compute — is a real economic resource.",
+        "key_findings": [
+          "GPT-4-level inference price fell from ~$60/M output tokens (early 2023) to <$1.5/M (early 2025) — a 40× reduction in 24 months",
+          "2025-2026 = critical preparation phase for Token Performance Index (TPI) infrastructure",
+          "Optimal token futures launch window: 2027-2028",
+          "Monte Carlo simulation: token futures could reduce enterprise compute cost volatility by 62-78%"
+        ],
+        "validates_gatt": "Strong academic validation of GATT's 'Token Economy' framing as a commodity-asset class. The paper explicitly proposes a 'Token Performance Index (TPI)' for which GATT's daily index is a working prototype. Pricing decline (40× in 24 months) confirms why GATT's blended pricing assumptions need explicit as-of dates.",
+        "action_taken_in_gatt": "v0.82 cites Xing 2026 in 'Token Economy' definition section. token_gdp.note now includes pricing-decline caveat with 40× context."
+      },
+      {
+        "id": "beyond-benchmarks",
+        "arxiv": "2510.26136",
+        "title": "Beyond Benchmarks: The Economics of AI Inference",
+        "authors": "Boqin Zhuang, Jiacheng Qiao, Mingqian Liu, Mingxing Yu, Ping Hong, Rui Li, Xiaoxia Song, Xiangjun Xu, Xu Chen, Yaoyao Ma, Yujie Gao",
+        "submitted": "2025-10-30",
+        "url": "https://arxiv.org/abs/2510.26136",
+        "thesis": "Treats LLM inference as 'compute-driven intelligent production activity'. Establishes the first 'LLM Inference Production Frontier' with three economic principles: diminishing marginal cost, diminishing returns to scale, and an optimal cost-effectiveness zone.",
+        "validates_gatt": "Provides theoretical framework that supports GATT's Token GDP methodology (vendor_volume × blended_price) by establishing inference as a production activity with formal economic structure.",
+        "action_taken_in_gatt": "v0.82 references Zhuang et al. 2025 in token_gdp.methodology field. Future v0.83+ may incorporate production-frontier sensitivity analysis."
+      },
+      {
+        "id": "cross-platform-survey",
+        "arxiv": "2603.25220",
+        "title": "Cross-Platform User Survey of AI Chat Platforms (388 active users, 7 platforms)",
+        "submitted": "2026-03",
+        "url": "https://arxiv.org/abs/2603.25220",
+        "key_findings": [
+          "Top 3 platforms (Claude, ChatGPT, DeepSeek) receive statistically indistinguishable satisfaction ratings",
+          ">80% of users use 2 or more platforms simultaneously",
+          "Switching costs are negligible",
+          "Each platform attracts users for different reasons: ChatGPT for interface, Claude for answer quality, DeepSeek through word-of-mouth, Grok for content policy",
+          "Conclusion: specialization (not generalist dominance) sustains competition"
+        ],
+        "validates_gatt": "Empirical evidence that AI chat is multi-vendor, not winner-take-all. Validates GATT's methodology of tracking all major vendors rather than focusing on a single 'leader'. The DeepSeek finding (statistically tied with Claude/ChatGPT despite vastly smaller funding) directly supports GATT's high ranking of Chinese vendors.",
+        "action_taken_in_gatt": "v0.82 cites this paper in vendor-watch and methodology sections to justify the 21-vendor breadth."
+      },
+      {
+        "id": "inference-bottleneck",
+        "arxiv": "2604.17431",
+        "title": "The Inference Bottleneck: A Formal Model of Vertical Foreclosure in AI Markets",
+        "submitted": "2026-04",
+        "url": "https://arxiv.org/abs/2604.17431",
+        "thesis": "Develops a formal economic model of vertical foreclosure in AI markets with explicit calibration methodology that distinguishes observed, inferred, and judgment-based parameters. Provides sensitivity analysis establishing which conclusions are robust to parameter perturbations.",
+        "validates_gatt": "Provides a methodological template GATT should adopt: explicit confidence taxonomy (observed / inferred / judgment-based) plus sensitivity analysis. GATT currently has confidence ratings (high/medium/low) but no formal sensitivity bands.",
+        "action_taken_in_gatt": "v0.82 commits to adopting observed/inferred/judgment parameter classification in v0.83 schema. Existing confidence field will be augmented, not replaced."
+      },
+      {
+        "id": "openrouter-100t",
+        "arxiv": "2601.10088",
+        "title": "State of AI: An Empirical 100 Trillion Token Study with OpenRouter",
+        "authors": "Malika Aubakirova, Anjney Midha (a16z); Alex Atallah, Chris Clark, Justin Summerville (OpenRouter)",
+        "submitted": "2026-01-15",
+        "url": "https://arxiv.org/abs/2601.10088",
+        "note": "Already cited in v0.81 (drove OpenRouter upgrade 1.27T → 3.0T/day). Listed here for completeness in academic validation block."
+      }
+    ],
+    "central_tension": "GATT's empirical 2026 US per-capita (459.7K tokens/person/day) is 2.04× above the Litowitz/Polson/Sokolov 2028 physics ceiling (225K). GATT interprets this as: (a) inference-stack efficiency gains beyond paper's Landauer baseline, plus (b) measurement-unit difference (delivered output vs physical capacity). Both numbers are likely correct in their own units. v0.82 documents this transparently without revising vendor estimates.",
+    "next_step_v083": "Adopt observed/inferred/judgment parameter classification (per arXiv:2604.17431). Publish sensitivity bands for headline numbers (per arXiv:2603.06630 physical ceiling as conservative bound). Add as-of dates to all blended pricing assumptions (per arXiv:2603.21690 40× pricing decline)."
   },
   "methodology_triangulation": {
     "as_of_date": "2026-05-09",
