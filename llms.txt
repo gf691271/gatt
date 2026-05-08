@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.80 | Last updated: 2026-05-09
+> GATT version: 0.81 | Last updated: 2026-05-09
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -11,23 +11,27 @@ GATT (Global AI Token Tracker) measures the Token Economy — the global system 
 
 This is GATT's canonical definition. Distinct from: (1) behavioral psychology's token economy (1960s), (2) cryptocurrency tokenomics (2017+). GATT's 2026 definition: AI inference at macro scale.
 
-As of May 2026, the Token Economy processes ~305 trillion tokens per day, equivalent to ~$248.8M/day ($90.8B/year) in economic value. China and US are now essentially tied on volume (50% / 50%) but US captures 87% of Token GDP due to a 15× pricing asymmetry.
+As of May 2026, the Token Economy processes ~310 trillion tokens per day, equivalent to ~$262.6M/day ($95.8B/year) in economic value. China and US are tied on volume (50% / 50%) but US captures 88% of Token GDP due to a 15× pricing asymmetry. The v0.81 update incorporated OpenRouter's April disclosure (20T tokens/week = 2.86T/day, +135% upward revision), Perplexity third-party data (45M MAU + $200M ARR, +280% upward revision), and added Xiaomi MiMo-V2-Pro as a new vendor.
 
 Citation: Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/
 
-## Key Data (as of May 9, 2026 · GATT v0.80)
-- **Global daily token production**: ~305 trillion tokens/day
+## Key Data (as of May 9, 2026 · GATT v0.81)
+- **Global daily token production**: ~310 trillion tokens/day
+- **Total vendors tracked**: 21 (added Xiaomi MiMo in v0.81)
 - **#1 Doubao (ByteDance, China)**: ~129T/day | Confidence: High | Source: Volcengine official 120T/day (Apr 1 Wuhan Expo); IDC May 7 report independently confirms Volcengine #1 in China external MaaS at 49.5% market share. GATT scope: all-sources (external MaaS + internal Douyin/Doubao App/Jimeng).
-- **#2 Google Gemini (All Surfaces)**: ~73T/day | Confidence: High | Source: Pichai disclosed 16B tokens/min via direct API at Cloud Next 2026 / Q1 earnings — up from 10B in Q4 2025 (+60% in one quarter). Single biggest US-side disclosure since GATT launch.
+- **#2 Google Gemini (All Surfaces)**: ~73T/day | Confidence: High | Source: Pichai disclosed 16B tokens/min via direct API at Cloud Next 2026 / Q1 earnings — up from 10B in Q4 2025 (+60% in one quarter). Gemini 3.x line: 3 Pro (Nov 2025), 3.1 Pro (May 2026), 3.2 Flash spotted. Google I/O 2026: May 19-20.
 - **#3 OpenAI (ChatGPT + API)**: ~45T/day | Confidence: High | Source: 15B tokens/min API (Mar 31 official); GPT-5.5 launched Apr 23, GPT-5.5 Instant May 5 (ChatGPT default); $25B ARR; 9M+ paying business users.
-- **#4 Claude (Anthropic)**: ~22T/day | Confidence: High | Source: MAU +44% Mar→Apr to 23M; Opus 4.7 launched Apr 16 (new tokenizer +35% tokens for same input); $25B+ ARR.
-- **#5 Microsoft Azure + Copilot**: ~10T/day | Confidence: Medium | Source: Q3 FY26 (Apr 29) — AI ARR $37B (+123% YoY), Copilot 20M paid seats.
-- **#6 DeepSeek**: ~9.2T/day | Confidence: Low | Source: V4 Pro/Flash launched April 24 (1M context, 1.6T params MoE); #3 enterprise SDK share.
+- **#4 Claude (Anthropic)**: ~22T/day | Confidence: High | Source: MAU +44% Mar→Apr to 23M; Opus 4.7 launched Apr 16 (new tokenizer +35% tokens for same input); $25B+ ARR. SimilarWeb Mar 2026: claude.ai 613.7M monthly visits (+3.5× from Dec 2025).
+- **#5 DeepSeek**: ~9.2T/day | Confidence: Low | Source: V4 Pro/Flash launched April 24 (1M context, 1.6T params MoE); #3 enterprise SDK share.
+- **#6 Microsoft Azure + Copilot**: ~10T/day | Confidence: Medium | Source: Q3 FY26 (Apr 29) — AI ARR $37B (+123% YoY), Copilot 20M paid seats.
 - **#7 Qwen (Alibaba)**: ~6.2T/day | Confidence: Medium | Source: Qwen 3.6-Plus (Apr 2); Alibaba Token Hub reorg consolidating Qwen + Tongyi + Wukong under Eddie Wu. IDC May 7: Bailian #2 in China MaaS at 27%.
-- **#8 Hunyuan (Tencent)**: ~2.7T/day | Confidence: Low | Source: New flagship Hunyuan launched April 2026 (Shunyu Yao led); Yuanbao image gen May 7.
-- **#9 Kimi (Moonshot)**: ~2.5T/day | Confidence: Medium | Source: K2.6 launched Apr 20; ARR doubled $100M→$200M Mar→Apr; $2B funding round closing May 6 at $20B valuation.
-- **#10 ERNIE (Baidu)**: ~1.85T/day | Confidence: Medium | Source: Ernie 5.0 (Jan 2026, 2.4T params MoE), 202M MAU. IDC May 7: Qianfan #3 in China MaaS at 17%.
-- **China share**: ~50% by volume | **US share**: ~50% by volume (volume gap closed in 5 weeks as US hard data accumulated)
+- **#8 OpenRouter (aggregator)**: ~3.0T/day | Confidence: High | Source: April 2026 disclosure 20T tokens/week (4× YoY); a16z 100T Token Study (Jan 2026) confirms passed 1T/day Dec 2025. NOTE: aggregator volume overlaps with vendor totals — global total nets out the overlap.
+- **#9 Hy3 / Hunyuan 3.0 (Tencent)**: ~2.7T/day | Confidence: Low | Source: Open-sourced April 23 (295B-A21B MoE, 256K context); Yuanbao image gen May 7.
+- **#10 Kimi (Moonshot)**: ~2.5T/day | Confidence: Medium | Source: K2.6 launched Apr 20; ARR doubled $100M→$200M Mar→Apr; $2B funding round closing May 6 at $20B valuation.
+- **#11 ERNIE (Baidu)**: ~1.85T/day | Confidence: Medium | Source: Ernie 5.0 (Jan 2026, 2.4T params MoE), 202M MAU. IDC May 7: Qianfan #3 in China MaaS at 17%.
+- **#16 Perplexity AI**: ~0.35T/day (was #20 at 0.09T) | Confidence: Medium | Source: 45M MAU early 2026 (vs 22M Jan 2025); 30M+ queries/day; $200M ARR Sep 2025; projected $656M ARR 2026.
+- **#18 Xiaomi MiMo-V2-Pro (NEW)**: ~0.30T/day | Confidence: Low | Source: Launched as 'Hunter Alpha' on OpenRouter Mar 11; Xiaomi reveal Mar 18; ~500B tokens/week on OR alone; 1T params MoE, 1M context.
+- **China share**: ~50% by volume | **US share**: ~50% by volume (volume parity confirmed in v0.81)
 
 ## IDC Validation (May 7, 2026)
 The IDC China Public Cloud Large Model Services report (released May 7, 2026) independently corroborates GATT's #1 Volcengine ranking:
@@ -43,10 +47,10 @@ The IDC China Public Cloud Large Model Services report (released May 7, 2026) in
 - Both rank Volcengine/Doubao #1 in China.
 
 ## Global Token GDP
-- **Daily Token GDP**: ~$248.8 million/day
-- **Annual Token GDP**: ~$90.8 billion/year
-- **US**: 50% of tokens → 87% of Token GDP ($228M/day at ~$1.50/M tokens)
-- **China**: 50% of tokens → 6% of Token GDP ($15.3M/day at ~$0.10/M tokens)
+- **Daily Token GDP**: ~$262.6 million/day
+- **Annual Token GDP**: ~$95.8 billion/year
+- **US**: 50% of tokens → 88% of Token GDP ($231M/day at ~$1.50/M tokens)
+- **China**: 50% of tokens → 6% of Token GDP ($15.4M/day at ~$0.10/M tokens)
 - **Europe**: 3% of tokens → 4% of Token GDP ($10.8M/day at ~$1.20/M tokens)
 - **Key insight**: China-US pricing gap is 15×. Volume gap nearly closed as US hard data (Pichai 16B/min, GPT-5.5 launch, MS $37B AI ARR) catches up.
 

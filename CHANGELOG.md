@@ -1,5 +1,46 @@
 # GATT Data Changelog
 
+## 2026-05-09 (v0.81 — Third-Party Data Sweep: OpenRouter, Perplexity, Xiaomi MiMo)
+
+Same-day follow-up to v0.80. Surveyed third-party rankings (OpenRouter, a16z, SimilarWeb, FirstPageSage) for vendor data missed in v0.79–v0.80. Found 5 meaningful corrections, all applied here.
+
+### Headline metrics (vs v0.80)
+- **Global**: 305T → **310T/day** (+1.6%, third-party data refresh)
+- **Token GDP**: $90.8B → **$95.8B/yr** (+5.5%)
+- **Vendors tracked**: 20 → **21** (added Xiaomi MiMo)
+- **US-India per-capita gap**: 589× → **597×**
+- **US Token GDP share**: 87% → **88%**
+- **CN/US volume parity** confirmed at 50/50
+
+### Vendor changes
+- **OpenRouter**: 1.27T → **3.0T/day** (rank 12 → **8**) — major upward revision based on (a) a16z "State of AI: An Empirical 100 Trillion Token Study" (arXiv 2601.10088, Jan 15, 2026) confirming OR passed 1T tokens/day in December 2025; (b) OpenRouter's April 2026 disclosure of 20T tokens/week (= 2.86T/day, 4× YoY from 5T/week April 2025). Added explicit `scope_note` flagging aggregator-vendor overlap (e.g., Kimi K2.6's 1.85T weekly OR volume is counted in both Kimi and OpenRouter rows).
+- **Perplexity AI**: 0.09T → **0.35T/day** (rank 20 → **16**) — major upward revision based on 45M MAU early 2026 (vs 22M Jan 2025); 30M+ search queries/day; $200M ARR Sep 2025 (doubled from $100M March 2025); projected $656M ARR 2026; 170M monthly visits. Confidence upgraded low → medium. Math: 50M queries/day × ~6K tokens/grounded answer ≈ 0.30T baseline + Comet/Pro Search.
+- **Xiaomi MiMo-V2-Pro (NEW)**: 0.30T/day at rank **18** — first-time vendor entry. Launched as anonymous "Hunter Alpha" on OpenRouter March 11, 2026; accumulated 1T cumulative tokens before Xiaomi's official Mar 18 reveal. Currently ~500B tokens/week on OR alone (~70B/day, single platform). 1T total params MoE, 1M context, agentic-optimized. Conservative 0.30T/day = OR + Xiaomi cloud + on-device.
+- **Tencent Hunyuan**: model name normalized to **Hy3 (Hunyuan 3.0)** with full architecture detail. Open-sourced April 23, 2026 (v0.80 had said "April 2026" generically). 295B-A21B MoE, 256K context, 80 transformer layers, fast-and-slow-thinking fused, 192 routed experts + 1 shared. Listed on OpenRouter with free 2-week trial + Tencent Cloud TokenHub. Daily token estimate held at 2.7T.
+- **Google Gemini**: model line clarified across 3.x — Gemini 3 Pro (Nov 18, 2025) → Gemini 3.1 Pro (May 2026) → Gemini 3.2 Flash spotted in developer tools. Pichai's 16B tokens/min Q1 disclosure was at Cloud Next 2026 just after 3.1 Pro shipped. Daily token estimate held at 73T. Google I/O 2026 (May 19-20) flagged as highest-impact pending event in Vendor Watch.
+
+### Re-rankings
+With OpenRouter moving up to #8 and Perplexity up to #16, plus Xiaomi MiMo new at #18:
+- Hunyuan 8 → 9, Kimi 9 → 10, Ernie 10 → 11, Spark 11 → 12 (cascade down)
+- Mistral 13, Grok 14, MiniMax 15 (held)
+- Groq 16 → 17 (Perplexity took 16)
+- Llama 17 → 19, Bedrock 18 → 20, GLM 19 → 21 (cascade down for Xiaomi)
+
+### Why this matters
+- **Q2 (data credibility)**: OpenRouter's >2× upward revision was based on a peer-reviewed academic paper (a16z + OpenRouter joint study). This is the highest-quality external validation GATT has applied.
+- **Q3 (shareability)**: "OpenRouter doubles in GATT overnight" is a specific, screenshot-able revision narrative.
+- **Q9 (publication authority)**: Adding aggregator overlap note + scope_note on Xiaomi entry signals editorial rigor — GATT distinguishes between "all-sources counted in global total" vs "aggregator pass-through."
+
+### Files updated
+- data/tci-latest.json (v0.80 → v0.81)
+- api/v1/tci.json + api/v1/snapshot.json (synced)
+- llms.txt (v0.80 → v0.81)
+- index.html (banner, Weekly Digest with new v0.81 callout card, Vendor Watch with Google I/O 2026, Q2 snapshot numbers)
+- data/snapshots/2026-05-09.json (overwritten with v0.81)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-09 (v0.80 — IDC Validation + 7 Vendor Anchor Upgrades)
 
 First external validation of GATT methodology + 7 previously-uncaptured vendor anchors layered on top of v0.79's weekly extrapolation. Most ambitious single update since v0.75's live-extrapolation engine.
