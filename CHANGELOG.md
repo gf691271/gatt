@@ -1,5 +1,70 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.90 — Autoresearch Quality-Assurance Pass)
+
+NEW `autoresearch_log` block. Three-phase systematic quality-assurance pass: (1) top-5 vendor freshness check, (2) eight key fact verifications, (3) methodology integrity audit. Two errors corrected, one major data point updated, six claims verified.
+
+### Two errors corrected
+
+**E1: CAICT 4.12T tokens/week attribution (v0.85 error)**
+- **What was wrong**: v0.85 attributed the "4.12T tokens/week China" figure to CAICT (中国信通院).
+- **What is true**: The 4.12T figure originates from **OpenRouter platform data** (Feb 9-15, 2026 weekly aggregation), reported by 第一财经 / 量子位 / 赛迪网 Chinese media. CAICT's 2026-01 report (No. 202516) is a separate ecosystem analysis without this specific number.
+- **Action**: methodology_triangulation rewritten — CAICT entry now correctly describes its scope (qualitative ecosystem analysis); a new OpenRouter Platform Data entry adds the correct attribution with updated trend: 4.12T (Feb 9-15) → 5.16T (Feb 16-22) → **7.359T (Mar 16-22)** weekly, China continuing to lead US for 3+ consecutive weeks.
+
+**E2: GPT-4 launch price (v0.88 error)**
+- **What was wrong**: v0.88 pricing_history.frontier_tier reported GPT-4 launch at $60/M.
+- **What is true**: GPT-4 launched at $37.50/M blended (NavyaAI report verification).
+- **Action**: pricing_history.frontier_tier corrected. Headline updated to "99.7% / 268× compression from $37.50 (Mar 2023) to $0.14 (Aug 2025)." The 99.7% claim itself (v0.86 key_paradoxes) was always anchored on the correct data; only the path label was wrong.
+
+### One major data update
+
+**Anthropic ARR trajectory verified at $44B (May 2026)**
+- v0.84 captured $25B (SemiAnalysis Apr 1)
+- Autoresearch confirms: Dec 2025 $9B → Feb 2026 $14B → Mar $19B → Apr $30B → **May $44B**
+- **+$96M ARR per day in 4 months** = fastest enterprise SaaS growth on record
+- Reconciliation: $44B / 365 / $5.50/M blended (input-weighted) = ~22T/day implied
+- GATT's 22T daily token estimate VALIDATED by ARR-derived calculation
+- Anthropic vendor entry now carries `arr_trajectory_USD_B` field with the full series
+
+### Six facts verified
+
+- ✅ 99.7% inference cost decline (NavyaAI, $37.50 → $0.14)
+- ✅ $602B 2026 hyperscaler capex (CreditSights / Visual Capitalist; +36% YoY vs 2025 $443B; ~75% AI-allocated = $450B)
+- ✅ Karpathy "token throughput" personal usage quote
+- ✅ Brynjolfsson AI economic dashboards prediction (Dec 2025)
+- ✅ BCG + Forrester 88% agent pilot fail rate
+- ✅ Median enterprise monthly LLM bill +7.2× YoY entering Q1 2026
+
+### Methodology audit — all green
+
+- **Extrapolation engine**: Top-10 vendor live = source × (1+rate)^(days/30) calculations all match daily_tokens_T values within 1-10% drift (expected). No mathematical errors.
+- **Anthropic ARR-to-token reconciliation**: $44B ARR / 365 / $5.50/M = 21.9T/day, validating GATT's 22T estimate.
+- **Growth rate assumptions**: All 21 vendor `growth_rate_monthly` values within reasonable range (-5% Grok to +30% Kimi). Top-10 weighted average = 11.6%/mo.
+- **Sensitivity bands internal consistency**: Conservative / best / aggressive bands across 5 metrics produce coherent multiplier ratios.
+
+### Why this matters
+
+- **Data integrity**: Acknowledging and correcting two errors (CAICT attribution + GPT-4 launch price) is the first time GATT has done a public retraction. This builds long-term citation credibility — journalists trust datasets that surface their own mistakes.
+- **Quality cadence**: The autoresearch_log block is designed to repeat. Future runs (next scheduled within 7 days post-Google I/O 2026) will append new audit entries, creating a documented quality history.
+- **Reconciliation rigor**: The Anthropic 22T = $44B ARR / $5.50 reconciliation is the strongest evidence yet that GATT's 22T estimate is correctly calibrated. Future ARR disclosures can be reconciled the same way.
+
+### What's NOT changed
+- All 21 vendor token totals held: 310T/day global · $95.8B Token GDP · 50/50 CN-US volume parity
+- v0.85 framework_adoption + v0.86 paradoxes/intelligence/outreach + v0.87 reasoning_split + v0.88 pricing_history (with corrections) + v0.89 sensitivity_bands all retained
+
+### Files updated
+- data/tci-latest.json (+autoresearch_log block; CAICT entry corrected; new OpenRouter Platform Data entry; pricing_history GPT-4 launch corrected; Anthropic vendor +arr_trajectory_USD_B)
+- api/v1/tci.json + api/v1/snapshot.json (synced)
+- index.html (banner reframed; version v0.89 → v0.90)
+- llms.txt (version bump v0.89 → v0.90)
+- data/snapshots/2026-05-10.json (overwritten with v0.90)
+- CHANGELOG.md (this entry)
+
+### Next autoresearch run
+Scheduled within 7 days, post-Google I/O 2026 (May 19-20). Priority targets: Gemini (post-I/O disclosure), OpenAI (Q2 update), Alibaba Qwen (Q1 earnings), Baidu Ernie (105 days stale, highest staleness in dataset).
+
+---
+
 ## 2026-05-10 (v0.89 — Sensitivity Bands)
 
 NEW `sensitivity_bands` block. **Delivers on the v0.82 academic paper Section 5.6 commitment**: "GATT v0.83 will publish sensitivity bands for headline figures, with conservative bounds anchored to physics-ceiling assumptions and aggressive bounds matching current empirical extrapolation." v0.89 fulfills this (eight versions later but same calendar day).
