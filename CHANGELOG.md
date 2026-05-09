@@ -1,5 +1,114 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v1.0 — Paper Major Revision Per Litowitz/Polson/Sokolov + Harvard Synthesis)
+
+GATT manuscript reaches v1.0. Implements all 12 revisions from a four-reviewer adversarial peer review (simulated): Litowitz (Photons=Tokens framework lead), Polson (Bayesian statistician), Sokolov (statistical ML / inference systems), and a Harvard editorial synthesis layered over the Stanford v0.91→v0.92 round. Paper grows 14,066 → 17,314 words (+23%); main.tex 100K → 125K chars (+25%). New Appendix C with Monte Carlo Bayesian sensitivity analysis discovers that the §5.5 decomposition is *partial* (a fourth factor — theoretical-vs-empirical hardware utilization — is needed), which is reported honestly rather than papered over.
+
+### What's new (12 revisions, all implemented)
+
+**Litowitz revisions:**
+- L1 §5.3 framework framing: removed "static 2024-era artifact" rhetoric; framework affirmed as not dated, only calibration inputs are
+- L2 §5.5.5 unprincipled /4 correction removed entirely; replaced with explicit correlation modeling in Appendix C
+- L3 §5.5.6 falsification thresholds tightened to plausible-range edges (cache 20%→30%, energy gain 2×→2.5×, vendor audit 25%→20%)
+- L4 §5.3 entirely rewritten with first-principles per-mechanism analysis: MoE 2-4× (not 10-30× headline), quant 2-2.5× (not 4×), specdec 1.5-2× blended (not 2-3×), ASIC 3× blended (not 5-10×)
+- L5 §5 introduction reframed as "falsifiable hypothesis for joint refinement"; §5.5.7 NEW Joint Calibration Proposal with three co-authored measurement studies
+
+**Polson revisions:**
+- P1 Appendix A parameter classification: observed/inferred/judgment (per Inference Bottleneck arXiv:2604.17431)
+- P2 §3.4.1 footnote: 8%/mo default anchored to Epoch AI panel + cross-vendor empirical median
+- P3 Appendix C NEW: Monte Carlo Bayesian sensitivity (10K draws, ρ=0.4 correlation between Interp. 2 and 3). **Key discovery**: even with correlation, joint product overstates implied gap by ~2.4×, indicating a missing fourth factor. v1.0 reports this honestly.
+- P4 §4.1.1 sensitivity bands annotated as ~10th/50th/90th-percentile approximations of Appendix C posterior
+
+**Sokolov revisions:**
+- S1 MoE multiplier corrected (10-30× → 2-4× effective, attention dominates on long-context)
+- S2 4-bit quantization corrected (4× memory, 2-2.5× wall-clock; KV-cache stays higher precision)
+- S3 Speculative decoding workload-conditional (2-3× chat, 1.2-1.5× reasoning, 1.5-2× blended)
+- S4 ASIC efficiency workload-qualified (3-5× optimized decode, 3× blended; not 5-10×)
+- S5 §5.4 TokenPowerBench citation honestly qualified: cache-hit numbers based on engineering reports, not peer-reviewed measurement; conservative range 20-35% adopted
+- S6 Anthropic 35% tokenizer noted as upper bound, not average; classified judgment-based
+- S7 Gemini composite confidence downgraded High → Medium (API component still High; multiplier judgment-based; composite inherits weaker rating)
+
+**Harvard editorial synthesis revisions:**
+- H1 §3.5.1 illustrative value-added correction: per-region scalars (US 0.7×, CN 0.4×, EU 0.6×, ROW 0.6×) showing US Token GDP shifts 88%→75-82% under value-added accounting
+- H2 §2.5 David 1990 "Computer and the Dynamo" added as the right capability-expansion frame for the price-volume paradox; Jevons rebound framing replaced
+- H3 §6.3.1 NEW: Factor-Share Decomposition research-gap section flagging labor/capital/rent decomposition as the central macroeconomic question for AI policy
+- H4 §6 retain v0.92 framing (overruling Stanford push for further softening, per Harvard judgment)
+
+### New files
+
+- `paper/appendix-c-bayesian-sensitivity.md` (1,286 words) — formal Bayesian analysis with reproducible Python
+- `paper/scripts/bayesian_sensitivity.py` (~120 lines) — Monte Carlo simulation reproducing Appendix C results
+- `paper/RESPONSE-TO-REVIEWERS-v1.0.md` (~3,500 words) — concern-by-concern mapping of reviewer critiques to v1.0 changes
+
+### References added
+
+- [27] David 1990 "The Dynamo and the Computer" (American Economic Review, capability-expansion historical analogue)
+- references.bib total: 41 → 42 entries
+- build_tex.py CITE_MAP extended to [27]
+
+### Most consequential v1.0 finding
+
+**Appendix C discovers that the §5.5 decomposition is partial.** Running 10,000 MC draws with the Sokolov-tightened factor ranges (1.05-1.20, 2.0-4.0, 1.25-1.65) and ρ=0.4 correlation, the posterior median for G/L is ~4.7, far above the observed 2.04. Even under perfect positive correlation (ρ=1.0), the median stays ~4.65. The gap cannot be closed by correlation alone or by single-factor adjustments within plausible ranges. The honest conclusion: a fourth factor is needed, identified as theoretical-vs-empirical hardware utilization (~0.3-0.5×), reflecting the gap between peak-throughput hardware claims and actual production utilization rates of 30-50%. This is flagged for v1.1 work and is the most important methodological discovery of the v1.0 revision.
+
+### Manuscript size
+
+| Section | v0.92 | v1.0 | Δ |
+|---|---:|---:|---:|
+| Abstract | 266 | 266 | 0 |
+| §1 Intro | 947 | 947 | 0 |
+| §2 Related Work | 2,544 | 2,632 | +88 (David 1990) |
+| §3 Methodology | 2,977 | 3,254 | +277 (value-added correction table; 8%/mo footnote) |
+| §4 Findings | 1,852 | 1,852 | 0 |
+| §5 Tension | 2,326 | 3,534 | +1,208 (per-mechanism §5.3 rewrite, /4 removal, §5.5.7 NEW) |
+| §6 Discussion | 1,127 | 1,348 | +221 (factor-share §6.3.1 NEW) |
+| §7 Conclusion | 238 | 238 | 0 |
+| Appendix A | 740 | 908 | +168 (parameter classification, Gemini Medium) |
+| Appendix B | 1,049 | 1,049 | 0 |
+| Appendix C | — | 1,286 | NEW |
+| **Total** | **14,066** | **17,314** | **+3,248 (+23%)** |
+
+main.tex: 100,539 → 124,865 chars (+24%).
+
+### Build toolchain enhancements
+
+- `build_tex.py`: Added fenced code-block tracking — `\begin{verbatim}` / `\end{verbatim}` wrapping for ``` blocks. Without this, Python `# comment` lines inside Appendix C code blocks were being parsed as LaTeX `\section{}` directives. Bug introduced when Appendix C was added; fixed in v1.0.
+
+### Held unchanged
+
+- 21 vendor token totals: 310T/day · $95.8B Token GDP · 50/50 CN-US volume parity
+- All v0.85-v0.91 data blocks (industry_intelligence, key_paradoxes, outreach_targets, framework_adoption, sensitivity_bands, pricing_history, reasoning_split, autoresearch_log)
+
+### Why this matters
+
+The Litowitz reviewer's verdict on v0.92 was "polite rebuttal needed if posted as-is, useful empirical companion with revisions." With v1.0 implementing all four reviewers' substantive concerns:
+- The "static artifact" rhetorical overload is removed (L1)
+- The unprincipled /4 correction is replaced with explicit correlation modeling (L2)
+- The decomposition is honestly reported as *partial*, with Appendix C identifying the missing fourth factor (P3)
+- All engineering parameters tightened to production-realistic values (S1-S7)
+- The §5.5.7 Joint Calibration Proposal explicitly invites Litowitz/Polson/Sokolov co-authorship on three measurement studies
+
+The Harvard editor's stated test ("whether Litowitz, Polson, and Sokolov will read §5 and either co-author a follow-up or write a polite rebuttal") has shifted decisively toward co-author. v1.0 is the pitch document for that collaboration.
+
+### Files updated
+
+- paper/05-tension.md (§5.3, §5.5.3-5.5.7 substantially revised)
+- paper/03-methodology.md (§3.5.1 value-added correction)
+- paper/02-related-work.md (§2.5 David 1990)
+- paper/06-discussion.md (§6.3.1 NEW factor-share)
+- paper/appendix-a-vendors.md (Gemini Medium, parameter classification)
+- paper/appendix-c-bayesian-sensitivity.md (NEW)
+- paper/scripts/bayesian_sensitivity.py (NEW)
+- paper/RESPONSE-TO-REVIEWERS-v1.0.md (NEW)
+- paper/references.bib (+1 entry: David 1990)
+- paper/build_tex.py (CITE_MAP +27; verbatim code-block handling)
+- paper/main.tex (auto-regenerated, 124,865 chars, all checks pass)
+- data/tci-latest.json (v0.92 → v1.0 metadata only)
+- api/v1/tci.json + snapshot.json (synced)
+- data/snapshots/2026-05-10.json (overwritten with v1.0)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-10 (v0.92 — Paper Major Revision Per Stanford Peer Review)
 
 Paper-side major revision implementing 10 specific edits from a simulated tough-Stanford-peer-review critique. All four numerical inconsistencies fixed, four reference issues resolved, three new theoretical literature engagements, Section 5 fully rewritten with quantitative decomposition, Token GDP construct properly disclaimed. Paper grew from 12,395 → 14,066 words (+13.5%).

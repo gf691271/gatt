@@ -24,6 +24,7 @@ SECTIONS = [
     ("conclusion", "07-conclusion.md"),
     ("appA", "appendix-a-vendors.md"),
     ("appB", "appendix-b-token-gdp-example.md"),
+    ("appC", "appendix-c-bayesian-sensitivity.md"),
 ]
 
 # Numeric citation [1] → BibTeX key mapping (per references.bib order)
@@ -54,6 +55,7 @@ CITE_MAP = {
     "24": "acemoglu2018task",
     "25": "hulten1978growth",
     "26": "bresnahan1995general",
+    "27": "david1990dynamo",
 }
 
 PREAMBLE = r"""\documentclass[11pt,a4paper]{article}
@@ -257,10 +259,28 @@ def convert_block(md: str, is_abstract=False) -> str:
     lines = md.split("\n")
     out = []
     i = 0
+    in_code_block = False  # track ``` fenced code blocks
 
     while i < len(lines):
         line = lines[i]
         stripped = line.strip()
+
+        # Code fence detection — wrap fenced blocks in verbatim env
+        if stripped.startswith("```"):
+            if not in_code_block:
+                in_code_block = True
+                out.append(r"\begin{verbatim}")
+            else:
+                in_code_block = False
+                out.append(r"\end{verbatim}")
+            i += 1
+            continue
+
+        # While inside a code block, emit lines verbatim, no markdown processing
+        if in_code_block:
+            out.append(line)
+            i += 1
+            continue
 
         # Headings
         if stripped.startswith("# "):

@@ -34,6 +34,14 @@ GATT carries four limitations worth surfacing.
 
 **Confidence still concentrated in the top tier.** The four highest-confidence vendor estimates (Doubao, Gemini, OpenAI, Anthropic) cover 88% of global volume. The remaining seventeen vendors are individually small but collectively material; their typically lower confidence ratings concentrate measurement error in the long tail rather than the headline.
 
+## 6.3.1 Factor-Share Decomposition: A Critical Research Gap
+
+GATT's headline 88% US Token GDP share is a gross-output number, and the gross-vs-value-added distinction (§3.5.1) is one critical caveat. A second, equally consequential gap that this paper does not yet address is the *factor-share decomposition* of that 88%: what fraction accrues to (a) labor (model researchers, infrastructure engineers, deployment operations), (b) capital (compute infrastructure, datacenter capex, hardware depreciation), (c) economic rent on frontier model capability (the price premium charged because capability gaps remain), and (d) data and intellectual-property rents (training-data licensing, model-architecture patents)?
+
+This is the central macroeconomic question for AI policy. A US Token GDP share dominated by frontier-capability rent has different policy implications than one dominated by capital rent or labor compensation. Industrial-policy debates currently proceed without this decomposition, treating the headline regional share as if its composition were neutral. It is not.
+
+GATT v0.84 or v1.0 will explore factor-share decomposition where vendor cost-disclosure data permits, drawing on Brynjolfsson, Collis, and Eggers' (2019) framework for AI's intangible-capital component and Hulten's (1978) standard growth-accounting formulation. We flag this here as the most important unaddressed measurement gap, not as a closure. Policy researchers — Furman, Acemoglu, Autor, and the Hulten-tradition growth-accounting community — should treat the current 88/6 figure as the *starting point* for a factor-share investigation, not the conclusion of one.
+
 ## 6.4 Future Work
 
 GATT v0.83 will adopt the Inference Bottleneck [12] template — observed/inferred/judgment parameter classification with explicit sensitivity analysis — and publish sensitivity bands for headline figures, with conservative bounds anchored to Litowitz/Polson/Sokolov [1] physics-ceiling assumptions and aggressive bounds matching current empirical extrapolation. v0.84 will explore per-domain decomposition (chat / coding / search / agent workflows) where vendor disclosures permit. v1.0 will incorporate the LLM Inference Production Frontier [11] as a theoretical grounding for Token GDP, replacing simple blended pricing with production-cost curves where vendor cost data permits.

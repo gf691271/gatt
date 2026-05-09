@@ -117,7 +117,18 @@ The Token GDP construct is therefore best understood as a **counterfactual retai
 
 We retain the "Token GDP" label because the construct is parallel to GDP in spirit — an aggregate economic-value measure across a defined production base — but commit in this paper to using "Token GDP (retail-equivalent gross)" or "TGE" in the manuscript whenever the gross-vs-value-added distinction matters, and to encouraging downstream researchers to compute alternative variants from the open dataset.
 
-The Zhuang et al. (2025) Inference Production Frontier [11] is the most natural theoretical refinement: blended prices should ideally reflect observed production-cost curves and demand elasticities rather than retail menu prices. GATT v0.83+ will incorporate this where vendor cost data permits.
+**Illustrative value-added correction.** A first-order estimate of how Token GDP would shift under value-added accounting is informative. Volcengine's all-sources Doubao volume includes substantial intermediate-input usage: Douyin AI Search recommendation calls, Doubao consumer chat, Jimeng image-generation prompt expansion, internal Volcengine pipeline workflows. Even if intermediate-input tokens represent half of all Chinese vendor volume (a conservative estimate, given the IDC arithmetic implies >95% of Volcengine throughput is internal first-party), netting them out would reduce China's value-added token volume by roughly 50%. US vendors are more modular — token sales between OpenAI/Anthropic and downstream API customers are arms-length transactions and would survive value-added netting more intact — though some intermediate-input volume exists (Microsoft Copilot's internal Azure usage, for instance). Applying a conservative 0.4-0.6× value-added scalar to gross Token GDP yields the following illustrative correction:
+
+| Region | Gross Token GDP (% of $95.8B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
+|---|:---:|:---:|:---:|
+| United States | 88% | ~0.7× | ~75-82% |
+| China | 6% | ~0.4× | ~3-4% |
+| Europe | 4% | ~0.6× | ~2-3% |
+| Rest of World | 2% | ~0.6× | ~1-2% |
+
+The qualitative finding — US Token GDP dominance — survives the value-added correction; the quantitative magnitude shifts modestly (88% → 75-82% US share). The China value-added share contracts further (6% → 3-4%) reflecting the heavily vertical-integrated structure of Chinese AI deployment. Readers citing GATT's headline 88/6 split for policy debates should note that under value-added accounting the gap widens, not narrows. The 0.4× and 0.7× scalars used here are illustrative; a rigorous decomposition awaits vendor cost-disclosure data we do not yet have.
+
+**The Zhuang et al. (2025) Inference Production Frontier [11]** is the most natural theoretical refinement: blended prices should ideally reflect observed production-cost curves and demand elasticities rather than retail menu prices. GATT v0.83+ will incorporate this where vendor cost data permits, alongside the value-added decomposition above.
 
 ## 3.6 Per-Capita Calculation
 

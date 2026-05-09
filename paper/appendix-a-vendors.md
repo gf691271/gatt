@@ -5,7 +5,7 @@ The full vendor table from GATT v0.82, ordered by daily token throughput. All fi
 | Rank | Vendor | Country | Daily Tokens (T) | Confidence | Tier | Source date | Notes |
 |------|--------|---------|-----------------:|:----------:|:----:|-------------|-------|
 | 1 | Doubao (ByteDance) | CN | 129.0 | High | 1 | 2026-04-07 | All-sources scope; Volcengine official 120T baseline (Apr 1) |
-| 2 | Google Gemini (All Surfaces) | US | 73.0 | High | 1 | 2026-04-09 | Pichai 16B tokens/min API; 3.2× All Surfaces multiplier |
+| 2 | Google Gemini (All Surfaces) | US | 73.0 | Medium | 1 | 2026-04-09 | Pichai 16B tokens/min API observed; 3.2× All Surfaces multiplier is editorial (downgraded from High in v1.0 per Sokolov critique) |
 | 3 | OpenAI (ChatGPT + API) | US | 45.0 | High | 1 | 2026-05-05 | 15B tokens/min API; GPT-5.5 + 5.5 Instant launches |
 | 4 | Anthropic Claude | US | 22.0 | High | 1 | 2026-04-16 | Opus 4.7 + 35% tokenizer expansion + MAU +44% |
 | 5 | DeepSeek | CN | 9.2 | Low | 2 | 2026-04-24 | V4 Pro/Flash launch; 1M context; #3 enterprise SDK |
@@ -26,7 +26,9 @@ The full vendor table from GATT v0.82, ordered by daily token throughput. All fi
 | 20 | Amazon Bedrock | US | 0.17 | Low | 2 | 2025-Q4 | AWS revenue ÷ price |
 | 21 | GLM (Zhipu AI) | CN | 0.13 | Medium | 1 | 2026-02 | OpenRouter data |
 
-**Confidence distribution:** 4 High · 2 Medium-high · 5 Medium · 10 Low (totals to 21)
+**Confidence distribution (v1.0):** 3 High · 2 Medium-high · 6 Medium · 10 Low (totals to 21). The Gemini All Surfaces composite was downgraded from High to Medium in v1.0; the API component (23T) remains High confidence, but the 3.2× All Surfaces multiplier covering Search AI Overviews, Gemini App, and Workspace is editorial rather than measured, and the composite estimate inherits the weaker rating of its components.
+
+**Parameter classification (v1.0, per Inference Bottleneck arXiv:2604.17431 [12]):** Each estimate is additionally classified by source quality. *Observed* = direct vendor disclosure of comparable measure within 90 days (4 vendors: Doubao 120T baseline, OpenAI 15B/min API, Pichai 16B/min API, Anthropic ARR trajectory). *Inferred* = computed from corroborated indirect signals such as ARR-and-pricing back-calculation (10 vendors). *Judgment-based* = editorial estimate where signals are sparse (7 vendors). The All Surfaces multiplier for Gemini (3.2×) is judgment-based; Anthropic's 35% tokenizer expansion factor as applied to GATT's 22T estimate is judgment-based (the 35% upper-bound figure is observed; the assumption that this rate applies as average to GATT's volume base is editorial).
 **Tier distribution:** 12 Tier-1 (direct or strong indirect) · 9 Tier-2 (back-calc / proxy)
 **Country distribution:** 10 US · 10 CN · 1 FR (totals to 21)
 
