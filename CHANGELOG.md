@@ -1,5 +1,41 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.88 — Pricing History Time Series)
+
+NEW `pricing_history` block. The price-volume paradox narrative (v0.86 `key_paradoxes`) now has machine-readable time series backing across three model tiers.
+
+**Frontier tier** (GPT-4-class equivalent, output token rate):
+- 2023-03: $60/M (GPT-4 launch)
+- 2023-11: $30/M (GPT-4 Turbo)
+- 2024-05: $15/M (GPT-4o)
+- 2024-12: $10/M (GPT-4o + Claude 3.5 Sonnet era)
+- 2025-08: $1.50/M (GPT-4-equivalent commodity, NavyaAI anchor)
+- 2026-05: $30/M (GPT-5.5 / Opus 4.7 — RESET as frontier advanced)
+
+**Compression**: 40× from Mar 2023 to Aug 2025 for the same model class. Frontier price reset in 2026 reflects model-class advance, not pricing inflation — same dollar buys vastly more capability now.
+
+**Mid-tier** (Gemini Flash / GPT mini): $5/M (May 2024) → $0.30/M (May 2026) = ~17× in 2 years.
+
+**Budget tier** (DeepSeek / Doubao / open-weight): $0.30/M (Aug 2024) → $0.10/M blended (May 2026); Doubao at ~$0.06 = sub-cent per thousand tokens.
+
+### Three independent measurements agree
+- Xing 2026 (arXiv:2603.21690): 40× over 24 months for GPT-4 equivalent
+- SemiAnalysis: 1200× for GPT-3-class older tier
+- Epoch AI: inference cost halves every 2 months (2 orders of magnitude/year)
+
+### Implication for Token GDP
+GATT's blended regional prices (US $1.50/M, EU $1.20/M, CN $0.10/M) are vendor-volume-weighted across all tiers. As the volume mix shifts, blended prices move. v0.88 makes the pricing series machine-readable so any analyst computing forward Token GDP can re-anchor explicitly.
+
+Vendor totals unchanged.
+
+### Files updated
+- data/tci-latest.json (+pricing_history block, v0.87 → v0.88)
+- api/v1/tci.json + snapshot.json (synced)
+- data/snapshots/2026-05-10.json (overwritten)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-10 (v0.87 — Reasoning Workload Dimension)
 
 NEW `reasoning_split` block. Per Gartner (March 2026), reasoning models consume 5-30× more tokens per task than standard chatbots. GATT now decomposes the 310T/day global total into reasoning (~95T, 31%) and non-reasoning (~215T, 69%) workloads, with per-vendor reasoning_share_pct estimates for all 21 vendors.

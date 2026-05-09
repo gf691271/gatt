@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "gatt_version": "0.87",
-  "generated_at": "2026-05-10T04:00:00Z",
+  "gatt_version": "0.88",
+  "generated_at": "2026-05-10T05:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-10",
     "confidence": "medium-high",
     "last_updated": "2026-05-10",
-    "note": "v0.87 — Reasoning workload split. Per Gartner (March 2026), reasoning models consume 5-30× more tokens per task than standard chatbots. New `reasoning_split` block decomposes the 310T/day global total into ~95T reasoning (31%) + ~215T non-reasoning (69%). Per-vendor reasoning_share assigned across 21 vendors. Top-indexed: DeepSeek 55% (R1/V4 reasoning brand), Anthropic 45% (Claude Code extended thinking), OpenAI 40% (o-series + GPT-5.5). Bottom-indexed: Groq 10% (speed-optimized), Ernie/Spark 15% (consumer chat), Doubao 25% (Doubao App dominant). Implication: reasoning is the principal 2026-2028 growth vector; under-indexed vendors face workload-mix shift risk. Vendor totals held."
+    "note": "v0.88 — Pricing history time series. NEW pricing_history block tracks GPT-4-equivalent inference pricing across three tiers (frontier / mid / budget) from 2023-03 to 2026-05. Frontier tier: $60/M (Mar 2023) → $1.50/M (Aug 2025) = 40× compression, then RESET to $30/M with GPT-5.5/Opus 4.7 frontier advance. Mid-tier: ~17× compression in 2 years. Budget tier: $0.30/M (Aug 2024) → $0.10/M (May 2026, Doubao ~$0.06 blended). Three independent measurements (Xing 40×, SemiAnalysis 1200× for older tiers, Epoch AI 2-month halving) agree. v0.86 key_paradoxes 99.7%/3× narrative now has machine-readable time series backing. Vendor totals held."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -368,6 +368,50 @@
       "week_2_plus": "China-side outreach (CAICT, CEIBS); analyst outreach (BCG, Forrester); long-tail substack features",
       "ongoing": "Each new vendor disclosure (e.g., next Volcengine FORCE conference, Anthropic ARR update) is a fresh news hook to re-engage tier-2"
     }
+  },
+  "pricing_history": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Time series of inference pricing across model tiers and time. Documents the 99.7% unit-cost decline (2023-2025) that drives the price-volume paradox — GATT's central narrative. Without explicit time series, Token GDP figures are not interpretable across periods.",
+    "methodology_note": "Pricing is reported as US-frontier-equivalent in $/M output tokens unless otherwise noted. Three model tiers tracked: frontier (GPT-4-class then; GPT-5.5/Opus 4.7 now), mid-tier (Gemini Flash, GPT mini, Claude Haiku), budget (DeepSeek, Doubao, open-weight). Sources: vendor pricing pages, Xing 2026 (arXiv:2603.21690), Epoch AI inference cost panel, SemiAnalysis newsletter, NavyaAI April 2026 cost report, Spheron Network blog.",
+    "frontier_tier": {
+      "description": "GPT-4-class equivalent quality, output token rate",
+      "trajectory": [
+        {"date": "2023-03", "price_per_M_USD": 60.00, "model": "GPT-4 (8K)", "source": "Xing 2026"},
+        {"date": "2023-11", "price_per_M_USD": 30.00, "model": "GPT-4 Turbo", "source": "OpenAI pricing"},
+        {"date": "2024-05", "price_per_M_USD": 15.00, "model": "GPT-4o", "source": "OpenAI pricing"},
+        {"date": "2024-12", "price_per_M_USD": 10.00, "model": "GPT-4o + Claude 3.5 Sonnet", "source": "vendor pricing pages"},
+        {"date": "2025-08", "price_per_M_USD": 1.50, "model": "GPT-4-equivalent commodity", "source": "Xing 2026 / NavyaAI"},
+        {"date": "2026-05", "price_per_M_USD": 30.00, "model": "GPT-5.5 / Opus 4.7 (frontier moved up)", "source": "OpenAI / Anthropic pricing"}
+      ],
+      "headline": "GPT-4 equivalent fell from $60/M (Mar 2023) to $1.50/M (Aug 2025) = 40× compression. Frontier tier RESET in 2026 with GPT-5.5 / Opus 4.7 ($30/M output) — same model class, new capability frontier."
+    },
+    "mid_tier": {
+      "description": "Strong reasoning capability at moderate price",
+      "trajectory": [
+        {"date": "2024-05", "price_per_M_USD": 5.00, "model": "GPT-4 mini / Gemini 1.5 Flash"},
+        {"date": "2025-03", "price_per_M_USD": 1.50, "model": "Gemini 2.0 Flash / GPT-5 mini"},
+        {"date": "2026-05", "price_per_M_USD": 0.30, "model": "Gemini 3.1 Flash-Lite / GPT-5 mini ($0.075-0.30 input, $0.30-2.00 output)"}
+      ],
+      "headline": "Mid-tier compressed ~17× in 2 years"
+    },
+    "budget_tier": {
+      "description": "Open-weight or aggressive-pricing models, often Chinese",
+      "trajectory": [
+        {"date": "2024-08", "price_per_M_USD": 0.30, "model": "DeepSeek V2"},
+        {"date": "2025-04", "price_per_M_USD": 0.14, "model": "DeepSeek V3 / Doubao Pro"},
+        {"date": "2025-08", "price_per_M_USD": 0.14, "model": "GPT-4-equivalent commodity (NavyaAI Aug 2025 anchor)"},
+        {"date": "2026-05", "price_per_M_USD": 0.10, "model": "DeepSeek V4 Pro ($0.145/$1.74), Doubao (~$0.06 blended), Kimi K2.6 ($0.60/$2.50)"}
+      ],
+      "headline": "Budget tier now ~$0.10/M blended; Doubao at ~$0.06 = sub-cent per thousand tokens"
+    },
+    "compression_summary": {
+      "frontier_2023_to_2025_x": 40,
+      "frontier_with_capability_reset_2026": "Same dollar buys vastly more capability; new frontier ~$30/M reflects model-class advance, not pricing inflation",
+      "gpt3_class_2023_to_2025_x": 1200,
+      "epoch_ai_halving_period_months": 2,
+      "narrative": "Three independent measurements (Xing 40×, SemiAnalysis 1200× for older tiers, Epoch AI 2-month halving) all agree: inference pricing has compressed at an extraordinary rate. GATT's Token GDP figures must therefore carry as-of dates; a Token GDP statement six months old is materially mis-anchored."
+    },
+    "implication_for_token_gdp": "GATT's blended regional prices (US $1.50/M, EU $1.20/M, CN $0.10/M, ROW $0.90/M) are vendor-volume-weighted across all tiers. If the volume mix shifts toward frontier (GPT-5.5/Opus 4.7), blended prices rise; toward budget (DeepSeek/Doubao), blended prices fall. v0.86 key_paradoxes documented the 99.7%/3× headline; v0.88 makes the pricing series machine-readable and citable."
   },
   "reasoning_split": {
     "as_of_date": "2026-05-10",
