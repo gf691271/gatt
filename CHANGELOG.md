@@ -1,5 +1,33 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.87 — Reasoning Workload Dimension)
+
+NEW `reasoning_split` block. Per Gartner (March 2026), reasoning models consume 5-30× more tokens per task than standard chatbots. GATT now decomposes the 310T/day global total into reasoning (~95T, 31%) and non-reasoning (~215T, 69%) workloads, with per-vendor reasoning_share_pct estimates for all 21 vendors.
+
+**Top-indexed reasoning vendors (over-indexed on growth vector):**
+- DeepSeek 55% (R1 + V4 reasoning brand)
+- Anthropic 45% (Claude Code extended thinking)
+- OpenAI 40% (o-series + GPT-5.5 reasoning)
+- Perplexity 35% (Pro Search + Comet reasoning grounded)
+- Tencent Hy3 35% (fast-and-slow-thinking fused architecture)
+
+**Bottom-indexed (workload-mix shift risk):**
+- Groq 10% (speed-optimized inference accelerator)
+- Ernie 15%, Spark 15%, MiniMax 15%, GLM 15% (consumer chat dominant)
+- Doubao 25% (Doubao App + Douyin chat heavy)
+
+**Why this matters:** Reasoning is not yet the majority of global token volume but is the principal 2026-2028 growth vector. If reasoning share grows from 31% to 50% by 2027 and the 5-30× per-task multiplier holds, total global token volume could grow 30%+ from workload-mix shift alone — even with constant task counts.
+
+Vendor totals unchanged. This is a decomposition layer, not a data revision.
+
+### Files updated
+- data/tci-latest.json (+reasoning_split block, version 0.86 → 0.87)
+- api/v1/tci.json + snapshot.json (synced)
+- data/snapshots/2026-05-10.json (overwritten)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-10 (v0.86 — Industry Intelligence, Key Paradoxes, Outreach Targets)
 
 Sixth same-day release. Adds three new top-level blocks to `data/tci-latest.json` mapping the broader media/podcast/newsletter/analyst ecosystem GATT competes and engages with; surfaces the central GATT narrative ("price-volume paradox: 99.7% / 3×") as a documented arithmetic story; and prioritizes 16 outreach targets for the v0.84 paper launch. No vendor data changes.

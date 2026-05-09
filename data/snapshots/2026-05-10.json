@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "gatt_version": "0.86",
-  "generated_at": "2026-05-10T03:00:00Z",
+  "gatt_version": "0.87",
+  "generated_at": "2026-05-10T04:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-10",
     "confidence": "medium-high",
     "last_updated": "2026-05-10",
-    "note": "v0.86 — Industry intelligence + key paradoxes + outreach targets blocks added. Maps the broader media/podcast/newsletter/analyst ecosystem (35+ resources cataloged across 4 categories), surfaces 5 key data paradoxes with the price-volume paradox (99.7% cost decline / 3× spending growth) as the central GATT narrative, and prioritizes 16 outreach targets across academic, practitioner, media, and policy tiers. Vendor numbers held. v0.80 IDC + v0.81 OR/Perplexity/Xiaomi + v0.82 Photons=Tokens 2× tension + v0.85 framework_adoption all retained."
+    "note": "v0.87 — Reasoning workload split. Per Gartner (March 2026), reasoning models consume 5-30× more tokens per task than standard chatbots. New `reasoning_split` block decomposes the 310T/day global total into ~95T reasoning (31%) + ~215T non-reasoning (69%). Per-vendor reasoning_share assigned across 21 vendors. Top-indexed: DeepSeek 55% (R1/V4 reasoning brand), Anthropic 45% (Claude Code extended thinking), OpenAI 40% (o-series + GPT-5.5). Bottom-indexed: Groq 10% (speed-optimized), Ernie/Spark 15% (consumer chat), Doubao 25% (Doubao App dominant). Implication: reasoning is the principal 2026-2028 growth vector; under-indexed vendors face workload-mix shift risk. Vendor totals held."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -368,6 +368,45 @@
       "week_2_plus": "China-side outreach (CAICT, CEIBS); analyst outreach (BCG, Forrester); long-tail substack features",
       "ongoing": "Each new vendor disclosure (e.g., next Volcengine FORCE conference, Anthropic ARR update) is a fresh news hook to re-engage tier-2"
     }
+  },
+  "reasoning_split": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Decomposes vendor token throughput into reasoning vs non-reasoning workload shares. Per Gartner (March 2026), reasoning models consume 5-30× more tokens per task than standard chatbots. Tracking the reasoning share is essential for forward demand modeling: as agentic and reasoning-heavy workloads grow, total token volume scales much faster than user count.",
+    "methodology_note": "Reasoning share is a vendor-level estimate based on observable product mix (e.g., DeepSeek's R1/V4 reasoning brand vs. ByteDance's chat-heavy Doubao consumer product). Confidence is uniformly low-to-medium because most vendors do not disclose workload split. The 30% global average is consistent with 2026 industry estimates from Gartner and BCG.",
+    "global_split": {
+      "reasoning_T_per_day": 95,
+      "non_reasoning_T_per_day": 215,
+      "reasoning_share_pct": 31,
+      "implications": [
+        "Reasoning workloads consume ~31% of global token volume but represent <20% of underlying tasks (per Gartner 5-30× per-task multiplier)",
+        "If reasoning share grows from 31% to 50% by 2027 and the multiplier holds, total global token volume could grow 30%+ from workload-mix shift alone, even with constant task count",
+        "Vendors with high reasoning share (DeepSeek 55%, Anthropic 45%, OpenAI 40%) are over-indexed on the dominant 2026-2028 growth vector"
+      ]
+    },
+    "vendor_reasoning_share": [
+      {"id": "deepseek", "share_pct": 55, "rationale": "R1 + V4 Pro/Flash explicitly reasoning-branded; DeepSeek's market position is reasoning-at-low-cost"},
+      {"id": "anthropic-claude", "share_pct": 45, "rationale": "Extended thinking heavily used in Claude Code; Opus 4.7 reasoning native; agentic workloads dominate API"},
+      {"id": "openai-chatgpt", "share_pct": 40, "rationale": "o-series reasoning models + GPT-5.5 reasoning baked in; reasoning is a major share of API traffic"},
+      {"id": "perplexity", "share_pct": 35, "rationale": "Pro Search and Comet browser explicitly use reasoning for grounded answers"},
+      {"id": "tencent-hunyuan", "share_pct": 35, "rationale": "Hy3 fast-and-slow-thinking fused architecture is reasoning-native"},
+      {"id": "google-gemini", "share_pct": 30, "rationale": "Thinking mode available across 3.x line; Deep Think a flagship feature"},
+      {"id": "moonshot-kimi", "share_pct": 30, "rationale": "K2.6 reasoning capable; ties GPT-5.5 on SWE-Bench Pro"},
+      {"id": "microsoft-azure", "share_pct": 30, "rationale": "Copilot uses GPT-5.5 + reasoning where applicable; agentic workflows growing"},
+      {"id": "openrouter", "share_pct": 30, "rationale": "Mix reflecting all routed models; aggregator overlap with vendor totals"},
+      {"id": "xiaomi-mimo", "share_pct": 25, "rationale": "1T params MoE optimized for agentic scenarios"},
+      {"id": "bytedance-doubao", "share_pct": 25, "rationale": "Doubao 1.6 reasoning model exists, but consumer chat (Doubao App, Douyin) dominates volume; reasoning share will grow as agent products scale"},
+      {"id": "amazon-bedrock", "share_pct": 25, "rationale": "Hosts Claude + other reasoning models; usage profile mirrors Anthropic at lower share"},
+      {"id": "xai-grok", "share_pct": 25, "rationale": "Grok 4.x reasoning available; Twitter/X integration drives chat-heavy usage"},
+      {"id": "alibaba-qwen", "share_pct": 20, "rationale": "Qwen3-Max-Thinking + 3.6-Plus exist; enterprise mix has notable reasoning"},
+      {"id": "meta-llama", "share_pct": 20, "rationale": "Llama 4.x reasoning available; consumer-oriented Meta AI usage dominates"},
+      {"id": "mistral-ai", "share_pct": 20, "rationale": "Mid-tier reasoning capability; enterprise focus"},
+      {"id": "baidu-ernie", "share_pct": 15, "rationale": "Mostly consumer chat (Ernie Bot 202M MAU); enterprise reasoning share modest"},
+      {"id": "iflytek-spark", "share_pct": 15, "rationale": "Consumer-oriented; voice/translation use cases dominate"},
+      {"id": "minimax", "share_pct": 15, "rationale": "Consumer chat focus"},
+      {"id": "zhipu-glm", "share_pct": 15, "rationale": "Mid-tier; mixed enterprise + consumer usage"},
+      {"id": "groq", "share_pct": 10, "rationale": "Inference accelerator focus; speed-optimized for non-reasoning fast turnaround"}
+    ],
+    "narrative": "Reasoning is not yet the majority of global token volume (31%), but it is the principal growth vector. The vendors over-indexed on reasoning (DeepSeek, Anthropic, OpenAI) are positioned for the 2026-2028 agentic-workload expansion. Vendors under-indexed on reasoning (Doubao, Ernie, consumer-chat heavy) face a workload-mix shift risk: as enterprise demand pivots to multi-step agents, simple-chat-dominant vendors will see slower per-task volume growth even if user counts hold."
   },
   "methodology_triangulation": {
     "as_of_date": "2026-05-09",
