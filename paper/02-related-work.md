@@ -1,0 +1,57 @@
+# 2. Related Work
+
+GATT sits at the intersection of four research traditions: commercial research firms producing USD-priced infrastructure forecasts; recent academic and industry studies producing token-volume estimates from narrow slices of the market; physics-and-economics theoretical models of AI inference; and empirical user studies of platform usage patterns. None of these covers the full territory GATT occupies — global, all-sources, daily, per-vendor — but each contributes a piece, and GATT's methodology engages with all four.
+
+## 2.1 Commercial Research (USD-priced)
+
+The dominant commercial-research vocabulary for AI economics is dollars, not tokens. IDC's *Worldwide Artificial Intelligence Infrastructure Tracker* projects global AI infrastructure spending will reach $758 billion by 2029 [7], with the United States accounting for 76% of 2Q25 spending, the People's Republic of China 11.6%, Asia-Pacific-Japan 6.9%, and EMEA 4.7%. Cloud and shared environments command 84.1% of total spending. Gartner's *Worldwide AI Spending* forecast similarly aggregates AI software, services, and infrastructure: $1.5 trillion in 2025 [8], with revisions toward $2 trillion in 2026.
+
+These figures are essential for capital-expenditure planning, vendor sales sizing, and macroeconomic comparisons. They are not, however, useful for measuring throughput. Two equal infrastructure-dollar investments can produce wildly different token volumes depending on hardware efficiency, model architecture, and inference optimization. Conversely, a dollar of GPT-5.5 inference at Anthropic's Opus 4.7 prices produces about 15 times fewer tokens than a dollar of Doubao inference. The USD-token translation is non-stationary: Xing [6] documents that GPT-4-equivalent output pricing fell from approximately $60 per million tokens in early 2023 to under $1.50 per million in early 2025 — a 40-fold reduction in 24 months. Any analysis pinned to dollar units must constantly re-anchor as pricing moves.
+
+GATT does maintain a Token GDP metric (vendor volume × regional blended price), but this is presented alongside, not in place of, raw token volume.
+
+## 2.2 Token-Volume Research
+
+Token-volume measurement has three principal sources, each constrained.
+
+**IDC China Public Cloud Large Model Services**, released May 7, 2026 [4], reports that China's external enterprise MaaS market consumed 114 trillion tokens in 2024, growing 16-fold to 1,944 trillion in 2025, with a forecast of approximately 40,000 trillion tokens for 2026. Volcengine led the market at 49.5% share for full-year 2025 (up from 46.4% in 2024 and 49.2% for the first half of 2025). Alibaba Bailian held second position at 27% (H1 2025); Baidu Qianfan held third at 17%. The IDC report is the highest-quality external token-volume measurement available, but it has two scope restrictions: it covers only China, and it counts only external enterprise public-cloud calls. Internal first-party usage — for example, ByteDance's own consumption of Doubao through Douyin AI Search, the Doubao consumer app, and the Jimeng image-generation product — is explicitly excluded from IDC's scope.
+
+This exclusion produces a striking gap. IDC's 2025 China average works out to 5.32 trillion tokens per day across all external MaaS, of which Volcengine's 49.5% share equals approximately 2.64 trillion tokens per day. The Volcengine official disclosure of 120 trillion tokens per day at the Wuhan AI Innovation Expo (April 1, 2026) is roughly 45 times higher. The reconciliation is unambiguous: more than 95% of Volcengine's measured throughput is internal first-party usage outside IDC's scope. GATT's "all-sources" methodology (Section 3.3) is designed precisely to cover this gap.
+
+**Aubakirova et al. (2026) State of AI: An Empirical 100 Trillion Token Study** [5], conducted by Andreessen Horowitz with OpenRouter, analyzes 100 trillion cumulative tokens of LLM interactions on the OpenRouter platform. The study documents that open-source models, particularly reasoning-forward variants such as DeepSeek R1 and Kimi K2, are gaining share due to cost efficiency. Creative and coding workloads dominate token volume. As of December 2025, OpenRouter processed more than 1 trillion tokens per day, growing approximately 4× year-over-year (from 5 trillion per week in April 2025 to 20 trillion per week in April 2026). The study is rigorous within its scope but its scope is one aggregator. GATT estimates total OpenRouter throughput at approximately 3 trillion tokens per day in May 2026 — about 1% of global throughput.
+
+**Vendor disclosures** form the third pillar. OpenAI announced on March 31, 2026 that its APIs process more than 15 billion tokens per minute [9]. Sundar Pichai, in Google's Q1 2026 earnings call delivered at Cloud Next 2026, disclosed that Gemini processes more than 16 billion tokens per minute via direct API [10] — up from 10 billion in Q4 2025. Volcengine's 120 trillion tokens per day disclosure at the Wuhan event has already been discussed. Microsoft's Q3 FY2026 earnings (April 29, 2026) reported AI business ARR of $37 billion, up 123% year-over-year. These vendor disclosures are the highest-confidence inputs to GATT but appear sporadically and at heterogeneous granularities (per-minute API throughput, per-day total, per-quarter ARR). GATT translates these into a uniform daily-token unit.
+
+## 2.3 Physics & Economics of Inference
+
+A small but growing literature treats AI inference as an object of formal physics or economics modeling.
+
+The most directly relevant is **Litowitz, Polson, and Sokolov (2026)** [1], which constructs a MacKay-style supply-and-demand balance sheet for global token production. The authors apply Landauer's principle [2] and Shannon's channel capacity [3] to current and projected GPU and accelerator infrastructure. Their headline result — that the projected 2028 US AI energy allocation of 326 TWh could support roughly 6.5 × 10¹⁷ tokens per year, or 225,000 tokens per person per day — is the principal benchmark this paper engages with (Section 5). Their framing, that token production has thermodynamic costs and that the question of "which tokens are worth producing" matters more than capacity expansion, is broadly compatible with GATT's emphasis on Token GDP rather than raw volume.
+
+**Xing (2026)** [6] extends this argument into commodity-market design, proposing that AI tokens have evolved into a commodity asset class with fungibility, standardized measurement, large-scale trading, non-storability, and supply rigidity — sharing critical features with electricity, carbon emission allowances, and bandwidth. The paper proposes derivative contract designs for AI token futures and estimates that such instruments could reduce enterprise compute cost volatility by 62-78% via Monte Carlo simulation. The optimal launch window is identified as 2027-2028. Xing notes the absence of a "Token Performance Index (TPI)" as critical infrastructure missing for the proposed market; GATT functions as a working prototype of such an index.
+
+**Zhuang et al. (2025)** [11] develop the first formal "LLM Inference Production Frontier," establishing three economic principles: diminishing marginal cost, diminishing returns to scale, and an optimal cost-effectiveness zone. The framework supports pricing-side normalization of token throughput and could provide theoretical grounding for GATT's Token GDP methodology in future versions.
+
+**The Inference Bottleneck paper (2026, arXiv:2604.17431)** [12] develops a formal economic model of vertical foreclosure in AI markets with explicit calibration methodology. The paper distinguishes observed, inferred, and judgment-based parameters, and provides sensitivity analysis establishing which conclusions are robust to parameter perturbations. GATT's current confidence taxonomy (high/medium/low) is less granular than this template; we adopt the observed/inferred/judgment classification as the v0.83 development target.
+
+**TokenPowerBench (Anonymous 2025, arXiv:2512.03024)** [13] introduces energy-centric metrics — Joules per token, Joules per response, instantaneous power draw — aligned with the prefill and decode phases of transformer inference. Its findings on the variability of energy-per-token across architectures support Section 5's argument that the physical-ceiling computation is sensitive to assumptions about inference-stack efficiency.
+
+## 2.4 Empirical Comparison Studies
+
+A separate literature surveys actual user behavior across platforms. The most relevant is the **Cross-Platform User Survey (2026, arXiv:2603.25220)** [14], which collected responses from 388 active AI chat users across seven major platforms (ChatGPT, Claude, Gemini, DeepSeek, Grok, Mistral, Llama). Three findings inform GATT's methodology: first, the top three platforms (Claude, ChatGPT, DeepSeek) receive statistically indistinguishable satisfaction ratings, validating GATT's choice not to focus on a single "leader"; second, more than 80% of users use two or more platforms, with negligible switching costs, supporting a multi-vendor measurement approach; third, each platform attracts users for different reasons (interface, answer quality, content policy, word-of-mouth), implying that specialization rather than generalist dominance sustains competition.
+
+## 2.5 Where GATT Fits
+
+Each of the four traditions covers part of the measurement problem. None covers the full territory:
+
+| Approach | Geographic coverage | Vendor coverage | Update frequency | Unit |
+|---|---|---|---|---|
+| IDC / Gartner USD reports | Global / regional | Aggregate | Quarterly–annual | USD |
+| IDC China MaaS report | China only | All major China vendors | Annual / semi-annual | Tokens (external only) |
+| a16z / OpenRouter 100T study | Global | OpenRouter only | Periodic | Tokens (cumulative) |
+| Vendor disclosures | Vendor-specific | One at a time | Irregular | Heterogeneous |
+| Physics-ceiling models | Global | None | Static | Theoretical capacity |
+| User surveys | Global | All major platforms | Periodic | Satisfaction scores |
+| **GATT** | **Global** | **21 vendors, 12 countries** | **Daily** | **Tokens per day, all-sources** |
+
+GATT does not replace any of these. It complements them: the empirical companion to physics-ceiling modeling (Litowitz et al.), the global counterpart to IDC's China-only token report, the all-vendor extension of OpenRouter's single-platform study, and the daily-frequency partner to the quarterly USD trackers. Section 5 develops the most consequential of these complementary relationships — with the Litowitz/Polson/Sokolov physical ceiling — in detail.

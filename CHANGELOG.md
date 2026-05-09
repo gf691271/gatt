@@ -1,5 +1,79 @@
 # GATT Data Changelog
 
+## 2026-05-09 (v0.83 — Academic Paper Manuscript Released)
+
+Same-day fourth release. Adds the full **academic paper manuscript** under `paper/` as the v0.83 deliverable. No data changes; v0.82 vendor numbers held throughout.
+
+### What's new
+
+A complete 10,000+ word academic paper manuscript ready for arXiv preprint submission:
+
+- **Title:** *Measuring the Token Economy: An Empirical Companion to Physical-Ceiling Models of Global AI Inference*
+- **Author:** Frank Gao (independent researcher)
+- **Length:** 10,154 words across 7 sections + 2 appendices
+- **Target:** arXiv (cs.CY primary, econ.GN cross-list), then journal submission
+- **Hook:** Direct dialogue with Litowitz/Polson/Sokolov "Photons = Tokens" (arXiv:2603.06630). The paper opens with the 2.04× discrepancy between GATT's empirical 459,700 tokens/US-resident/day (May 2026) and the paper's 2028 physical ceiling of 225,000.
+
+### File structure (paper/)
+
+```
+paper/
+├── README.md                       (project workflow + arXiv submission plan)
+├── outline.md                      (1,555 words — structural plan)
+├── abstract.md                     (266 words — final abstract with 2× hook)
+├── 01-introduction.md              (898 words — Section 1)
+├── 02-related-work.md              (1,534 words — Section 2: 4 research traditions)
+├── 03-methodology.md               (1,770 words — Section 3: 21-vendor methodology)
+├── 04-findings.md                  (1,656 words — Section 4: empirical findings)
+├── 05-tension.md                   (1,323 words — Section 5: 3 reconciliation interpretations)
+├── 06-discussion.md                (905 words — Section 6: policy + geo-econ + limitations)
+├── 07-conclusion.md                (238 words — Section 7)
+├── appendix-a-vendors.md           (649 words — full 21-vendor table with confidence)
+├── appendix-b-token-gdp-example.md (915 words — Token GDP worked calculation + sensitivity)
+└── references.bib                  (BibTeX, 30 citations covering arXiv papers + vendor disclosures + classics)
+```
+
+### Core scholarly contributions
+
+1. **First global, all-sources, daily token throughput index** as a published methodology
+2. **Three reconciliation interpretations** for the 2× discrepancy with the physics-ceiling literature, with quantitative back-of-envelope reasoning
+3. **All-sources scope methodology** that explicitly distinguishes external API vs. internal first-party usage, with the 95% internal-usage demonstration for Volcengine via IDC arithmetic
+4. **Token GDP as a regional-comparable economic metric**, with sensitivity bands across pricing scenarios
+
+### Key references engaged
+
+The paper engages with 6 directly-relevant arXiv papers (4 of them 2026 publications):
+- arXiv:2603.06630 (Litowitz/Polson/Sokolov, Photons=Tokens) — central tension
+- arXiv:2603.21690 (Xing, AI Token Futures Market) — commodity framing
+- arXiv:2510.26136 (Zhuang et al., Beyond Benchmarks) — production frontier
+- arXiv:2603.25220 (Cross-Platform User Survey) — multi-home validation
+- arXiv:2604.17431 (Inference Bottleneck) — methodology template
+- arXiv:2601.10088 (a16z + OpenRouter, 100T Token Study) — OpenRouter validation
+
+### Editorial decisions documented in the paper
+
+- **Author list:** Frank Gao solo (per user direction)
+- **Hook:** "2× tension" opening (per user direction)
+- **Venue:** arXiv preprint first, journal submission after
+- **License:** CC BY 4.0 (matching the GATT dataset)
+
+### Next steps (post-v0.83)
+
+- Convert Markdown to LaTeX via Pandoc (`pandoc *.md -o paper.tex`)
+- arXiv submission (cs.CY primary, econ.GN cross-list)
+- Post-arXiv: target *AI Magazine*, *Big Data & Society*, or SSRN
+
+### Data state (v0.82 unchanged)
+
+- Global: 310T/day · Token GDP $95.8B/yr · 21 vendors · CN/US 50/50 volume parity · US 88% Token GDP · 597× per-capita gap · IDC + 5-paper academic validation
+
+### Files updated
+- paper/ directory (NEW): full manuscript + BibTeX
+- data/tci-latest.json (v0.82 → v0.83 metadata only)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-09 (v0.82 — Academic Validation Sweep)
 
 Same-day follow-up to v0.81. Surveyed arXiv for token-economy academic literature. Reviewed five relevant papers; documented one productive 2× tension between GATT empirical numbers and academic physics-ceiling projections.
