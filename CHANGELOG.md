@@ -1,5 +1,76 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.91 — arXiv Submission Toolchain)
+
+Paper-side release. Adds the arXiv-ready LaTeX toolchain and submission guide. No data changes.
+
+### What's new
+
+```
+paper/
+├── ARXIV_SUBMISSION.md   ← submission guide + endorser email template
+├── build_tex.py          ← Markdown → LaTeX converter (custom Python)
+├── check_tex.py          ← LaTeX integrity checker
+├── main.tex              ← arXiv-ready manuscript (auto-generated, 75,677 chars)
+└── ... (paper/*.md sources unchanged from v0.84)
+```
+
+### Toolchain
+
+- `build_tex.py` is a 200-line custom converter (no Pandoc dependency since Pandoc was unavailable on the build machine). Handles:
+  - Headings (# → \\section, ## → \\subsection, ### → \\subsubsection)
+  - Numeric citations [1] → \\cite{...} via 22-entry CITE_MAP
+  - Markdown links → \\href{}{}
+  - Bold / italic / inline code with `_` and `{` escaping inside \\texttt{}
+  - Markdown tables → booktabs tabular
+  - Display math `$$...$$` → equation environment
+  - Bullet/numbered list consolidation across blank lines
+  - Currency `$758` → `\\$758` (LaTeX-safe)
+  - Unicode superscripts (¹⁷) → `$^{17}$` (math mode)
+  - CJK character stripping (中国信通院 → empty; redundant with English equivalents)
+  - LaTeX-fatal char escaping (% & in body)
+
+- `check_tex.py` validates: citation resolution, brace balance, math-mode balance, currency-escape coverage, section structure, non-ASCII inventory.
+
+### Validation results (v0.91)
+
+- ✅ 53 \\cite calls, 22 unique citation keys (matches references.bib exactly)
+- ✅ Brace balance: 353 open / 353 close
+- ✅ Math mode balanced
+- ✅ 0 unprotected currency $
+- ✅ 9 sections + 2 appendices
+- ✅ 6 remaining non-ASCII chars (· × ÷ – — →) all utf8 inputenc compatible
+
+### ARXIV_SUBMISSION.md contents
+
+- Pre-flight checklist (8 items)
+- arXiv form fields: title, abstract (plain-text version), categories (cs.CY primary, econ.GN cross-list), comments, license
+- Endorser request paths + email template (3 best candidates: Brynjolfsson, Midha, Sokolov)
+- Day-of submission timing recommendations
+- Day 0 / Day 1-2 / Day 3-7 outreach schedule (mapped to v0.86 outreach_targets)
+- Post-arXiv next steps (journal, infographic, data story, domain, book)
+
+### Why this matters
+
+The paper has been sitting in markdown-only state since v0.84. Without LaTeX, it cannot be cited or submitted. v0.91 closes that gap: the manuscript is now one upload away from arXiv. The build tooling is also reproducible — future paper revisions just rerun `python paper/build_tex.py`.
+
+### What's NOT changed
+- All 21 vendor numbers held: 310T/day · $95.8B Token GDP · 50/50 CN-US volume parity
+- All v0.85-v0.90 data blocks retained
+- paper/*.md sources unchanged from v0.84
+
+### Files updated
+- paper/ARXIV_SUBMISSION.md (NEW, 287 lines)
+- paper/build_tex.py (NEW, ~250 lines)
+- paper/check_tex.py (NEW, ~50 lines)
+- paper/main.tex (NEW, 75,677 chars auto-generated)
+- data/tci-latest.json (v0.90 → v0.91 metadata only)
+- api/v1/tci.json + snapshot.json (synced)
+- data/snapshots/2026-05-10.json (overwritten with v0.91)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-10 (v0.90 — Autoresearch Quality-Assurance Pass)
 
 NEW `autoresearch_log` block. Three-phase systematic quality-assurance pass: (1) top-5 vendor freshness check, (2) eight key fact verifications, (3) methodology integrity audit. Two errors corrected, one major data point updated, six claims verified.
