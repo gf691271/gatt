@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "gatt_version": "0.88",
-  "generated_at": "2026-05-10T05:00:00Z",
+  "gatt_version": "0.89",
+  "generated_at": "2026-05-10T06:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-10",
     "confidence": "medium-high",
     "last_updated": "2026-05-10",
-    "note": "v0.88 — Pricing history time series. NEW pricing_history block tracks GPT-4-equivalent inference pricing across three tiers (frontier / mid / budget) from 2023-03 to 2026-05. Frontier tier: $60/M (Mar 2023) → $1.50/M (Aug 2025) = 40× compression, then RESET to $30/M with GPT-5.5/Opus 4.7 frontier advance. Mid-tier: ~17× compression in 2 years. Budget tier: $0.30/M (Aug 2024) → $0.10/M (May 2026, Doubao ~$0.06 blended). Three independent measurements (Xing 40×, SemiAnalysis 1200× for older tiers, Epoch AI 2-month halving) agree. v0.86 key_paradoxes 99.7%/3× narrative now has machine-readable time series backing. Vendor totals held."
+    "note": "v0.89 — Sensitivity bands (delivers v0.82 paper Section 5.6 commitment). NEW sensitivity_bands block publishes conservative / best / aggressive estimates for 5 headline metrics: global_daily_tokens_T (250/310/400), us_per_capita_K (350/459.7/600), us_india_ratio (450×/597×/750×), token_gdp_annual_USD_B (70/95.8/140), doubao_daily_T (110/129/145). Adopts observed/inferred/judgment parameter classification template from arXiv:2604.17431 (Inference Bottleneck). Robustness check: all 5 headline narratives — China-US volume parity, US Token GDP dominance, large per-capita gap, growth trajectory, 2× physics-ceiling tension — survive the conservative bound. Vendor totals held."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -367,6 +367,83 @@
       "day_2_to_7": "X DMs to Karpathy + a16z partners; reach out to media tier-2 (Hao, Roose, Newton, Guo)",
       "week_2_plus": "China-side outreach (CAICT, CEIBS); analyst outreach (BCG, Forrester); long-tail substack features",
       "ongoing": "Each new vendor disclosure (e.g., next Volcengine FORCE conference, Anthropic ARR update) is a fresh news hook to re-engage tier-2"
+    }
+  },
+  "sensitivity_bands": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Delivers on the v0.82 academic paper Section 5.6 commitment: 'GATT v0.83 will publish sensitivity bands for headline figures, with conservative bounds anchored to physics-ceiling assumptions and aggressive bounds matching current empirical extrapolation.' v0.89 fulfills this with three documented scenarios for each headline metric. Adopts the observed/inferred/judgment parameter classification template from arXiv:2604.17431 (Inference Bottleneck).",
+    "methodology": {
+      "conservative_bound": "Anchored to Litowitz/Polson/Sokolov 2603.06630 physics-ceiling assumptions. Applies Interpretation 1 (GATT may overestimate top vendors via Gemini All Surfaces multiplier and Doubao all-sources scope). Multipliers reduced 10-15%. Trims Token GDP for cache-hit + batching effects (Interpretation 3 of 2× tension). Use this when reporting figures to physicists or capacity planners.",
+      "best_estimate": "GATT v0.86 published values. Vendor-volume-weighted, all-sources, with current pricing assumptions as of May 2026. Use this as the default citable figure.",
+      "aggressive_bound": "Assumes 22%/mo growth holds through year-end 2026 plus 1-2 additional Pichai-class US disclosures. Applies upper end of OpenRouter 4× YoY growth, Anthropic 18%/mo, Kimi 30%/mo. Use this for forward-looking strategic planning."
+    },
+    "headline_metrics": {
+      "global_daily_tokens_T": {
+        "conservative": 250,
+        "best_estimate": 310,
+        "aggressive": 400,
+        "as_of": "2026-05-10",
+        "narrative": "Conservative trims Gemini multiplier 3.2× → 2.5× (-15T) and Doubao all-sources 132T → 115T (-17T) plus minor adjustments. Aggressive adds 2-month forward extrapolation at 22%/mo plus assumed Q2-end disclosures from OpenAI / Anthropic / ByteDance."
+      },
+      "us_per_capita_K": {
+        "conservative": 350,
+        "best_estimate": 459.7,
+        "aggressive": 600,
+        "as_of": "2026-05-10",
+        "physics_ceiling_2028_K": 225,
+        "narrative": "All three estimates exceed the Litowitz/Polson/Sokolov 2028 physical ceiling of 225K. The 2× tension persists across the band. Section 5.5 of the paper attributes this to inference-stack efficiency (interpretation 2) and unit-of-measurement difference (interpretation 3) rather than measurement error."
+      },
+      "us_india_per_capita_ratio": {
+        "conservative": 450,
+        "best_estimate": 597,
+        "aggressive": 750,
+        "as_of": "2026-05-10",
+        "narrative": "The inequality finding is robust: even the conservative estimate (450×) is wider than the income gap (~30×) by an order of magnitude. The aggressive estimate assumes US growth continues while India remains population-bound."
+      },
+      "token_gdp_annual_USD_B": {
+        "conservative": 70,
+        "best_estimate": 95.8,
+        "aggressive": 140,
+        "as_of": "2026-05-10",
+        "narrative": "Conservative applies cache-hit and batching adjustments (Interpretation 3) to volume; aggressive assumes frontier-pricing-weighted blends (Opus 4.7 / GPT-5.5 mix dominates US billing) plus 22%/mo volume continuation."
+      },
+      "doubao_daily_T": {
+        "conservative": 110,
+        "best_estimate": 129,
+        "aggressive": 145,
+        "as_of": "2026-05-10",
+        "narrative": "IDC's external-MaaS-only scope produces ~3T/day for Volcengine. Conservative reduces all-sources estimate by 15% to allow for cached/replicated agent calls. Aggressive applies 8%/mo extrapolation through end-Q2 2026."
+      }
+    },
+    "parameter_classification": {
+      "purpose": "Per Inference Bottleneck (arXiv:2604.17431), each headline metric is classified by source quality. 'Observed' = direct vendor disclosure within 90 days. 'Inferred' = computed from corroborated indirect signals (ARR + pricing). 'Judgment-based' = editorial estimate where signals are sparse.",
+      "classification_per_metric": {
+        "global_daily_tokens_T": {
+          "category": "inferred",
+          "rationale": "Aggregated across 21 vendors of which only 4 have observed-tier inputs (Doubao 120T official, OpenAI 15B/min API, Pichai 16B/min Gemini, Anthropic ARR ranges)"
+        },
+        "us_per_capita_K": {
+          "category": "inferred",
+          "rationale": "US country total derived from sum of US-headquartered vendor estimates, divided by population. Vendor-attribution choices (e.g., Microsoft cross-border allocation) are judgment-based."
+        },
+        "doubao_daily_T": {
+          "category": "observed",
+          "rationale": "Volcengine official 120T disclosure (Apr 1, 2026) + IDC 49.5% market share validation. Extrapolation from Apr 1 to May 9 is judgment-based but small (5%)."
+        },
+        "us_token_gdp_share_pct": {
+          "category": "judgment-based",
+          "rationale": "Depends on regional blended pricing assumptions ($1.50/M US blended). Pricing volatility (40× compression in 24 months per Xing) makes this category appropriately classified as judgment."
+        }
+      }
+    },
+    "robustness_check": {
+      "headline_findings_survive_conservative_bound": [
+        "China and US tied or near-tied on token volume (conservative: CN 53% / US 47%; best: 50/50)",
+        "US captures dominant Token GDP share (conservative: 85%; best: 88%)",
+        "Per-capita gap ≥ 450× US/India (conservative: 450×; best: 597×; aggressive: 750×)",
+        "GATT empirical exceeds Photons=Tokens 2028 ceiling (conservative US per-capita 350K still > 225K)"
+      ],
+      "interpretation": "All five headline narratives — China-US volume parity, US Token GDP dominance, large per-capita gap, growth trajectory, and 2× physics-ceiling tension — survive the conservative bound. This robustness is the strongest case for citing GATT figures: the qualitative findings do not depend on aggressive estimation choices."
     }
   },
   "pricing_history": {

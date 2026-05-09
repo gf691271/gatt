@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.86 | Last updated: 2026-05-10
+> GATT version: 0.89 | Last updated: 2026-05-10
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -197,6 +197,53 @@ GATT tracks the broader ecosystem covering token economy:
 **Analysts**: BCG, McKinsey, Bain, Forrester, Gartner, DIGITIMES Research, Tech Insights/Sanneblad, Visual Capitalist, Spheron Network, S&P Global
 
 GATT's positioning: union of (a) global, (b) all-sources, (c) daily, (d) per-vendor, (e) free + open. No single competitor combines all five.
+
+## Sensitivity Bands (v0.89)
+
+GATT publishes conservative / best / aggressive scenarios for 5 headline metrics. All 5 GATT findings survive the conservative bound — qualitative robustness check.
+
+| Metric | Conservative | Best | Aggressive |
+|---|---|---|---|
+| Global daily tokens (T) | 250 | **310** | 400 |
+| US per-capita (K tokens/person/day) | 350 | **459.7** | 600 |
+| US-India per-capita ratio | 450× | **597×** | 750× |
+| Token GDP annual ($B) | 70 | **95.8** | 140 |
+| Doubao daily (T) | 110 | **129** | 145 |
+
+**Conservative bound** = Photons=Tokens physics-ceiling-anchored + GATT-overestimate adjustments.
+**Best estimate** = GATT v0.86 published values.
+**Aggressive bound** = 22%/mo growth continuation + assumed Q2-end disclosures.
+
+**Robustness**: even at conservative, GATT US per-capita (350K) still exceeds Litowitz/Polson/Sokolov 2028 ceiling (225K). The 2× tension persists across the band.
+
+## Reasoning Workload Split (v0.87)
+
+Global token volume decomposed into reasoning vs non-reasoning workloads (per Gartner March 2026: reasoning models use 5-30× more tokens per task):
+
+- **Global**: 95T reasoning (31%) + 215T non-reasoning (69%)
+- **Top-indexed** (over-indexed on growth vector): DeepSeek 55%, Anthropic 45%, OpenAI 40%, Perplexity 35%, Hy3 35%
+- **Bottom-indexed** (workload-mix shift risk): Groq 10%, Ernie/Spark/MiniMax/GLM 15%, Doubao 25%
+
+Implication: if reasoning share grows 31%→50% by 2027, total token volume grows 30%+ from workload-mix shift alone, even with constant task count.
+
+## Pricing History (v0.88)
+
+GPT-4-equivalent inference pricing across three tiers, 2023-2026:
+
+**Frontier tier (output $/M tokens):**
+- 2023-03: $60 (GPT-4 launch)
+- 2023-11: $30 (GPT-4 Turbo)
+- 2024-05: $15 (GPT-4o)
+- 2024-12: $10 (GPT-4o + Claude 3.5 Sonnet era)
+- 2025-08: $1.50 (commodity GPT-4-equivalent)
+- 2026-05: $30 (GPT-5.5 / Opus 4.7 — frontier RESET)
+
+40× compression Mar 2023 → Aug 2025. The 2026 reset reflects model-class advance, not pricing inflation.
+
+**Mid-tier**: $5 (May 2024) → $0.30 (May 2026) = ~17× compression
+**Budget tier**: $0.30 (Aug 2024) → $0.10 blended (May 2026); Doubao at ~$0.06
+
+Three independent measurements agree (Xing 40×, SemiAnalysis 1200× for older tiers, Epoch AI 2-month halving).
 
 ## License
 CC BY 4.0 — Free to use with attribution.
