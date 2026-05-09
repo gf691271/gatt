@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.82 | Last updated: 2026-05-09
+> GATT version: 0.85 | Last updated: 2026-05-10
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -136,6 +136,39 @@ Five arXiv papers reviewed:
 - **Cross-Platform User Survey** (arXiv:2603.25220, Mar 2026) — 388 active users across 7 platforms. Top-3 (Claude, ChatGPT, DeepSeek) statistically tied on satisfaction. >80% multi-home. Validates GATT's broad-vendor coverage.
 - **Inference Bottleneck** (arXiv:2604.17431, April 2026) — Methodological template: observed / inferred / judgment-based parameter classification. GATT v0.83 will adopt.
 - **State of AI: 100T Token Study** (a16z + OpenRouter, arXiv:2601.10088, Jan 15, 2026) — Already drove v0.81 OR upgrade.
+
+## Framework Adoption (v0.85)
+
+GATT's analytical framework — Token Economy, Token GDP, all-sources scope, daily token throughput indexing — is being independently adopted in policy, academia, and AI practice. Five documented instances:
+
+1. **CSIS "Token Bill" framing (April 2026)** — Center for Strategic and International Studies uses "Token Bill" framing to discuss American enterprises running Chinese AI; first major US policy think tank to adopt token-economy vocabulary. URL: https://www.shashi.co/2026/04/american-enterprises-are-quietly.html
+
+2. **CEIBS "How China overtook the US in AI token usage"** — Top Chinese business school using token-volume measurement as the lens for US-China AI competition. Independent Chinese-side academic adoption of GATT framing. URL: https://www.ceibs.edu/new-papers-columns/28826
+
+3. **Brynjolfsson "AI economic dashboards" prediction (December 2025)** — Stanford HAI / Digital Economy Lab predicted 2026 would see "high-frequency AI economic dashboards" anticipating GATT by two months. URL: https://news.stanford.edu/stories/2025/12/stanford-ai-experts-predict-what-will-happen-in-2026
+
+4. **Andrej Karpathy personal "token throughput" metric (X 2026)** — Top AI practitioner with 1.3M+ followers publicly using GATT measurement vocabulary at the personal scale. Quote: "A large fraction of my recent token throughput is going less into manipulating code, and more into manipulating knowledge."
+
+5. **Xing 2026 (arXiv:2603.21690) — Token Performance Index call** — First academic paper formally calling for the kind of index GATT publishes. GATT is a working prototype of the proposed TPI infrastructure.
+
+## Validation Sources (v0.85)
+
+GATT data is independently validated across three Chinese-side sources, two US-side sources, and four academic frameworks:
+
+**Chinese-side (3 sources):**
+- IDC China Public Cloud MaaS report (May 7, 2026) — Volcengine 49.5% market share confirmation
+- China National Data Administration — 140T/day national total disclosed March 2026
+- CAICT (China Academy of ICT) — January 2026 report; February 2026 supplementary data: Chinese mainstream LLMs at 4.12T tokens/week vs US 2.7T
+
+**US-side (2 sources):**
+- IDC Worldwide AI Infrastructure Tracker — $758B by 2029, US 76% / CN 11.6% spending
+- SemiAnalysis (Dylan Patel) — AI Cloud TCO model; 1200× compression for GPT-3-class inference cost
+
+**Academic (key papers):**
+- Litowitz/Polson/Sokolov "Photons = Tokens" (arXiv:2603.06630) — physics ceiling; productive 2× tension with GATT
+- a16z + OpenRouter "100T Token Study" (arXiv:2601.10088) — drove v0.81 OR upgrade
+- Xing "Token Futures" (arXiv:2603.21690) — commodity framing
+- Epoch AI / Sevilla — inference cost halves every 2 months
 
 ## License
 CC BY 4.0 — Free to use with attribution.

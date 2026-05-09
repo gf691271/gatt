@@ -637,7 +637,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
       <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">中</button>
     </div>
-    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-05-09</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.82</span></div>
+    <div><span class="live-dot"></span><span class="updated" id="header-date">Updated 2026-05-10</span> <span style="color:var(--subtle);font-size:0.68rem;font-weight:400;" id="version-tag">v0.85</span></div>
     <div>
       <span id="stat-vendors">29</span> <span class="i18n" data-en="Vendors" data-zh="厂商">Vendors</span> &nbsp;·&nbsp;
       <span id="stat-countries">18</span> <span class="i18n" data-en="Countries" data-zh="国家">Countries</span> &nbsp;·&nbsp;
@@ -650,8 +650,8 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
 <div style="background:#fef3c7;border:1px solid #fde68a;border-radius:var(--radius);padding:12px 16px;margin-bottom:24px;font-family:-apple-system,sans-serif;font-size:0.8rem;display:flex;align-items:flex-start;gap:10px;">
   <span style="font-size:1.1rem;flex-shrink:0;">🔔</span>
   <div>
-    <strong style="color:#92400e;">📚 v0.82 (May 9, evening) — Academic Validation Sweep:</strong>
-    <span style="color:#78350f;"> 5 arXiv papers reviewed. <strong>Productive 2× tension surfaced</strong>: Litowitz/Polson/Sokolov "Photons = Tokens" (arXiv:2603.06630) projects 2028 US ceiling at 225K tokens/person/day; GATT measures 459.7K in May 2026. Three reconciliation interpretations documented (efficiency multipliers + measurement-unit difference). Token Futures + Cross-Platform Survey + Production Frontier all validate Token Economy framing. <strong>Vendor numbers held</strong>; methodology disclosure update. <a href="about.html#academic-validation" style="color:#92400e;font-weight:600;text-decoration:underline;">See methodology →</a></span>
+    <strong style="color:#92400e;">🌐 v0.85 (May 10) — Validation & Framework Adoption Expansion:</strong>
+    <span style="color:#78350f;"> Three Chinese-side validators (IDC + China NDA + <strong>CAICT 信通院</strong>) + USD-side <strong>SemiAnalysis</strong> + 11 academic sources (added <strong>Brynjolfsson</strong>, <strong>Epoch AI</strong>, <strong>Crawford</strong>, <strong>Hao</strong>, <strong>Karpathy</strong>). NEW <strong>framework_adoption</strong> block: 5 instances of GATT framing being independently adopted (CSIS Token Bill · CEIBS · Brynjolfsson dashboards prediction · Karpathy personal usage · Xing TPI call). <a href="data/tci-latest.json" style="color:#92400e;font-weight:600;text-decoration:underline;">See JSON →</a></span>
     <a href="#changelog" style="color:#92400e;font-weight:600;margin-left:8px;text-decoration:underline;" onclick="document.querySelector('.section-label + .method-box').scrollIntoView({behavior:'smooth'});return false;">See full log →</a>
   </div>
 </div>
@@ -806,7 +806,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     <div>
       <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:#94a3b8;margin-bottom:4px;">GATT Quarterly Report</div>
       <div style="font-size:1.15rem;font-weight:700;color:#fff;">Q2 2026 Mid-Quarter Token Economy Snapshot</div>
-      <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Period: Apr 1 – May 9, 2026 · Updated May 9, 2026 · GATT v0.82</div>
+      <div style="font-size:0.72rem;color:#64748b;margin-top:2px;">Period: Apr 1 – May 10, 2026 · Updated May 10, 2026 · GATT v0.85</div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
       <button onclick="navigator.clipboard.writeText('Q2 2026 Mid-Quarter Token Economy Snapshot (GATT v0.80):\n• 305T tokens/day global run rate (May 9) — +16% in 5 days, driven by 7 vendor anchor upgrades\n• $90.8B/year Token GDP (annualized, +38% in 5 days)\n• China 50% / US 50% — volume gap closed (was 57/38 on May 4) as US hard data accumulated\n• 589× US-vs-India per-capita gap (was 448×)\n• Pichai disclosed Gemini 16B tokens/min via API (Cloud Next Q1, +60% QoQ)\n• Microsoft AI business ARR $37B (Q3 FY26, +123% YoY)\n• Anthropic Opus 4.7 + MAU +44% Mar→Apr to 23M\n• IDC May 7: independently validates Volcengine 49.5% #1 in China\nSource: GATT — gf691271.github.io/gatt/').then(()=>this.textContent='✅ Copied!')" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#cbd5e1;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:0.68rem;font-weight:600;">📋 Copy Q2 Snapshot</button>
@@ -841,8 +841,8 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">China <strong style="color:#f87171;">50%</strong> volume vs <strong style="color:#fbbf24;">6%</strong> Token GDP. US <strong style="color:#60a5fa;">50%</strong> volume vs <strong style="color:#a3e635;">87%</strong> GDP. Volume gap closed in five weeks (was 58/35 on Apr 6) as US disclosures (Gemini 16B/min, GPT-5.5, MS $37B AI ARR, Opus 4.7) accumulated. The 15× pricing gap remains.</div>
     </div>
     <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:6px;padding:12px;">
-      <div style="font-size:0.65rem;font-weight:700;color:#93c5fd;margin-bottom:6px;">📊 IDC + Academic Validation</div>
-      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">IDC May 7 confirms Volcengine #1 at <strong style="color:#60a5fa;">49.5%</strong> China MaaS. v0.82 adds 5 arXiv papers — most importantly <a href="https://arxiv.org/abs/2603.06630" style="color:#a3e635;">Photons = Tokens</a> (Litowitz/Polson/Sokolov, Feb 2026) projects 2028 US physical ceiling at 225K tokens/person/day; GATT empirical reads <strong style="color:#fbbf24;">459.7K (May 2026, 2.04× above ceiling)</strong>. Three reconciliation interpretations documented in <a href="about.html" style="color:#a3e635;">about page</a> — efficiency multipliers (MoE + ASIC + quantization) + unit-of-measurement difference most likely.</div>
+      <div style="font-size:0.65rem;font-weight:700;color:#93c5fd;margin-bottom:6px;">📊 Validation & Framework Adoption (v0.85)</div>
+      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;"><strong>3 Chinese validators</strong> (IDC <strong style="color:#60a5fa;">49.5%</strong> · China NDA 140T · <strong>CAICT</strong> 4.12T/wk vs US 2.7T) + <strong>SemiAnalysis</strong> USD-side. <strong>11 academic sources</strong> with central <strong style="color:#fbbf24;">2.04× tension</strong> vs <a href="https://arxiv.org/abs/2603.06630" style="color:#a3e635;">Photons = Tokens</a> 2028 ceiling. <strong>Framework adoption</strong>: <a href="https://www.shashi.co/2026/04/american-enterprises-are-quietly.html" style="color:#a3e635;">CSIS "Token Bill"</a> · <a href="https://www.ceibs.edu/new-papers-columns/28826" style="color:#a3e635;">CEIBS</a> · Brynjolfsson 2025 dashboards prediction · Karpathy personal "token throughput" · Xing TPI call.</div>
     </div>
   </div>
   <div style="font-size:0.62rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;">

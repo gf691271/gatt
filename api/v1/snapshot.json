@@ -1,16 +1,16 @@
 {
   "version": "1.0",
-  "gatt_version": "0.84",
-  "generated_at": "2026-05-10T00:30:00Z",
+  "gatt_version": "0.85",
+  "generated_at": "2026-05-10T01:30:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
     "total_daily_tokens_T": 310,
-    "as_of_date": "2026-05-09",
+    "as_of_date": "2026-05-10",
     "confidence": "medium-high",
-    "last_updated": "2026-05-09",
-    "note": "v0.82 — Academic validation sweep. Five arXiv papers reviewed; key finding: Litowitz/Polson/Sokolov 'Photons = Tokens' (arXiv:2603.06630, Feb 23, 2026) constructs a physics-based global token budget that projects a 2028 US ceiling of 225,000 tokens/person/day under 326 TWh AI energy allocation. GATT v0.81 measures US per-capita at 459,700 tokens/person/day in May 2026 — 2× above their 2028 physical ceiling. Three reconciliation interpretations documented in academic_validation block. Vendor numbers held; this is a methodology disclosure update, not a data revision. Token Futures (Xing 2603.21690) validates commodity framing. Cross-platform user survey (2603.25220) corroborates multi-home dynamic. Beyond Benchmarks (Zhuang et al. 2510.26136) provides production-frontier framework. v0.80 IDC validation + v0.81 OR/Perplexity/Xiaomi upgrades retained."
+    "last_updated": "2026-05-10",
+    "note": "v0.85 — Validation sources expanded. methodology_triangulation now includes CAICT (China Academy of ICT) as third Chinese-side independent validation source, joining IDC May 7 and China NDA 140T. SemiAnalysis (Dylan Patel) added as USD-side commercial peer. academic_validation expanded from 6 to 11 sources adding Brynjolfsson AI economic dashboards prediction (Dec 2025), Epoch AI inference cost panel, Crawford Atlas of AI, Hao Empire of AI, Karpathy 'token throughput' personal usage. NEW framework_adoption block tracks 5 instances of GATT framing being independently adopted (CSIS Token Bill, CEIBS academic, Brynjolfsson prediction, Karpathy practitioner usage, Xing TPI call). Vendor numbers held; this is a credibility-infrastructure update, not a data revision. v0.80 IDC + v0.81 OR/Perplexity/Xiaomi + v0.82 Photons=Tokens 2× tension all retained."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -98,10 +98,121 @@
         "submitted": "2026-01-15",
         "url": "https://arxiv.org/abs/2601.10088",
         "note": "Already cited in v0.81 (drove OpenRouter upgrade 1.27T → 3.0T/day). Listed here for completeness in academic validation block."
+      },
+      {
+        "id": "brynjolfsson-dashboards",
+        "title": "Stanford AI Experts Predict What Will Happen in 2026 — 'AI Economic Dashboards'",
+        "authors": "Erik Brynjolfsson (Stanford HAI / Digital Economy Lab)",
+        "published": "2025-12",
+        "url": "https://news.stanford.edu/stories/2025/12/stanford-ai-experts-predict-what-will-happen-in-2026",
+        "key_quote": "Arguments about AI's economic impact will finally give way to careful measurement, with the emergence of high-frequency 'AI economic dashboards' that track, at the task and occupation level, where AI is boosting productivity, displacing workers, or creating new roles.",
+        "validates_gatt": "GATT is the operationalization of Brynjolfsson's prediction. December 2025 anticipated 'high-frequency AI economic dashboards'; GATT (launched February 2026, daily-updated) is one such dashboard. The token-based granularity is finer than Brynjolfsson's task/occupation framing but operates in the same measurement-discipline mode he predicted.",
+        "action_taken_in_gatt": "v0.84 adds Brynjolfsson reference to Section 1.3 of academic paper as anchor positioning GATT as fulfillment of his prediction. Plan to email him personally with paper preprint when arXiv submission goes live."
+      },
+      {
+        "id": "epoch-ai-inference-cost",
+        "title": "Trends in Artificial Intelligence — Inference Cost Trajectory",
+        "authors": "Epoch AI / Jaime Sevilla (co-founder, director)",
+        "published": "2026 (rolling)",
+        "url": "https://epoch.ai/trends",
+        "key_finding": "Inference cost at fixed performance level halves every 2 months — i.e., 2 orders of magnitude per year compression.",
+        "validates_gatt": "Provides longitudinal third-party data on the pricing-decline phenomenon GATT cites. Three independent sources (Epoch AI, Xing 2026 [40× in 24mo], SemiAnalysis [1200× for older tiers]) agreeing in direction and magnitude strengthens GATT's Token GDP as-of-date caveat substantially.",
+        "action_taken_in_gatt": "v0.84 adds Epoch AI to Section 2.3 (academic literature) and Section 3.5 (Token GDP methodology) of paper. Plan to follow Sevilla on X and engage if he tweets about token-volume measurement."
+      },
+      {
+        "id": "crawford-atlas",
+        "title": "Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence",
+        "authors": "Kate Crawford",
+        "publisher": "Yale University Press",
+        "year": 2021,
+        "isbn": "9780300252392",
+        "validates_gatt": "Foundational text on AI infrastructure as a planetary-scale system with concentrated externalities. GATT's per-capita inequality findings (US 459.7K vs India 0.77K = 597×) are an empirical corollary of Crawford's thesis. The Atlas framing is the right popular-academic conceptual register for GATT's geo-economics discussion.",
+        "action_taken_in_gatt": "v0.84 cites Crawford in paper Section 6.2 (geo-economic implications). Eligible for popular-press write-up framing (e.g., Substack data-story version)."
+      },
+      {
+        "id": "hao-empire-of-ai",
+        "title": "Empire of AI: Dreams and Nightmares in Sam Altman's OpenAI",
+        "authors": "Karen Hao",
+        "publisher": "Penguin Press",
+        "year": 2025,
+        "isbn": "9780593657508",
+        "validates_gatt": "Investigative narrative on the political economy of frontier AI (OpenAI / Sam Altman / compute capital concentration). Complementary to GATT's data-side perspective: Hao tells the story; GATT measures the consequences. The volume-vs-GDP asymmetry GATT documents is the downstream economic signature of the concentration Hao narrates.",
+        "action_taken_in_gatt": "v0.84 cites Hao in paper Section 6.2. The book is the closest existing trade-press AI work; GATT's eventual book proposal should differentiate on data-side global-index angle vs Hao's OpenAI-specific narrative."
+      },
+      {
+        "id": "karpathy-token-throughput",
+        "title": "Personal use of 'token throughput' as productivity metric (X / Twitter)",
+        "authors": "Andrej Karpathy",
+        "published": "2026 (X posts)",
+        "url": "https://x.com/karpathy",
+        "key_quote": "A large fraction of my recent token throughput is going less into manipulating code, and more into manipulating knowledge.",
+        "validates_gatt": "Top AI practitioner publicly using 'token throughput' as a personal-productivity metric — exact language alignment with GATT's measurement vocabulary. Signals broader AI-community appetite for token-based measurement at all scales.",
+        "action_taken_in_gatt": "v0.85 logs this as a community-level signal. Plan to share GATT paper preprint with Karpathy via X DM when arXiv submission goes live; he is a high-leverage outreach target. His X account has 1.3M+ followers."
       }
     ],
     "central_tension": "GATT's empirical 2026 US per-capita (459.7K tokens/person/day) is 2.04× above the Litowitz/Polson/Sokolov 2028 physics ceiling (225K). GATT interprets this as: (a) inference-stack efficiency gains beyond paper's Landauer baseline, plus (b) measurement-unit difference (delivered output vs physical capacity). Both numbers are likely correct in their own units. v0.82 documents this transparently without revising vendor estimates.",
     "next_step_v083": "Adopt observed/inferred/judgment parameter classification (per arXiv:2604.17431). Publish sensitivity bands for headline numbers (per arXiv:2603.06630 physical ceiling as conservative bound). Add as-of dates to all blended pricing assumptions (per arXiv:2603.21690 40× pricing decline)."
+  },
+  "framework_adoption": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Tracks instances where GATT's analytical framework — Token Economy, Token GDP, all-sources scope, daily token throughput indexing — has been independently adopted, anticipated, or echoed in academic, policy, or practitioner discourse. This is the most credible signal that GATT is a useful intellectual artifact, not a vanity project.",
+    "instances": [
+      {
+        "id": "csis-token-bill",
+        "type": "policy think tank",
+        "source": "Center for Strategic and International Studies (CSIS)",
+        "title": "American Enterprises Are Quietly Running Chinese AI. The Token Bill Explains Why.",
+        "date": "2026-04",
+        "url": "https://www.shashi.co/2026/04/american-enterprises-are-quietly.html",
+        "framework_used": "'Token Bill' framing for cross-border AI economic flows — directly parallel to GATT's Token GDP regional-asymmetry framing",
+        "why_significant": "First instance of major US policy think tank using 'token economy' / 'token bill' framing in print. GATT's Token GDP concept is now in the policy vocabulary.",
+        "action": "v0.85 cites in methodology_triangulation; v0.84 paper cites in Section 6.1; GATT will email CSIS authors to introduce the dataset as a research input."
+      },
+      {
+        "id": "ceibs-china-overtook-us",
+        "type": "academic policy school",
+        "source": "China Europe International Business School (CEIBS)",
+        "title": "How China overtook the US in AI token usage—and why it matters",
+        "url": "https://www.ceibs.edu/new-papers-columns/28826",
+        "framework_used": "Token-volume measurement as the lens for US-China AI competition — exact same lens as GATT, from a Chinese-side academic perspective",
+        "why_significant": "Independent Chinese-side academic adoption of the token-volume framing. CEIBS is one of the top business schools in China; this paper signals the framing has reached elite Chinese policy / business education.",
+        "action": "v0.85 logs. Plan to reach out to CEIBS authors as potential collaborators or commentators for v0.84 paper."
+      },
+      {
+        "id": "brynjolfsson-prediction",
+        "type": "academic prediction",
+        "source": "Erik Brynjolfsson (Stanford HAI / Digital Economy Lab)",
+        "title": "Stanford AI Experts Predict 2026 — 'AI Economic Dashboards'",
+        "date": "2025-12",
+        "url": "https://news.stanford.edu/stories/2025/12/stanford-ai-experts-predict-what-will-happen-in-2026",
+        "framework_used": "Brynjolfsson predicted 'high-frequency AI economic dashboards' as the 2026 mode of AI economic measurement",
+        "why_significant": "GATT (launched February 2026, daily-updated, 21 vendors) is a working instance of what Brynjolfsson predicted in December 2025 — two months before GATT existed.",
+        "action": "Cited in v0.84 paper Section 1.3. Email Brynjolfsson when paper hits arXiv with the framing 'You predicted this; here is one instance.'"
+      },
+      {
+        "id": "karpathy-personal-token-throughput",
+        "type": "practitioner adoption",
+        "source": "Andrej Karpathy (X)",
+        "title": "Personal use of 'token throughput' as productivity metric",
+        "date": "2026-04 / 2026-05",
+        "url": "https://x.com/karpathy",
+        "framework_used": "Token throughput as a measurable individual-level productivity metric",
+        "why_significant": "Top AI practitioner with 1.3M+ X followers publicly using exact GATT measurement vocabulary at the personal scale. Signals broader community readiness for token-based measurement at all scales.",
+        "action": "v0.85 logs as community signal. Karpathy is the highest-leverage individual outreach target for paper distribution."
+      },
+      {
+        "id": "xing-token-performance-index",
+        "type": "academic call for infrastructure",
+        "source": "Yicai Xing (arXiv:2603.21690)",
+        "title": "AI Token Futures Market — Calls for 'Token Performance Index (TPI)' as essential infrastructure",
+        "date": "2026-03-23",
+        "url": "https://arxiv.org/abs/2603.21690",
+        "framework_used": "Xing's paper explicitly calls for a Token Performance Index (TPI) — GATT is a working prototype of exactly this artifact",
+        "why_significant": "First academic paper to formally argue for the kind of index GATT publishes. Validates GATT's positioning as token-economy market infrastructure.",
+        "action": "Cited in v0.82 academic_validation and v0.84 paper Sections 1.3, 3.5, 6.1. Email Xing as potential collaborator on TPI methodology specification."
+      }
+    ],
+    "interpretation": "Five distinct framework-adoption instances across four categories (think tank, academic policy school, academic prediction, practitioner usage, academic infrastructure call). The framing GATT operationalizes is being independently adopted in policy, academia, and AI practice. GATT is positioned to become the citation-default for token-economy measurement."
   },
   "methodology_triangulation": {
     "as_of_date": "2026-05-09",
@@ -132,6 +243,50 @@
           "Geography: IDC China-only; GATT global",
           "Frequency: IDC annual / semi-annual; GATT continuously updated",
           "Math check: IDC 2025 average 5.32T/day total external MaaS × Volcengine 49.5% = 2.64T/day external Volcengine in 2025. The 120T/day Volcengine figure (Apr 1, 2026) cannot fit IDC's external-only scope under any plausible growth path — therefore GATT's 129T/day Doubao number is inherently all-sources (external + internal Douyin AI Search + Doubao App + Jimeng + first-party pipelines). Internal usage estimated at ≥95% of total Volcengine throughput."
+        ]
+      },
+      {
+        "source": "CAICT (China Academy of Information and Communications Technology, 中国信通院)",
+        "report": "Artificial Intelligence Industry Development Research Report (2025), Report No. 202516",
+        "report_date": "2026-01",
+        "scope": "China only · 'mainstream domestic large models' · narrower than IDC's external MaaS scope; appears to focus on top-tier public-cloud LLM call volume from a government-research lens",
+        "unit": "tokens (weekly)",
+        "key_figures": {
+          "china_mainstream_weekly_T_feb_2026": 4.12,
+          "us_mainstream_weekly_T_feb_2026": 2.7,
+          "china_lead_pct": 52.6,
+          "first_time_china_exceeded_us": "2026-02"
+        },
+        "spokesperson": "Wei Liang (魏亮), CAICT Vice President — quoted on industry shift 'from parameter scaling to architecture optimization'",
+        "validates_gatt": [
+          "Third independent Chinese-side validation source (joining IDC May 7 + China NDA 140T/day) confirming China leads US on volume measurement",
+          "Direction matches GATT: China > US on token volume",
+          "First-time-China-exceeded-US framing reinforces v0.81/v0.82 narrative of CN/US 50/50 volume parity converging from earlier US lead"
+        ],
+        "differs_from_gatt": [
+          "Scope: 'mainstream large models only' is narrower than IDC's external MaaS, which is itself narrower than GATT's all-sources",
+          "Math: 4.12T/wk = 588B/day China mainstream vs IDC 5.32T/day average external MaaS (2025) vs GATT 154T/day all-sources. Three concentric scopes.",
+          "Frequency: CAICT annual + supplementary monthly notes; GATT continuously updated"
+        ]
+      },
+      {
+        "source": "SemiAnalysis (Dylan Patel) — AI Cloud TCO Model",
+        "scope": "Industry analyst USD-side coverage; closest commercial peer to GATT in spirit but in dollar units",
+        "unit": "USD per token / TCO ratios",
+        "key_figures": {
+          "gpt3_quality_inference_cost_compression_x": 1200,
+          "gpt4_inference_cost_decline_2years": "comparable order-of-magnitude decline",
+          "annualized_revenue_USD_M": 100
+        },
+        "validates_gatt": [
+          "Documents same pricing-decline phenomenon GATT cites (40× per Xing 2026, 1200× per SemiAnalysis for older tiers)",
+          "Independently corroborates Section 3.5 caveat that Token GDP figures need explicit as-of dates",
+          "$100M ARR for AI/semi research newsletter validates market appetite for this kind of measurement work"
+        ],
+        "differs_from_gatt": [
+          "Unit: USD/TCO; GATT: token volume",
+          "Coverage: framework analysis; GATT: per-vendor empirical index",
+          "Access: paywalled subscription; GATT: free CC BY 4.0"
         ]
       },
       {

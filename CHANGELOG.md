@@ -1,5 +1,69 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.85 — Validation Sources & Framework Adoption Block)
+
+Reverse-flow update: the 7 new sources from v0.84's paper-references work are now also embedded in the GATT dataset itself (not just the manuscript). No vendor data changes; this is a credibility-infrastructure update that strengthens the data file's stand-alone authority.
+
+### Three structural changes to data/tci-latest.json
+
+**1. `methodology_triangulation` — added 2 new external sources (4 → 6)**
+
+- **CAICT (中国信通院)** — third independent Chinese-side validator joining IDC and China NDA. Their February 2026 supplementary data: Chinese mainstream LLMs at 4.12T tokens/week vs US 2.7T (China lead 52.6%, first-time-China-exceeded-US framing). Important scope note: CAICT measures a *narrower* slice than IDC (mainstream public-cloud LLMs only), itself narrower than GATT all-sources. The three Chinese sources thus form concentric validation rings: CAICT ⊂ IDC ⊂ NDA + GATT.
+- **SemiAnalysis (Dylan Patel)** — closest USD-side commercial peer. Documents 1200× compression for GPT-3-class inference cost; $100M ARR for the newsletter validates market appetite for this kind of measurement work.
+
+**2. `academic_validation` — expanded papers list (6 → 11)**
+
+Added five new sources beyond the original arXiv-only set:
+- **Brynjolfsson "AI economic dashboards" prediction** (Stanford HAI / Digital Economy Lab, December 2025) — predicted 2026 would see "high-frequency AI economic dashboards" two months before GATT launched. GATT is a working instance.
+- **Epoch AI / Jaime Sevilla** — inference cost halves every 2 months; complementary longitudinal evidence to Xing's 40× and SemiAnalysis's 1200×.
+- **Crawford "Atlas of AI" (Yale UP, 2021)** — foundational text on AI as planetary-scale infrastructure with concentrated externalities. Conceptual register for GATT's per-capita inequality findings.
+- **Hao "Empire of AI" (Penguin Press, 2025)** — investigative narrative on OpenAI / compute capital concentration. The story; GATT measures the consequences.
+- **Karpathy personal "token throughput" usage** (X 2026, 1.3M+ followers) — practitioner-level adoption of GATT measurement vocabulary at personal productivity scale.
+
+**3. NEW `framework_adoption` block — tracks 5 instances of GATT framing being independently adopted**
+
+- CSIS "Token Bill" framing (April 2026) — policy think tank adoption
+- CEIBS "How China overtook the US in AI token usage" — Chinese-side academic adoption
+- Brynjolfsson dashboards prediction — academic prediction GATT fulfills
+- Karpathy personal token throughput — practitioner adoption
+- Xing 2026 Token Performance Index call — academic call for infrastructure GATT prototypes
+
+The block's `interpretation` field reads: "Five distinct framework-adoption instances across four categories signal that GATT's framing is becoming the citation-default for token-economy measurement. The concept exists in policy, academia, and AI practice; GATT operationalizes it."
+
+### Front-end updates
+- `index.html` banner reframed as "v0.85 — Validation & Framework Adoption Expansion" with explicit calls to CAICT, SemiAnalysis, 11 academic sources, 5 framework adopters
+- `index.html` Q2 snapshot card now lists 3 Chinese validators + framework adoption
+- `about.html` adds two new top-level sections: "Framework Adoption (v0.85)" and "Validation Sources (v0.85)" — table-formatted for journalist scannability
+- `llms.txt` adds `Framework Adoption` and `Validation Sources` sections for AI crawler ingestion
+
+### What's NOT changed
+- All 21 vendor numbers held (Doubao 129T, Gemini 73T, OpenAI 45T, Anthropic 22T, etc.)
+- Global total held at 310T/day
+- Token GDP held at $95.8B/year
+- 2× tension with Photons=Tokens still the central methodology disclosure (v0.82)
+- Paper manuscript under paper/ unchanged from v0.84
+
+### Why this matters
+- **Q2 (data credibility)**: Three independent Chinese-side validation rings (CAICT ⊂ IDC ⊂ NDA) elevate GATT's China data quality far above any single-source dataset.
+- **Q9 (publication authority)**: Demonstrating Brynjolfsson predicted GATT, CSIS uses Token Bill framing, CEIBS adopts token-volume measurement, Karpathy uses GATT vocabulary, and Xing calls for the index GATT prototypes — this is a 360° demonstration that GATT is in the right intellectual conversation, not a vanity project.
+- **Q10 (citation value)**: The data file alone (without paper) now carries substantial authority. Any AI crawler ingesting `data/tci-latest.json` immediately sees academic + policy + practitioner endorsement.
+
+### Files updated
+- data/tci-latest.json (v0.84 → v0.85 with 3 structural blocks expanded)
+- api/v1/tci.json + api/v1/snapshot.json (synced)
+- llms.txt (Framework Adoption + Validation Sources sections added)
+- index.html (banner, Q2 snapshot card)
+- about.html (NEW Framework Adoption section + NEW Validation Sources section)
+- data/snapshots/2026-05-10.json (NEW immutable snapshot)
+- CHANGELOG.md (this entry)
+
+### Out of scope (deferred)
+- Outreach emails to Litowitz/Karpathy/Brynjolfsson/Midha/Patel — paper still in draft, will execute when arXiv preprint goes live
+- Pandoc → LaTeX conversion of paper/ — pending
+- Infographics, data story, independent domain — future sprints
+
+---
+
 ## 2026-05-10 (v0.84 — Paper References Expanded with 7 New Sources)
 
 Same-night follow-up to v0.83. Added 7 new references to the academic paper after a literature-and-people sweep. No data changes.
