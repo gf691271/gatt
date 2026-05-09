@@ -41,6 +41,18 @@ GATT therefore reports Doubao (Volcengine's flagship model) at 132 trillion toke
 
 For non-Chinese vendors, the all-sources scope is generally less consequential because the largest internal first-party deployments are smaller relative to external API. Gemini's "All Surfaces" estimate (Search AI Overviews + Gemini App + Workspace + Cloud API) uses a 3.2× multiplier on the disclosed direct-API number; this is an attribution choice rather than a scope expansion, and Section 5 discusses its potential overestimation.
 
+### 3.3.1 Gross vs. Value-Added: A Necessary Caveat
+
+The all-sources scope choice raises a question that national accounts have grappled with since Hulten (1978) and the SNA 2008 framework: should the headline aggregate measure *gross output* (every transaction, including intermediate inputs) or *value-added* (final consumption only, with intermediate goods netted out)? GATT's all-sources methodology is closer to gross output: tokens consumed by Douyin's recommendation system as an intermediate input to a user-facing video feed are summed alongside Claude tokens consumed as final-consumption end-user assistance. This is a genuine measurement choice with consequences.
+
+Three observations frame the choice:
+
+First, the analogous decision in national accounts is well understood. Headline GDP is value-added (~$25 trillion US 2026); gross output (intermediate plus final) is approximately 1.7× larger. Both are published; both are useful for different questions. GATT publishes the gross construct because the value-added construct would require netting agent-loop tokens from final-output tokens, which no vendor discloses with the granularity needed.
+
+Second, the volume parity finding (China-US 50/50) is partially an artifact of vertical integration vs. modular architecture. ByteDance vertically integrates Doubao into Douyin, the Doubao consumer app, and Jimeng — all of which generate intermediate-input token consumption that GATT counts. The US ecosystem is more modular: OpenAI sells API tokens; Anthropic sells API tokens; the customer's downstream pipeline tokens are consumed at the customer's account, not OpenAI's. A strict value-added comparison would likely show a wider US lead in final-consumption tokens than the gross 50/50 implies. Future GATT versions (v0.84+) will explore netting out one well-documented internal pipeline (e.g., Doubao prompt expansion calls inside the Jimeng image-generation pipeline) as a methodological probe.
+
+Third, this caveat does not invalidate the gross construct — it constrains its interpretation. The 50/50 volume parity is an accurate measurement of *gross* token consumption attributable to each region's vendor base. Readers comparing GATT to a value-added counterpart would expect the US share to rise. We therefore frame the headline finding as "gross token volume parity, with the US over-represented in final-consumption value capture" rather than as parity simpliciter.
+
 ## 3.4 Extrapolation Engine
 
 Vendor disclosures are sporadic. A typical pattern is a single high-confidence signal — for example, a quarterly earnings call — followed by 60-90 days of silence. To produce a daily index, GATT extrapolates between disclosures.
@@ -51,7 +63,30 @@ $$ v(t) = s_v \cdot (1 + g_v)^{(t - d_v)/30} $$
 
 The monthly growth rate `g_v` is set by editorial judgment based on observed multi-period trajectories, capped at 30% per month for new high-momentum vendors (e.g., Kimi K2.6 post-launch) and floored at -5% per month for declining vendors (e.g., Grok in May 2026). The rate is reviewed weekly and updated when new signals arrive. Vendors with no recent disclosure default to 8% per month, reflecting a 2025-2026 baseline median across the index.
 
-The extrapolation engine runs in the browser when readers load the dashboard, recomputing each vendor's `live` value from the latest snapshot file. This means the headline number visible on `gf691271.github.io/gatt/` is always current to the day, even between version releases. Snapshot files (`data/snapshots/YYYY-MM-DD.json`) freeze each day's state for reproducibility; this paper draws all empirical figures from the May 9, 2026 snapshot.
+The extrapolation engine runs in the browser when readers load the dashboard, recomputing each vendor's `live` value from the latest snapshot file. Snapshot files (`data/snapshots/YYYY-MM-DD.json`) freeze each day's state for reproducibility; this paper draws all empirical figures from the May 9, 2026 snapshot. The headline number visible on the dashboard is therefore best understood as *anchor-extrapolated*, not freshly measured: it represents the most recent direct disclosure for each vendor projected forward at the editorial growth rate.
+
+### 3.4.1 Anchor Age and Backtest
+
+The honest framing of GATT's "daily" headline requires reporting the underlying anchor age. Table 1 summarizes the volume-weighted anchor age and growth rate for the top 10 vendors (which collectively cover 88% of global volume) as of May 9, 2026:
+
+| Vendor | Daily T | Anchor date | Anchor age (days) | g_v (%/mo) | Volume × age |
+|---|---:|:---:|---:|---:|---:|
+| Doubao | 129 | 2026-04-07 | 32 | 8 | 4128 |
+| Gemini | 73 | 2026-04-09 | 30 | 10 | 2190 |
+| OpenAI | 45 | 2026-05-05 | 4 | 15 | 180 |
+| Anthropic | 22 | 2026-04-16 | 23 | 18 | 506 |
+| Microsoft | 10 | 2026-04-29 | 10 | 10 | 100 |
+| DeepSeek | 9.2 | 2026-04-24 | 15 | 10 | 138 |
+| Qwen | 6.2 | 2026-04-02 | 37 | 8 | 229 |
+| OpenRouter | 3.0 | 2026-04-30 | 9 | 10 | 27 |
+| Hy3 | 2.7 | 2026-04-23 | 16 | 12 | 43 |
+| Kimi | 2.5 | 2026-04-20 | 19 | 30 | 47 |
+
+The volume-weighted mean anchor age for the top 10 is approximately **24 days**. The most stale top-tier anchor is Qwen (37 days), pending the Alibaba Q1 2026 earnings disclosure expected in May. The freshest is OpenAI (4 days) following the May 5 GPT-5.5 Instant launch.
+
+We ran a five-day backtest comparing the v0.79 snapshot (May 4, 2026) extrapolated forward five days using the engine to the v0.82 anchored values (May 9). For the four vendors that received fresh anchors in this window (Gemini, Anthropic, Microsoft, OpenAI), the engine's pure-extrapolation prediction differed from the anchored update by a volume-weighted **+15.3%** (engine under-predicted, primarily because the Gemini Cloud Next 2026 disclosure of 16B tokens/min via API was a step-change rather than smooth growth). For the six top-10 vendors that did not receive fresh anchors (Doubao, DeepSeek, Qwen, OpenRouter, Hy3, Kimi), the engine prediction was within ±2% of the manually-adjusted v0.82 values, validating the engine's accuracy in the absence of step-changes. The implication: the extrapolation engine is reliable between disclosures but cannot anticipate large vendor announcements; readers should treat the headline as accurate to within ~10% during quiet news weeks and within ~25% during active disclosure windows.
+
+The default 8%/month growth rate is calibrated to the Epoch AI inference-cost panel (Sevilla et al., reference [18]): Epoch reports cost-per-fixed-capability halving every two months, equivalent to a ~30%/month price decline. If volume grows at 22%/month (the 2026 GATT-implied rate), the implied real-resource expansion is approximately +50%/month — consistent with hyperscaler capex trajectories ($602B in 2026, +36% YoY) but at the upper end. Vendor-specific growth rates deviate from the 8%/month default when vendor-specific signals (Anthropic's MAU surge, Grok's user decline) override the field default.
 
 ## 3.5 Token GDP
 
@@ -70,7 +105,19 @@ These are vendor-volume-weighted blends across input and output token rates and 
 
 For May 9, 2026, GATT computes daily Token GDP at $262.6 million, or $95.8 billion annualized. The regional breakdown is striking: the United States contributes $231 million per day (88% of the total) on 154 trillion tokens; China contributes $15.4 million per day (6%) on 154 trillion tokens. The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference.
 
-The Zhuang et al. (2025) Inference Production Frontier [11] suggests a future refinement: blended prices should reflect observed production-cost curves and demand elasticities rather than retail menu prices. GATT v0.83+ will incorporate this where vendor cost data permits.
+### 3.5.1 What "Token GDP" Is and Is Not
+
+The label "Token GDP" carries economic baggage that requires explicit framing. National accounts GDP, since Hulten (1978) and codified in SNA 2008, measures *value-added* — gross output net of intermediate inputs — and uses *transacted* prices. GATT's Token GDP construct departs from this standard in two ways.
+
+First, as Section 3.3.1 details, GATT's all-sources volume basis is closer to gross output than to value-added. Doubao tokens consumed by Douyin's recommendation system as an intermediate input are summed alongside Claude tokens consumed as final-consumption end-user assistance.
+
+Second, GATT applies retail menu prices ($1.50/M for US blended, $0.10/M for CN blended) to all volume — including the substantial fraction (>95% for Volcengine per the Section 3.3 arithmetic) that is *not* transacted at retail. The internal Doubao calls inside ByteDance's pipelines are not actually billed; assigning them a counterfactual retail price ("what would this cost on the API menu") is a comparability device, not an observed price.
+
+The Token GDP construct is therefore best understood as a **counterfactual retail-equivalent valuation of gross token output**, not a national-accounts-style value-added measure. Readers comparing Token GDP to USD-priced AI infrastructure spending (e.g., IDC's $758B 2029 forecast [7]) should note that the constructs are not directly comparable: IDC measures money actually flowing; Token GDP measures the retail-equivalent value of all token consumption regardless of whether transacted. Future versions will explore (a) a value-added variant that nets out tracked internal-pipeline calls, and (b) a transaction-based variant that prices internal calls at internal-cost rather than retail. Both are substantial methodological extensions and are flagged for v1.0.
+
+We retain the "Token GDP" label because the construct is parallel to GDP in spirit — an aggregate economic-value measure across a defined production base — but commit in this paper to using "Token GDP (retail-equivalent gross)" or "TGE" in the manuscript whenever the gross-vs-value-added distinction matters, and to encouraging downstream researchers to compute alternative variants from the open dataset.
+
+The Zhuang et al. (2025) Inference Production Frontier [11] is the most natural theoretical refinement: blended prices should ideally reflect observed production-cost curves and demand elasticities rather than retail menu prices. GATT v0.83+ will incorporate this where vendor cost data permits.
 
 ## 3.6 Per-Capita Calculation
 

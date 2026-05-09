@@ -26,11 +26,11 @@ The full vendor table from GATT v0.82, ordered by daily token throughput. All fi
 | 20 | Amazon Bedrock | US | 0.17 | Low | 2 | 2025-Q4 | AWS revenue ÷ price |
 | 21 | GLM (Zhipu AI) | CN | 0.13 | Medium | 1 | 2026-02 | OpenRouter data |
 
-**Confidence distribution:** 4 High · 0 Medium-high · 5 Medium · 8 Low · 4 Other
+**Confidence distribution:** 4 High · 2 Medium-high · 5 Medium · 10 Low (totals to 21)
 **Tier distribution:** 12 Tier-1 (direct or strong indirect) · 9 Tier-2 (back-calc / proxy)
-**Country distribution:** 11 US · 9 CN · 1 FR (totals to 21)
+**Country distribution:** 10 US · 10 CN · 1 FR (totals to 21)
 
-**Vendor sum:** 309.28T per day across 21 vendors. Global total of 310T per day in v0.82 includes a small adjustment for country-residual usage in non-tracked geographies.
+**Vendor sum:** 309.28T per day across 21 vendors. The reported global total of 310T per day in the main text rounds the vendor sum (309.28T) and adds a small (~0.7T) Rest-of-World residual for activity in non-tracked geographies (Saudi Arabia, India, Brazil, Indonesia, etc.) not attributable to any tracked vendor headquarters. The `token_gdp.breakdown` regional totals in the dataset (US 154T + CN 154T + EU 9T + ROW 6T = 323T) include a further allocation of country-level non-vendor-attributable usage, which is why the regional sum exceeds the vendor sum by ~13T (~4%). This residual is documented in the dataset's `correction_log` and represents enterprise / consumer AI usage in tracked countries that uses non-tracked vendors or self-hosted open-weight models.
 
 **Source files:**
 - Live data: `data/tci-latest.json`

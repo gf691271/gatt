@@ -50,6 +50,10 @@ CITE_MAP = {
     "20": "hao2025empire",
     "21": "csis2026tokenbill",
     "22": "patel2026semianalysis",
+    "23": "brynjolfsson2021productivity",
+    "24": "acemoglu2018task",
+    "25": "hulten1978growth",
+    "26": "bresnahan1995general",
 }
 
 PREAMBLE = r"""\documentclass[11pt,a4paper]{article}
@@ -161,6 +165,17 @@ def replace_unicode(text: str) -> str:
 def convert_inline(text: str) -> str:
     """Convert inline markdown to LaTeX."""
 
+    # PROTECT inline math $...$ from subsequent conversions (italic regex would mangle $G^{*}$)
+    # Replace each $...$ segment with a placeholder, restore at the end.
+    # IMPORTANT: only protect math-shaped content (starts with letter or backslash),
+    # NOT currency ($758 = digit start = currency, must NOT be protected).
+    math_segments = []
+    def math_protect(m):
+        math_segments.append(m.group(0))
+        return f"\x00MATH{len(math_segments)-1}\x00"
+    # Math content: $ followed by letter or backslash, ending with another $, single-line only
+    text = re.sub(r"\$[a-zA-Z\\][^\$\n]{0,300}\$", math_protect, text)
+
     # Convert markdown links [text](url) → \href{url}{text}
     def link_repl(m):
         label = m.group(1)
@@ -205,6 +220,10 @@ def convert_inline(text: str) -> str:
 
     # Replace problematic Unicode (superscripts, CJK) with LaTeX-safe forms
     text = replace_unicode(text)
+
+    # RESTORE protected math segments
+    for idx, seg in enumerate(math_segments):
+        text = text.replace(f"\x00MATH{idx}\x00", seg)
 
     return text
 

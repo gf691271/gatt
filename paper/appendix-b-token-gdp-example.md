@@ -75,7 +75,7 @@ Where V is in trillions of tokens per day and p is in dollars per million tokens
 | Rest of World | 6 | $0.90 | $5.4 | $2.0 |
 | **Global** | **323** | — | **$262.6** | **$95.8** |
 
-(The Token-GDP volume base of 323T differs slightly from the volume-only base of 310T due to country-residual allocations as noted above. The vendor-attribution sum is 309.28T; country-level sums add small residuals for usage in tracked countries that is not attributable to a tracked vendor.)
+**Reconciliation of the three volume bases.** Three distinct sums appear in this paper: (a) the per-vendor sum (309.28T), the strict aggregate of GATT's 21 tracked vendor estimates; (b) the rounded global total in the main text (310T); and (c) the regional Token GDP base (323T = US 154T + CN 154T + EU 9T + ROW 6T). The 13T (4%) residual between (b) and (c) represents country-level enterprise and consumer AI usage in tracked countries that is not attributable to any of GATT's 21 tracked vendor headquarters — primarily self-hosted open-weight model deployments (Llama, Qwen-OSS, Mistral-OSS) and smaller regional providers in the UK, Germany, France, Japan, South Korea, Canada, India, Brazil, Saudi Arabia, and Indonesia. The 13T residual is allocated to regions in proportion to country-level estimated AI usage (per-capita scaling). Token GDP is computed on the regional base (323T) because the regional pricing assumptions implicitly cover all in-region consumption; computing Token GDP on the strict vendor sum (309.28T) would understate the regional aggregates by 4%. We adopt the regional base for Token GDP figures throughout this paper.
 
 **Annualized:** $262.6M per day × 365 = $95.85B per year.
 

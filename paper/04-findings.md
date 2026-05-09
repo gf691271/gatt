@@ -8,6 +8,18 @@ Global daily AI inference output stands at **310 trillion tokens per day** as of
 
 The 310T figure is itself the result of substantial recent revisions. GATT v0.79 (May 4, 2026) reported 264T per day; v0.80 (also May 9) raised this to 305T after seven vendor anchor upgrades reflecting Pichai's 16-billion-tokens-per-minute Q1 disclosure, Anthropic's Opus 4.7 launch and 44% MAU surge, Microsoft's Q3 FY26 $37B AI ARR earnings release, Kimi K2.6's launch and ARR doubling, DeepSeek V4 Pro/Flash's launch, and minor adjustments to Qwen and Hunyuan. v0.81 added 5 trillion tokens per day from third-party revisions (OpenRouter platform data, Perplexity user metrics, and the new Xiaomi MiMo entry). The week-over-week swing from 264T to 310T (+17%) reflects measurement-update density rather than a single underlying growth event; vendor activity in the April 1 to May 9 window was unusually rich in publishable signals.
 
+### 4.1.1 Sensitivity Band on the Headline
+
+The 310T point estimate carries methodological uncertainty that warrants explicit bracketing. Following the parameter classification template from Inference Bottleneck [12] (observed / inferred / judgment-based), GATT publishes three scenarios for the headline global figure:
+
+| Scenario | Global daily tokens (T) | Methodology |
+|---|---:|---|
+| Conservative | 250 | Photons=Tokens-anchored: trim Gemini All-Surfaces multiplier 3.2× → 2.5×; trim Doubao all-sources by 5% (cache adjustment); apply 15% reduction across vendors with low-confidence ratings |
+| **Best estimate** | **310** | **GATT v0.86 published values; vendor-volume-weighted, all-sources, May 9, 2026 anchored** |
+| Aggressive | 400 | 22%/mo growth assumption holds through end-Q2 2026; assumes 1-2 additional Pichai-class US disclosures by mid-June |
+
+The conservative bound (250T) maintains all five qualitative GATT findings — China-US volume near-parity (53/47 in conservative), US Token GDP dominance ≥85%, per-capita gap ≥450× US/India, growth trajectory positive, and the 2× tension with the Photons=Tokens 2028 ceiling persists (350K conservative US per-capita > 225K ceiling). The qualitative robustness of GATT's headline claims to conservative recalibration is, in our judgment, the strongest argument for citing GATT figures despite the unavoidable measurement uncertainty in the underlying vendor data.
+
 ## 4.2 Volume Parity Between China and the United States
 
 For the first time since GATT began publishing in February 2026, the China and United States token-volume shares are essentially tied. As of May 9: **China 50.0% of global volume (153.92 trillion tokens per day)**, **United States 49.7% (154.62 trillion tokens per day)**, with Europe at 0.24% (0.74 trillion, dominated by Mistral) and the Rest of World residual at the remainder.

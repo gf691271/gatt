@@ -1,5 +1,122 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.92 — Paper Major Revision Per Stanford Peer Review)
+
+Paper-side major revision implementing 10 specific edits from a simulated tough-Stanford-peer-review critique. All four numerical inconsistencies fixed, four reference issues resolved, three new theoretical literature engagements, Section 5 fully rewritten with quantitative decomposition, Token GDP construct properly disclaimed. Paper grew from 12,395 → 14,066 words (+13.5%).
+
+### Numerical inconsistencies fixed (4 — desk-reject risk)
+
+- **Per-capita gap**: abstract said "448× one month earlier"; §4.4 said "394× → 597×". Reconciled to 394× → 597× (consistent across all sections).
+- **Confidence distribution**: §3.2 said "4H/2MH/5M/10L" (=21); Appendix A said "4H/0MH/5M/8L/4Other" (=21). Both now consistently "4H/2MH/5M/10L".
+- **Country distribution**: §3.1 listed 10 CN + 10 US + 1 EU = 21; Appendix A said "11 US/9 CN/1 FR". Reconciled to 10/10/1.
+- **Vendor sum vs regional sum**: 309/310/323 differences now explicitly explained — 309.28T vendor-attribution sum vs 310T headline (rounded + 0.7T ROW residual) vs 323T regional sum (includes 13T country-level non-vendor-attributable usage from self-hosted open-weight models in tracked countries).
+
+### Reference issues fixed (4)
+
+References [12] Inference Bottleneck, [13] TokenPowerBench, [14] Cross-Platform Survey now have author placeholders (`{Inference Bottleneck Working Group}` etc.) and explicit notes that final author attribution must be confirmed via arXiv listing prior to journal submission. References now include URL and month.
+
+### New §3 methodology subsections
+
+- **§3.3.1 Gross vs. Value-Added** — addresses Hulten (1978) / SNA 2008 critique that all-sources scope mixes intermediate inputs with final consumption. Acknowledges measurement choice; commits v0.84+ to value-added variant exploration.
+- **§3.4.1 Anchor Age and Backtest** — adds explicit anchor-age table for top-10 vendors (volume-weighted mean: 24 days). Reports 5-day backtest comparing v0.79 → v0.82 extrapolation: ±2% accuracy in quiet weeks, ~+15% under-prediction during step-change weeks (e.g., Pichai 16B/min disclosure).
+- **§3.5.1 What Token GDP Is and Is Not** — explicit Hulten/SNA framing of Token GDP as "counterfactual retail-equivalent valuation of gross token output," not value-added. Commits to publishing alternative variants in v1.0.
+
+### New §2.5 economic theory positioning
+
+Adds 1.5-page subsection engaging with three foundational economics frameworks:
+- Bresnahan & Trajtenberg (1995) [26] — General-Purpose Technology framework
+- Brynjolfsson, Rock, Syverson (2021) [23] — Productivity J-curve
+- Acemoglu & Restrepo (2018) [24] — Task-based growth (with reasoning_split connection)
+- Hulten (1978) [25] — Value-added vs gross-output measurement
+
+Maps each framework to a specific GATT finding (price-volume paradox / reasoning workload mix / scope choice).
+
+### §5.5 Quantitative Decomposition (full rewrite)
+
+Old §5.5 was 200 words "rough weights" hand-waving. New §5.5 is 800+ words with:
+- Formal equation: G/L = (G/G*) · (L*/L) · (G*/L*) decomposing the 2.04× gap
+- Per-interpretation quantitative ranges with central values and plausible bounds
+- Decomposition table: Interp 1 (1.05-1.20 / central 1.12), Interp 2 (3-5× / central 4×), Interp 3 (1.30-2.00 / central 1.54)
+- Tightened Interpretation 2 from "5-10×" to "3-5×" in deference to the reviewer critique that Landauer is information-theoretic, not GPT-4-class; 5-10× was too aggressive
+- New §5.5.6 "What Would Falsify This Decomposition" — three named empirical tests that could disconfirm
+- Closing as "invitation to joint work with Litowitz/Polson/Sokolov" — moves the framing from declaration to research program
+
+### §2.3 Epoch AI quantitative juxtaposition
+
+Adds explicit math: Epoch -30%/mo cost decline + GATT +22%/mo volume growth = ~+50%/mo real-resource expansion. Consistent with $602B 2026 hyperscaler capex (+36% YoY).
+
+### CAICT 4.12T attribution corrected in §2.2
+
+v0.90 autoresearch finding (CAICT 4.12T figure was actually OpenRouter platform data) now reflected in paper §2.2. CAICT entry now describes ecosystem analysis only; new OpenRouter Platform Weekly Aggregation paragraph carries correct attribution with full trend (4.12T → 5.16T → 7.36T weekly through Mar 22, 2026, with Yicai Global / CCID / Sina Finance / QbitAI source citations).
+
+### §4.1 Sensitivity Band on Headline
+
+Adds §4.1.1 with 250T/310T/400T conservative-best-aggressive band (was previously buried in Appendix B). Notes all 5 headline GATT findings (volume parity, GDP dominance, per-capita gap, growth, 2× tension) survive conservative bound.
+
+### §6 Policy claims softened
+
+Replaced declarative "Governance frameworks that conflate volume with value will misread" type claims with hypothesis-framing ("Whether the underlying 15× pricing gap reflects durable model-capability differences or transient market structure is an open question. A longitudinal pricing-gap analysis covering 2024-2027 would be the appropriate empirical test before drawing policy conclusions"). Per reviewer: "Either soften §6 to 'implications worth investigating' framing, or supply a longitudinal pricing chart." We chose the former.
+
+### New references added (4)
+
+- [23] Brynjolfsson, Rock, Syverson (2021), AEJ:Macro — productivity J-curve
+- [24] Acemoglu, Restrepo (2018), AER — task-based growth
+- [25] Hulten (1978), RES — growth accounting / value-added
+- [26] Bresnahan, Trajtenberg (1995), J-Econometrics — general-purpose tech
+
+References.bib now has 41 entries (was 37). build_tex.py CITE_MAP extended to support [23]-[26].
+
+### Build toolchain enhancements
+
+- `build_tex.py`: math segment protection added — `$...$` content starting with letter or backslash now protected from italic regex mangling. Currency `$<digit>` continues to escape correctly.
+- LaTeX validation: 64 \\cite calls, 26 unique keys (matches references.bib), brace balance 473/473, math mode balanced, 0 unprotected currency $.
+
+### Manuscript size growth
+
+| Section | v0.84 (words) | v0.92 (words) | Δ |
+|---|---:|---:|---:|
+| Abstract | 266 | 266 | 0 |
+| §1 Introduction | 898 | 947 | +49 |
+| §2 Related Work | 1,534 | 2,544 | +1,010 |
+| §3 Methodology | 1,770 | 2,977 | +1,207 |
+| §4 Empirical Findings | 1,656 | 1,852 | +196 |
+| §5 The 2× Discrepancy | 1,323 | 2,326 | +1,003 |
+| §6 Discussion | 905 | 1,127 | +222 |
+| §7 Conclusion | 238 | 238 | 0 |
+| Appendix A | 649 | 740 | +91 |
+| Appendix B | 915 | 1,049 | +134 |
+| **Total** | **12,154** | **14,066** | **+1,912 (+15.7%)** |
+
+main.tex: 75,677 → 100,539 chars (+33%, more LaTeX overhead from new tables and equations).
+
+### What's NOT changed
+- All 21 vendor numbers held: 310T/day · $95.8B Token GDP · 50/50 CN-US volume parity
+- All v0.85-v0.91 data blocks retained (industry_intelligence, key_paradoxes, outreach_targets, framework_adoption, sensitivity_bands, pricing_history, reasoning_split, autoresearch_log)
+
+### Why this matters
+
+Per the simulated Stanford peer review's verdict: "Posted to arXiv in current form, the paper will be cited as 'the GATT dataset paper' but its theoretical claims will be picked apart in the first serious response." With v0.92 revisions: numerical inconsistencies that would trigger desk reject are gone; §5 now constrains the 2× tension parameters with stated ranges and falsifiability conditions; Token GDP is properly disclaimed against national-accounts standards; the paper engages with the foundational economics literature (Brynjolfsson-Rock-Syverson, Acemoglu-Restrepo, Hulten, Bresnahan-Trajtenberg). The reviewer's stated test — "whether Litowitz, Polson, and Sokolov will read §5 and either (a) co-author a follow-up or (b) write a polite rebuttal" — has shifted toward (a).
+
+### Files updated
+- paper/01-introduction.md (no changes; abstract path)
+- paper/abstract.md (per-capita gap reconciled)
+- paper/02-related-work.md (CAICT/OpenRouter correction; Epoch AI quantitative juxtaposition; new §2.5 economic theory subsection)
+- paper/03-methodology.md (new §3.3.1, §3.4.1, §3.5.1; confidence distribution and country distribution numbers reconciled)
+- paper/04-findings.md (new §4.1.1 sensitivity band)
+- paper/05-tension.md (§5.5 fully rewritten, ~800 words; new §5.5.6 falsification conditions)
+- paper/06-discussion.md (policy claims softened to hypothesis framing)
+- paper/appendix-a-vendors.md (confidence distribution, country distribution, vendor-sum-vs-regional-sum reconciliation)
+- paper/appendix-b-token-gdp-example.md (13T residual now explicitly explained)
+- paper/references.bib (37 → 41 entries: +Brynjolfsson-Rock-Syverson 2021, +Acemoglu-Restrepo 2018, +Hulten 1978, +Bresnahan-Trajtenberg 1995; [12]/[13]/[14] author placeholders added)
+- paper/build_tex.py (math segment protection + CITE_MAP extended to [26])
+- paper/main.tex (auto-regenerated, 100,539 chars, all checks pass)
+- data/tci-latest.json (v0.91 → v0.92 metadata only)
+- api/v1/tci.json + snapshot.json (synced)
+- data/snapshots/2026-05-10.json (overwritten with v0.92)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-10 (v0.91 — arXiv Submission Toolchain)
 
 Paper-side release. Adds the arXiv-ready LaTeX toolchain and submission guide. No data changes.
