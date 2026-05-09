@@ -1,5 +1,57 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.84 — Paper References Expanded with 7 New Sources)
+
+Same-night follow-up to v0.83. Added 7 new references to the academic paper after a literature-and-people sweep. No data changes.
+
+### New references added to paper/references.bib
+
+| ID | Source | Type | Why added |
+|----|--------|------|-----------|
+| [16] | **CAICT (China Academy of ICT) AI Industry Report 2025** | Government research | February 2026 supplementary data: Chinese mainstream LLMs at 4.12 trillion tokens/week vs. US 2.7 trillion = 50%+ Chinese lead. **Third independent Chinese-side validation** (joining IDC May 7 + China NDA 140T). Vice President Wei Liang quoted on architecture-optimization shift. |
+| [17] | **Brynjolfsson "AI economic dashboards" prediction** | Stanford HAI / Digital Economy Lab | December 2025 prediction explicitly anticipates "high-frequency AI economic dashboards" — GATT directly fulfills this prediction. Cited in Section 1.3 contributions. |
+| [18] | **Epoch AI / Sevilla — Inference cost trends** | Research org | Documents inference cost halves every 2 months. Reinforces Section 3.5 Token GDP as-of-date caveat with longitudinal data. |
+| [19] | **Crawford — Atlas of AI (2021)** | Foundational book | Frames AI as planetary-scale infrastructure with concentrated externalities. Cited in Section 6.2 geo-economics for per-capita inequality framing. |
+| [20] | **Hao — Empire of AI (2025)** | Trade book | Investigative narrative on OpenAI / compute capital concentration. Complementary to GATT's data-side perspective. Cited in Section 6.2. |
+| [21] | **CSIS "Token Bill" analysis (April 2026)** | Policy think tank | Uses "Token Bill" framing to discuss American enterprises running Chinese AI. Direct evidence GATT's framing has entered policy discourse. Cited in Section 6.1. |
+| [22] | **Patel / SemiAnalysis — AI Cloud TCO Model** | Industry analysis | The closest USD-side competitor; documents 1200× compression for GPT-3-class inference cost. Complementary to GATT (token volume vs. dollar cost). Cited in Sections 1.3, 2.1, 2.3, 3.5, 6.1. |
+
+### Paper sections revised (4 sections)
+
+- **Section 1.3 (Introduction — Contributions)**: Added Brynjolfsson "AI economic dashboards" framing as the academic anchor positioning GATT as fulfillment of his December 2025 prediction. Added Patel/SemiAnalysis as USD-side complement.
+- **Section 2.1 (Related Work — Commercial Research)**: Added SemiAnalysis 1200× compression finding alongside Xing's 40×.
+- **Section 2.2 (Token-Volume Research)**: Added a new paragraph featuring CAICT as the third Chinese-side validation source. Triangulates IDC + NDA + CAICT.
+- **Section 2.3 (Physics & Economics of Inference)**: Added Epoch AI / Sevilla inference cost panel.
+- **Section 3.5 (Token GDP)**: Added Epoch AI 2-month halving + SemiAnalysis 1200× compression alongside Xing's 40×. Three independent measurements agreeing in direction and magnitude.
+- **Section 6.1 (Policy Implications)**: Added CSIS "Token Bill" April 2026 analysis as evidence that GATT's framing has entered policy discourse.
+- **Section 6.2 (Geo-Economic Implications)**: Added Crawford (planetary-scale infrastructure framing for per-capita inequality) and Hao (compute capital concentration) as broader anchors.
+
+### Bibliography total: 30 → 37 entries
+
+### Why this matters
+- **Q9 (publication authority)**: Engaging with Brynjolfsson, Crawford, and Hao — the most cited names in the AI political-economy space — signals GATT is in the right intellectual conversation.
+- **Q2 (data credibility)**: CAICT as third Chinese-side validator strengthens the China-50% volume claim significantly. The argument now triangulates across cloud-vendor (IDC), government (NDA), and government-research (CAICT) sources.
+- **Q10 (citation value)**: SemiAnalysis is the closest USD-side analyst; explicit cross-citation positions GATT as the natural token-side counterpart.
+
+### Files updated
+- paper/references.bib (30 → 37 entries)
+- paper/01-introduction.md (Section 1.3)
+- paper/02-related-work.md (Sections 2.1, 2.2, 2.3)
+- paper/03-methodology.md (Section 3.5)
+- paper/06-discussion.md (Sections 6.1, 6.2)
+- data/tci-latest.json (v0.83 → v0.84 metadata only)
+- CHANGELOG.md (this entry)
+
+### Out of scope (logged for future versions)
+
+The literature sweep also surfaced people and resources that were not yet incorporated:
+- **Outreach plan** for Litowitz/Polson/Sokolov, Karpathy, Brynjolfsson, Midha, Patel — to be executed when paper hits arXiv
+- **Chinese-side experts**: 信通院魏亮、清华/北大 AI 学者、新华社可能背书等 — for future engagement
+- **Karpathy uses "token throughput" personally** (X 2026) — supportive language alignment with GATT framing, valuable for outreach narrative
+- **Dylan Patel SemiAnalysis $100M ARR** for AI/semi research newsletter — proves the appetite for this kind of content
+
+---
+
 ## 2026-05-09 (v0.83 — Academic Paper Manuscript Released)
 
 Same-day fourth release. Adds the full **academic paper manuscript** under `paper/` as the v0.83 deliverable. No data changes; v0.82 vendor numbers held throughout.
