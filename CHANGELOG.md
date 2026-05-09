@@ -1,5 +1,89 @@
 # GATT Data Changelog
 
+## 2026-05-10 (v0.86 — Industry Intelligence, Key Paradoxes, Outreach Targets)
+
+Sixth same-day release. Adds three new top-level blocks to `data/tci-latest.json` mapping the broader media/podcast/newsletter/analyst ecosystem GATT competes and engages with; surfaces the central GATT narrative ("price-volume paradox: 99.7% / 3×") as a documented arithmetic story; and prioritizes 16 outreach targets for the v0.84 paper launch. No vendor data changes.
+
+### Three new structural blocks
+
+**1. NEW `industry_intelligence` block — 35+ resources cataloged**
+
+Categorized into 4 sub-sections:
+- **Media** (12 outlets): Bloomberg AI, FT AI, The Information, Reuters AI, WSJ AI, JPMorgan "Eye on the Market", DIGITIMES, TechCrunch, Caixin Global, TechNode, Visual Capitalist, etc.
+- **Podcasts** (7 shows): Hard Fork (NYT), No Priors (Sarah Guo / Elad Gil), The Cognitive Revolution, Latent Space (Swyx), 20VC, Lex Fridman, Acquired
+- **Newsletters** (9 sources): Stratechery (Ben Thompson), Import AI (Jack Clark), Latent Space, SemiAnalysis, Frontier AI Substack, MeaningfulTech, NavyaAI, AnalyticsWeek, Ben Evans
+- **Analysts & research firms** (10 firms): BCG, McKinsey, Bain, Forrester, Gartner, DIGITIMES Research, Tech Insights/Sanneblad, Visual Capitalist, Spheron Network, S&P Global
+
+Each entry has relevance + engagement notes. Block ends with positioning summary: "GATT's positioning is the union of (a) global, (b) all-sources, (c) daily, (d) per-vendor, (e) free + open. No single competitor combines all five."
+
+**2. NEW `key_paradoxes` block — 5 documented data narratives**
+
+The most quotable arithmetic findings from the dataset:
+
+- **Price-Volume Paradox** (the central GATT story): Token unit cost dropped 99.7% (2023-2025), but enterprise AI cloud bill tripled. Volume must have grown >300× to overcome the price collapse. "Jevons-paradox-on-steroids."
+- **Volume-GDP Paradox**: China and US tied at 50%/50% on volume, split 6%/88% on Token GDP. 15× pricing gap.
+- **Agent-Pilot-Failure Paradox**: 88% of agent pilots fail to graduate, but reasoning models use 5-30× more tokens per task (Gartner Mar 2026). The successful 12% drive disproportionate token consumption.
+- **Median-Enterprise-Bill Paradox**: Median enterprise's monthly LLM bill grew 7.2× YoY entering Q1 2026 — despite 99.7% unit price decline.
+- **Supply-Side-Capex Paradox**: Top 5 hyperscalers committed $602B for 2026 AI infrastructure, with inference now consuming 70% of that capacity (CSIS) and 85% of enterprise AI budget (AnalyticsWeek). The "inference flip" completed early 2026.
+
+Block declares narrative_priority: "the price-volume paradox (99.7% / 3×) is the single most powerful headline. It explains why Token GDP matters: even as unit prices collapse, total economic value rises because volume scales faster. This is GATT's central insight."
+
+**3. NEW `outreach_targets` block — 16 prioritized contacts**
+
+Tier 1 (academic must-engage):
+- Litowitz/Polson/Sokolov (Photons=Tokens authors)
+- Brynjolfsson (Stanford HAI; predicted GATT)
+- Yicai Xing (Token Futures author; called for TPI)
+- Jaime Sevilla (Epoch AI)
+
+Tier 1 (practitioner high-reach):
+- Andrej Karpathy (uses "token throughput" personally; 1.3M+ X)
+- Anjney Midha (a16z; co-author 100T study)
+- Martin Casado (a16z infra)
+- Dylan Patel (SemiAnalysis)
+
+Tier 2 (media distribution):
+- Karen Hao (The Atlantic, Empire of AI)
+- Kevin Roose & Casey Newton (Hard Fork, NYT)
+- Sarah Guo & Elad Gil (No Priors)
+- Ben Thompson (Stratechery)
+- Ezra Klein (NYT Opinion)
+
+Tier 2 (policy / China):
+- Wei Liang (CAICT 信通院 副院长)
+- CSIS Wadhwani Center authors
+- CEIBS authors
+
+Each entry has personalized hook + channel + priority. Engagement timing scheduled relative to arXiv submission.
+
+### Front-end updates
+- `index.html` banner: "v0.86 — Industry Intelligence + Key Paradoxes" with explicit price-volume paradox callout
+- `index.html` Q2 snapshot card: version-tagged to v0.86
+- `llms.txt` adds full Key Paradoxes section + Industry Intelligence Map for AI crawler ingestion
+- `index.html` version tag: v0.85 → v0.86
+
+### What's NOT changed
+- All 21 vendor numbers held
+- Global total 310T/day · Token GDP $95.8B/yr · 50/50 volume parity
+- 2× tension with Photons=Tokens
+- Paper manuscript under paper/ (frozen at v0.84)
+- v0.85 framework_adoption + methodology_triangulation + academic_validation blocks all retained
+
+### Why this matters
+- **Distribution-readiness**: For the first time, GATT has a documented map of which outlets, podcasts, and newsletters cover this beat — and which individuals to email when paper launches.
+- **Narrative-readiness**: The price-volume paradox is now formalized as GATT's headline story. Any journalist citing GATT will see this paradox in the data file and adopt it as their lede.
+- **GEO/SEO readiness**: AI crawlers ingesting the data file or `llms.txt` will see GATT's framing positioned alongside Bloomberg, FT, Stratechery, Hard Fork, Karpathy, Brynjolfsson — implicit authority by association.
+
+### Files updated
+- data/tci-latest.json (v0.85 → v0.86, +3 new top-level blocks)
+- api/v1/tci.json + api/v1/snapshot.json (synced)
+- llms.txt (Key Paradoxes + Industry Intelligence Map sections added)
+- index.html (banner reframed; version v0.85 → v0.86)
+- data/snapshots/2026-05-10.json (overwritten with v0.86)
+- CHANGELOG.md (this entry)
+
+---
+
 ## 2026-05-10 (v0.85 — Validation Sources & Framework Adoption Block)
 
 Reverse-flow update: the 7 new sources from v0.84's paper-references work are now also embedded in the GATT dataset itself (not just the manuscript). No vendor data changes; this is a credibility-infrastructure update that strengthens the data file's stand-alone authority.

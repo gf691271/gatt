@@ -1,6 +1,6 @@
 # GATT - Global AI Token Tracker
 > The world's first open index for AI inference consumption. Tracks daily token production by vendor and country.
-> GATT version: 0.85 | Last updated: 2026-05-10
+> GATT version: 0.86 | Last updated: 2026-05-10
 
 ## What is GATT?
 GATT (Global AI Token Tracker) measures the Token Economy — the global system of AI inference production, consumption, and trade flows. Updated continuously. Created by Frank Gao (ex-Alibaba, Microsoft, Nokia).
@@ -169,6 +169,34 @@ GATT data is independently validated across three Chinese-side sources, two US-s
 - a16z + OpenRouter "100T Token Study" (arXiv:2601.10088) — drove v0.81 OR upgrade
 - Xing "Token Futures" (arXiv:2603.21690) — commodity framing
 - Epoch AI / Sevilla — inference cost halves every 2 months
+
+## Key Paradoxes (v0.86 — central GATT narratives)
+
+These are the principal data narratives GATT can speak to. Not editorial opinions; arithmetic consequences of the dataset that journalists and analysts find most quotable.
+
+1. **Price-Volume Paradox (the central GATT story)**: Token unit cost dropped **99.7%** (2023-2025, GPT-4 equivalent: $50-60/M → $0.14/M per Aug 2025), but enterprise AI cloud bill **tripled** ($11.5B 2024 → $37B 2025). Volume must have grown >300× to overcome the price collapse. **Interpretation: cheap tokens unlock disproportionate volume growth. This is Jevons-paradox-on-steroids.** Sources: Xing 2026, Epoch AI, SemiAnalysis, NavyaAI Apr 2026.
+
+2. **Volume-GDP Paradox**: China and US tied at 50%/50% on token volume but split 6%/88% on Token GDP. Same volume, 15× different value capture. Pricing gap: US $1.50/M blended vs CN $0.10/M.
+
+3. **Agent-Pilot-Failure Paradox**: 88% of agent pilots fail to graduate to production (BCG+Forrester 2026), yet reasoning/agentic models use 5-30× more tokens per task than standard chatbots (Gartner Mar 2026). The successful 12% drive disproportionate token consumption.
+
+4. **Median-Enterprise-Bill Paradox**: Median enterprise's monthly LLM bill grew **7.2× YoY** entering Q1 2026 — despite 99.7% unit price decline and 88% agent pilot failure. Validates GATT's 22%/mo top-line growth assumption.
+
+5. **Supply-Side-Capex Paradox**: Top 5 hyperscalers (Meta/Alphabet/Microsoft/Amazon/Oracle) committed ~$602B for 2026 AI infrastructure, with inference now consuming ~70% of that capacity (CSIS) and 85% of enterprise AI budget (AnalyticsWeek). The 'inference flip' completed in early 2026.
+
+## Industry Intelligence Map (v0.86)
+
+GATT tracks the broader ecosystem covering token economy:
+
+**Media** (Tier 1 mainstream): Bloomberg AI, FT AI, The Information, Reuters AI, WSJ AI, JPMorgan "Eye on the Market", DIGITIMES (Asia)
+
+**Podcasts**: Hard Fork (NYT), No Priors (Sarah Guo / Elad Gil), The Cognitive Revolution, Latent Space (Swyx / Alessio), 20VC (Stebbings), Lex Fridman, Acquired
+
+**Newsletters**: Stratechery (Ben Thompson), Import AI (Jack Clark), Latent Space, SemiAnalysis (Dylan Patel), Frontier AI Substack, MeaningfulTech, NavyaAI, AnalyticsWeek, Ben Evans
+
+**Analysts**: BCG, McKinsey, Bain, Forrester, Gartner, DIGITIMES Research, Tech Insights/Sanneblad, Visual Capitalist, Spheron Network, S&P Global
+
+GATT's positioning: union of (a) global, (b) all-sources, (c) daily, (d) per-vendor, (e) free + open. No single competitor combines all five.
 
 ## License
 CC BY 4.0 — Free to use with attribution.

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "gatt_version": "0.85",
-  "generated_at": "2026-05-10T01:30:00Z",
+  "gatt_version": "0.86",
+  "generated_at": "2026-05-10T03:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-10",
     "confidence": "medium-high",
     "last_updated": "2026-05-10",
-    "note": "v0.85 — Validation sources expanded. methodology_triangulation now includes CAICT (China Academy of ICT) as third Chinese-side independent validation source, joining IDC May 7 and China NDA 140T. SemiAnalysis (Dylan Patel) added as USD-side commercial peer. academic_validation expanded from 6 to 11 sources adding Brynjolfsson AI economic dashboards prediction (Dec 2025), Epoch AI inference cost panel, Crawford Atlas of AI, Hao Empire of AI, Karpathy 'token throughput' personal usage. NEW framework_adoption block tracks 5 instances of GATT framing being independently adopted (CSIS Token Bill, CEIBS academic, Brynjolfsson prediction, Karpathy practitioner usage, Xing TPI call). Vendor numbers held; this is a credibility-infrastructure update, not a data revision. v0.80 IDC + v0.81 OR/Perplexity/Xiaomi + v0.82 Photons=Tokens 2× tension all retained."
+    "note": "v0.86 — Industry intelligence + key paradoxes + outreach targets blocks added. Maps the broader media/podcast/newsletter/analyst ecosystem (35+ resources cataloged across 4 categories), surfaces 5 key data paradoxes with the price-volume paradox (99.7% cost decline / 3× spending growth) as the central GATT narrative, and prioritizes 16 outreach targets across academic, practitioner, media, and policy tiers. Vendor numbers held. v0.80 IDC + v0.81 OR/Perplexity/Xiaomi + v0.82 Photons=Tokens 2× tension + v0.85 framework_adoption all retained."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -213,6 +213,161 @@
       }
     ],
     "interpretation": "Five distinct framework-adoption instances across four categories (think tank, academic policy school, academic prediction, practitioner usage, academic infrastructure call). The framing GATT operationalizes is being independently adopted in policy, academia, and AI practice. GATT is positioned to become the citation-default for token-economy measurement."
+  },
+  "industry_intelligence": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Maps the broader media, podcast, newsletter, and analyst ecosystem that covers the AI inference / token economy beat. GATT uses this map to identify outreach targets, distribution channels, and competing measurement perspectives. Tracking the ecosystem is itself a credibility signal: GATT is aware of and engaging with the conversation it joins.",
+    "media": {
+      "tier_1_mainstream_business": [
+        {"name": "Bloomberg AI Vertical", "url": "https://www.bloomberg.com/ai", "relevance": "Mainstream financial coverage; tracks AI infrastructure capex, vendor earnings, market reactions. May 2026 example: 'Fresh AI Disruption Selloff Hits Thomson Reuters Despite Strong Results.'", "engagement": "GATT should pitch as data source for AI macro stories"},
+        {"name": "Financial Times AI", "url": "https://www.ft.com/artificial-intelligence", "relevance": "Global financial / policy AI coverage; strong UK + EU readership", "engagement": "Pitch Token GDP framing as measurement infrastructure"},
+        {"name": "The Information", "url": "https://www.theinformation.com", "relevance": "Silicon Valley insider reporting; tracks vendor strategic moves (e.g., DeepSeek V4 Lite Huawei chip story Apr 2026)", "engagement": "High-leverage for vendor disclosure scoops"},
+        {"name": "Reuters AI", "url": "https://www.reuters.com/technology/artificial-intelligence/", "relevance": "Newswire; broadest distribution if GATT data is cited"},
+        {"name": "Wall Street Journal AI", "relevance": "US business mainstream"},
+        {"name": "JPMorgan Asset Management — 'Eye on the Market'", "url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/insights/eye-on-the-market/smothering-heights-amv.pdf", "relevance": "Investment bank macro commentary on AI economy; 2026 'Smothering Heights' outlook treats AI as central macro variable", "engagement": "Pitch Token GDP as macro indicator"}
+      ],
+      "tier_2_tech_specialty": [
+        {"name": "DIGITIMES (Taiwan)", "url": "https://www.digitimes.com/", "relevance": "Asia semiconductor + enterprise AI; May 6, 2026 report 'Enterprise AI Enters Deployment Phase, Shifting Compute Architectures Toward Inference'", "engagement": "Asia-side outreach channel"},
+        {"name": "TechCrunch", "relevance": "Startup + product-launch news; cited GATT vendors regularly (Kimi, Moonshot, etc.)"},
+        {"name": "Caixin Global", "relevance": "Chinese-market English coverage; already cited in GATT vendor sources"},
+        {"name": "TechNode", "relevance": "Chinese tech English; Doubao 120T/day reporting"},
+        {"name": "Visual Capitalist", "url": "https://www.visualcapitalist.com/", "relevance": "Infographic-format data journalism; AI cost breakdown (R&D / compute / inference) infographics; closest infographic competitor for GATT"}
+      ]
+    },
+    "podcasts": [
+      {"name": "Hard Fork", "hosts": "Kevin Roose & Casey Newton", "publisher": "New York Times", "relevance": "Top-tier mainstream tech AI podcast; weekly news framing", "engagement": "Highest-impact mainstream channel; GATT framing pitch should target this show first"},
+      {"name": "No Priors", "hosts": "Sarah Guo & Elad Gil", "relevance": "VC AI commentary; entrepreneurially minded; cutting-edge AI in real-world impact context", "engagement": "Strong alignment with token-economy commodity framing"},
+      {"name": "The Cognitive Revolution", "frequency": "biweekly", "relevance": "Transformative AI across industries; long-form discussion"},
+      {"name": "Latent Space", "hosts": "Swyx (Shawn Wang) & Alessio Fanelli", "relevance": "AI engineer / practitioner focused; covers vendor benchmarks, MoE architectures, cost analysis", "engagement": "Audience overlaps with GATT data users; high natural fit"},
+      {"name": "20VC", "host": "Harry Stebbings", "relevance": "VC interviews; reaches investor audience"},
+      {"name": "Lex Fridman Podcast", "relevance": "Long-form deep interviews; reaches broad tech audience"},
+      {"name": "Acquired", "hosts": "Ben Gilbert & David Rosenthal", "relevance": "Deep dives on tech companies; could feature GATT vendors"}
+    ],
+    "newsletters": [
+      {"name": "Stratechery", "author": "Ben Thompson", "relevance": "Business strategy + tech analysis; central to Silicon Valley discourse; GATT Token GDP framing aligns with his analytical style", "engagement": "Highest-leverage newsletter target; weekly free tier + premium daily"},
+      {"name": "Import AI", "author": "Jack Clark (ex-Anthropic, ex-OpenAI)", "relevance": "Academic + policy AI; trusted source for AI researchers", "engagement": "Direct alignment with GATT's academic validation focus"},
+      {"name": "Latent Space Newsletter", "author": "Swyx", "relevance": "AI engineer audience; complements podcast"},
+      {"name": "SemiAnalysis Newsletter", "author": "Dylan Patel", "url": "https://newsletter.semianalysis.com/", "relevance": "USD-side commercial peer; $100M ARR projected 2026; closest commercial measurement competitor", "engagement": "Already in methodology_triangulation; potential cross-citation"},
+      {"name": "Frontier AI Substack", "url": "https://frontierai.substack.com/", "relevance": "'The Inference Economy' series; token-economy native vocabulary", "engagement": "Explicit framing alignment"},
+      {"name": "MeaningfulTech", "url": "https://meaningfultech.com/", "relevance": "'The Token Economy: What a $100,000 Employee Really Costs' (April 2026); applies token-economy framing to enterprise productivity"},
+      {"name": "NavyaAI Reports", "url": "https://www.navyaai.com/reports/", "relevance": "Cost-paradox specialist; published 'Tokens got 99.7% cheaper, AI bill tripled'"},
+      {"name": "AnalyticsWeek — Inference Economics", "url": "https://analyticsweek.com/", "relevance": "Inference cost FinOps focus; documents 85% of enterprise AI budget on inference (2026)"},
+      {"name": "Ben Evans", "relevance": "Tech analyst; AI macro commentary"}
+    ],
+    "analysts_and_research_firms": [
+      {"name": "BCG", "url": "https://www.bcg.com/", "relevance": "Strategy consulting; 2026 'Build for the Future' report; AI value gap analysis; Forrester+BCG agent ROI study (5.1mo time-to-value, 88% pilot fail rate)", "engagement": "GATT could be cited as data input for their enterprise AI advisory"},
+      {"name": "McKinsey", "relevance": "State of AI 2026 report; converges with IDC on $1.4T global enterprise AI agent spend by 2027"},
+      {"name": "Bain", "relevance": "AI ROI analysis; CEO leadership tracking"},
+      {"name": "Forrester", "relevance": "Enterprise tech analyst; agent adoption trends; co-authored BCG agent study"},
+      {"name": "Gartner", "url": "https://www.gartner.com/", "relevance": "March 2026: reasoning models use 5-30× more tokens per task than standard chatbots; this is GATT's missing reasoning-share dimension", "engagement": "Already in methodology_triangulation; key data points for v0.87 reasoning split"},
+      {"name": "DIGITIMES Research (Taiwan)", "relevance": "Asia semiconductor + AI infrastructure deep research"},
+      {"name": "Tech Insights / Johan Sanneblad", "relevance": "Token-optimization commentary; CTO-facing"},
+      {"name": "Visual Capitalist", "relevance": "Data-journalism infographics; closest infographic competitor"},
+      {"name": "Spheron Network blog", "url": "https://www.spheron.network/", "relevance": "GPU FinOps playbook; 'AI Inference Cost Economics 2026'"},
+      {"name": "S&P Global Market Intelligence", "relevance": "Public-company AI tracking; not yet cited in GATT but should be"}
+    ],
+    "summary": "GATT is competing in a crowded but fragmented attention market. No single source combines (a) global, (b) all-sources, (c) daily, (d) per-vendor, and (e) free + open. The 30+ resources cataloged here cover one or two of those properties each. GATT's positioning is the union of all five — but distribution requires selectively engaging with each of these channels."
+  },
+  "key_paradoxes": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Documents the principal data narratives GATT can speak to. These are not editorial opinions; they are arithmetic consequences of the dataset that journalists and analysts find most quotable.",
+    "paradoxes": [
+      {
+        "id": "price-volume-paradox",
+        "headline": "Token unit cost dropped 99.7% (2023-2025), but enterprise AI cloud bill tripled in same window.",
+        "data_points": [
+          "GPT-4-equivalent inference price: ~$50-60/M tokens (early 2023) → $0.14/M tokens (August 2025) = 99.7% decline",
+          "Enterprise AI cloud spending: $11.5B (2024) → $37B (2025) = 3× growth",
+          "Math: Volume must have grown >300× to overcome 99.7% price collapse and still triple total spend"
+        ],
+        "interpretation": "Token economy is exhibiting a 'Jevons-paradox-on-steroids' dynamic: cheap tokens unlock disproportionate volume growth. This is the single most important narrative GATT operationalizes in its data. Volume × cheap = MORE total spend, not less.",
+        "sources": ["Xing 2026 (arXiv:2603.21690)", "Epoch AI inference cost trends", "SemiAnalysis 1200× compression for older tiers", "NavyaAI 'Tokens got 99.7% cheaper' April 2026"]
+      },
+      {
+        "id": "volume-gdp-paradox",
+        "headline": "China and US tied at 50/50 on token volume but split 6%/88% on Token GDP — same volume, 15× different value capture.",
+        "data_points": [
+          "China: 154T tokens/day (50%) → $15.4M/day Token GDP (6%)",
+          "US: 154T tokens/day (50%) → $231M/day Token GDP (88%)",
+          "Pricing gap: ~15× (US $1.50/M blended vs CN $0.10/M blended)"
+        ],
+        "interpretation": "Volume parity does not mean economic parity. The 15× pricing gap reflects model capability tier (frontier US vs. fast-follower CN), enterprise willingness-to-pay, and absence of true price competition where capability gaps remain. Governance frameworks conflating volume with value will misread the situation.",
+        "sources": ["GATT v0.85 vendor estimates", "Vendor pricing pages (May 2026)"]
+      },
+      {
+        "id": "agent-pilot-failure-paradox",
+        "headline": "88% of agent pilots fail to graduate to production, but agentic workloads will dominate token consumption.",
+        "data_points": [
+          "BCG + Forrester 2026 surveys: 88% of agent pilots fail to graduate",
+          "Top blockers: evaluation gaps (64%), governance friction (57%), model reliability (51%)",
+          "Reasoning/agentic models use 5-30× more tokens per task than standard chatbots (Gartner March 2026)",
+          "Multi-step agents cost $0.10-$1.00 per task completion = 100-1000× simple chatbot API call (CSIS 2026)"
+        ],
+        "interpretation": "Demand-side paradox: the production successful 12% of agents drive disproportionate token consumption. Even at 12% deployment rate, agentic workloads materially shift the volume mix toward reasoning/multi-step inference. This is the dominant growth vector through 2027.",
+        "sources": ["BCG + Forrester 2026", "Gartner March 2026", "CSIS analysis 2026"]
+      },
+      {
+        "id": "median-enterprise-bill-paradox",
+        "headline": "Median enterprise's monthly LLM bill grew 7.2× year-over-year entering Q1 2026.",
+        "data_points": [
+          "Median enterprise monthly LLM bill: 7.2× YoY growth (Q1 2026)",
+          "Despite 99.7% unit price decline",
+          "Despite 88% agent pilot failure rate",
+          "Validates GATT's 22%/mo top-line growth assumption"
+        ],
+        "interpretation": "The volume curve dominates the price curve. GATT's 22%/mo growth rate is consistent with — and on the conservative end of — the median-enterprise spending data.",
+        "sources": ["BCG + Forrester 2026 enterprise AI surveys", "IDC + McKinsey converged $1.4T forecast for 2027"]
+      },
+      {
+        "id": "supply-side-capex-paradox",
+        "headline": "Top 5 hyperscalers committed $602B for 2026 AI infrastructure, but inference will consume 70% of that capacity.",
+        "data_points": [
+          "5 US hyperscalers (Meta, Alphabet, Microsoft, Amazon, Oracle) 2026 AI capex: ~$602B aggregate",
+          "Inference share of AI compute (2026): ~70% (CSIS estimate)",
+          "Inference share of enterprise AI budget: 85% (AnalyticsWeek)",
+          "Microsoft AI business ARR: $37B Q3 FY26 (+123% YoY)",
+          "Google internal token processing: 130× growth over 18 months"
+        ],
+        "interpretation": "The 'inference flip' completed in early 2026. AI compute is now an inference-dominated economy, with training a back-burner activity. GATT's inference focus aligns with the emerging structure of the industry.",
+        "sources": ["Hyperscaler capex disclosures", "CSIS 2026", "AnalyticsWeek", "Microsoft Q3 FY26 earnings", "Google Cloud Next 2026"]
+      }
+    ],
+    "narrative_priority": "When GATT is cited or pitched, the price-volume paradox (99.7% / 3×) is the single most powerful headline. It explains why Token GDP matters: even as unit prices collapse, total economic value rises because volume scales faster. This is GATT's central insight."
+  },
+  "outreach_targets": {
+    "as_of_date": "2026-05-10",
+    "purpose": "Prioritized list of high-leverage individuals to contact when the v0.84 paper hits arXiv and during ongoing GATT distribution. Each entry includes a personalized hook (why this person specifically should care) and the right channel.",
+    "tier_1_academic_must_engage": [
+      {"name": "Alec Litowitz, Nick Polson, Vadim Sokolov", "role": "Authors of arXiv:2603.06630 (Photons = Tokens)", "hook": "GATT's empirical 459.7K tokens/US-resident/day vs. your 2028 ceiling of 225K — a 2.04× discrepancy that is almost certainly due to inference-stack efficiency above your physics baseline. Joint reconciliation paper?", "channel": "Email (find via institutional pages); also @vsokolov on X", "priority": "Highest — paper's core dialogue partners"},
+      {"name": "Erik Brynjolfsson", "role": "Stanford HAI / Digital Economy Lab", "hook": "You predicted in December 2025 that 2026 would see 'high-frequency AI economic dashboards' tracking AI's economic impact. GATT (launched February 2026) is a working instance of that prediction. Your endorsement would substantially elevate the project.", "channel": "Email via Stanford HAI; @erikbryn on X", "priority": "Highest — most powerful single endorser"},
+      {"name": "Yicai Xing", "role": "Author of arXiv:2603.21690 (AI Token Futures)", "hook": "You called for a Token Performance Index (TPI) as essential market infrastructure. GATT is a working prototype. Collaboration on TPI methodology specification?", "channel": "Email via affiliation; arXiv author contact"},
+      {"name": "Jaime Sevilla", "role": "Co-founder, Director, Epoch AI", "hook": "Your inference cost panel (halves every 2 months) and GATT's empirical token volume are complementary tracks of the same phenomenon. Cross-citation in your next Epoch Brief?", "channel": "Email via Epoch AI; @Jsevillamol on X"}
+    ],
+    "tier_1_practitioner_high_reach": [
+      {"name": "Andrej Karpathy", "role": "Independent / ex-Tesla / OpenAI; 1.3M+ X followers", "hook": "You publicly use 'token throughput' as a personal productivity metric. GATT operationalizes the same vocabulary at the global scale. Your retweet would put GATT in the AI engineering conversation overnight.", "channel": "X DM @karpathy", "priority": "Highest — single most leveraged individual outreach"},
+      {"name": "Anjney Midha", "role": "Venture Partner, a16z; co-author of arXiv:2601.10088", "hook": "Your '100T Token Study' covered OpenRouter; GATT extends the methodology to all 21 vendors globally. Could be highlighted in a16z's AI infra content.", "channel": "Email via a16z; @anjney on X"},
+      {"name": "Martin Casado", "role": "General Partner, a16z (infrastructure)", "hook": "GATT's Token GDP framing fits a16z's commodity-of-AI thesis (per recent a16z infra writing)", "channel": "Email via a16z; @martin_casado on X"},
+      {"name": "Dylan Patel", "role": "Founder, SemiAnalysis", "hook": "GATT is the token-side complement to your USD-side AI Cloud TCO model. Possible Substack feature: 'Two views of the same economy.'", "channel": "Email via semianalysis.com; @dylan522p on X"}
+    ],
+    "tier_2_media_distribution": [
+      {"name": "Karen Hao", "role": "Author, Empire of AI; The Atlantic", "hook": "Your book documents the political economy of OpenAI / compute concentration. GATT measures the global consequences. Possible feature in Atlantic AI coverage.", "channel": "Email via The Atlantic; @_KarenHao on X"},
+      {"name": "Kevin Roose & Casey Newton", "role": "Hosts, Hard Fork (NYT)", "hook": "GATT's price-volume paradox (99.7% cheaper, 3× more spend) is a perfect Hard Fork-style story.", "channel": "Email via NYT; show-pitch line"},
+      {"name": "Sarah Guo & Elad Gil", "role": "Hosts, No Priors", "hook": "VC-aligned content; GATT's token-economy thesis fits No Priors' strategic-investment lens", "channel": "Email via Conviction (Sarah's firm)"},
+      {"name": "Ben Thompson", "role": "Author, Stratechery", "hook": "GATT Token GDP framing aligns with Stratechery's analytical mode. Possible Stratechery Daily Update feature.", "channel": "Email via Stratechery contact form"},
+      {"name": "Ezra Klein", "role": "NYT Opinion / Ezra Klein Show", "hook": "Per-capita inequality findings (US-India 597×) align with his AI inequality concerns", "channel": "Email via NYT"}
+    ],
+    "tier_2_policy_china": [
+      {"name": "Wei Liang (魏亮)", "role": "Vice President, CAICT (中国信通院)", "hook": "CAICT's 4.12T tokens/week China figure and GATT's 154T/day China measurement triangulate well. Possible joint methodology note.", "channel": "Email via CAICT institutional contact"},
+      {"name": "CSIS Wadhwani Center for AI authors", "role": "Used 'Token Bill' framing in April 2026 analysis", "hook": "GATT operationalizes the Token Bill concept; data input for future CSIS analyses", "channel": "Email via CSIS"},
+      {"name": "CEIBS authors", "role": "Wrote 'How China overtook the US in AI token usage'", "hook": "Direct subject-matter overlap; potential collaboration on China-side commentary for v0.84 paper", "channel": "Email via CEIBS"}
+    ],
+    "engagement_timing": {
+      "before_arxiv": "Quietly send paper preprint to Litowitz/Polson/Sokolov for accuracy review (1 week before arXiv submission)",
+      "day_of_arxiv_submission": "Email tier-1 academic + tier-1 practitioner (8 people total) within 24 hours of arXiv preprint going live",
+      "day_2_to_7": "X DMs to Karpathy + a16z partners; reach out to media tier-2 (Hao, Roose, Newton, Guo)",
+      "week_2_plus": "China-side outreach (CAICT, CEIBS); analyst outreach (BCG, Forrester); long-tail substack features",
+      "ongoing": "Each new vendor disclosure (e.g., next Volcengine FORCE conference, Anthropic ARR update) is a fresh news hook to re-engage tier-2"
+    }
   },
   "methodology_triangulation": {
     "as_of_date": "2026-05-09",
