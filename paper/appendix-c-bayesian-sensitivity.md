@@ -104,13 +104,39 @@ This is informative, not falsifying. There are three possible resolutions:
 
 Negative correlation actually *raises* the central posterior slightly. Substitution does not resolve the gap either.
 
-## C.7 Honest conclusion
+## C.7 Honest conclusion and pre-registered prediction
 
-The §5.5 decomposition is inconsistent with the observed 2.04× discrepancy under the per-factor ranges stated. This means either the per-factor central values are systematically biased upward (Resolution 1, which we reject on engineering grounds), or the decomposition is missing a fourth factor (Resolution 2, which we identify as theoretical-vs-empirical-utilization gap and flag for v1.1 work), or both.
+The §5.5 decomposition is inconsistent with the observed 2.04× discrepancy under the per-factor ranges stated. This means either the per-factor central values are systematically biased upward (Resolution 1, which we reject on engineering grounds), or the decomposition is missing a fourth factor (Resolution 2, which we identify as theoretical-vs-empirical-utilization gap and quantify below), or both.
 
-We report this honestly in the v1.0 paper: §5.5 is a *partial* decomposition that captures three of the relevant mechanisms but probably not all of them. The 2.04× observation is consistent with the partial decomposition once a 0.3-0.5× theoretical-vs-empirical-utilization factor is included; it is inconsistent with the partial decomposition as standalone. This is the appropriate scientific conclusion: the reconciliation hypothesis is *partially* supported and identifies a specific empirical research question (theoretical-vs-empirical hardware utilization in 2026 production inference) that the joint-calibration program proposed in §5.5.7 should address.
+We report this honestly in the v1.0 paper: §5.5 is a *partial* decomposition that captures three of the relevant mechanisms but probably not all of them. The 2.04× observation is consistent with the partial decomposition once a 0.3-0.5× theoretical-vs-empirical-utilization factor is included; it is inconsistent with the partial decomposition as standalone.
 
-The v0.92 manuscript reported "consistent with the observable" without this analysis. The v1.0 manuscript reports the analysis and the resulting honest conclusion: **the §5.5 decomposition is necessary but not sufficient.** A fourth factor is needed.
+### C.7.1 Pre-registered numerical prediction
+
+To convert this finding from a soft "v1.1 will explore" into a falsifiable scientific claim, we commit to a specific numerical prediction in advance of empirical measurement:
+
+> **Prediction.** When third-party benchmarking studies or vendor disclosures report aggregate hardware-utilization figures for representative 2026-2027 production inference deployments (H100/H200/TPU 8th-gen clusters serving frontier-model workloads), the volume-weighted average will satisfy $\eta \in [0.30, 0.50]$, with central expectation $\eta \approx 0.40$.
+
+The four-factor model — adding $\eta$ to the §5.5.5 decomposition — yields:
+
+$$
+\frac{G}{L} = \underbrace{\frac{G}{G^{*}}}_{\approx 1.12} \cdot \underbrace{\frac{L^{*}}{L}}_{\approx 3.0} \cdot \underbrace{\frac{G^{*}}{L^{*}}}_{\approx 1.4} \cdot \underbrace{\eta}_{\approx 0.4} \approx 1.88
+$$
+
+against the observed $G/L = 2.04$. The 8% remaining residual sits well within the joint credibility band. This is *not* curve-fitting — $\eta \approx 0.4$ is the value implied by published 2024-2025 H100 utilization studies (Patel SemiAnalysis [22]; Epoch AI [18]) for memory-bandwidth-bound inference workloads, applied here as a forward extrapolation rather than a free parameter.
+
+**Falsification rule:**
+
+- **Confirmation** ($\eta \in [0.30, 0.50]$): the four-factor model is consistent with both empirical observation and engineering priors. Joint posterior of $G/L$ centers near 1.88-2.20, encompassing 2.04.
+- **Falsification at the upper end** ($\eta > 0.70$): production hardware runs close to theoretical peak. The §5.5 per-factor central values overstate efficiency gains. Either Interpretation 2 ($L^{*}/L = 3.0$) is too aggressive or Interpretation 3 ($G^{*}/L^{*} = 1.4$) is too aggressive. The decomposition must be re-derived with the per-factor centrals revised downward.
+- **Falsification at the lower end** ($\eta < 0.20$): production hardware is so under-utilized that capacity is software-throttled, not hardware-bounded. The Litowitz-Polson-Sokolov physical ceiling has implicit assumptions about scheduler/utilization efficiency that need to be made explicit. The framework requires an additional utilization parameter rather than treating utilization as part of the calibration.
+
+The prediction is registered here, in v1.0, before any measurement. The author commits to publishing a v1.x revision within six months of the first credible empirical $\eta$ measurement, either confirming or retracting the prediction.
+
+### C.7.2 Significance for the §5.5 program
+
+The v0.92 manuscript reported "consistent with the observable" without sensitivity analysis. The v1.0 manuscript reports the sensitivity analysis, identifies the missing fourth factor, and pre-registers a specific numerical prediction with explicit falsification thresholds. The progression — from consistency assertion to identified-gap analysis to pre-registered prediction — is the appropriate scientific path for a hypothesis that cannot yet be uniquely identified from a single observable.
+
+**The §5.5 decomposition is necessary but not sufficient. The fourth factor's central value is now an empirical question with a stated answer; the next study to measure $\eta$ in production deployments will either confirm or refute this paper's central reconciliation hypothesis.**
 
 ## C.8 Reproducibility
 

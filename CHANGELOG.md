@@ -1,5 +1,47 @@
 # GATT Data Changelog
 
+## 2026-05-11 (v1.1 — Hygiene + Token-Native Methodology Additions + Empirical Tokeneconomy Stake Claim)
+
+GATT moves from v1.0 to v1.1: methodological hygiene fixes plus four substantive paper additions that establish *empirical tokeneconomy* as a distinct methodological tradition. Triggered by an internal three-schools audit (Stanford HAI / Brynjolfsson growth-accounting · Litowitz-Polson-Sokolov physical-ceiling · Xing/Inference-Bottleneck microstructure) plus a website-vs-data consistency check that surfaced 16+ stale-number mismatches predating the v1.0 paper revision.
+
+### Hygiene (data ↔ paper ↔ website alignment)
+
+- **`vendors[].confidence` upgraded 3-level → 4-level** (High/Medium-High/Medium/Low) per paper §3.2. Distribution: 3 High · 2 Medium-High · 8 Medium · 8 Low. Gemini High → Medium (downgrade noted at v1.0 per Sokolov critique now reflected in JSON). New `methodology_notes.confidence_taxonomy_v1.0` block documents the upgrade.
+- **NEW `token_gdp.value_added_decomposition`** — machine-readable form of paper §3.5.1's illustrative correction. Per-region scalars (US 0.7×, CN 0.4×, EU 0.6×, ROW 0.6×) yielding gross-vs-value-added share columns. US 88% gross → 75-82% VA; China 6% → 3-4%. Caveat field flags illustrative-not-measured status.
+- **`index.html` consistency pass** — 16+ stale-number mismatches reconciled to v1.0 canonical values: 235T/305T → 310T (multiple locations); $90.8B → $95.8B; 87% → 88% Token GDP share; 589× → 597× US-India; Doubao 63T/120T → 129T (vendor cards, spotlight, vendor-array data). Touched: meta description, og:description, og:image:alt, Q2 snapshot copy/tweet, headline cards, Doubao spotlight, projection panels, share-text templates, badge URLs, "Time to produce 1T tokens" widget, Markdown download header. Historical changelog entries (correction-old/correction-new) preserved unchanged.
+
+### New paper concepts (v1.1 substance)
+
+- **§4.4.1 Token Gini coefficient.** Population-weighted Gini = **0.674** across the 12 broken-out countries (~51% of global population). Top 10% population captures 50.2% of tokens; top 1% captures 6.0%; bottom 50% captures 1.4%. Reference: cross-country income Gini ≈ 0.62; pre-tax US wealth Gini ≈ 0.85. Token consumption inequality already exceeds global income inequality and approaches wealth-distribution levels. New reproducibility script: `paper/scripts/token_gini.py` (Lorenz curve + Gini, optional matplotlib output). Abstract updated.
+- **§5.5.7 pre-registered numerical prediction.** Promotes the Appendix C "fourth factor" (theoretical-vs-empirical hardware utilization $\eta$) from a soft "v1.1 will explore" to a falsifiable claim with explicit thresholds: **predicted $\eta \in [0.30, 0.50]$**, central 0.40. Confirmation rule, upper-end falsification ($\eta > 0.70$), lower-end falsification ($\eta < 0.20$) all stated in advance of measurement. Author commits to v1.x revision within six months of first credible empirical $\eta$ figure. §C.7 mirrored with §C.7.1 (the prediction) and §C.7.2 (significance for the §5.5 program).
+- **§5.5.8 Token Velocity as a Unifying Macro Frame.** Fisher quantity-equation analog $M \cdot V = Q$ recasts the §5.5 decomposition: $M = L_{\text{eff}}$ (effective fresh-compute capacity, including the fourth factor), $V = G^{*}/L^{*}$ (the emitted-vs-fresh-compute multiplier, renamed token velocity), $Q = G^{*}$ (corrected emitted-token output). Interpretation 3 from §5.4 collapses into a token-velocity statement. Locates the fourth factor on the *capacity* side ($M$), not as a velocity correction. Three substantive implications spelled out (decomposition collapse, capacity-vs-velocity policy split, predictive utility of velocity).
+- **§7 closing stake claim — "Empirical Tokeneconomy as a Fourth Methodological Tradition".** The three established traditions (physical-ceiling [A], growth-accounting [B], microstructure/derivative [C]) each apply pre-AI methodologies to the token unit. None is methodologically token-native — their toolkits would adapt to FLOPs or GPU-hours with comparable validity. GATT v1.0+ introduces token-native constructs that have no direct counterpart in source disciplines: **Token GDP** (vendor-volume × pricing — needs token retail menu), **Token Velocity** (cache-and-batching reuse — meaningless at FLOP layer), **Token Gini** (population attributability — no compute aggregate has this). The §5.5.7 pre-registered prediction + daily-anchored open dataset establish the tradition as falsifiable and reproducible. Future work flagged: Token Balance of Payments, Token Engel curves, longitudinal panel.
+
+### Files added
+
+- `paper/scripts/token_gini.py` (~120 lines) — Gini + Lorenz reproducibility, optional PNG output
+
+### Files modified (paper)
+
+- `paper/abstract.md` — Gini = 0.674 added to second paragraph
+- `paper/04-findings.md` — §4.4.1 Distributional Summary (Gini + Lorenz + within-country caveat)
+- `paper/05-tension.md` — §5.5.7 Pre-registered numerical prediction; §5.5.8 Token Velocity macro frame
+- `paper/appendix-c-bayesian-sensitivity.md` — §C.7 split into C.7.1 (prediction) + C.7.2 (significance)
+- `paper/07-conclusion.md` — Empirical Tokeneconomy fourth-tradition stake claim
+- `paper/main.tex` — regenerated; 124,865 → 141,360 chars (+13%); 27 unique citation keys retained; math balanced (186 `$`); braces 712/712. Build-time bug surfaced and fixed: math expression starting with digit (`$225 \times ...$`) was being escape-mangled; rewritten to start with `$L_{\text{eff}} = ...$`
+
+### Most consequential v1.1 contribution
+
+The §7 stake claim. v1.0 was a methodologically rigorous empirical paper engaging with three existing traditions; v1.1 names what GATT is *contributing* — token-native concepts that did not exist before this work and would not exist if tokens had not emerged as the AI economic unit. **Token GDP, Token Velocity, and Token Gini are all v1.x originals**; the §5.5.7 pre-registration is the falsification machinery that converts the empirical-tokeneconomy frame from a label into a working methodology.
+
+The price-volume paradox ($P$ falls 99.7% while $P \cdot Q$ rises 3×) is the natural target for this frame: standard demand-elasticity treatments cannot accommodate it; growth-accounting (B) treats it as an effective-quantity expansion; physical-ceiling modeling (A) is silent on prices; microstructure (C) has the right vocabulary but no measurement infrastructure. Empirical tokeneconomy is the frame that makes the paradox the *headline* finding rather than a curiosity.
+
+### Vendor and Token GDP totals (held)
+
+21 vendors · 310T tokens/day · $95.8B annualized Token GDP. 50/50 China-US volume share. 88/6 US/CN Token GDP share. 597× US-India per-capita. Numbers are stable from v1.0; the v1.1 release adds methodology, not new data.
+
+---
+
 ## 2026-05-10 (v1.0 — Paper Major Revision Per Litowitz/Polson/Sokolov + Harvard Synthesis)
 
 GATT manuscript reaches v1.0. Implements all 12 revisions from a four-reviewer adversarial peer review (simulated): Litowitz (Photons=Tokens framework lead), Polson (Bayesian statistician), Sokolov (statistical ML / inference systems), and a Harvard editorial synthesis layered over the Stanford v0.91→v0.92 round. Paper grows 14,066 → 17,314 words (+23%); main.tex 100K → 125K chars (+25%). New Appendix C with Monte Carlo Bayesian sensitivity analysis discovers that the §5.5 decomposition is *partial* (a fourth factor — theoretical-vs-empirical hardware utilization — is needed), which is reported honestly rather than papered over.

@@ -135,6 +135,49 @@ The §5.5 decomposition cannot be uniquely identified without empirical measurem
 
 Each measurement is independently valuable (each could publish as a methodology note in its own right) and jointly sufficient to convert the §5.5 decomposition from a hypothesis into a tested model. We invite the Litowitz-Polson-Sokolov team to co-design Measurement 1, IDC/CAICT teams to co-design Measurement 3, and the OpenRouter/vLLM communities to co-design Measurement 2. The output of all three would be a follow-up paper bearing the appropriate co-authorship — likely Litowitz, Polson, Sokolov, and Gao for Measurement 1's results, with appropriate co-authorship from the platform-data and audit-data contributors. This paper, v1.0 of GATT, is the pitch document for that program.
 
+**Pre-registered numerical prediction (falsifiable test of the §5.5 decomposition).** The Appendix C Bayesian sensitivity analysis identifies a fourth factor — the theoretical-vs-empirical hardware-utilization scalar $\eta$ — whose value is not yet measured but which closes the §5.5 decomposition residual. We commit, in advance of any measurement, to a specific prediction:
+
+> When 2027 vendor disclosures or third-party benchmarking studies report aggregate hardware-utilization figures for representative production inference deployments (H100/H200 clusters serving Anthropic, OpenAI, Google, ByteDance, DeepSeek workloads), **the volume-weighted average will fall in the range $\eta \in [0.30, 0.50]$**, with central expectation $\eta \approx 0.40$.
+
+The falsification rule:
+
+- **Confirmation** ($\eta \in [0.30, 0.50]$): the §5.5 decomposition + Appendix C fourth factor are jointly consistent with observed deployment efficiency. Joint posterior of the four-factor model achieves the observed 2.04× ratio at central values.
+- **Falsification at the upper end** ($\eta > 0.70$): production hardware is running close to theoretical peak. The §5.5 decomposition's per-factor central values overstate efficiency gains; either Interpretation 2 is too aggressive (tokens-per-Joule lift ≪ 3×) or Interpretation 3 is too aggressive (cache-hit dominance smaller than 1.4×). Section 5 must be re-derived.
+- **Falsification at the lower end** ($\eta < 0.20$): production hardware is running so far below theoretical peak that capacity is essentially software-throttled, not hardware-bounded. The Litowitz-Polson-Sokolov physical ceiling has unstated assumptions about scheduler efficiency that are doing more work than acknowledged; the framework needs an explicit utilization parameter, not an implicit assumption of full deployment.
+
+This is **not** a forecast that "such a study will happen by 2027." It is a conditional prediction: *if* such a study is published, *then* the central tendency should fall in the stated range. The prediction is registered here, in v1.0, against future evidence. We invite Epoch AI [18], the Inference Bottleneck working group [12], or the SemiAnalysis team [22] to take the measurement, and we commit to publishing a v1.x revision either confirming or retracting this prediction within six months of the measurement's release.
+
+This level of pre-registration moves the §5.5 decomposition from "a plausible reconciliation hypothesis" (its v0.92 status) to "a hypothesis with a specific empirical falsification target" (its v1.0 status). Polson's Bayesian-statistics critique was that consistency-checking is not identification; pre-registered prediction with falsification thresholds is the appropriate step beyond consistency-checking, short of full identification.
+
+### 5.5.8 Token Velocity as a Unifying Macro Frame
+
+The §5.5 decomposition treats $G$, $L$, $G^{*}$, and $L^{*}$ as point quantities and reasons about their ratios. A complementary framing — closer to monetary macroeconomics than to physics-ceiling accounting — is to treat the same quantities as a quantity-equation system parallel to Fisher's $M \cdot V = P \cdot Q$.
+
+Define:
+
+- **Token money supply** $M \equiv L_{\text{eff}}$, the *effective* fresh-compute capacity, where $L_{\text{eff}}$ is the Litowitz-Polson-Sokolov 2028 ceiling adjusted for two factors: the Section 5.3 efficiency recalibration ($L^{*}/L = 3.0$ central) and the Appendix C "fourth factor" — a hardware-utilization scalar capturing the gap between theoretical peak and observed-in-production deployment ($\eta \approx 0.3-0.5$). Concretely, $L_{\text{eff}} = L \cdot (L^{*}/L) \cdot \eta$, with central values $L_{\text{eff}} = 225 \times 3.0 \times 0.4 = 270$K tokens/resident/day of *deliverable* fresh-compute capacity.
+- **Token velocity** $V \equiv G^{*}/L^{*}$, the emitted-vs-fresh-compute multiplier of Interpretation 3. Currently estimated at $V \approx 1.4$ with plausible range $[1.25, 1.65]$, dominated by KV-cache reuse and batched attention. Velocity in this sense is a measurement of *how many emitted tokens each unit of fresh compute supports* — exactly analogous to monetary velocity, which measures how many transactions each unit of money supports.
+- **Token price level** $P$, the regional blended price per million tokens (US \$1.50, China \$0.10, Europe \$1.20, ROW \$0.90 per the Section 3.5 schedule).
+- **Token GDP volume** $Q \equiv G^{*}$, the overestimation-corrected emitted-token output.
+
+The quantity equation:
+
+$$
+M \cdot V = Q
+$$
+
+(with units of tokens per resident per day, and Token GDP recoverable as $P \cdot Q$).
+
+Three substantive implications follow.
+
+**First, the §5.5 decomposition collapses to a velocity statement.** The 2.04× tension between $G$ and $L$ is, in this frame, the joint product of an under-estimated capacity ($M$ is roughly $L_{\text{eff}}$, not $L$) and a velocity multiplier ($V \approx 1.4$). Section 5.5.5's "$G^{*}/L^{*}$" factor *is* token velocity; calling it that surfaces its similarity to a well-understood macro variable rather than treating it as an idiosyncratic ratio.
+
+**Second, the Appendix C fourth factor lives on the $M$ side, not the velocity side.** The honest finding from the Bayesian sensitivity analysis is that the §5.5 decomposition's per-factor central values overstate the implied gap by ~2.3× under any plausible correlation structure. This residual is most parsimoniously explained as a hardware-utilization scalar $\eta$ that reduces the effective money supply, not as additional velocity. The distinction matters because the policy implications differ: a low-$\eta$ economy (production hardware running at 30-50% of theoretical peak) responds to different interventions than a low-velocity economy (low cache reuse, sparse batching). The first invites infrastructure investment; the second invites software-stack optimization.
+
+**Third, velocity is a measurable, predictively useful quantity.** Token velocity has direct empirical proxies — KV-cache hit rates, attention-batching factors, prefix-sharing across sessions — that production inference operators measure routinely but rarely publish. A coordinated cross-vendor study reporting $V$ in the same way Epoch AI [18] reports inference cost would convert "is the gap real?" into "is velocity rising or falling, and at what rate?" Cross-checking against Epoch's panel: if cost-per-fixed-capability halves every two months [18] but $V$ holds constant, then physical-capacity expansion accounts for the entire gain; if $V$ rises in parallel, software efficiency is contributing too. Each of those two findings would have distinct implications for hyperscaler capex elasticity.
+
+The macro-quantity-equation framing is offered as conceptual scaffolding, not as a complete theory. The most direct contributions of this subsection are: (a) renaming "Interpretation 3" as **token velocity** and aligning it with a familiar macro variable; (b) locating the Appendix C fourth factor on the *capacity* side rather than as a velocity correction; and (c) suggesting that velocity itself, $V$, is the most useful single forward-looking variable for tracking the Token Economy — more so than headline volume, more so even than Token GDP at fixed prices.
+
 ## 5.6 Implications for Methodology
 
 The reconciliation has three constructive consequences for GATT and one for physical-ceiling modeling.

@@ -60,6 +60,25 @@ Dividing country tokens by national population produces the AI-inequality findin
 
 The headline ratio is **United States to India = 597×**. As recently as April 6, 2026, this gap stood at 394×; one month later it has widened to 597× — meaningfully faster than absolute United States token growth alone, because the United States per-capita base is leveraging upward via product launches and tokenizer changes while India's per-capita base is barely moving from 0.66K to 0.77K over the same window. The gap is wider than the corresponding income ratio (approximately 30× by GDP per capita) and substantially wider than the digital-divide gap measured by mobile or internet penetration. We treat this as the most striking inequality finding in the dataset.
 
+### 4.4.1 Distributional Summary: Gini and Lorenz
+
+The 597× United States-India ratio is a single-pair statistic. To summarize the full distribution, we compute the **population-weighted Gini coefficient** and the implied Lorenz curve across the twelve countries broken out in the dataset (which collectively cover approximately 51% of global population; the unrepresented residual is mostly low-per-capita and would push the global Gini higher rather than lower). The reproducibility script is `paper/scripts/token_gini.py`.
+
+The result:
+
+| Measure | Value |
+|---|---:|
+| Population-weighted Gini coefficient (12 countries) | **0.674** |
+| Top 10% of population's share of token consumption | 50.2% |
+| Top 1% of population's share | 6.0% |
+| Bottom 50% of population's share | **1.4%** |
+
+For comparison: cross-country income Gini (PPP-adjusted, 2024 World Bank) is approximately 0.62; pre-tax US wealth Gini is approximately 0.85. **Token consumption inequality has already exceeded global income inequality and approaches wealth-distribution levels of concentration.** This is consistent with Crawford [19]'s framing of AI infrastructure as a planetary-scale system whose access concentrates among a small number of populations and regions; the Gini number is the empirical scalar form of that concern.
+
+The Lorenz curve (formal computation in the script) shows a particularly sharp inflection at the China-US transition: the bottom 92% of the represented population (everyone outside the United States) collectively accounts for 52% of token volume, while the top 8% (the United States) accounts for the remaining 48%. This is the structural consequence of the 50/50 China-US volume parity finding combined with China's 4.2× larger population.
+
+**A caveat on interpretation.** The Gini above captures *vendor-attributed* per-capita consumption; it does not measure individual-level consumption within countries (which would require a wholly different data source, since GATT cannot observe per-user activity). Within-country distribution may also be highly unequal: a small fraction of US users likely accounts for a disproportionate share of US token volume. The 0.674 figure therefore *under*-states the true individual-level Gini, possibly substantially. We flag a within-country decomposition as future work but emphasize that even the conservative cross-country measurement establishes that token consumption is more unequally distributed than income at the global scale — already, in 2026, before the technology is broadly diffused.
+
 ## 4.5 Top Vendor Findings
 
 The top four vendors account for **88% of global volume**:
