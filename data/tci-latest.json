@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "gatt_version": "1.1",
+  "gatt_version": "1.2",
   "generated_at": "2026-05-10T11:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-11",
     "confidence": "medium-high",
     "last_updated": "2026-05-11",
-    "note": "v1.1 — Methodology hygiene + token-native concept additions. (1) vendors[].confidence upgraded 3-level -> 4-level (High/Medium-High/Medium/Low) per paper Section 3.2. (2) NEW token_gdp.value_added_decomposition block making paper Section 3.5.1 machine-readable (US 88% gross -> 75-82% VA, China 6% -> 3-4%). (3) Paper additions: Section 4.4.1 Token Gini coefficient = 0.674 (Lorenz curve + reproducibility script paper/scripts/token_gini.py); Section 5.5.7 pre-registered numerical prediction (eta in [0.30, 0.50] for 2027 hardware-utilization disclosures); Section 5.5.8 Token Velocity (Fisher M*V=Q analog) as unifying macro frame; Section 7 stake claim 'Empirical Tokeneconomy as a Fourth Methodological Tradition'. (4) Website hygiene: 16+ stale-number mismatches (235T/305T/87%/589x/Doubao 120T) reconciled to v1.0 canonical values across meta tags, Q2 snapshot, vendor cards, projection panels, share templates. Vendor totals held: 21 vendors x 310T/day x $95.8B Token GDP."
+    "note": "v1.2 - Per-vendor parameter_classification downsink. Each of the 21 vendors now carries a parameter_classification field with category (observed/inferred/judgment) and rationale, sourced from paper Appendix A footer + Section 3.2 confidence taxonomy. Distribution: 4 observed (Doubao, Gemini API, OpenAI, Anthropic) - 10 inferred (Microsoft, Qwen, OpenRouter, Hy3, Kimi, ERNIE, Spark, MiniMax, Perplexity, DeepSeek) - 7 judgment (Mistral, Grok, Groq, Xiaomi MiMo, Llama API, Bedrock, GLM). Per Inference Bottleneck (arXiv:2604.17431) sensitivity-analysis template. Vendor totals held: 21 vendors, 310T/day, 5.8B Token GDP."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -781,6 +781,16 @@
           "category": "judgment-based",
           "rationale": "Depends on regional blended pricing assumptions ($1.50/M US blended). Pricing volatility (40× compression in 24 months per Xing) makes this category appropriately classified as judgment."
         }
+      },
+      "vendor_level_downsink": {
+        "as_of_date": "2026-05-11",
+        "note": "v1.1 extended parameter_classification from the 4 headline metrics to all 21 vendors. Each vendor entry's parameter_classification field is the authoritative source. Per-vendor distribution: 4 Observed, 10 Inferred, 7 Judgment-based; matches Appendix A footer count.",
+        "distribution": {
+          "observed": 4,
+          "inferred": 10,
+          "judgment": 7
+        },
+        "paper_reference": "Appendix A footer + Section 3.2 confidence taxonomy + Section 3.4 extrapolation engine"
       }
     },
     "robustness_check": {
@@ -1439,7 +1449,11 @@
         }
       ],
       "source_value_T": 120,
-      "note": "GATT scope: all-sources. IDC scope: external MaaS only. Both rank Volcengine/Doubao #1 in China."
+      "note": "GATT scope: all-sources. IDC scope: external MaaS only. Both rank Volcengine/Doubao #1 in China.",
+      "parameter_classification": {
+        "category": "observed",
+        "rationale": "Volcengine OFFICIAL 120T disclosure (Apr 1, 2026, Wuhan AI Expo). IDC May 7 independently confirms 49.5% MaaS market share. May 2026 anchor of 129T applies a small (~7%) extrapolation from the Apr 1 baseline."
+      }
     },
     {
       "id": "google-gemini",
@@ -1490,7 +1504,11 @@
           "source": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/"
         }
       ],
-      "source_value_T": 73
+      "source_value_T": 73,
+      "parameter_classification": {
+        "category": "observed",
+        "rationale": "Pichai disclosed 'more than 16 billion tokens per minute via direct API' at Cloud Next 2026 / Q1 2026 earnings (+60% QoQ). API portion (~23T) is fully observed. NOTE: composite 73T applies a 3.2x All-Surfaces multiplier (Search AI Overviews + Gemini App + Workspace) which is judgment-based; this is why the composite confidence is Medium even though the underlying signal is observed (downgraded High->Medium in v1.0 per Sokolov)."
+      }
     },
     {
       "id": "openai-chatgpt",
@@ -1541,7 +1559,11 @@
           "source": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/"
         }
       ],
-      "source_value_T": 44
+      "source_value_T": 44,
+      "parameter_classification": {
+        "category": "observed",
+        "rationale": "OFFICIAL 15B tokens/min API throughput disclosed Mar 31, 2026. Plus 2.5B ChatGPT prompts/day, 9M paid business users, GPT-5.5 + GPT-5.5 Instant launches Apr 23 / May 5."
+      }
     },
     {
       "id": "anthropic-claude",
@@ -1625,7 +1647,11 @@
           "date": "2026-05",
           "arr": 44
         }
-      ]
+      ],
+      "parameter_classification": {
+        "category": "observed",
+        "rationale": "ARR trajectory directly disclosed: Dec $9B -> Feb $14B -> Mar $19B -> Apr $30B -> May $44B (+$96M/day). Opus 4.7 launch Apr 16 dated. MAU 23M (+44% Mar->Apr) directly disclosed. The 22T daily figure derives from ARR/blended-price reconciliation; underlying signals are observed even if final volume is computed."
+      }
     },
     {
       "id": "deepseek",
@@ -1656,7 +1682,11 @@
           "source": "https://api-docs.deepseek.com/news/news260424"
         }
       ],
-      "source_value_T": 9.2
+      "source_value_T": 9.2,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "V4 Pro/Flash launch (Apr 24) dated; market-share modeling uses 81.6M WAU + IDC China #3 standing. No direct throughput disclosure."
+      }
     },
     {
       "id": "microsoft-azure",
@@ -1687,7 +1717,11 @@
           "source": "https://news.microsoft.com/source/2026/04/29/microsoft-cloud-and-ai-strength-fuels-third-quarter-results/"
         }
       ],
-      "source_value_T": 10.0
+      "source_value_T": 10.0,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "Q3 FY26 (Apr 29, 2026) earnings disclosed $37B AI business ARR (+123% YoY) and 20M paid Copilot seats. Volume estimate 10T derives from ARR/price-blend reconciliation. Underlying ARR signal is observed; volume conversion is inferred."
+      }
     },
     {
       "id": "alibaba-qwen",
@@ -1718,7 +1752,11 @@
           "source": "https://www.caixinglobal.com/2026-04-02/alibaba-releases-qwen-36-plus-ai-model-with-enhanced-coding-capabilities-102430395.html"
         }
       ],
-      "source_value_T": 6.2
+      "source_value_T": 6.2,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "Alibaba Cloud Q4 FY25 earnings + Token Hub reorg + extrapolation. No direct token throughput disclosure."
+      }
     },
     {
       "id": "tencent-hunyuan",
@@ -1748,7 +1786,11 @@
           "source": "https://huggingface.co/tencent/Hy3-preview"
         }
       ],
-      "source_value_T": 2.65
+      "source_value_T": 2.65,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "Open-sourced Apr 23, 2026; 295B-A21B MoE specs disclosed. No direct throughput disclosure; 2.7T inferred from OpenRouter trace + Tencent Cloud TokenHub listing."
+      }
     },
     {
       "id": "moonshot-kimi",
@@ -1779,7 +1821,11 @@
           "source": "https://miraflow.ai/blog/kimi-k2-6-explained-moonshot-ai-open-source-model-ties-gpt-5-5-coding"
         }
       ],
-      "source_value_T": 2.4
+      "source_value_T": 2.4,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "K2.6 launch Apr 20 dated; ARR doubled $100M -> $200M Mar -> Apr disclosed; $20B valuation round closing May 6. Volume 2.5T inferred from ARR + OpenRouter routing."
+      }
     },
     {
       "id": "baidu-ernie",
@@ -1808,7 +1854,11 @@
           "reason": "33-day extrapolation at 5%/mo. IDC May 7 confirms Baidu Qianfan #3 in China external MaaS at 17%. Awaiting Baidu Q1 2026 earnings (May)."
         }
       ],
-      "source_value_T": 1.73
+      "source_value_T": 1.73,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "Baidu Q1 2026 earnings + 202M MAU + IDC #3 standing (17% China MaaS share). Volume 1.85T inferred."
+      }
     },
     {
       "id": "iflytek-spark",
@@ -1836,7 +1886,11 @@
           "reason": "33-day extrapolation at 6%/mo."
         }
       ],
-      "source_value_T": 1.53
+      "source_value_T": 1.53,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "iFlytek Q4 2025 earnings + extrapolation. 1.62T inferred."
+      }
     },
     {
       "id": "openrouter",
@@ -1873,7 +1927,11 @@
           "source": "https://openrouter.ai/state-of-ai"
         }
       ],
-      "source_value_T": 3.0
+      "source_value_T": 3.0,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "Aggregator platform data: 3T/day live + 20T/week April disclosure. Numbers are observed at the aggregator level but overlap with vendor totals (Kimi, DeepSeek, Anthropic, Tencent, Xiaomi route through OpenRouter), so the role in GATT's global is inferred not observed."
+      }
     },
     {
       "id": "mistral-ai",
@@ -1901,7 +1959,11 @@
           "reason": "33-day extrapolation at 8%/mo."
         }
       ],
-      "source_value_T": 0.68
+      "source_value_T": 0.68,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "$400M ARR back-calculation only; no usage disclosures. 0.74T is editorial estimate."
+      }
     },
     {
       "id": "xai-grok",
@@ -1932,7 +1994,11 @@
           "source": "https://finance.biggo.com/news/dlxZ-50BrAZSr0oSEq2c"
         }
       ],
-      "source_value_T": 0.55
+      "source_value_T": 0.55,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "First negative-growth vendor in GATT history; signals declining (MAU -12.5% Mar->Apr, staff departures). 0.55T downgraded from 0.65T as judgment call."
+      }
     },
     {
       "id": "minimax",
@@ -1960,7 +2026,11 @@
           "reason": "33-day extrapolation at 8%/mo."
         }
       ],
-      "source_value_T": 0.39
+      "source_value_T": 0.39,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "OpenRouter + HuggingFace + agent platform data. 0.42T inferred."
+      }
     },
     {
       "id": "groq",
@@ -1988,7 +2058,11 @@
           "reason": "33-day extrapolation at 12%/mo."
         }
       ],
-      "source_value_T": 0.29
+      "source_value_T": 0.29,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "LPU capacity back-calculation (2.5M devs x LPU); no direct throughput disclosure. 0.32T is engineering estimate."
+      }
     },
     {
       "id": "xiaomi-mimo",
@@ -2014,7 +2088,11 @@
           "source": "https://mimo.xiaomi.com/mimo-v2-pro"
         }
       ],
-      "source_value_T": 0.3
+      "source_value_T": 0.3,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "NEW vendor v0.81; appeared anonymously on OpenRouter Mar 11; ~500B tokens/week post-launch. Sparse signals; 0.30T is editorial."
+      }
     },
     {
       "id": "meta-llama",
@@ -2043,7 +2121,11 @@
           "reason": "33-day extrapolation at 10%/mo."
         }
       ],
-      "source_value_T": 0.21
+      "source_value_T": 0.21,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "'Virtually no standalone users vs OpenAI' per Meta growth-rate stmt. 0.23T is editorial estimate."
+      }
     },
     {
       "id": "amazon-bedrock",
@@ -2071,7 +2153,11 @@
           "reason": "33-day extrapolation at 8%/mo."
         }
       ],
-      "source_value_T": 0.16
+      "source_value_T": 0.16,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "AWS revenue known but allocation between Bedrock vs other AI services is editorial. 0.17T derived via revenue/price."
+      }
     },
     {
       "id": "zhipu-glm",
@@ -2099,7 +2185,11 @@
           "reason": "33-day extrapolation at 5%/mo."
         }
       ],
-      "source_value_T": 0.12
+      "source_value_T": 0.12,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "OpenRouter trace only; 0.13T is editorial."
+      }
     },
     {
       "id": "perplexity",
@@ -2135,7 +2225,11 @@
           "source": "https://www.demandsage.com/perplexity-ai-statistics/"
         }
       ],
-      "source_value_T": 0.35
+      "source_value_T": 0.35,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "45M MAU + 30M+ queries/day + $200M ARR Sep 2025 + projected $656M for 2026. 0.35T inferred from MAU + query volume."
+      }
     }
   ],
   "countries": [

@@ -1,5 +1,40 @@
 # GATT Data Changelog
 
+## 2026-05-11 (v1.2 — Per-Vendor parameter_classification Downsink)
+
+Small but methodologically meaningful release: the `parameter_classification` block (added as v0.83's adoption of the Inference Bottleneck [12] template) is downsunk from the 4 headline metrics to all 21 vendor rows. Each `vendors[].parameter_classification` now carries `{category, rationale}`, where category ∈ {observed, inferred, judgment}, sourced from paper §3.2 + Appendix A.
+
+### Distribution (matches Appendix A footer 4/10/7)
+
+| Category | Count | Vendors |
+|---|---|---|
+| **observed** | 4 | Doubao, Gemini API (with composite-Judgment caveat), OpenAI, Anthropic |
+| **inferred** | 10 | Microsoft, Qwen, OpenRouter, Hy3/Hunyuan, Kimi, ERNIE, Spark, MiniMax, Perplexity, DeepSeek |
+| **judgment** | 7 | Mistral, Grok, Groq, Xiaomi MiMo, Llama API, Bedrock, GLM |
+
+### Why this matters
+
+The `confidence` field (4-level High/Medium-High/Medium/Low, added in v1.1) and the `parameter_classification` field (3-category, this release) are **complementary**, not redundant:
+
+- `confidence` answers: *how much would I trust this number to within ±X%?*
+- `parameter_classification` answers: *what is the **kind** of evidence backing this number?*
+
+A vendor can be "Medium confidence + observed" (Gemini composite — strong observed input but judgment multiplier shrinks final-confidence) or "High confidence + inferred" (Microsoft — observed ARR but inferred volume conversion). Together they let downstream researchers filter the dataset for sensitivity analysis: e.g., "show only `observed` vendors" leaves 4 rows covering 269T of the 310T global (87%).
+
+### Paper alignment
+
+Closes the **last v1.0 paper-vs-data gap** identified by the v1.0 three-schools subagent audit (school C / Inference Bottleneck recommendation P1). With this release, every claim in the paper that references `parameter_classification` is now traceable to a per-vendor JSON field.
+
+### Files modified
+
+- `data/tci-latest.json`: 21 new `vendors[].parameter_classification` fields; `sensitivity_bands.parameter_classification.vendor_level_downsink` block documents the migration; `gatt_version` 1.1 → 1.2
+
+### Numbers held
+
+21 vendors · 310T/day · $95.8B Token GDP · 50/50 China-US volume · 88/6 Token GDP · 597× US-India per-capita.
+
+---
+
 ## 2026-05-11 (v1.1 — Hygiene + Token-Native Methodology Additions + Empirical Tokeneconomy Stake Claim)
 
 GATT moves from v1.0 to v1.1: methodological hygiene fixes plus four substantive paper additions that establish *empirical tokeneconomy* as a distinct methodological tradition. Triggered by an internal three-schools audit (Stanford HAI / Brynjolfsson growth-accounting · Litowitz-Polson-Sokolov physical-ceiling · Xing/Inference-Bottleneck microstructure) plus a website-vs-data consistency check that surfaced 16+ stale-number mismatches predating the v1.0 paper revision.
