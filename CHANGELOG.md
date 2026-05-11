@@ -1,5 +1,52 @@
 # GATT Data Changelog
 
+## 2026-05-11 (v1.3 — Vendor Coverage Expansion: 21 → 24)
+
+First post-paper-v1.2 data expansion. Adds three new vendor entries addressing the most consequential gaps identified by the v1.2 three-schools coverage audit:
+
+### New vendors (rank by daily volume)
+
+| # | Vendor | Country | Daily T | Confidence | Gap Closed |
+|---|---|---|---|---|---|
+| 11 | **Apple Intelligence (Private Cloud Compute)** | US | 2.0 | Low | Largest *known* coverage gap. 2.2B devices, on-device + cloud hybrid. WWDC 2026 (June) is the disclosure trigger. Currently flagged as highest-uncertainty entry; on-device fraction (~85%) excluded per dark-zone scope. |
+| 23 | **Cohere (Command R+ / Command A)** | CA | 0.10 | Low | First Canada-HQ vendor. Enterprise-only; ~$80M ARR back-calc at $2/M blended. Addresses §6.3 critique that GATT under-represents EU/CA enterprise. |
+| 24 | **Sarvam AI (Sarvam-M, Sarvam-1)** | IN | 0.05 | Low | First India-HQ vendor. State-partnered via IndiaAI Mission; 22 Indian languages. Partially addresses §4.4.1 methodological gap (prior India per-capita was 100% US-vendor-attributed). |
+
+All three classified as `judgment` per parameter_classification (no direct throughput disclosure for any).
+
+### Headline shifts
+
+| Metric | v1.2 | v1.3 | Δ |
+|---|---|---|---|
+| Total vendors | 21 | **24** | +3 |
+| Global daily T | 310 | **311** | +1 |
+| Token GDP annualized | $95.8B | **$97.0B** | +$1.2B |
+| US/CN volume share | 50/50 | **50/49** | US edges past China after Apple addition |
+| US/CN Token GDP share | 88/6 | **88/6** | unchanged at rounded precision |
+| Confidence distribution | 3/2/8/8 | **3/2/8/11** | +3 Low |
+| Parameter classification distribution | 4/10/7 | **4/10/10** | +3 Judgment |
+
+### Caveats explicitly NOT addressed in v1.3
+
+- **`per_capita` and `countries` blocks not updated.** Vendor-HQ attribution (Apple=US, Cohere=CA, Sarvam=IN) does not automatically flow to region-of-use per-capita. Apple Intelligence serves global iPhone users; Cohere serves global enterprises; only Sarvam reasonably maps mostly to Indian users. Customer-geography splits are flagged for v1.3.x or v1.4 once vendor data permits (paper §3.6 already lists this as known limitation).
+- **Paper v1.2 alignment.** Paper headline "21 vendors / 310T / $95.8B" is frozen at v1.2 publication state. Data v1.3 advances beyond paper. CHANGELOG and JSON `gatt_version` field document the offset; future paper revision (v1.x) will absorb the expansion.
+- **Apple 2T is speculative.** Awaiting WWDC 2026 (June 9-13) for first credible cloud-throughput disclosure. Plausible range 0.5-8T/day. Whatever Apple says will re-anchor this single entry — possibly shifting the global headline by 1-2%.
+
+### Why these three and not others
+
+Out of a candidate pool of ~15 plausible additions (Tier 1: Apple, Cohere, AI21, Together AI, NIM, Yi; Tier 2: Naver HyperCLOVA, Falcon/TII, Krutrim, Sakana, NTT tsuzumi; Tier 3: SenseTime, Aleph Alpha, JD Yanxi, Meituan LongCat), these three were selected on:
+- **Highest expected volume impact** (Apple) — could shift global by 2-4× when WWDC discloses
+- **Geographic diversity** (Cohere → Canada/UK; Sarvam → India) — addresses the strongest critique of v1.2 paper, namely 19/21 vendors being US or CN
+- **Methodological consistency** — each has enough public signal for a defensible Low/judgment entry
+
+Future v1.3.x candidates (in order): AI21 Labs, Falcon/TII, Naver HyperCLOVA X, Krutrim, Together AI, Yi (01.AI).
+
+### Files modified
+
+- `data/tci-latest.json` — 3 new `vendors[]` entries; all aggregates rebalanced; `gatt_version` 1.2 → 1.3; `global_summary.note` rewritten
+
+---
+
 ## 2026-05-11 (v1.2 — Per-Vendor parameter_classification Downsink)
 
 Small but methodologically meaningful release: the `parameter_classification` block (added as v0.83's adoption of the Inference Bottleneck [12] template) is downsunk from the 4 headline metrics to all 21 vendor rows. Each `vendors[].parameter_classification` now carries `{category, rationale}`, where category ∈ {observed, inferred, judgment}, sourced from paper §3.2 + Appendix A.

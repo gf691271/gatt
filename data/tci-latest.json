@@ -1,16 +1,16 @@
 {
   "version": "1.0",
-  "gatt_version": "1.2",
+  "gatt_version": "1.3",
   "generated_at": "2026-05-10T11:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 310,
+    "total_daily_tokens_T": 311,
     "as_of_date": "2026-05-11",
     "confidence": "medium-high",
     "last_updated": "2026-05-11",
-    "note": "v1.2 - Per-vendor parameter_classification downsink. Each of the 21 vendors now carries a parameter_classification field with category (observed/inferred/judgment) and rationale, sourced from paper Appendix A footer + Section 3.2 confidence taxonomy. Distribution: 4 observed (Doubao, Gemini API, OpenAI, Anthropic) - 10 inferred (Microsoft, Qwen, OpenRouter, Hy3, Kimi, ERNIE, Spark, MiniMax, Perplexity, DeepSeek) - 7 judgment (Mistral, Grok, Groq, Xiaomi MiMo, Llama API, Bedrock, GLM). Per Inference Bottleneck (arXiv:2604.17431) sensitivity-analysis template. Vendor totals held: 21 vendors, 310T/day, 5.8B Token GDP."
+    "note": "v1.3 - Vendor coverage expansion: 21 -> 24. New entries: Apple Intelligence (US, 2T cloud-only, Low confidence/judgment, WWDC-pending), Cohere (CA, 0.1T, first Canadian vendor-HQ entry, addresses EU/CA enterprise gap), Sarvam AI (IN, 0.05T, first India-HQ vendor, partially addresses Section 4.4.1 methodological gap that prior India per-capita was all US-vendor-attributed). New global daily total: 311T (was 310T); Token GDP $97.0B/yr (was $95.8B). US-CN volume share: 50/49 (was 50/50; Apple adds 2T US-side). US Token GDP share: 88% (unchanged). Distribution: 3 High / 2 Medium-High / 8 Medium / 11 Low confidence; 4 Observed / 10 Inferred / 10 Judgment. per_capita and countries blocks NOT updated: vendor-HQ attribution vs region-of-use is a known caveat (paper Section 3.6) - v1.3.x will explore customer-geography splits."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -784,11 +784,11 @@
       },
       "vendor_level_downsink": {
         "as_of_date": "2026-05-11",
-        "note": "v1.1 extended parameter_classification from the 4 headline metrics to all 21 vendors. Each vendor entry's parameter_classification field is the authoritative source. Per-vendor distribution: 4 Observed, 10 Inferred, 7 Judgment-based; matches Appendix A footer count.",
+        "note": "v1.1 extended parameter_classification from the 4 headline metrics to all 21 vendors. v1.3 added 3 more vendors (Apple Intelligence, Cohere, Sarvam), all classified as judgment. Per-vendor distribution as of v1.3: 4 Observed, 10 Inferred, 10 Judgment-based; total 24 vendors.",
         "distribution": {
           "observed": 4,
           "inferred": 10,
-          "judgment": 7
+          "judgment": 10
         },
         "paper_reference": "Appendix A footer + Section 3.2 confidence taxonomy + Section 3.4 extrapolation engine"
       }
@@ -1192,22 +1192,23 @@
     ]
   },
   "token_gdp": {
-    "daily_usd_M": 262.6,
-    "annual_usd_B": 95.8,
-    "as_of_date": "2026-05-09",
+    "daily_usd_M": 265.8,
+    "annual_usd_B": 97.0,
+    "as_of_date": "2026-05-11",
     "methodology": "vendor_volume_x_blended_price",
     "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M, ROW ~$0.90/M.",
     "breakdown": [
       {
         "region": "United States",
-        "daily_tokens_T": 154,
+        "daily_tokens_T": 156.0,
         "price_per_M": 1.5,
-        "daily_gdp_M": 231.0,
-        "gdp_share_pct": 88
+        "daily_gdp_M": 234.0,
+        "gdp_share_pct": 88,
+        "note_v13": "Apple Intelligence cloud +2T at $1.5/M added in v1.3"
       },
       {
         "region": "China",
-        "daily_tokens_T": 154,
+        "daily_tokens_T": 154.0,
         "price_per_M": 0.1,
         "daily_gdp_M": 15.4,
         "gdp_share_pct": 6
@@ -1221,10 +1222,11 @@
       },
       {
         "region": "Rest of World",
-        "daily_tokens_T": 6.0,
+        "daily_tokens_T": 6.15,
         "price_per_M": 0.9,
-        "daily_gdp_M": 5.4,
-        "gdp_share_pct": 2
+        "daily_gdp_M": 5.575000000000001,
+        "gdp_share_pct": 2,
+        "note_v13": "Cohere (CA) 0.1T + Sarvam (IN) 0.05T added in v1.3 - Canada now first-class vendor-HQ country; India gets first native vendor"
       }
     ],
     "key_insight": "China and US tied at 50/50 on token volume after v0.81's OpenRouter + Perplexity uplift (US +2.0T) and Xiaomi MiMo addition (CN +0.3T). The 15× pricing gap remains: US captures 88% of Token GDP. Volume parity + GDP gap is the central paradox of the 2026 Token Economy.",
@@ -1373,14 +1375,14 @@
   ],
   "key_stats": {
     "us_vs_india_per_capita_ratio": 597,
-    "china_token_volume_share_pct": 50,
+    "china_token_volume_share_pct": 49,
     "china_token_gdp_share_pct": 6,
     "us_token_volume_share_pct": 50,
     "us_token_gdp_share_pct": 88,
     "pricing_gap_us_vs_cn": "15x",
-    "headline": "A US user generates 597× more AI tokens per day than an Indian user (460K vs 0.77K)",
+    "headline": "v1.3 expansion: 24 vendors (was 21). US 50% / CN 49% volume; US 88% Token GDP. US-India per-capita gap 597x held (Apple 2T cloud-only attribution does not flow to per-capita; pending customer-geography work in v1.3.x).",
     "great_divergence": "China: 50% of tokens, 6% of Token GDP. US: 50% of tokens, 88% of Token GDP. Volume parity confirmed in v0.81 with OpenRouter + Perplexity uplift; pricing gap unchanged at 15×.",
-    "doubao_global_share_pct": 42,
+    "doubao_global_share_pct": 41,
     "doubao_note": "Doubao remains #1 globally (129T/day, all-sources scope including external MaaS + internal Douyin AI / Doubao App / Jimeng). IDC May 7 report independently confirms Volcengine #1 in China at 49.5% external MaaS market share.",
     "openrouter_milestone": "v0.81 upgrade: OpenRouter 1.27T → 3.0T/day. Validated by a16z 'State of AI' 100T Token Study (Jan 15, 2026) and OpenRouter's April 2026 disclosure of 20T tokens/week (4× YoY). NOTE: OpenRouter is an aggregator — its volume overlaps with vendor totals (e.g., Kimi K2.6 routes 1.85T weekly through OR, counted in both Kimi and OpenRouter rows).",
     "perplexity_milestone": "v0.81 upgrade: Perplexity 0.09T → 0.35T/day. 45M MAU, 30M+ queries/day (May 2025), $200M ARR Sep 2025, projected $656M for 2026.",
@@ -1654,43 +1656,8 @@
       }
     },
     {
-      "id": "deepseek",
-      "rank": 5,
-      "name": "DeepSeek",
-      "country": "CN",
-      "daily_tokens_T": 9.2,
-      "confidence": "Low",
-      "tier": 2,
-      "source": "DeepSeek V4 Pro / V4 Flash launched April 24 — 1M token context, 1.6T params MoE / 49B active (V4 Pro), 284B / 13B (V4 Flash). #3 enterprise market share (behind Anthropic, OpenAI). 130M MAU. Pricing $0.145/M input, $1.74/M output (~7× cheaper than GPT-5.5).",
-      "source_url": "https://api-docs.deepseek.com/news/news260424",
-      "source_date": "2026-04-24",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.1,
-      "data_freshness_days": 15,
-      "is_extrapolated": true,
-      "note": "V4 launch (Apr 24) is significant: 1M context window doubles V3, MoE efficiency improvements likely accelerate adoption. #3 in enterprise dev SDK usage. v0.79 had 8.2T held; v0.80 bumps to 9.2T to incorporate V4 Pro/Flash launch.",
-      "revision_history": [
-        {
-          "date": "2026-04-06",
-          "value_T": 8.2,
-          "reason": "130M MAU, V4 Lite on Huawei chips"
-        },
-        {
-          "date": "2026-05-09",
-          "value_T": 9.2,
-          "reason": "DeepSeek V4 Pro / V4 Flash launched April 24 with 1M-token context window. Now #3 in enterprise developer SDK usage. 15-day extrapolation at 10%/mo + V4 launch boost.",
-          "source": "https://api-docs.deepseek.com/news/news260424"
-        }
-      ],
-      "source_value_T": 9.2,
-      "parameter_classification": {
-        "category": "inferred",
-        "rationale": "V4 Pro/Flash launch (Apr 24) dated; market-share modeling uses 81.6M WAU + IDC China #3 standing. No direct throughput disclosure."
-      }
-    },
-    {
       "id": "microsoft-azure",
-      "rank": 6,
+      "rank": 5,
       "name": "Azure OpenAI Service + Microsoft 365 Copilot",
       "country": "US",
       "daily_tokens_T": 10.0,
@@ -1721,6 +1688,41 @@
       "parameter_classification": {
         "category": "inferred",
         "rationale": "Q3 FY26 (Apr 29, 2026) earnings disclosed $37B AI business ARR (+123% YoY) and 20M paid Copilot seats. Volume estimate 10T derives from ARR/price-blend reconciliation. Underlying ARR signal is observed; volume conversion is inferred."
+      }
+    },
+    {
+      "id": "deepseek",
+      "rank": 6,
+      "name": "DeepSeek",
+      "country": "CN",
+      "daily_tokens_T": 9.2,
+      "confidence": "Low",
+      "tier": 2,
+      "source": "DeepSeek V4 Pro / V4 Flash launched April 24 — 1M token context, 1.6T params MoE / 49B active (V4 Pro), 284B / 13B (V4 Flash). #3 enterprise market share (behind Anthropic, OpenAI). 130M MAU. Pricing $0.145/M input, $1.74/M output (~7× cheaper than GPT-5.5).",
+      "source_url": "https://api-docs.deepseek.com/news/news260424",
+      "source_date": "2026-04-24",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.1,
+      "data_freshness_days": 15,
+      "is_extrapolated": true,
+      "note": "V4 launch (Apr 24) is significant: 1M context window doubles V3, MoE efficiency improvements likely accelerate adoption. #3 in enterprise dev SDK usage. v0.79 had 8.2T held; v0.80 bumps to 9.2T to incorporate V4 Pro/Flash launch.",
+      "revision_history": [
+        {
+          "date": "2026-04-06",
+          "value_T": 8.2,
+          "reason": "130M MAU, V4 Lite on Huawei chips"
+        },
+        {
+          "date": "2026-05-09",
+          "value_T": 9.2,
+          "reason": "DeepSeek V4 Pro / V4 Flash launched April 24 with 1M-token context window. Now #3 in enterprise developer SDK usage. 15-day extrapolation at 10%/mo + V4 launch boost.",
+          "source": "https://api-docs.deepseek.com/news/news260424"
+        }
+      ],
+      "source_value_T": 9.2,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "V4 Pro/Flash launch (Apr 24) dated; market-share modeling uses 81.6M WAU + IDC China #3 standing. No direct throughput disclosure."
       }
     },
     {
@@ -1756,6 +1758,47 @@
       "parameter_classification": {
         "category": "inferred",
         "rationale": "Alibaba Cloud Q4 FY25 earnings + Token Hub reorg + extrapolation. No direct token throughput disclosure."
+      }
+    },
+    {
+      "id": "openrouter",
+      "rank": 8,
+      "name": "OpenRouter (aggregator)",
+      "country": "US",
+      "daily_tokens_T": 3.0,
+      "confidence": "Medium-High",
+      "tier": 1,
+      "scope_note": "AGGREGATOR — overlaps with vendor totals. OpenRouter routes traffic to Kimi, DeepSeek, Anthropic, OpenAI, Tencent Hy3, Xiaomi MiMo, etc. Tokens flowing through OR are also counted in those vendors' rows. Reported here as platform-scale signal, not additive to global total. The global_total_T of 310 already nets out this overlap (OR's incremental contribution is the small portion of routing not attributed to identified top-20 vendors).",
+      "source": "April 2026: 20 trillion tokens/week = 2.86T/day on OpenRouter (4× YoY from 5T/week April 2025). Validated by a16z 'State of AI: An Empirical 100 Trillion Token Study' (arXiv 2601.10088, Jan 15, 2026). OpenRouter passed 1T tokens/day in December 2025. Top traffic May 2026: Kimi K2.6 (1.85T weekly), DeepSeek V4 Pro/Flash, Claude Sonnet 4, Tencent Hy3 preview, Xiaomi MiMo-V2-Pro.",
+      "source_url": "https://openrouter.ai/state-of-ai",
+      "source_date": "2026-04-30",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.1,
+      "data_freshness_days": 9,
+      "is_extrapolated": true,
+      "note": "v0.81 MAJOR REVISION: Bumped 1.27T → 3.0T/day based on OpenRouter's April 2026 20T/week disclosure and a16z 100T Token Study. Previous estimate was based on stale Feb 2026 data and missed the Mar-Apr 2026 4× YoY growth.",
+      "revision_history": [
+        {
+          "date": "2026-04-06",
+          "value_T": 1.13,
+          "reason": "Hold from Feb 2026 baseline"
+        },
+        {
+          "date": "2026-05-04",
+          "value_T": 1.27,
+          "reason": "Weekly extrapolation at 10%/mo"
+        },
+        {
+          "date": "2026-05-09",
+          "value_T": 3.0,
+          "reason": "MAJOR REVISION: OpenRouter April 2026 disclosed 20T tokens/week = 2.86T/day (4× YoY). a16z 'State of AI' 100T Token Study (arXiv Jan 2026) confirms platform passed 1T/day in Dec 2025. Previous GATT estimate was based on stale Feb 2026 data point. Confidence remains high — OR publishes platform stats monthly. Aggregator overlap with vendor totals flagged in scope_note.",
+          "source": "https://openrouter.ai/state-of-ai"
+        }
+      ],
+      "source_value_T": 3.0,
+      "parameter_classification": {
+        "category": "inferred",
+        "rationale": "Aggregator platform data: 3T/day live + 20T/week April disclosure. Numbers are observed at the aggregator level but overlap with vendor totals (Kimi, DeepSeek, Anthropic, Tencent, Xiaomi route through OpenRouter), so the role in GATT's global is inferred not observed."
       }
     },
     {
@@ -1828,8 +1871,39 @@
       }
     },
     {
-      "id": "baidu-ernie",
+      "id": "apple-intelligence",
       "rank": 11,
+      "name": "Apple Intelligence (Private Cloud Compute)",
+      "country": "US",
+      "daily_tokens_T": 2.0,
+      "confidence": "Low",
+      "tier": 2,
+      "scope_note": "Apple Private Cloud Compute (PCC) only - the cloud-routed fraction of Apple Intelligence queries that exceed on-device 3B-parameter model capacity. On-device inference across 2.2B active devices (estimated ~85% of total Apple Intelligence volume) is excluded from GATT scope per Section 6.3 'self-hosted / on-device' dark zone. 2T/day cloud estimate is speculative pending WWDC 2026 disclosure (June 2026); plausible range 0.5-8T/day.",
+      "source": "Conservative cloud-routing estimate: 2.2B active devices x ~15% Apple Intelligence-active users x ~600 cloud tokens/active-user/day = ~2T/day. Awaiting WWDC 2026 for direct disclosure.",
+      "source_url": "https://www.apple.com/apple-intelligence/",
+      "source_date": "2026-05-11",
+      "extrapolated_to": "2026-05-11",
+      "growth_rate_monthly": 0.15,
+      "data_freshness_days": 0,
+      "is_extrapolated": false,
+      "revision_history": [
+        {
+          "date": "2026-05-11",
+          "value_T": 2.0,
+          "reason": "v1.3 NEW ENTRY: First inclusion. Conservative cloud-only estimate; on-device volume excluded per dark-zone scope. WWDC 2026 expected to disclose throughput; estimate will be re-anchored at that point."
+        }
+      ],
+      "source_value_T": 2.0,
+      "note": "WWDC 2026 dependency: this estimate may shift 2-4x when Apple discloses Private Cloud Compute throughput. Flagged as highest-uncertainty entry in GATT v1.3.",
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "No direct vendor disclosure of cloud token volumes. 2T/day estimate derived from three editorial multipliers (2.2B devices x 15% AI-active x 600 cloud tokens/day); each multiplier could be wrong by 2-3x. Range 0.5-8T plausible. Pending WWDC 2026 disclosure to re-anchor."
+      },
+      "added_in": "v1.3"
+    },
+    {
+      "id": "baidu-ernie",
+      "rank": 12,
       "name": "ERNIE (Baidu)",
       "country": "CN",
       "daily_tokens_T": 1.85,
@@ -1862,7 +1936,7 @@
     },
     {
       "id": "iflytek-spark",
-      "rank": 12,
+      "rank": 13,
       "name": "Spark (iFlytek)",
       "country": "CN",
       "daily_tokens_T": 1.62,
@@ -1893,49 +1967,8 @@
       }
     },
     {
-      "id": "openrouter",
-      "rank": 8,
-      "name": "OpenRouter (aggregator)",
-      "country": "US",
-      "daily_tokens_T": 3.0,
-      "confidence": "Medium-High",
-      "tier": 1,
-      "scope_note": "AGGREGATOR — overlaps with vendor totals. OpenRouter routes traffic to Kimi, DeepSeek, Anthropic, OpenAI, Tencent Hy3, Xiaomi MiMo, etc. Tokens flowing through OR are also counted in those vendors' rows. Reported here as platform-scale signal, not additive to global total. The global_total_T of 310 already nets out this overlap (OR's incremental contribution is the small portion of routing not attributed to identified top-20 vendors).",
-      "source": "April 2026: 20 trillion tokens/week = 2.86T/day on OpenRouter (4× YoY from 5T/week April 2025). Validated by a16z 'State of AI: An Empirical 100 Trillion Token Study' (arXiv 2601.10088, Jan 15, 2026). OpenRouter passed 1T tokens/day in December 2025. Top traffic May 2026: Kimi K2.6 (1.85T weekly), DeepSeek V4 Pro/Flash, Claude Sonnet 4, Tencent Hy3 preview, Xiaomi MiMo-V2-Pro.",
-      "source_url": "https://openrouter.ai/state-of-ai",
-      "source_date": "2026-04-30",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.1,
-      "data_freshness_days": 9,
-      "is_extrapolated": true,
-      "note": "v0.81 MAJOR REVISION: Bumped 1.27T → 3.0T/day based on OpenRouter's April 2026 20T/week disclosure and a16z 100T Token Study. Previous estimate was based on stale Feb 2026 data and missed the Mar-Apr 2026 4× YoY growth.",
-      "revision_history": [
-        {
-          "date": "2026-04-06",
-          "value_T": 1.13,
-          "reason": "Hold from Feb 2026 baseline"
-        },
-        {
-          "date": "2026-05-04",
-          "value_T": 1.27,
-          "reason": "Weekly extrapolation at 10%/mo"
-        },
-        {
-          "date": "2026-05-09",
-          "value_T": 3.0,
-          "reason": "MAJOR REVISION: OpenRouter April 2026 disclosed 20T tokens/week = 2.86T/day (4× YoY). a16z 'State of AI' 100T Token Study (arXiv Jan 2026) confirms platform passed 1T/day in Dec 2025. Previous GATT estimate was based on stale Feb 2026 data point. Confidence remains high — OR publishes platform stats monthly. Aggregator overlap with vendor totals flagged in scope_note.",
-          "source": "https://openrouter.ai/state-of-ai"
-        }
-      ],
-      "source_value_T": 3.0,
-      "parameter_classification": {
-        "category": "inferred",
-        "rationale": "Aggregator platform data: 3T/day live + 20T/week April disclosure. Numbers are observed at the aggregator level but overlap with vendor totals (Kimi, DeepSeek, Anthropic, Tencent, Xiaomi route through OpenRouter), so the role in GATT's global is inferred not observed."
-      }
-    },
-    {
       "id": "mistral-ai",
-      "rank": 13,
+      "rank": 14,
       "name": "Mistral AI",
       "country": "FR",
       "daily_tokens_T": 0.74,
@@ -1967,7 +2000,7 @@
     },
     {
       "id": "xai-grok",
-      "rank": 14,
+      "rank": 15,
       "name": "Grok (xAI)",
       "country": "US",
       "daily_tokens_T": 0.55,
@@ -2002,7 +2035,7 @@
     },
     {
       "id": "minimax",
-      "rank": 15,
+      "rank": 16,
       "name": "MiniMax",
       "country": "CN",
       "daily_tokens_T": 0.42,
@@ -2033,167 +2066,8 @@
       }
     },
     {
-      "id": "groq",
-      "rank": 17,
-      "name": "Groq",
-      "country": "US",
-      "daily_tokens_T": 0.32,
-      "confidence": "Low",
-      "tier": 2,
-      "source": "2.5M devs × usage + LPU capacity back-calc",
-      "source_date": "2026-01",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.12,
-      "data_freshness_days": 123,
-      "is_extrapolated": true,
-      "revision_history": [
-        {
-          "date": "2026-04-06",
-          "value_T": 0.29,
-          "reason": "Hold"
-        },
-        {
-          "date": "2026-05-09",
-          "value_T": 0.32,
-          "reason": "33-day extrapolation at 12%/mo."
-        }
-      ],
-      "source_value_T": 0.29,
-      "parameter_classification": {
-        "category": "judgment",
-        "rationale": "LPU capacity back-calculation (2.5M devs x LPU); no direct throughput disclosure. 0.32T is engineering estimate."
-      }
-    },
-    {
-      "id": "xiaomi-mimo",
-      "rank": 18,
-      "name": "MiMo-V2-Pro (Xiaomi)",
-      "country": "CN",
-      "daily_tokens_T": 0.3,
-      "confidence": "Low",
-      "tier": 2,
-      "source": "v0.81 NEW VENDOR. MiMo-V2-Pro launched as anonymous 'Hunter Alpha' on OpenRouter March 11, 2026 — accumulated 1T cumulative tokens before official Xiaomi reveal on March 18. Currently ~500B tokens/week (~70B/day) on OR alone. 1T total params MoE, 1M context, agentic-optimized. Pricing $1/M input, $3/M output. Available via Xiaomi cloud + OpenRouter.",
-      "source_url": "https://mimo.xiaomi.com/mimo-v2-pro",
-      "source_date": "2026-03-18",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.2,
-      "data_freshness_days": 52,
-      "is_extrapolated": true,
-      "note": "Conservative 0.30T/day estimate based on: (1) ~70B/day on OpenRouter alone (validated by ~500B tokens/week), (2) Xiaomi enterprise + on-device deployments add ~3-5× OR volume, (3) early-stage adoption curve suggests 20%/mo growth. Confidence low — first vendor entry, no enterprise revenue disclosure yet.",
-      "revision_history": [
-        {
-          "date": "2026-05-09",
-          "value_T": 0.3,
-          "reason": "NEW VENDOR (v0.81). Hunter Alpha → MiMo-V2-Pro Mar 11→18, 2026. ~500B tokens/week on OpenRouter as of Mar 2026. Total estimated 0.30T/day across OR + Xiaomi cloud + on-device.",
-          "source": "https://mimo.xiaomi.com/mimo-v2-pro"
-        }
-      ],
-      "source_value_T": 0.3,
-      "parameter_classification": {
-        "category": "judgment",
-        "rationale": "NEW vendor v0.81; appeared anonymously on OpenRouter Mar 11; ~500B tokens/week post-launch. Sparse signals; 0.30T is editorial."
-      }
-    },
-    {
-      "id": "meta-llama",
-      "rank": 19,
-      "name": "Llama API (Meta)",
-      "country": "US",
-      "daily_tokens_T": 0.23,
-      "confidence": "Low",
-      "tier": 2,
-      "source": "Meta AI distributed across 4B+ MAU apps. 'Virtually no standalone AI users vs OpenAI' (247WallSt, Mar 15 2026).",
-      "source_url": "https://247wallst.com/investing/2026/03/15/meta-has-virtually-no-ai-users-compared-to-openais-900m-says-big-technologys-kantrowitz/",
-      "source_date": "2026-03-15",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.1,
-      "data_freshness_days": 55,
-      "is_extrapolated": true,
-      "revision_history": [
-        {
-          "date": "2026-04-06",
-          "value_T": 0.21,
-          "reason": "Hold"
-        },
-        {
-          "date": "2026-05-09",
-          "value_T": 0.23,
-          "reason": "33-day extrapolation at 10%/mo."
-        }
-      ],
-      "source_value_T": 0.21,
-      "parameter_classification": {
-        "category": "judgment",
-        "rationale": "'Virtually no standalone users vs OpenAI' per Meta growth-rate stmt. 0.23T is editorial estimate."
-      }
-    },
-    {
-      "id": "amazon-bedrock",
-      "rank": 20,
-      "name": "Amazon Bedrock",
-      "country": "US",
-      "daily_tokens_T": 0.17,
-      "confidence": "Low",
-      "tier": 2,
-      "source": "AWS revenue ÷ price estimate",
-      "source_date": "2025-Q4",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.08,
-      "data_freshness_days": 129,
-      "is_extrapolated": true,
-      "revision_history": [
-        {
-          "date": "2026-04-06",
-          "value_T": 0.16,
-          "reason": "Hold"
-        },
-        {
-          "date": "2026-05-09",
-          "value_T": 0.17,
-          "reason": "33-day extrapolation at 8%/mo."
-        }
-      ],
-      "source_value_T": 0.16,
-      "parameter_classification": {
-        "category": "judgment",
-        "rationale": "AWS revenue known but allocation between Bedrock vs other AI services is editorial. 0.17T derived via revenue/price."
-      }
-    },
-    {
-      "id": "zhipu-glm",
-      "rank": 21,
-      "name": "GLM (Zhipu AI)",
-      "country": "CN",
-      "daily_tokens_T": 0.13,
-      "confidence": "Medium",
-      "tier": 1,
-      "source": "OpenRouter data",
-      "source_date": "2026-02",
-      "extrapolated_to": "2026-05-09",
-      "growth_rate_monthly": 0.05,
-      "data_freshness_days": 91,
-      "is_extrapolated": true,
-      "revision_history": [
-        {
-          "date": "2026-04-06",
-          "value_T": 0.12,
-          "reason": "Hold"
-        },
-        {
-          "date": "2026-05-09",
-          "value_T": 0.13,
-          "reason": "33-day extrapolation at 5%/mo."
-        }
-      ],
-      "source_value_T": 0.12,
-      "parameter_classification": {
-        "category": "judgment",
-        "rationale": "OpenRouter trace only; 0.13T is editorial."
-      }
-    },
-    {
       "id": "perplexity",
-      "rank": 16,
+      "rank": 17,
       "name": "Perplexity AI",
       "country": "US",
       "daily_tokens_T": 0.35,
@@ -2230,6 +2104,226 @@
         "category": "inferred",
         "rationale": "45M MAU + 30M+ queries/day + $200M ARR Sep 2025 + projected $656M for 2026. 0.35T inferred from MAU + query volume."
       }
+    },
+    {
+      "id": "groq",
+      "rank": 18,
+      "name": "Groq",
+      "country": "US",
+      "daily_tokens_T": 0.32,
+      "confidence": "Low",
+      "tier": 2,
+      "source": "2.5M devs × usage + LPU capacity back-calc",
+      "source_date": "2026-01",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.12,
+      "data_freshness_days": 123,
+      "is_extrapolated": true,
+      "revision_history": [
+        {
+          "date": "2026-04-06",
+          "value_T": 0.29,
+          "reason": "Hold"
+        },
+        {
+          "date": "2026-05-09",
+          "value_T": 0.32,
+          "reason": "33-day extrapolation at 12%/mo."
+        }
+      ],
+      "source_value_T": 0.29,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "LPU capacity back-calculation (2.5M devs x LPU); no direct throughput disclosure. 0.32T is engineering estimate."
+      }
+    },
+    {
+      "id": "xiaomi-mimo",
+      "rank": 19,
+      "name": "MiMo-V2-Pro (Xiaomi)",
+      "country": "CN",
+      "daily_tokens_T": 0.3,
+      "confidence": "Low",
+      "tier": 2,
+      "source": "v0.81 NEW VENDOR. MiMo-V2-Pro launched as anonymous 'Hunter Alpha' on OpenRouter March 11, 2026 — accumulated 1T cumulative tokens before official Xiaomi reveal on March 18. Currently ~500B tokens/week (~70B/day) on OR alone. 1T total params MoE, 1M context, agentic-optimized. Pricing $1/M input, $3/M output. Available via Xiaomi cloud + OpenRouter.",
+      "source_url": "https://mimo.xiaomi.com/mimo-v2-pro",
+      "source_date": "2026-03-18",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.2,
+      "data_freshness_days": 52,
+      "is_extrapolated": true,
+      "note": "Conservative 0.30T/day estimate based on: (1) ~70B/day on OpenRouter alone (validated by ~500B tokens/week), (2) Xiaomi enterprise + on-device deployments add ~3-5× OR volume, (3) early-stage adoption curve suggests 20%/mo growth. Confidence low — first vendor entry, no enterprise revenue disclosure yet.",
+      "revision_history": [
+        {
+          "date": "2026-05-09",
+          "value_T": 0.3,
+          "reason": "NEW VENDOR (v0.81). Hunter Alpha → MiMo-V2-Pro Mar 11→18, 2026. ~500B tokens/week on OpenRouter as of Mar 2026. Total estimated 0.30T/day across OR + Xiaomi cloud + on-device.",
+          "source": "https://mimo.xiaomi.com/mimo-v2-pro"
+        }
+      ],
+      "source_value_T": 0.3,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "NEW vendor v0.81; appeared anonymously on OpenRouter Mar 11; ~500B tokens/week post-launch. Sparse signals; 0.30T is editorial."
+      }
+    },
+    {
+      "id": "meta-llama",
+      "rank": 20,
+      "name": "Llama API (Meta)",
+      "country": "US",
+      "daily_tokens_T": 0.23,
+      "confidence": "Low",
+      "tier": 2,
+      "source": "Meta AI distributed across 4B+ MAU apps. 'Virtually no standalone AI users vs OpenAI' (247WallSt, Mar 15 2026).",
+      "source_url": "https://247wallst.com/investing/2026/03/15/meta-has-virtually-no-ai-users-compared-to-openais-900m-says-big-technologys-kantrowitz/",
+      "source_date": "2026-03-15",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.1,
+      "data_freshness_days": 55,
+      "is_extrapolated": true,
+      "revision_history": [
+        {
+          "date": "2026-04-06",
+          "value_T": 0.21,
+          "reason": "Hold"
+        },
+        {
+          "date": "2026-05-09",
+          "value_T": 0.23,
+          "reason": "33-day extrapolation at 10%/mo."
+        }
+      ],
+      "source_value_T": 0.21,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "'Virtually no standalone users vs OpenAI' per Meta growth-rate stmt. 0.23T is editorial estimate."
+      }
+    },
+    {
+      "id": "amazon-bedrock",
+      "rank": 21,
+      "name": "Amazon Bedrock",
+      "country": "US",
+      "daily_tokens_T": 0.17,
+      "confidence": "Low",
+      "tier": 2,
+      "source": "AWS revenue ÷ price estimate",
+      "source_date": "2025-Q4",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.08,
+      "data_freshness_days": 129,
+      "is_extrapolated": true,
+      "revision_history": [
+        {
+          "date": "2026-04-06",
+          "value_T": 0.16,
+          "reason": "Hold"
+        },
+        {
+          "date": "2026-05-09",
+          "value_T": 0.17,
+          "reason": "33-day extrapolation at 8%/mo."
+        }
+      ],
+      "source_value_T": 0.16,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "AWS revenue known but allocation between Bedrock vs other AI services is editorial. 0.17T derived via revenue/price."
+      }
+    },
+    {
+      "id": "zhipu-glm",
+      "rank": 22,
+      "name": "GLM (Zhipu AI)",
+      "country": "CN",
+      "daily_tokens_T": 0.13,
+      "confidence": "Medium",
+      "tier": 1,
+      "source": "OpenRouter data",
+      "source_date": "2026-02",
+      "extrapolated_to": "2026-05-09",
+      "growth_rate_monthly": 0.05,
+      "data_freshness_days": 91,
+      "is_extrapolated": true,
+      "revision_history": [
+        {
+          "date": "2026-04-06",
+          "value_T": 0.12,
+          "reason": "Hold"
+        },
+        {
+          "date": "2026-05-09",
+          "value_T": 0.13,
+          "reason": "33-day extrapolation at 5%/mo."
+        }
+      ],
+      "source_value_T": 0.12,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "OpenRouter trace only; 0.13T is editorial."
+      }
+    },
+    {
+      "id": "cohere",
+      "rank": 23,
+      "name": "Cohere (Command R+ / Command A)",
+      "country": "CA",
+      "daily_tokens_T": 0.1,
+      "confidence": "Low",
+      "tier": 2,
+      "scope_note": "Enterprise-only deployment (no consumer chatbot). Estimated from ~$80M ARR back-calculation at ~$2/M blended enterprise pricing. Toronto HQ, founded 2019 by Aidan Gomez (ex-Google Brain). Adds Canada to vendor-HQ geography (previously only US/CN/FR represented).",
+      "source": "~$80M ARR estimate (mid-2026, mixed Series D + post-D revenue signals) / ~$2/M blended enterprise price ~= 110B tokens/day. Conservative round to 0.10T/day.",
+      "source_url": "https://cohere.com/",
+      "source_date": "2026-05-11",
+      "extrapolated_to": "2026-05-11",
+      "growth_rate_monthly": 0.08,
+      "data_freshness_days": 0,
+      "is_extrapolated": false,
+      "revision_history": [
+        {
+          "date": "2026-05-11",
+          "value_T": 0.1,
+          "reason": "v1.3 NEW ENTRY: First inclusion. ARR back-calculation from public Series-D-era signals."
+        }
+      ],
+      "source_value_T": 0.1,
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "Cohere does not disclose token throughput or precise ARR. 0.10T derives from ARR-and-pricing back-calculation, similar to Mistral (Low confidence, judgment). Range 0.05-0.20T plausible."
+      },
+      "added_in": "v1.3"
+    },
+    {
+      "id": "sarvam",
+      "rank": 24,
+      "name": "Sarvam AI (Sarvam-M, Sarvam-1)",
+      "country": "IN",
+      "daily_tokens_T": 0.05,
+      "confidence": "Low",
+      "tier": 2,
+      "scope_note": "India-headquartered LLM startup, backed by Lightspeed + Khosla + Peak XV. Focus on 22 Indian languages (Hindi, Bengali, Tamil, etc.). Sarvam-M (24B params) and Sarvam-1 (2B) deployed mid-2026. State partnership via IndiaAI Mission. First Indian vendor in GATT - partially addresses Section 4.4.1 methodological gap that prior 0.77K/person/day India per-capita was entirely US-vendor-attributed traffic.",
+      "source": "Conservative estimate from limited public signals: estimated ~$10M ARR (mid-2026 post-launch) / ~$1.5/M (Indian-rupee-discounted enterprise + government pricing) ~= 20B tokens/day. Rounded up to 0.05T for headroom on rapid post-IndiaAI-Mission growth.",
+      "source_url": "https://www.sarvam.ai/",
+      "source_date": "2026-05-11",
+      "extrapolated_to": "2026-05-11",
+      "growth_rate_monthly": 0.25,
+      "data_freshness_days": 0,
+      "is_extrapolated": false,
+      "revision_history": [
+        {
+          "date": "2026-05-11",
+          "value_T": 0.05,
+          "reason": "v1.3 NEW ENTRY: First inclusion. ARR back-calculation + IndiaAI Mission state-deployment estimate."
+        }
+      ],
+      "source_value_T": 0.05,
+      "note": "Adds first India-headquartered vendor. Comparison candidate: Krutrim (Ola), similar scale, may be added in v1.3.x.",
+      "parameter_classification": {
+        "category": "judgment",
+        "rationale": "Sarvam does not disclose token throughput. 0.05T derives from limited ARR signals + state-deployment proxy. Range 0.02-0.15T plausible. Krutrim (Ola) is a parallel candidate with similar uncertainty."
+      },
+      "added_in": "v1.3"
     }
   ],
   "countries": [
@@ -2479,7 +2573,7 @@
         "High": 3,
         "Medium-High": 2,
         "Medium": 8,
-        "Low": 8
+        "Low": 11
       },
       "gemini_downgrade_note": "Gemini All Surfaces composite was High at v0.92, downgraded to Medium at v1.0 per Sokolov peer-review critique: the API component (~23T) remains High, but the 3.2× All Surfaces multiplier is editorial."
     }
