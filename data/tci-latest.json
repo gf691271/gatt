@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "gatt_version": "1.4",
-  "generated_at": "2026-05-10T11:00:00Z",
+  "generated_at": "2026-05-11T16:02:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-11",
     "confidence": "medium-high",
     "last_updated": "2026-05-11",
-    "note": "v1.4 - Token Economy vocabulary disambiguation + industry framings integration. Triggered by (a) NVIDIA Jensen Huang GTC 2026 Keynote publicly staking 'Token Economics' as core narrative (supply-side tokens/watt framework, $1T Blackwell+Rubin order backlog through 2027), and (b) Google AI Overview research revealing systematic exclusion of GATT from default LLM-mediated search for 'token economics' queries. New blocks: methodology_notes.token_economy_disambiguation (4 vocabulary meanings: AI-inference / blockchain / TokenOps / behavioral psychology); industry_framings (NVIDIA + TokenOps as parallel framings to academic_validation block); token_gdp.dual_accounting (supply-side imputed Jensen vs demand-side measured GATT, with Token GDP Statistical Discrepancy as research question). Paper v1.4 mirrors: Section 1.2 NEW disambiguation, Section 2.6 NEW NVIDIA Token Economics framing, Section 2.7 NEW TokenOps / FinOps for AI; existing sections renumbered. References.bib +5 entries (huang2026gtc, finout2024tokenops, healthark2025tokenecon, inventivehq2025promptopt, tokenfinops2025survey). Vendor totals held: 24 vendors x 311T tokens/day x $97.0B annualized Token GDP (demand-side). 50/49 China-US volume share; 88/6 Token GDP share. Strategy: stake 'Token Economy' as AI-inference meaning; drop 'Tokenomics' competition with blockchain; add GEO as 20% workstream alongside data infra + Substack + paper."
+    "note": "May 4–11 source sweep for OpenAI / Google / Anthropic / ByteDance completed on top of the existing v1.4 model. No newer hard throughput disclosure beat the standing anchors, so the top-four estimates are held at OpenAI 45T, Gemini 73T, Claude 22T, Doubao 129T/day. Fresh signals incorporated into source metadata: OpenAI DeployCo + >1M business adopters (May 11), Gemini 3.1 Flash-Lite GA for high-volume workloads (May 7), Anthropic higher limits + SpaceX compute deal (May 6), China Daily Doubao paid-tier / enterprise depth report (May 6). Global headline remains 311T/day."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -1449,12 +1449,12 @@
       "confidence": "High",
       "tier": 1,
       "scope_note": "ALL-SOURCES: external MaaS calls + internal first-party (Douyin AI Search, Doubao App, Jimeng, Volcengine internal pipelines). IDC May 7 report measures only external MaaS (49.5% market share — independently confirms GATT's #1 ranking in China). Internal usage estimated at ≥95% of total Volcengine throughput.",
-      "source": "Volcengine officially announced 120T/day at Wuhan AI Innovation Expo (Apr 1, 2026). IDC May 7 report independently confirms Volcengine #1 in China external MaaS at 49.5% (2025 full year). 33-day extrapolation at 8%/mo from Apr 1 anchor.",
-      "source_url": "https://technode.com/2026/04/07/doubao-surpasses-120-trillion-daily-tokens-as-usage-doubles-in-three-months/",
-      "source_date": "2026-04-07",
-      "extrapolated_to": "2026-05-09",
+      "source": "China Daily’s May 6 report on Doubao’s paid-tier test reiterates the latest official scale anchor: 120T tokens/day as of March, with 140 enterprise clients above 1T cumulative tokens. No newer hard throughput figure surfaced, so GATT holds Doubao at 129T/day extrapolated from the April official anchor.",
+      "source_url": "https://global.chinadaily.com.cn/a/202605/06/WS69fa79bea310d6866eb46f3e.html",
+      "source_date": "2026-05-06",
+      "extrapolated_to": "2026-05-11",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 32,
+      "data_freshness_days": 5,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -1495,7 +1495,7 @@
         }
       ],
       "source_value_T": 120,
-      "note": "GATT scope: all-sources. IDC scope: external MaaS only. Both rank Volcengine/Doubao #1 in China.",
+      "note": "May 6 China Daily coverage refreshes the enterprise-depth story but does not beat the 120T/day official anchor. Doubao stays at 129T/day extrapolated.",
       "parameter_classification": {
         "category": "observed",
         "rationale": "Volcengine OFFICIAL 120T disclosure (Apr 1, 2026, Wuhan AI Expo). IDC May 7 independently confirms 49.5% MaaS market share. May 2026 anchor of 129T applies a small (~7%) extrapolation from the Apr 1 baseline."
@@ -1509,14 +1509,14 @@
       "daily_tokens_T": 73,
       "confidence": "Medium",
       "tier": 1,
-      "source": "MAJOR UPGRADE: Pichai at Cloud Next 2026 / Q1 2026 earnings (April) — 'Gemini models now process more than 16 billion tokens per minute via direct API' = 23T/day API only. Up from 10B/min in Q4 2025 (+60%). 750M Gemini App MAU. Google Cloud +48% YoY. Gemma 4 launched Apr 1. 330 organizations process >1T tokens each annually on Google Cloud.",
-      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/",
-      "source_date": "2026-04-09",
-      "extrapolated_to": "2026-05-09",
+      "source": "Google’s May 7 Gemini 3.1 Flash-Lite GA post reinforces Gemini’s high-volume production footprint with ultra-low-latency positioning and customer examples at million-call scale, but it does not beat the existing 16B tokens/min API anchor disclosed by Pichai in April. GATT therefore holds Gemini at 73T/day all-surfaces.",
+      "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available",
+      "source_date": "2026-05-07",
+      "extrapolated_to": "2026-05-11",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 30,
+      "data_freshness_days": 4,
       "is_extrapolated": true,
-      "note": "Q1 2026 disclosure was the biggest single Gemini upgrade since GATT launch: API throughput jumped from 10B → 16B tokens/min in one quarter. All Surfaces estimate = API (23T) × ~3.2 multiplier for Search AI Overviews + Gemini App + Workspace = 73T (multiplier reduced from 4× since API outpaced consumer surface attach). Confidence upgraded medium-high → high.",
+      "note": "May 7 Flash-Lite GA is a fresh high-volume demand signal, but no harder figure than the 16B tokens/min API anchor appeared. Gemini stays at 73T/day all-surfaces.",
       "revision_history": [
         {
           "date": "2026-04-06",
@@ -1564,14 +1564,14 @@
       "daily_tokens_T": 45,
       "confidence": "High",
       "tier": 1,
-      "source": "OFFICIAL: 15B tokens/min API (Mar 31 — held as anchor). GPT-5.5 launched April 23 (now ChatGPT default via 5.5 Instant May 5). Some developers reportedly hitting 40M tokens/min during launch. $25B+ ARR; targeting $29.4B for 2026 (+18%). 1M+ business customers, 9M+ paying business users, 4M+ developers.",
-      "source_url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/",
-      "source_date": "2026-05-05",
-      "extrapolated_to": "2026-05-09",
+      "source": "OpenAI’s May 11 Deployment Company announcement says more than 1 million businesses have adopted OpenAI products and APIs, alongside 9M+ paying business users and 4M+ developers. It still does not publish a harder throughput figure than the standing >15B API tokens/min anchor, so GATT holds OpenAI at 45T/day.",
+      "source_url": "https://openai.com/index/openai-launches-the-deployment-company/",
+      "source_date": "2026-05-11",
+      "extrapolated_to": "2026-05-11",
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 4,
+      "data_freshness_days": 0,
       "is_extrapolated": true,
-      "note": "GPT-5.5 (Apr 23) and 5.5 Instant (May 5) launched within v0.79→v0.80 window. Token-efficient per task but spike in launch usage drives net total up. Conservative bump 44 → 45T (vs theoretical 47T at 15%/mo).",
+      "note": "Fresh May 11 enterprise-adoption signal (>1M business adopters) supports demand staying elevated, but no harder throughput figure surfaced. OpenAI stays at 45T/day.",
       "revision_history": [
         {
           "date": "2026-04-06",
@@ -1619,14 +1619,14 @@
       "daily_tokens_T": 22,
       "confidence": "High",
       "tier": 1,
-      "source": "MAJOR: Claude MAU surged 44% Mar→Apr to 23M (BigGo/Similarweb — biggest growth among top AI apps in April). Opus 4.7 launched April 16 — new tokenizer produces up to 35% more tokens for same input. Claude Code Pro test removal Apr 21. $25B+ ARR per SemiAnalysis.",
-      "source_url": "https://www.anthropic.com/news/claude-opus-4-7",
-      "source_date": "2026-04-16",
-      "extrapolated_to": "2026-05-09",
+      "source": "Anthropic’s May 6 compute update doubles Claude Code five-hour limits, removes peak-hour reductions, raises Claude Opus API limits, and adds 300MW / 220,000 NVIDIA GPUs via the SpaceX Colossus 1 deal. Strong demand-and-capacity signal, but still no direct throughput disclosure; GATT holds Claude at 22T/day.",
+      "source_url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "source_date": "2026-05-06",
+      "extrapolated_to": "2026-05-11",
       "growth_rate_monthly": 0.18,
-      "data_freshness_days": 23,
+      "data_freshness_days": 5,
       "is_extrapolated": true,
-      "note": "Three compounding tailwinds: (1) Claude MAU +44% Mar→Apr — biggest growth among top AI apps in April; (2) Opus 4.7 tokenizer change inflates token counts up to 35% for identical inputs; (3) Compute strain continues. v0.79 was 19T at 18%/mo extrapolation; v0.80 bumps to 22T to incorporate the previously-uncaptured Opus 4.7 launch and MAU surge.",
+      "note": "May 6 higher-limits + compute expansion confirms Claude demand is still outrunning supply, but without a hard token print. Claude stays at 22T/day.",
       "revision_history": [
         {
           "date": "2026-02-20",
@@ -2481,7 +2481,7 @@
   ],
   "global_total_T": 310,
   "year_end_projection_T": "1100-1500",
-  "last_updated": "2026-05-09",
+  "last_updated": "2026-05-11",
   "correction_log": [
     {
       "date": "2026-05-09",
@@ -2601,6 +2601,13 @@
       "old": "69.2T/day (extrapolated)",
       "new": "120T/day (OFFICIAL)",
       "reason": "OFFICIAL: Volcengine 120T/day at Wuhan AI Innovation Expo (Apr 1, 2026)."
+    },
+    {
+      "date": "2026-05-11",
+      "vendor": "Weekly source refresh (top 4)",
+      "old": "Mixed Apr 7–May 5 source metadata; generated_at 2026-05-10T11:00:00Z; last_updated 2026-05-09",
+      "new": "Top-four source metadata refreshed to May 6–11 sweep; generated_at 2026-05-11T16:02:00Z; last_updated 2026-05-11",
+      "reason": "Past-7-day AI usage news sweep for OpenAI / Google / Anthropic / ByteDance found fresher demand signals but no harder throughput disclosure than existing anchors, so headline vendor numbers were held while timestamps and citations were refreshed."
     }
   ],
   "methodology_notes": {
