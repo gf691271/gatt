@@ -18,7 +18,21 @@ We propose three reconciliations:
 
 We argue that interpretations (2) and (3) jointly account for most of the gap, with (1) contributing a smaller share. Section 5 develops this argument in detail. The point of this paper is not to invalidate either methodology — both are valuable — but to propose that the *productive* interpretation of the discrepancy is methodological maturation rather than measurement error.
 
-## 1.2 The Measurement Gap
+## 1.2 Disambiguation: Token Economy vs. Tokenomics vs. TokenOps
+
+Four distinct concepts use overlapping "token" vocabulary, and confusion among them substantially limits the discoverability and citation pathways of token-economy research. We disambiguate explicitly.
+
+**"Token Economy" (this paper)** refers to the global market for AI inference token production, distribution, and consumption — the empirical phenomenon GATT measures. Throughput is denominated in trillions of tokens per day across 24 vendors and 12 countries; economic value is measured in retail-equivalent USD (Token GDP). This is a *macro-empirical* construct.
+
+**"Tokenomics" / "Token Economics" (blockchain)** refers to the supply dynamics, distribution mechanics, and incentive structures of cryptocurrency tokens within distributed ledger networks. The term predates the LLM-token usage by approximately a decade. When a general reader queries "tokenomics" via Google AI Overview, blockchain content dominates the response by default. We do not contest this vocabulary; GATT does not measure blockchain tokens.
+
+**"TokenOps" / "FinOps for AI" (enterprise cost management)** [29, 30, 31] refers to operational disciplines for tracking and optimizing LLM token consumption at the firm level — prompt structure efficiency, request batching, cost attribution. Commercial SaaS offerings now operationalize this discipline (Finout, BMC Helix, Apptio). TokenOps and the present paper are complementary: TokenOps optimizes within-firm token consumption; this paper measures and aggregates across-firm token consumption at the global level. Section 2.7 develops this complementarity in detail.
+
+**"Token Economy" (behavioral psychology)** refers to a 1960s clinical-psychology behavior-modification protocol — physical tokens earned for target behaviors, exchanged for backup reinforcers. This usage predates both AI and blockchain by decades but operates in a distinct disciplinary literature with no overlap to the present work.
+
+The vocabulary collision is not merely terminological. It directly shapes the discoverability of token-economy research via large-language-model-mediated search (so-called Generative Engine Optimization). We propose that the AI-inference meaning of *"Token Economy"* is the appropriate empirical-macroeconomic counterpart to *"Tokenomics"* (blockchain) and to *"TokenOps"* (firm-level cost management), and use the term consistently in this sense throughout.
+
+## 1.3 The Measurement Gap
 
 GATT exists because no other public dataset measures global AI inference in token units. Existing approaches fall into four categories:
 
@@ -29,7 +43,7 @@ GATT exists because no other public dataset measures global AI inference in toke
 
 GATT fills the gap as a global, all-sources, daily-updated, per-vendor index. It is also, deliberately, free and CC BY 4.0 — addressing what we observe as a citation barrier in the existing commercial-research landscape.
 
-## 1.3 Contributions
+## 1.4 Contributions
 
 This paper makes four contributions:
 
@@ -38,6 +52,6 @@ This paper makes four contributions:
 3. We **surface and reconcile the 2× discrepancy** with the physics-ceiling literature, proposing a synthesis that is informative for both empirical measurement and physical-bound modeling.
 4. We **propose "Token GDP"** — a vendor-volume × regional-blended-pricing metric — as a regional-comparable economic-value indicator for the Token Economy. This addresses a gap noted by Xing [6], who argues for a "Token Performance Index" as essential infrastructure for an emerging token futures market, and complements the USD-side analysis of Patel [22] and SemiAnalysis.
 
-## 1.4 Roadmap
+## 1.5 Roadmap
 
 Section 2 places GATT in the existing literature spanning commercial research, single-platform studies, physics-economics models, and empirical user studies. Section 3 details the methodology, including vendor coverage, confidence hierarchy, all-sources scope, the daily extrapolation engine, and the Token GDP formula. Section 4 reports empirical findings as of May 9, 2026. Section 5 returns to the 2× discrepancy and develops the reconciliation argument. Section 6 discusses policy and geo-economic implications. Section 7 concludes with limitations and an invitation to collaborate.

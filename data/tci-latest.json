@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "gatt_version": "1.3",
+  "gatt_version": "1.4",
   "generated_at": "2026-05-10T11:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
@@ -10,7 +10,7 @@
     "as_of_date": "2026-05-11",
     "confidence": "medium-high",
     "last_updated": "2026-05-11",
-    "note": "v1.3 - Vendor coverage expansion: 21 -> 24. New entries: Apple Intelligence (US, 2T cloud-only, Low confidence/judgment, WWDC-pending), Cohere (CA, 0.1T, first Canadian vendor-HQ entry, addresses EU/CA enterprise gap), Sarvam AI (IN, 0.05T, first India-HQ vendor, partially addresses Section 4.4.1 methodological gap that prior India per-capita was all US-vendor-attributed). New global daily total: 311T (was 310T); Token GDP $97.0B/yr (was $95.8B). US-CN volume share: 50/49 (was 50/50; Apple adds 2T US-side). US Token GDP share: 88% (unchanged). Distribution: 3 High / 2 Medium-High / 8 Medium / 11 Low confidence; 4 Observed / 10 Inferred / 10 Judgment. per_capita and countries blocks NOT updated: vendor-HQ attribution vs region-of-use is a known caveat (paper Section 3.6) - v1.3.x will explore customer-geography splits."
+    "note": "v1.4 - Token Economy vocabulary disambiguation + industry framings integration. Triggered by (a) NVIDIA Jensen Huang GTC 2026 Keynote publicly staking 'Token Economics' as core narrative (supply-side tokens/watt framework, $1T Blackwell+Rubin order backlog through 2027), and (b) Google AI Overview research revealing systematic exclusion of GATT from default LLM-mediated search for 'token economics' queries. New blocks: methodology_notes.token_economy_disambiguation (4 vocabulary meanings: AI-inference / blockchain / TokenOps / behavioral psychology); industry_framings (NVIDIA + TokenOps as parallel framings to academic_validation block); token_gdp.dual_accounting (supply-side imputed Jensen vs demand-side measured GATT, with Token GDP Statistical Discrepancy as research question). Paper v1.4 mirrors: Section 1.2 NEW disambiguation, Section 2.6 NEW NVIDIA Token Economics framing, Section 2.7 NEW TokenOps / FinOps for AI; existing sections renumbered. References.bib +5 entries (huang2026gtc, finout2024tokenops, healthark2025tokenecon, inventivehq2025promptopt, tokenfinops2025survey). Vendor totals held: 24 vendors x 311T tokens/day x $97.0B annualized Token GDP (demand-side). 50/49 China-US volume share; 88/6 Token GDP share. Strategy: stake 'Token Economy' as AI-inference meaning; drop 'Tokenomics' competition with blockchain; add GEO as 20% workstream alongside data infra + Substack + paper."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -1273,6 +1273,50 @@
       "caveat": "The 0.4x / 0.6x / 0.7x scalars are illustrative editorial estimates, not measured. Robust decomposition requires (a) vendor cost-disclosure data on internal-pipeline call volumes, (b) per-customer arms-length share decomposition, neither of which any vendor currently publishes. v1.x will refine when data permits.",
       "related_construct": "TGE = Token GDP (retail-equivalent gross). Future variants flagged in paper: (a) value-added Token GDP (this block, illustrative); (b) transaction-based Token GDP pricing internal calls at cost rather than retail.",
       "paper_section": "§3.5.1 — illustrative value-added correction"
+    },
+    "dual_accounting": {
+      "as_of_date": "2026-05-11",
+      "purpose": "Documents the two parallel accounting frameworks for Token GDP that exist as of mid-2026, paralleling production-side vs expenditure-side GDP measurement in national accounts.",
+      "paper_reference": "paper Section 2.6 + Section 3.5",
+      "demand_side": {
+        "name": "Demand-Side Token GDP (this dataset)",
+        "methodology": "sum_vendor(observed_daily_tokens × regional_blended_price)",
+        "value_annual_usd_B": 97.0,
+        "temporal_orientation": "backward-looking; anchored to dated vendor disclosures",
+        "strengths": [
+          "Realized values not assumed",
+          "Per-vendor traceability",
+          "Open dataset"
+        ],
+        "limitations": [
+          "Cloud only (no on-device)",
+          "Vendor-HQ attribution caveat",
+          "Token unit fungibility unsettled (see STU v0.1)"
+        ]
+      },
+      "supply_side": {
+        "name": "Supply-Side Token GDP (NVIDIA GTC 2026 framing)",
+        "methodology": "installed_GW × tokens_per_watt × tier_mix × tier_pricing × utilization",
+        "value_annual_usd_B_imputed_2027": "approximately 400-700 (back-of-envelope from $1T cumulative Blackwell+Rubin orders through 2027)",
+        "temporal_orientation": "forward-looking; capacity-imputed at assumed utilization and tier mix",
+        "strengths": [
+          "Captures capacity ahead of usage",
+          "Reflects intended business model",
+          "Anchored to physical infrastructure"
+        ],
+        "limitations": [
+          "Utilization assumption opaque",
+          "Tier-mix assumption (25/25/25/25) is marketing not empirical",
+          "Excludes secondary markets / cross-vendor routing"
+        ]
+      },
+      "discrepancy": {
+        "concept": "Token GDP Statistical Discrepancy",
+        "definition": "supply_side_imputed - demand_side_realized",
+        "mid_2026_estimate_usd_B_per_year": "300-600",
+        "interpretation": "A large positive discrepancy in 2026 reflects: (a) most installed AI capacity is not yet operating at Premium-tier assumptions; (b) Free + Mid tier traffic dominates; (c) realized prices are well below $45/M Premium benchmark; (d) utilization is uneven. This is not a contradiction of NVIDIA framing — it is the demand-side counterpart needed for the Premium-tier 5x revenue projection to be credibly audited.",
+        "research_question": "How does Token GDP Statistical Discrepancy evolve 2026-2030? Convergence indicates Token Economy maturation; divergence indicates capacity overshoot OR persistent under-monetization. Either is publishable."
+      }
     }
   },
   "per_capita": [
@@ -2576,6 +2620,91 @@
         "Low": 11
       },
       "gemini_downgrade_note": "Gemini All Surfaces composite was High at v0.92, downgraded to Medium at v1.0 per Sokolov peer-review critique: the API component (~23T) remains High, but the 3.2× All Surfaces multiplier is editorial."
+    },
+    "token_economy_disambiguation": {
+      "as_of_date": "2026-05-11",
+      "purpose": "Disambiguates four distinct concepts that share overlapping \"token\" vocabulary. GATT uses \"Token Economy\" exclusively in the AI-inference sense; this block documents the other meanings explicitly to support machine-readable cross-referencing and reduce ambiguity in downstream citation graphs.",
+      "paper_reference": "paper Section 1.2",
+      "meanings": [
+        {
+          "term": "Token Economy (AI inference)",
+          "meaning": "Global market for AI inference token production, distribution, consumption",
+          "unit": "tokens/day",
+          "domain": "AI / macroeconomics",
+          "canonical_source": "GATT (this dataset)",
+          "usage_in_gatt": "primary"
+        },
+        {
+          "term": "Tokenomics / Token Economics (blockchain)",
+          "meaning": "Supply dynamics, distribution, incentive structures of cryptocurrency tokens",
+          "unit": "tokens / blockchain",
+          "domain": "cryptocurrency / distributed ledger",
+          "canonical_source": "Wikipedia: Tokenomics",
+          "usage_in_gatt": "not used; explicitly disambiguated"
+        },
+        {
+          "term": "TokenOps / FinOps for AI",
+          "meaning": "Enterprise operational discipline for tracking and optimizing LLM token cost at firm level",
+          "unit": "$/M tokens",
+          "domain": "enterprise FinOps / SRE",
+          "canonical_source": "Finout, BMC Helix, Apptio, Inventive HQ",
+          "usage_in_gatt": "complementary; firm-micro vs GATT global-macro"
+        },
+        {
+          "term": "Token Economy (behavioral psychology)",
+          "meaning": "Behavior-modification protocol; tokens earned for target behaviors exchanged for reinforcers",
+          "unit": "reinforcement events",
+          "domain": "1960s clinical psychology",
+          "canonical_source": "PMC / EBSCO research starters",
+          "usage_in_gatt": "not related; orthogonal field"
+        }
+      ],
+      "geo_implication": "Google AI Overview / SGE / Perplexity citation behavior currently favors blockchain (Wikipedia) and TokenOps (commercial blogs) for queries on \"token economics\". GATT is systematically excluded from default AI-mediated search. The 30-day GEO workstream (gf691271.github.io/gatt/token-economy/ landing page + JSON-LD schema + Wikipedia outreach) addresses this gap."
     }
+  },
+  "industry_framings": {
+    "as_of_date": "2026-05-11",
+    "purpose": "Documents the industry-side and operations-side framings of the Token Economy that complement the academic literature catalogued in academic_validation. These framings shape AI-economics discourse outside academic peer review and directly affect how the Token Economy is described in mainstream financial / policy / business press.",
+    "paper_reference": "paper Section 2.6 + Section 2.7",
+    "framings": [
+      {
+        "name": "NVIDIA Token Economics",
+        "school_letter": "industry-supply-side",
+        "origin_event": "GTC 2026 Keynote (May 2026)",
+        "origin_actor": "Jensen Huang, NVIDIA CEO",
+        "methodology": "Supply-side capacity revenue: tokens/watt (Y) x tokens/second/user (X) x installed_GW x tier_pricing = annual_revenue",
+        "representative_metric": "tokens/watt; 1 GW Rubin Premium-tier = $150B/yr annualized",
+        "headline_claim": "Total Blackwell + Vera Rubin order backlog $1T through 2027 (doubled from prior-year $500B)",
+        "methodological_tensions": [
+          "Reasoning-token asymmetry: o1-class models emit 50-200K hidden reasoning tokens per output answer; whether GTC framework counts these in Y throughput, X TPS, both, or neither is unspecified.",
+          "Cross-vendor tokenizer fungibility: framework treats \"1 token\" as homogeneous unit; cross-vendor tokenizer differences (chars/token, bytes/token) directly contradict this assumption."
+        ],
+        "relationship_to_gatt": "Supply-side, capacity-imputed counterpart to GATT demand-side, consumption-realized measurement. Production-side vs expenditure-side Token GDP analog of national accounts GDP measurement. In equilibrium two should agree up to statistical discrepancy; the measured difference is a research output.",
+        "paper_reference": "paper Section 2.6"
+      },
+      {
+        "name": "TokenOps / FinOps for AI",
+        "school_letter": "industry-operations",
+        "origin_event": "Multiple commercial product launches 2024-2026",
+        "origin_actor": "Finout, BMC Helix, Apptio, CloudHealth, Healthark, Inventive HQ",
+        "methodology": "Firm-level cost management: prompt optimization, batch geometry, model routing, token budget allocation",
+        "representative_metric": "$ per million tokens billed; cost-per-output-quality",
+        "headline_claim": "Within-firm token cost can be reduced 20-60% via prompt structure + model-routing optimization without quality loss",
+        "commercial_implementations": [
+          "Finout TokenOps",
+          "BMC Helix AI cost tracking",
+          "Apptio AI workload management"
+        ],
+        "representative_publications": [
+          "Finout (2024) — Definitive Guide to FinOps for Tokens",
+          "Healthark Insights (2025) — Token Economics: Measuring and Optimizing the Cost of Intelligence",
+          "Inventive HQ (2025) — Optimize Prompts to Reduce Token Costs",
+          "Anonymous (2025) arXiv:2507.03254 — A Survey of FinOps for LLM Token Cost Management"
+        ],
+        "relationship_to_gatt": "Micro-operational firm-level discipline; complementary to GATT macro-empirical measurement. Accounting identity: sum of firm-level token expenditures across firms in a region equals (up to measurement error) the region Token GDP at the macro level. GATT provides denominator for firm-level benchmarking (\"are we paying above or below industry rate?\"); TokenOps provides validation of price-per-million-tokens parameters that enter Token GDP.",
+        "paper_reference": "paper Section 2.7"
+      }
+    ],
+    "positioning_summary": "GATT is the demand-side empirical observatory in a six-framing landscape: (1) Physical-ceiling [Litowitz/Polson/Sokolov] - thermodynamic bounds; (2) Growth-accounting [Brynjolfsson] - macro productivity; (3) Market-microstructure [Xing/Zhuang] - commodity / futures design; (4) NVIDIA supply-side [Huang GTC 2026] - factory capacity revenue; (5) Enterprise FinOps [Finout/Healthark/Inventive HQ] - firm-level cost; (6) Empirical Tokeneconomy [GATT, this work] - demand-side daily measurement. Each framing measures a different facet of the same global Token Economy. GATT is unique among the six in providing daily-update open-data empirical aggregates."
   }
 }

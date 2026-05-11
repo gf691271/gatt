@@ -56,6 +56,11 @@ CITE_MAP = {
     "25": "hulten1978growth",
     "26": "bresnahan1995general",
     "27": "david1990dynamo",
+    "28": "huang2026gtc",
+    "29": "finout2024tokenops",
+    "30": "healthark2025tokenecon",
+    "31": "inventivehq2025promptopt",
+    "32": "tokenfinops2025survey",
 }
 
 PREAMBLE = r"""\documentclass[11pt,a4paper]{article}

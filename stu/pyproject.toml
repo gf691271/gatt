@@ -1,0 +1,33 @@
+[project]
+name = "stu-tokenizer-matrix"
+version = "0.1.0-pre"
+description = "Cross-vendor tokenizer ratio matrix (Petrov-Ahia 2023 refresh for 2026 frontier vendors)"
+authors = [{ name = "Frank Gao" }]
+requires-python = ">=3.11"
+license = "CC-BY-4.0"
+
+dependencies = [
+  "tokenizers>=0.20",        # HuggingFace Rust-backed tokenizer (avoids transformers metadata bug)
+  "tiktoken==0.12.0",         # OpenAI BPE
+  "huggingface_hub>=0.24",    # Download tokenizer.json files
+  "datasets>=2.20",           # FLORES-200 loader
+  "pandas>=2.0",
+  "pyarrow>=15.0",
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+api = [
+  "anthropic>=0.34",
+  "google-genai>=0.3",
+]
+
+[tool.stu]
+# Reproducibility pinning
+seed = 20260511
+flores_revision = "main"        # pin specific commit at run time
+python_hash_seed = "0"
+add_special_tokens = false       # raw tokenizer count, no chat-template wrapping
+normalization = "NFC"            # Unicode normalization
+newline_policy = "LF"            # \r\n -> \n
+strip_bom = true

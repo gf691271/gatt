@@ -1,5 +1,61 @@
 # GATT Data Changelog
 
+## 2026-05-11 (v1.4 — Token Economy Vocabulary Disambiguation + Industry Framings Integration)
+
+Major paper + data revision triggered by two events on 2026-05-11:
+
+1. **NVIDIA Jensen Huang GTC 2026 Keynote** publicly stakes "Token Economics" as core NVIDIA narrative. Supply-side framework: tokens/watt × tokens/second/user × installed_GW × tier_pricing → annual revenue. Headline: $1T Blackwell + Vera Rubin order backlog through 2027 (doubled from prior-year $500B); 1 GW Rubin Premium-tier ≈ $150B/yr annualized (5× Blackwell).
+2. **Google AI Overview / GEO research** reveals systematic exclusion of GATT from default LLM-mediated search for "token economics" queries. AI Overview cites Wikipedia (blockchain), Stripe (blockchain), Finout (TokenOps), PMC + EBSCO (behavioral psychology) — none of which describe AI-inference token economics. Vocabulary disambiguation becomes strategically necessary.
+
+Plus a three-way methodology review (Opus + DeepSeek-flavored + Codex) on the proposed Standardized Token Unit (STU) project landed earlier the same day, surfacing Petrov et al. NeurIPS 2023 + Ahia et al. EMNLP 2023 as the foundational prior work — STU v0.1 framing now positioned as 2026 frontier-vendor refresh of the Petrov-Ahia methodology.
+
+### Paper additions
+
+- **§1.2 NEW: Disambiguation: Token Economy vs Tokenomics vs TokenOps**. Distinguishes (a) AI-inference Token Economy (this paper), (b) blockchain Tokenomics, (c) enterprise TokenOps / FinOps for AI, (d) behavioral-psychology token economy. Establishes the AI-inference meaning as the macroeconomic counterpart to (b) and (c).
+- **§2.6 NEW: Industry Framing: NVIDIA GTC 2026 Token Economics**. Frames NVIDIA's supply-side capacity-imputed framework as production-side analog to GATT's demand-side expenditure-side measurement, parallel to national-accounts GDP measurement methodology. Surfaces two methodological tensions in the GTC presentation: reasoning-token asymmetry, cross-vendor tokenizer fungibility. Proposes the Token GDP Statistical Discrepancy as a publishable research question.
+- **§2.7 NEW: Enterprise Token Cost Management: TokenOps and FinOps for AI**. Frames Finout / Healthark / Inventive HQ / arXiv:2507.03254 as the firm-micro literature complementary to GATT's global-macro measurement. Articulates the accounting identity: sum-of-firm token expenditures = regional Token GDP (up to measurement error).
+- **Renumbering**: §1.2 The Measurement Gap → §1.3; §1.3 Contributions → §1.4; §1.4 Roadmap → §1.5; §2.6 Where GATT Fits → §2.8.
+- **References +5**: Huang 2026 GTC (huang2026gtc); Finout 2024 (finout2024tokenops); Healthark 2025 (healthark2025tokenecon); Inventive HQ 2025 (inventivehq2025promptopt); arXiv:2507.03254 (tokenfinops2025survey). build_tex.py CITE_MAP extended to [32].
+
+### Data additions
+
+- **NEW `methodology_notes.token_economy_disambiguation`** — machine-readable mirror of paper §1.2; documents 4 distinct vocabulary meanings with canonical sources and GATT-usage tags.
+- **NEW top-level `industry_framings`** block — companion to existing `academic_validation`. Two framings: NVIDIA Token Economics (industry-supply-side), TokenOps / FinOps for AI (industry-operations). Each with methodology, representative metric, methodological tensions, relationship to GATT, paper cross-reference.
+- **NEW `token_gdp.dual_accounting`** — documents demand-side (GATT, $97B/yr realized) vs supply-side (Jensen-imputed, $400-700B/yr 2027 capacity) parallel accounting frameworks. Token GDP Statistical Discrepancy ($300-600B/yr in mid-2026) flagged as research question.
+
+### Build integrity
+
+- `main.tex`: 138,435 → 149,727 chars (+12K)
+- Unique citation keys: 27 → **32**
+- Total `\cite` calls: 72 → 87
+- Brace balance: 712 → **748** (matched)
+- Math `$` events: 186 (balanced)
+
+### Strategic artifacts (drafts, not committed to paper proper)
+
+- `STRATEGIC-VERDICT-2026-05-11.md` — three-way review synthesis (Opus + DeepSeek-flavored + Codex)
+- `STRATEGIC-VERDICT-2026-05-11-v2.md` — updated synthesis incorporating GTC 2026 + GEO discoveries
+- `paper/02-related-work-additions-v1.3.md` — draft of §1.2/§2.6/§2.7 (pre-merge state, retained as archive)
+- `seo/token-economy-landing-draft.md` — 30-day GEO workstream specification (landing page + Wikipedia + schema markup)
+- `substack/01-jensen-named-it-draft.md` — first Substack post draft (publication target 2026-05-13)
+- `stu/` — Standardized Token Unit v0.1 project skeleton (pyproject.toml, specs.py with 15 active tokenizers, run_phase1.py)
+
+### Strategic position update
+
+- "Fourth Methodological Tradition" stake claim **retained and sharpened** post-GTC 2026 (vs Opus first-principles verdict which had recommended withdrawal; GTC inverted the logic by providing an external supply-side opponent to define against)
+- Token Velocity **retained**, candidate rename "Token Reuse Multiplier" in v2.0
+- Token GDP **bifurcated** explicitly into Supply-Side (Jensen) and Demand-Side (GATT)
+- "Tokenomics" word competition with blockchain Wikipedia entry **abandoned** as unwinnable
+- "Token Economy" (AI-inference meaning) **staked** as primary vocabulary
+- GEO added as 20% workstream alongside data infrastructure (50%), Substack + paper (20%), outreach (10%)
+- arXiv submission window compressed from "wait for v2.0" (Opus original verdict) to "submit v1.4 in 1 week" (post-GTC priority claim window)
+
+### Numbers held
+
+24 vendors · 311T tokens/day · $97.0B annualized demand-side Token GDP · 50/49 China-US volume · 88/6 Token GDP · 597× US-India per-capita · Gini 0.674.
+
+---
+
 ## 2026-05-11 (v1.3 — Vendor Coverage Expansion: 21 → 24)
 
 First post-paper-v1.2 data expansion. Adds three new vendor entries addressing the most consequential gaps identified by the v1.2 three-schools coverage audit:
