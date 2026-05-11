@@ -2,7 +2,7 @@
 
 ### An Empirical Companion to Physical-Ceiling Models of Global AI Inference
 
-**Frank Gao** · May 2026 · GATT v1.2 · CC BY 4.0
+**Frank Gao** · May 2026 · GATT v1.4 · CC BY 4.0
 Live data: <https://gf691271.github.io/gatt/>
 Source: <https://github.com/gf691271/gatt>
 
@@ -12,7 +12,7 @@ Source: <https://github.com/gf691271/gatt>
 
 In May 2026, the Global AI Token Tracker (GATT) measures **459,700 tokens per United States resident per day** — 2.04× the 2028 physical ceiling of 225,000 tokens per person per day projected by Litowitz, Polson, and Sokolov (2026, arXiv:2603.06630) under a 326 TWh AI energy allocation. This paper presents the empirical methodology underlying that measurement and proposes three reconciliation interpretations: (i) GATT may overestimate top vendors via attribution multipliers, (ii) the paper's Landauer/Shannon ceiling is conservative because real 2026 inference uses Mixture-of-Experts architectures, 4-bit quantization, speculative decoding, and dedicated inference ASICs, yielding 5-10× more tokens per Joule than the physics baseline, and (iii) the two metrics measure different units — GATT measures empirical all-surface output, while the physical-ceiling paper models theoretical capacity assuming fresh compute per token.
 
-GATT is, to our knowledge, the first global, all-sources, daily-updated index of AI token throughput, covering 21 vendors across 12 countries. As of May 9, 2026, GATT measures global daily output at 310 trillion tokens, with China and the United States tied at 50% volume share but the United States capturing 88% of "Token GDP" — a vendor-volume × blended-pricing metric — due to a 15× pricing asymmetry between US and Chinese vendors. The US-India per-capita gap stands at 597×, having widened from 394× one month earlier; the population-weighted Gini coefficient of token consumption across the 12 countries is **0.674**, already exceeding global income inequality (~0.62) and approaching wealth-distribution levels of concentration. We document our methodology, contrast it with IDC China Public Cloud MaaS (which independently confirms our top vendor ranking at 49.5% Volcengine market share), and propose Token GDP as a regional-comparable economic-value metric for the emerging Token Economy. All data and code are released under CC BY 4.0 at gf691271.github.io/gatt/.
+GATT is, to our knowledge, the first global, all-sources, daily-updated index of AI token throughput, covering 24 vendors across 12 countries. As of May 11, 2026, GATT measures global daily output at 311 trillion tokens, with China and the United States essentially tied (50.2/49.5) on volume but the United States capturing 88% of "Token GDP" — a vendor-volume × blended-pricing metric — due to a 15× pricing asymmetry between US and Chinese vendors. The US-India per-capita gap stands at 597×, having widened from 394× one month earlier; the population-weighted Gini coefficient of token consumption across the 12 countries is **0.674**, already exceeding global income inequality (~0.62) and approaching wealth-distribution levels of concentration. We document our methodology, contrast it with IDC China Public Cloud MaaS (which independently confirms our top vendor ranking at 49.5% Volcengine market share), and propose Token GDP as a regional-comparable economic-value metric for the emerging Token Economy. All data and code are released under CC BY 4.0 at gf691271.github.io/gatt/.
 
 ---
 
@@ -24,7 +24,7 @@ In February 2026, Litowitz, Polson, and Sokolov constructed a thermodynamics-gro
 
 In May 2026 — eighteen months ahead of that 2028 projection — the empirical Global AI Token Tracker (GATT) measures US per-capita token throughput at **459,700 tokens per resident per day**, or 2.04× the paper's 2028 ceiling.
 
-This paper takes the discrepancy seriously. It cannot be that an AI ecosystem in 2026 is exceeding a 2028 *physical* ceiling. Yet both numbers are derived carefully — one from peer-track-record physics, the other from twenty-one vendor-level disclosures aggregated daily. The most useful interpretation is not that one is wrong, but that they measure different quantities, or that one of the constituent assumptions is loose.
+This paper takes the discrepancy seriously. It cannot be that an AI ecosystem in 2026 is exceeding a 2028 *physical* ceiling. Yet both numbers are derived carefully — one from peer-track-record physics, the other from twenty-four vendor-level disclosures aggregated daily. The most useful interpretation is not that one is wrong, but that they measure different quantities, or that one of the constituent assumptions is loose.
 
 We propose three reconciliations:
 
@@ -36,7 +36,21 @@ We propose three reconciliations:
 
 We argue that interpretations (2) and (3) jointly account for most of the gap, with (1) contributing a smaller share. Section 5 develops this argument in detail. The point of this paper is not to invalidate either methodology — both are valuable — but to propose that the *productive* interpretation of the discrepancy is methodological maturation rather than measurement error.
 
-## 1.2 The Measurement Gap
+## 1.2 Disambiguation: Token Economy vs. Tokenomics vs. TokenOps
+
+Four distinct concepts use overlapping "token" vocabulary, and confusion among them substantially limits the discoverability and citation pathways of token-economy research. We disambiguate explicitly.
+
+**"Token Economy" (this paper)** refers to the global market for AI inference token production, distribution, and consumption — the empirical phenomenon GATT measures. Throughput is denominated in trillions of tokens per day across 24 vendors and 12 countries; economic value is measured in retail-equivalent USD (Token GDP). This is a *macro-empirical* construct.
+
+**"Tokenomics" / "Token Economics" (blockchain)** refers to the supply dynamics, distribution mechanics, and incentive structures of cryptocurrency tokens within distributed ledger networks. The term predates the LLM-token usage by approximately a decade. When a general reader queries "tokenomics" via Google AI Overview, blockchain content dominates the response by default. We do not contest this vocabulary; GATT does not measure blockchain tokens.
+
+**"TokenOps" / "FinOps for AI" (enterprise cost management)** [29, 30, 31] refers to operational disciplines for tracking and optimizing LLM token consumption at the firm level — prompt structure efficiency, request batching, cost attribution. Commercial SaaS offerings now operationalize this discipline (Finout, BMC Helix, Apptio). TokenOps and the present paper are complementary: TokenOps optimizes within-firm token consumption; this paper measures and aggregates across-firm token consumption at the global level. Section 2.7 develops this complementarity in detail.
+
+**"Token Economy" (behavioral psychology)** refers to a 1960s clinical-psychology behavior-modification protocol — physical tokens earned for target behaviors, exchanged for backup reinforcers. This usage predates both AI and blockchain by decades but operates in a distinct disciplinary literature with no overlap to the present work.
+
+The vocabulary collision is not merely terminological. It directly shapes the discoverability of token-economy research via large-language-model-mediated search (so-called Generative Engine Optimization). We propose that the AI-inference meaning of *"Token Economy"* is the appropriate empirical-macroeconomic counterpart to *"Tokenomics"* (blockchain) and to *"TokenOps"* (firm-level cost management), and use the term consistently in this sense throughout.
+
+## 1.3 The Measurement Gap
 
 GATT exists because no other public dataset measures global AI inference in token units. Existing approaches fall into four categories:
 
@@ -47,16 +61,16 @@ GATT exists because no other public dataset measures global AI inference in toke
 
 GATT fills the gap as a global, all-sources, daily-updated, per-vendor index. It is also, deliberately, free and CC BY 4.0 — addressing what we observe as a citation barrier in the existing commercial-research landscape.
 
-## 1.3 Contributions
+## 1.4 Contributions
 
 This paper makes four contributions:
 
-1. We **introduce GATT** — a daily empirical index of global AI inference token throughput across 21 vendors and 12 countries, with full revision history and confidence ratings. This work directly operationalizes Brynjolfsson's [17] December 2025 prediction that 2026 will see "the emergence of high-frequency AI economic dashboards that track, at the task and occupation level, where AI is boosting productivity, displacing workers, or creating new roles."
+1. We **introduce GATT** — a daily empirical index of global AI inference token throughput across 24 vendors and 12 countries, with full revision history and confidence ratings. This work directly operationalizes Brynjolfsson's [17] December 2025 prediction that 2026 will see "the emergence of high-frequency AI economic dashboards that track, at the task and occupation level, where AI is boosting productivity, displacing workers, or creating new roles."
 2. We **document an all-sources scope methodology** that distinguishes external enterprise API calls from internal first-party usage, and reconcile our scope with IDC's narrower external-MaaS-only methodology.
 3. We **surface and reconcile the 2× discrepancy** with the physics-ceiling literature, proposing a synthesis that is informative for both empirical measurement and physical-bound modeling.
 4. We **propose "Token GDP"** — a vendor-volume × regional-blended-pricing metric — as a regional-comparable economic-value indicator for the Token Economy. This addresses a gap noted by Xing [6], who argues for a "Token Performance Index" as essential infrastructure for an emerging token futures market, and complements the USD-side analysis of Patel [22] and SemiAnalysis.
 
-## 1.4 Roadmap
+## 1.5 Roadmap
 
 Section 2 places GATT in the existing literature spanning commercial research, single-platform studies, physics-economics models, and empirical user studies. Section 3 details the methodology, including vendor coverage, confidence hierarchy, all-sources scope, the daily extrapolation engine, and the Token GDP formula. Section 4 reports empirical findings as of May 9, 2026. Section 5 returns to the 2× discrepancy and develops the reconciliation argument. Section 6 discusses policy and geo-economic implications. Section 7 concludes with limitations and an invitation to collaborate.
 
@@ -126,7 +140,27 @@ GATT's Token GDP construct connects to a longstanding economics literature on th
 
 These three frameworks are not separate concerns — they jointly constrain the interpretation of GATT's headline numbers. The price-volume paradox (Bresnahan-Trajtenberg / Brynjolfsson-Rock-Syverson territory), the workload mix (Acemoglu-Restrepo territory), and the volume-vs-Token-GDP asymmetry (Hulten territory) together form the economic interpretation of the dataset that this paper has so far pursued only descriptively. Future work — particularly a co-authored extension with macroeconomists — could formalize the GATT data as a panel for empirical testing of GPT-era productivity claims.
 
-## 2.6 Where GATT Fits
+## 2.6 Industry Framing: NVIDIA GTC 2026 Token Economics
+
+In May 2026, NVIDIA's GTC keynote [28] introduced a publicly articulated "Token Economics" framework as the company's core narrative for the Blackwell-to-Vera-Rubin architecture transition. The framework plots two axes: **tokens per watt** (Y, throughput per power input) and **tokens per second per user** (X, interaction speed, presented as a proxy for inference quality). Huang's central claim: in a power-constrained world, architectural efficiency on this two-axis surface determines annual revenue per gigawatt of installed inference capacity, with Rubin delivering 5× the 1 GW datacenter annual revenue of Blackwell ($30B → $150B) through 2-10× efficiency gains across user-tier service levels. Total Blackwell + Vera Rubin order backlog through 2027 is reported at approximately $1 trillion, double the prior-year $500 billion projection.
+
+This industry framing is the **supply-side, capacity-imputed counterpart** to the present paper's *demand-side, consumption-measured* approach. The two constructs are best understood through the GDP-accounting analogy: NVIDIA's framework is the *production-side* aggregate (factory output × imputed pricing × utilization assumptions); GATT's Token GDP (Section 3.5) is the *expenditure-side* aggregate (realized vendor revenue from observed token consumption). In a closed token economy, the two should equal each other up to a statistical discrepancy; their measured difference is itself a research output, paralleling the production-vs-expenditure GDP discrepancy that has been a long-standing topic of national-accounts research [25].
+
+Two methodological tensions in the NVIDIA framing warrant explicit note. First, the X-axis "tokens per second per user as proxy for inference quality" implicitly aggregates *output tokens* and *hidden reasoning tokens* (chain-of-thought traces from o1-class reasoning models). Modern reasoning models emit 50-200K reasoning tokens per user-visible answer; whether the GTC framework counts these in Y-axis throughput, in X-axis TPS/user, in both, or in neither is not specified in the public presentation. This *reasoning-token asymmetry* affects both supply-side and demand-side accounting and is the focus of the Section 5.5.8 Token Velocity decomposition. Second, the NVIDIA framework treats "1 token" as a homogeneous unit across vendors and models — an assumption that cross-vendor tokenizer-fungibility analysis (Section 3.2 and Appendix A) directly contradicts.
+
+We propose that demand-side empirical measurement (this paper) and supply-side capacity modeling [1, 28] are complementary frameworks that jointly constrain the global Token Economy more tightly than either alone. The reconciliation work — quantifying and explaining the supply-side vs demand-side Token GDP discrepancy — is a publishable research question that the present paper opens for subsequent work.
+
+## 2.7 Enterprise Token Cost Management: TokenOps and FinOps for AI
+
+A parallel literature in enterprise operations — variously labeled "TokenOps" or "FinOps for AI" — addresses token consumption at the single-firm level. Representative work includes Finout's *Definitive Guide to FinOps for Tokens* [29], Healthark Insights' *Token Economics: Measuring and Optimizing the Cost of Intelligence* [30], Inventive HQ's *Optimize Prompts to Reduce Token Costs* [31], and the academic survey [32]. Commercial SaaS implementations — Finout's TokenOps platform, BMC Helix's AI cost-tracking modules, and similar offerings from CloudHealth and Apptio — provide firm-level dashboards on the dimensions of cost, latency, and model-routing efficiency.
+
+This literature is *micro-operational*: its unit of analysis is the firm, its objects are prompt structure / batch geometry / model selection, and its outputs are cost-per-output-quality optimization decisions. The present paper's unit of analysis is the global system, its objects are vendor-level volumes and pricing, and its outputs are macro-empirical aggregates (Token GDP, per-capita gaps, distributional Gini). The two frameworks are connected by an obvious accounting identity: the sum of firm-level token expenditures across firms in a region equals — up to measurement error — the region's Token GDP at the macro level.
+
+Two specific complementarities follow. First, TokenOps frameworks provide validation of the *price-per-million-tokens* parameters that enter Token GDP calculations: their cost-management product literature documents realized blended pricing across model selections and vendor mixes, which a macro paper cannot directly observe. Second, the present paper's macro-aggregate datasets provide the *denominator* for any firm-level benchmarking question of the form "are we paying above or below the typical industry token rate?" — a question TokenOps SaaS products implicitly answer through opaque proprietary baselines but which an open dataset like GATT can answer transparently.
+
+GATT and TokenOps are not competing methodologies. They occupy distinct scales (global-macro vs. firm-micro) and serve distinct audiences (researchers / policy analysts vs. enterprise FinOps teams). The present paper proposes a productive division of labor: TokenOps platforms operationalize within-firm cost control; the Token Economy literature (this paper, NVIDIA GTC 2026 framing [28], Photons = Tokens physical-ceiling work [1]) provides the macro context within which firm-level decisions are made.
+
+## 2.8 Where GATT Fits
 
 Each of the four traditions covers part of the measurement problem. None covers the full territory:
 
@@ -138,7 +172,7 @@ Each of the four traditions covers part of the measurement problem. None covers 
 | Vendor disclosures | Vendor-specific | One at a time | Irregular | Heterogeneous |
 | Physics-ceiling models | Global | None | Static | Theoretical capacity |
 | User surveys | Global | All major platforms | Periodic | Satisfaction scores |
-| **GATT** | **Global** | **21 vendors, 12 countries** | **Daily** | **Tokens per day, all-sources** |
+| **GATT** | **Global** | **24 vendors, 12 countries** | **Daily** | **Tokens per day, all-sources** |
 
 GATT does not replace any of these. It complements them: the empirical companion to physics-ceiling modeling (Litowitz et al.), the global counterpart to IDC's China-only token report, the all-vendor extension of OpenRouter's single-platform study, and the daily-frequency partner to the quarterly USD trackers. Section 5 develops the most consequential of these complementary relationships — with the Litowitz/Polson/Sokolov physical ceiling — in detail.
 
@@ -165,7 +199,7 @@ Each vendor entry carries a confidence rating drawn from four levels:
 - **Medium** — multiple converging indirect signals (ARR plus pricing plus user count) without a direct throughput number.
 - **Low** — single proxy signal, often months old.
 
-The current distribution of confidence across the 21 vendors is: 4 High, 2 Medium-High, 5 Medium, 10 Low. This skew reflects the disclosure asymmetry between US and Chinese vendors: US vendors typically disclose ARR but not throughput; Chinese vendors increasingly disclose throughput but rarely ARR. Both kinds of signal are usable, but at different confidence levels.
+The current distribution of confidence across the 24 vendors (post-v1.3 expansion) is: 3 High, 2 Medium-High, 8 Medium, 11 Low. This skew reflects the disclosure asymmetry between US and Chinese vendors: US vendors typically disclose ARR but not throughput; Chinese vendors increasingly disclose throughput but rarely ARR. Both kinds of signal are usable, but at different confidence levels.
 
 This taxonomy is a working approximation. The Inference Bottleneck paper (arXiv:2604.17431) provides a more rigorous template — distinguishing observed, inferred, and judgment-based parameters, with explicit sensitivity analysis showing which conclusions are robust to perturbations [12]. GATT v0.83 will adopt this structure, augmenting (not replacing) the four-level confidence field.
 
@@ -183,7 +217,7 @@ IDC's *China Public Cloud Large Model Services* report [4] explicitly excludes c
 
 The two scopes can be reconciled with arithmetic. IDC's 2025 China total of 1,944 trillion tokens for the full year averages to approximately 5.32 trillion tokens per day. Volcengine's IDC market share of 49.5% for full-year 2025 yields approximately 2.64 trillion tokens per day in external MaaS volume. Volcengine's officially disclosed 120 trillion tokens per day, dated April 1, 2026, is a factor of 45 larger. No plausible growth path between January and April closes this gap; the only interpretation is that more than 95% of Volcengine's measured throughput is internal first-party usage that lies outside IDC's scope.
 
-GATT therefore reports Doubao (Volcengine's flagship model) at 132 trillion tokens per day for May 9, 2026, with a `scope_note` field explicitly marking this as all-sources. The IDC validation block in `data/tci-latest.json` documents that GATT and IDC agree on Volcengine's #1 position in China while disagreeing on the absolute volume, with the scope difference fully accounting for the gap.
+GATT therefore reports Doubao (Volcengine's flagship model) at 129 trillion tokens per day for May 11, 2026, with a `scope_note` field explicitly marking this as all-sources. The IDC validation block in `data/tci-latest.json` documents that GATT and IDC agree on Volcengine's #1 position in China while disagreeing on the absolute volume, with the scope difference fully accounting for the gap.
 
 For non-Chinese vendors, the all-sources scope is generally less consequential because the largest internal first-party deployments are smaller relative to external API. Gemini's "All Surfaces" estimate (Search AI Overviews + Gemini App + Workspace + Cloud API) uses a 3.2× multiplier on the disclosed direct-API number; this is an attribution choice rather than a scope expansion, and Section 5 discusses its potential overestimation.
 
@@ -213,7 +247,7 @@ The extrapolation engine runs in the browser when readers load the dashboard, re
 
 ### 3.4.1 Anchor Age and Backtest
 
-The honest framing of GATT's "daily" headline requires reporting the underlying anchor age. Table 1 summarizes the volume-weighted anchor age and growth rate for the top 10 vendors (which collectively cover 88% of global volume) as of May 9, 2026:
+The honest framing of GATT's "daily" headline requires reporting the underlying anchor age. Table 1 summarizes the volume-weighted anchor age and growth rate for the top 10 vendors (which collectively cover approximately 97% of global volume) as of May 11, 2026:
 
 | Vendor | Daily T | Anchor date | Anchor age (days) | g_v (%/mo) | Volume × age |
 |---|---:|:---:|---:|---:|---:|
@@ -249,7 +283,7 @@ where `r(v)` is the region of vendor `v` and `p_{r(v)}` is the regional blended 
 
 These are vendor-volume-weighted blends across input and output token rates and across the model lineup typical for each region. They are intentionally point-in-time. Xing [6] documents that GPT-4-equivalent pricing fell from approximately $60 per million tokens in early 2023 to under $1.50 per million in early 2025 — a 40-fold compression in 24 months. Epoch AI [18] reports a complementary finding from a longitudinal inference-cost panel: cost at fixed performance level halves every two months across the 2024-2026 window. SemiAnalysis [22] independently reports a 1200× compression for GPT-3-class inference cost over a similar window. The three measurements agree in direction and magnitude. Any analysis quoting Token GDP must accompany the figure with an as-of date and a note that the implicit pricing assumptions may have shifted by the time of citation.
 
-For May 9, 2026, GATT computes daily Token GDP at $262.6 million, or $95.8 billion annualized. The regional breakdown is striking: the United States contributes $231 million per day (88% of the total) on 154 trillion tokens; China contributes $15.4 million per day (6%) on 154 trillion tokens. The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference.
+For May 11, 2026, GATT computes daily Token GDP at $265.8 million, or $97.0 billion annualized. The regional breakdown is striking: the United States contributes $234 million per day (88% of the total) on 156 trillion tokens (post-v1.3 Apple Intelligence cloud-routed addition of 2T); China contributes $15.4 million per day (6%) on 154 trillion tokens. The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference.
 
 ### 3.5.1 What "Token GDP" Is and Is Not
 
@@ -265,7 +299,7 @@ We retain the "Token GDP" label because the construct is parallel to GDP in spir
 
 **Illustrative value-added correction.** A first-order estimate of how Token GDP would shift under value-added accounting is informative. Volcengine's all-sources Doubao volume includes substantial intermediate-input usage: Douyin AI Search recommendation calls, Doubao consumer chat, Jimeng image-generation prompt expansion, internal Volcengine pipeline workflows. Even if intermediate-input tokens represent half of all Chinese vendor volume (a conservative estimate, given the IDC arithmetic implies >95% of Volcengine throughput is internal first-party), netting them out would reduce China's value-added token volume by roughly 50%. US vendors are more modular — token sales between OpenAI/Anthropic and downstream API customers are arms-length transactions and would survive value-added netting more intact — though some intermediate-input volume exists (Microsoft Copilot's internal Azure usage, for instance). Applying a conservative 0.4-0.6× value-added scalar to gross Token GDP yields the following illustrative correction:
 
-| Region | Gross Token GDP (% of $95.8B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
+| Region | Gross Token GDP (% of $97.0B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
 |---|:---:|:---:|:---:|
 | United States | 88% | ~0.7× | ~75-82% |
 | China | 6% | ~0.4× | ~3-4% |
@@ -300,29 +334,29 @@ This auditability is the methodology's strongest claim. It does not eliminate me
 
 # 4. Empirical Findings
 
-This section reports headline findings from the GATT v0.82 dataset as of May 9, 2026. All figures are reproducible from `data/snapshots/2026-05-09.json` in the project repository. Where a figure depends on extrapolation between disclosures, the source date and growth-rate assumption are documented in the corresponding vendor entry's `revision_history`.
+This section reports headline findings from the GATT v1.4 dataset as of May 11, 2026. All figures are reproducible from `data/tci-latest.json` (immutable v1.0 baseline at `data/snapshots/2026-05-09.json`; v1.3 vendor expansion and v1.4 methodology integration in current). Where a figure depends on extrapolation between disclosures, the source date and growth-rate assumption are documented in the corresponding vendor entry's `revision_history`.
 
 ## 4.1 Global Volume
 
-Global daily AI inference output stands at **310 trillion tokens per day** as of May 9, 2026. The headline figure aggregates 21 tracked vendors across 12 countries, with a small "Rest of World" residual covering geographies not yet broken out individually. Growth has run at approximately 22% per month over the preceding eight weeks — a doubling time of roughly 3.5 months. Extrapolating this rate forward through year-end 2026 yields a projection band of **1.1 to 1.5 quadrillion tokens per day** by December 2026, with the conservative end of the band assuming growth deceleration to 18% per month and the aggressive end assuming sustained 22% per month.
+Global daily AI inference output stands at **311 trillion tokens per day** as of May 11, 2026. The headline figure aggregates 24 tracked vendors across 12 countries (21 vendors at v1.0 publication state plus Apple Intelligence cloud-routed, Cohere, and Sarvam AI added in v1.3), with a small "Rest of World" residual covering geographies not yet broken out individually. Growth has run at approximately 22% per month over the preceding eight weeks — a doubling time of roughly 3.5 months. Extrapolating this rate forward through year-end 2026 yields a projection band of **1.1 to 1.5 quadrillion tokens per day** by December 2026, with the conservative end of the band assuming growth deceleration to 18% per month and the aggressive end assuming sustained 22% per month.
 
-The 310T figure is itself the result of substantial recent revisions. GATT v0.79 (May 4, 2026) reported 264T per day; v0.80 (also May 9) raised this to 305T after seven vendor anchor upgrades reflecting Pichai's 16-billion-tokens-per-minute Q1 disclosure, Anthropic's Opus 4.7 launch and 44% MAU surge, Microsoft's Q3 FY26 $37B AI ARR earnings release, Kimi K2.6's launch and ARR doubling, DeepSeek V4 Pro/Flash's launch, and minor adjustments to Qwen and Hunyuan. v0.81 added 5 trillion tokens per day from third-party revisions (OpenRouter platform data, Perplexity user metrics, and the new Xiaomi MiMo entry). The week-over-week swing from 264T to 310T (+17%) reflects measurement-update density rather than a single underlying growth event; vendor activity in the April 1 to May 9 window was unusually rich in publishable signals.
+The 311T figure is itself the result of substantial recent revisions. GATT v0.79 (May 4, 2026) reported 264T per day; v0.80 (also May 9) raised this to 305T after seven vendor anchor upgrades reflecting Pichai's 16-billion-tokens-per-minute Q1 disclosure, Anthropic's Opus 4.7 launch and 44% MAU surge, Microsoft's Q3 FY26 $37B AI ARR earnings release, Kimi K2.6's launch and ARR doubling, DeepSeek V4 Pro/Flash's launch, and minor adjustments to Qwen and Hunyuan. v0.81 added 5 trillion tokens per day from third-party revisions (OpenRouter platform data, Perplexity user metrics, and the new Xiaomi MiMo entry). The week-over-week swing from 264T to 310T (+17%) reflects measurement-update density rather than a single underlying growth event; vendor activity in the April 1 to May 9 window was unusually rich in publishable signals.
 
 ### 4.1.1 Sensitivity Band on the Headline
 
-The 310T point estimate carries methodological uncertainty that warrants explicit bracketing. Following the parameter classification template from Inference Bottleneck [12] (observed / inferred / judgment-based), GATT publishes three scenarios for the headline global figure:
+The 311T point estimate carries methodological uncertainty that warrants explicit bracketing. Following the parameter classification template from Inference Bottleneck [12] (observed / inferred / judgment-based), GATT publishes three scenarios for the headline global figure:
 
 | Scenario | Global daily tokens (T) | Methodology |
 |---|---:|---|
 | Conservative | 250 | Photons=Tokens-anchored: trim Gemini All-Surfaces multiplier 3.2× → 2.5×; trim Doubao all-sources by 5% (cache adjustment); apply 15% reduction across vendors with low-confidence ratings |
-| **Best estimate** | **310** | **GATT v0.86 published values; vendor-volume-weighted, all-sources, May 9, 2026 anchored** |
+| **Best estimate** | **311** | **GATT v1.4 published values; vendor-volume-weighted, all-sources, May 11, 2026 anchored** |
 | Aggressive | 400 | 22%/mo growth assumption holds through end-Q2 2026; assumes 1-2 additional Pichai-class US disclosures by mid-June |
 
 The conservative bound (250T) maintains all five qualitative GATT findings — China-US volume near-parity (53/47 in conservative), US Token GDP dominance ≥85%, per-capita gap ≥450× US/India, growth trajectory positive, and the 2× tension with the Photons=Tokens 2028 ceiling persists (350K conservative US per-capita > 225K ceiling). The qualitative robustness of GATT's headline claims to conservative recalibration is, in our judgment, the strongest argument for citing GATT figures despite the unavoidable measurement uncertainty in the underlying vendor data.
 
 ## 4.2 Volume Parity Between China and the United States
 
-For the first time since GATT began publishing in February 2026, the China and United States token-volume shares are essentially tied. As of May 9: **China 50.0% of global volume (153.92 trillion tokens per day)**, **United States 49.7% (154.62 trillion tokens per day)**, with Europe at 0.24% (0.74 trillion, dominated by Mistral) and the Rest of World residual at the remainder.
+For the first time since GATT began publishing in February 2026, the China and United States token-volume shares are essentially tied. As of May 11 (post-v1.3 expansion that added Apple Intelligence 2T to the US side): **United States 50.2% of global volume (156 trillion tokens per day)**, **China 49.5% (154 trillion tokens per day)**, with Europe at ~0.24% (0.74 trillion, dominated by Mistral and Cohere) and the Rest of World residual at the remainder. At v1.0 publication state (May 9, 2026, pre-Apple) the two were exactly tied at 154T each; the v1.3 expansion places the US marginally ahead.
 
 The convergence is recent. On April 6, 2026, GATT v0.75 measured China at 58% and the United States at 35%. The 5-week shift to 50/50 reflects new United States hard-data disclosures rather than slowed Chinese growth: Pichai's 16-billion-tokens-per-minute API disclosure (a 60% quarter-over-quarter increase from Q4 2025's 10 billion) raised Gemini's All Surfaces estimate from 57T to 73T; Microsoft's Q3 FY26 disclosure of $37 billion AI business ARR (+123% year-over-year) and 20 million paid Copilot seats raised Microsoft's estimate from 8.1T to 10T; OpenAI's GPT-5.5 launch (April 23) and GPT-5.5 Instant rollout (May 5) raised OpenAI's estimate from 40T to 45T; Anthropic's Opus 4.7 launch (April 16, with a new tokenizer producing up to 35% more tokens per equivalent input) plus 44% Claude monthly-active-user growth raised Anthropic from 15T to 22T. China's leaders held steady on extrapolation through the same window, with no comparably large new disclosures.
 
@@ -330,12 +364,12 @@ The volume parity is the headline geo-economic finding of the v0.82 release. It 
 
 ## 4.3 Token GDP Asymmetry
 
-Daily Token GDP — vendor volume × regional blended price (Section 3.5) — totals **$262.6 million per day** ($95.8 billion annualized). The regional split is the inverse of volume:
+Daily Token GDP — vendor volume × regional blended price (Section 3.5) — totals **$265.8 million per day** ($97.0 billion annualized) post-v1.3 expansion. The regional split is the inverse of volume:
 
-- **United States: $231 million per day, 88% of global Token GDP, on 49.7% of volume.**
-- **China: $15.4 million per day, 6% of global Token GDP, on 50.0% of volume.**
+- **United States: $234 million per day, 88% of global Token GDP, on 50.2% of volume.**
+- **China: $15.4 million per day, 6% of global Token GDP, on 49.5% of volume.**
 - Europe: $10.8 million per day, 4% of Token GDP, on 0.24% of volume.
-- Rest of World: $5.4 million per day, 2% of Token GDP, on 1.4% of volume.
+- Rest of World: $5.6 million per day, 2% of Token GDP, on 2.0% of volume (post-v1.3 Cohere + Sarvam additions).
 
 The driver is a 15× pricing gap between United States and Chinese vendors. Anthropic's Opus 4.7 prices at $5 per million input tokens and $25 per million output (a blend of approximately $7.50 per million); GPT-5.5 prices at $5/$30 per million ($8 blended); Doubao prices at approximately $0.10 per million blended; DeepSeek V4 Pro at $0.145 input / $1.74 output. Volume parity at 50/50 thus produces economic value at 88/6 — the central paradox of the May 2026 Token Economy.
 
@@ -381,7 +415,7 @@ The Lorenz curve (formal computation in the script) shows a particularly sharp i
 
 ## 4.5 Top Vendor Findings
 
-The top four vendors account for **88% of global volume**:
+The top four vendors account for **87% of global volume**:
 
 - **Doubao (ByteDance, China): 129 trillion tokens per day**, 42% of global. All-sources scope including external Volcengine MaaS, Douyin AI Search, the Doubao consumer app, the Jimeng image-generation pipeline, and internal Volcengine workflows. The May 7, 2026 IDC China Public Cloud MaaS report independently confirms Volcengine #1 in China at 49.5% market share for full-year 2025 [4]. The all-sources vs. external-MaaS scope reconciliation is detailed in Section 3.3.
 
@@ -419,7 +453,7 @@ Both numbers are produced carefully. We argue that the gap reflects three compou
 
 The Litowitz et al. ceiling derives from three inputs: a 326 TWh US AI energy allocation projected for 2028, Landauer's information-theoretic minimum energy cost per bit, and a Shannon-channel capacity calibration anchored to GPT-4-class inference efficiency. Their token-budget framework is rigorous within these assumptions and produces a meaningful upper bound on token production under fixed inputs. The 225,000 tokens-per-resident-per-day figure is the per-capita normalization of their aggregate ceiling under 2028 US population estimates.
 
-The GATT empirical figure derives from twenty-one vendor-level estimates summed into a national total, divided by US population. Each vendor estimate is anchored in a dated source signal — a vendor disclosure, an ARR-and-pricing back-calculation, or platform-aggregator data — and updated via the extrapolation engine described in Section 3.4.
+The GATT empirical figure derives from twenty-four vendor-level estimates summed into a national total, divided by US population. Each vendor estimate is anchored in a dated source signal — a vendor disclosure, an ARR-and-pricing back-calculation, or platform-aggregator data — and updated via the extrapolation engine described in Section 3.4.
 
 The two figures are not measuring the same physical quantity. We now develop three reconciliation interpretations, each accounting for some portion of the 2× ratio.
 
@@ -653,7 +687,7 @@ Beyond the dataset, three research directions are open: deeper integration with 
 
 # 7. Conclusion
 
-This paper introduced GATT — to our knowledge, the first global, all-sources, daily-updated empirical index of AI inference token throughput. As of May 9, 2026, GATT measures global daily output at 310 trillion tokens across 21 vendors and 12 countries, with China and the United States tied at 50% volume share, the United States capturing 88% of Token GDP at $95.8 billion annualized, and a 597× United States–India per-capita gap.
+This paper introduced GATT — to our knowledge, the first global, all-sources, daily-updated empirical index of AI inference token throughput. As of May 11, 2026, GATT measures global daily output at 311 trillion tokens across 24 vendors and 12 countries, with China and the United States essentially tied (49.5/50.2) on volume share, the United States capturing 88% of Token GDP at $97.0 billion annualized, and a 597× United States–India per-capita gap.
 
 The central methodological contribution of the paper is the documented 2.04× discrepancy between GATT's empirical United States per-capita figure (459,700 tokens per resident per day in May 2026) and the physical 2028 ceiling of 225,000 projected by Litowitz, Polson, and Sokolov [1]. Three reconciliation interpretations — partial GATT overestimation, conservative physical-ceiling calibration relative to 2026 inference-stack efficiency, and a unit-of-measurement difference between emitted and fresh-compute tokens — jointly account for the gap without invoking measurement error in either methodology. Empirical tracking and physical-bound modeling are productive complements; the Token Economy needs both.
 
@@ -665,9 +699,9 @@ GATT v1.0 introduces a fourth tradition — **empirical tokeneconomy** — whose
 
 ---
 
-# Appendix A. Full Vendor List with Confidence Ratings (May 9, 2026)
+# Appendix A. Full Vendor List with Confidence Ratings (May 11, 2026)
 
-The full vendor table from GATT v0.82, ordered by daily token throughput. All figures in trillions of tokens per day. Confidence ratings per Section 3.2. The dataset is the canonical source; this appendix is a reproducible extract.
+The full vendor table from GATT v1.4, ordered by daily token throughput. All figures in trillions of tokens per day. Confidence ratings per Section 3.2 (4-level upgrade in v1.1). The dataset is the canonical source; this appendix is a reproducible extract. The v0.82 table below has been augmented with the three v1.3 additions (Apple Intelligence cloud-routed, Cohere, Sarvam AI) re-ranked into the global volume ordering; the v0.82 snapshot remains immutable at `data/snapshots/2026-05-09.json`.
 
 | Rank | Vendor | Country | Daily Tokens (T) | Confidence | Tier | Source date | Notes |
 |------|--------|---------|-----------------:|:----------:|:----:|-------------|-------|
@@ -675,31 +709,34 @@ The full vendor table from GATT v0.82, ordered by daily token throughput. All fi
 | 2 | Google Gemini (All Surfaces) | US | 73.0 | Medium | 1 | 2026-04-09 | Pichai 16B tokens/min API observed; 3.2× All Surfaces multiplier is editorial (downgraded from High in v1.0 per Sokolov critique) |
 | 3 | OpenAI (ChatGPT + API) | US | 45.0 | High | 1 | 2026-05-05 | 15B tokens/min API; GPT-5.5 + 5.5 Instant launches |
 | 4 | Anthropic Claude | US | 22.0 | High | 1 | 2026-04-16 | Opus 4.7 + 35% tokenizer expansion + MAU +44% |
-| 5 | DeepSeek | CN | 9.2 | Low | 2 | 2026-04-24 | V4 Pro/Flash launch; 1M context; #3 enterprise SDK |
-| 6 | Microsoft Azure + Copilot | US | 10.0 | Medium | 1 | 2026-04-29 | Q3 FY26: $37B AI ARR; 20M Copilot seats |
+| 5 | Microsoft Azure + Copilot | US | 10.0 | Medium-High | 1 | 2026-04-29 | Q3 FY26: $37B AI ARR; 20M Copilot seats |
+| 6 | DeepSeek | CN | 9.2 | Low | 2 | 2026-04-24 | V4 Pro/Flash launch; 1M context; #3 enterprise SDK |
 | 7 | Qwen (Alibaba Cloud) | CN | 6.2 | Medium | 1 | 2026-04-02 | Qwen 3.6-Plus; Alibaba Token Hub reorg |
 | 8 | OpenRouter (aggregator) | US | 3.0 | High | 1 | 2026-04-30 | Aggregator overlap with vendor totals; 20T/week April |
 | 9 | Hy3 / Hunyuan 3.0 (Tencent) | CN | 2.7 | Low | 2 | 2026-04-23 | Open-sourced; 295B-A21B MoE; 256K context |
 | 10 | Kimi (Moonshot AI) | CN | 2.5 | Medium | 1 | 2026-04-20 | K2.6 launch; ARR doubled; $20B valuation |
-| 11 | ERNIE (Baidu) | CN | 1.85 | Medium | 1 | 2026-01-25 | 2.4T params MoE; 202M MAU; IDC #3 (17%) |
-| 12 | Spark (iFlytek) | CN | 1.62 | Medium | 1 | 2025-Q4 | iFlytek Q4 2025 earnings |
-| 13 | Mistral AI | FR | 0.74 | Low | 2 | 2025-Q4 | $400M ARR back-calculation |
-| 14 | Grok (xAI) | US | 0.55 | Low | 2 | 2026-04-15 | First negative-growth vendor (-5%/mo) |
-| 15 | MiniMax | CN | 0.42 | Medium | 1 | 2026-02 | OpenRouter + HuggingFace data |
-| 16 | Perplexity AI | US | 0.35 | Medium | 1 | 2026-04-30 | 45M MAU; $200M ARR Sep 2025 |
-| 17 | Groq | US | 0.32 | Low | 2 | 2026-01-15 | LPU capacity back-calc |
-| 18 | MiMo-V2-Pro (Xiaomi) | CN | 0.30 | Low | 2 | 2026-03-18 | NEW v0.81; 1T params MoE; 1M context |
-| 19 | Llama API (Meta) | US | 0.23 | Low | 2 | 2026-03-15 | "Virtually no standalone users vs OpenAI" |
-| 20 | Amazon Bedrock | US | 0.17 | Low | 2 | 2025-Q4 | AWS revenue ÷ price |
-| 21 | GLM (Zhipu AI) | CN | 0.13 | Medium | 1 | 2026-02 | OpenRouter data |
+| 11 | Apple Intelligence (Private Cloud Compute) | US | 2.0 | Low | 2 | 2026-05-11 | v1.3 NEW. Cloud-only estimate; on-device excluded; WWDC 2026-pending |
+| 12 | ERNIE (Baidu) | CN | 1.85 | Medium | 1 | 2026-01-25 | 2.4T params MoE; 202M MAU; IDC #3 (17%) |
+| 13 | Spark (iFlytek) | CN | 1.62 | Medium | 1 | 2025-Q4 | iFlytek Q4 2025 earnings |
+| 14 | Mistral AI | FR | 0.74 | Low | 2 | 2025-Q4 | $400M ARR back-calculation |
+| 15 | Grok (xAI) | US | 0.55 | Low | 2 | 2026-04-15 | First negative-growth vendor (-5%/mo) |
+| 16 | MiniMax | CN | 0.42 | Medium | 1 | 2026-02 | OpenRouter + HuggingFace data |
+| 17 | Perplexity AI | US | 0.35 | Medium | 1 | 2026-04-30 | 45M MAU; $200M ARR Sep 2025 |
+| 18 | Groq | US | 0.32 | Low | 2 | 2026-01-15 | LPU capacity back-calc |
+| 19 | MiMo-V2-Pro (Xiaomi) | CN | 0.30 | Low | 2 | 2026-03-18 | v0.81; 1T params MoE; 1M context |
+| 20 | Llama API (Meta) | US | 0.23 | Low | 2 | 2026-03-15 | "Virtually no standalone users vs OpenAI" |
+| 21 | Amazon Bedrock | US | 0.17 | Low | 2 | 2025-Q4 | AWS revenue ÷ price |
+| 22 | GLM (Zhipu AI) | CN | 0.13 | Medium | 1 | 2026-02 | OpenRouter data |
+| 23 | Cohere (Command R+ / Command A) | CA | 0.10 | Low | 2 | 2026-05-11 | v1.3 NEW. First Canada-HQ entry; enterprise-only; $80M ARR back-calc |
+| 24 | Sarvam AI (Sarvam-M, Sarvam-1) | IN | 0.05 | Low | 2 | 2026-05-11 | v1.3 NEW. First India-HQ vendor; 22 Indian languages; IndiaAI Mission |
 
-**Confidence distribution (v1.0):** 3 High · 2 Medium-high · 6 Medium · 10 Low (totals to 21). The Gemini All Surfaces composite was downgraded from High to Medium in v1.0; the API component (23T) remains High confidence, but the 3.2× All Surfaces multiplier covering Search AI Overviews, Gemini App, and Workspace is editorial rather than measured, and the composite estimate inherits the weaker rating of its components.
+**Confidence distribution (v1.4):** 3 High · 2 Medium-High · 8 Medium · 11 Low (totals to 24). The Gemini All Surfaces composite was downgraded from High to Medium in v1.0 (Sokolov critique on 3.2× All-Surfaces multiplier as editorial). v1.1 introduced the 4-level taxonomy (adding Medium-High between High and Medium). v1.3 added 3 Low-confidence entries (Apple Intelligence, Cohere, Sarvam) — all judgment-based until WWDC 2026 and other vendor disclosures land.
 
-**Parameter classification (v1.0, per Inference Bottleneck arXiv:2604.17431 [12]):** Each estimate is additionally classified by source quality. *Observed* = direct vendor disclosure of comparable measure within 90 days (4 vendors: Doubao 120T baseline, OpenAI 15B/min API, Pichai 16B/min API, Anthropic ARR trajectory). *Inferred* = computed from corroborated indirect signals such as ARR-and-pricing back-calculation (10 vendors). *Judgment-based* = editorial estimate where signals are sparse (7 vendors). The All Surfaces multiplier for Gemini (3.2×) is judgment-based; Anthropic's 35% tokenizer expansion factor as applied to GATT's 22T estimate is judgment-based (the 35% upper-bound figure is observed; the assumption that this rate applies as average to GATT's volume base is editorial).
-**Tier distribution:** 12 Tier-1 (direct or strong indirect) · 9 Tier-2 (back-calc / proxy)
-**Country distribution:** 10 US · 10 CN · 1 FR (totals to 21)
+**Parameter classification (v1.4, per Inference Bottleneck arXiv:2604.17431 [12], downsunk to vendor row in v1.1):** Each estimate is classified by source quality. *Observed* (4 vendors): Doubao Volcengine official + IDC validation; OpenAI 15B tokens/min API official; Pichai Gemini 16B tokens/min API; Anthropic ARR trajectory. *Inferred* (10 vendors): Microsoft, Qwen, OpenRouter, Hy3, Kimi, ERNIE, Spark, MiniMax, Perplexity, DeepSeek — corroborated indirect signals. *Judgment-based* (10 vendors): Mistral, Grok, Groq, Xiaomi MiMo, Llama API, Bedrock, GLM, plus v1.3 additions (Apple, Cohere, Sarvam). The All Surfaces multiplier for Gemini (3.2×) and Anthropic 35% tokenizer expansion factor remain judgment-based even though the underlying vendor signals are observed.
+**Tier distribution:** 12 Tier-1 (direct or strong indirect) · 12 Tier-2 (back-calc / proxy / judgment)
+**Country distribution:** 11 US · 10 CN · 1 FR · 1 CA · 1 IN (totals to 24)
 
-**Vendor sum:** 309.28T per day across 21 vendors. The reported global total of 310T per day in the main text rounds the vendor sum (309.28T) and adds a small (~0.7T) Rest-of-World residual for activity in non-tracked geographies (Saudi Arabia, India, Brazil, Indonesia, etc.) not attributable to any tracked vendor headquarters. The `token_gdp.breakdown` regional totals in the dataset (US 154T + CN 154T + EU 9T + ROW 6T = 323T) include a further allocation of country-level non-vendor-attributable usage, which is why the regional sum exceeds the vendor sum by ~13T (~4%). This residual is documented in the dataset's `correction_log` and represents enterprise / consumer AI usage in tracked countries that uses non-tracked vendors or self-hosted open-weight models.
+**Vendor sum:** 311.43T per day across 24 vendors. The reported global total of 311T per day in the main text rounds the vendor sum. The `token_gdp.breakdown` regional totals in the dataset (US 156T + CN 154T + EU 9T + ROW 6.15T = 325T) include a further allocation of country-level non-vendor-attributable usage; the regional sum exceeds the vendor sum by ~14T (~4.4%). This residual is documented in the dataset's `correction_log` and represents enterprise / consumer AI usage in tracked countries that uses non-tracked vendors or self-hosted open-weight models.
 
 **Source files:**
 - Live data: `data/tci-latest.json`
@@ -708,9 +745,11 @@ The full vendor table from GATT v0.82, ordered by daily token throughput. All fi
 
 ---
 
-# Appendix B. Token GDP Worked Example (May 9, 2026)
+# Appendix B. Token GDP Worked Example (May 9, 2026 — v1.0 publication-state)
 
-This appendix walks through the Token GDP calculation in full, demonstrating how regional aggregations are derived from per-vendor estimates and how the headline $95.8 billion annualized figure is obtained.
+This appendix walks through the Token GDP calculation in full, demonstrating how regional aggregations are derived from per-vendor estimates and how the v1.0 headline $95.8 billion annualized figure was obtained.
+
+**v1.4 update note (2026-05-11):** The worked example below is preserved as the v1.0 reproducible tutorial anchored to the immutable snapshot `data/snapshots/2026-05-09.json` (21 vendors, $95.8B annualized). The v1.3 vendor expansion added Apple Intelligence Private Cloud Compute (US, +2T, ~+$3M/day at $1.50/M), Cohere (CA, +0.10T, ~+$0.15M/day at $1.50/M), and Sarvam AI (IN, +0.05T, ~+$0.025M/day at $0.50/M), shifting the v1.4 headline to **$97.0 billion annualized** ($265.8M/day on 311T/day across 24 vendors). Readers wishing to reproduce the v1.4 headline should apply these three additions to the v1.0 base below; readers wishing to follow the worked-example pedagogy intact should use the v1.0 numbers as published.
 
 ## B.1 Per-Vendor Volume by Region
 
@@ -969,18 +1008,4 @@ The script accepts custom factor ranges and correlation values via command-line 
 
 ## References
 
-Bibliography in BibTeX format at `paper/references.bib` (42 entries, 27 used in cite calls in main.tex). Key references:
-
-- [1] Litowitz, Polson, Sokolov (2026) — *Photons = Tokens* (arXiv:2603.06630)
-- [4] IDC (2026) — *China Public Cloud Large Model Services Market Tracker*
-- [6] Xing (2026) — *AI Token Futures Market* (arXiv:2603.21690)
-- [11] Zhuang et al. (2025) — *LLM Inference Production Frontier* (arXiv:2510.26136)
-- [12] Inference Bottleneck Working Group (2026) — arXiv:2604.17431
-- [18] Sevilla et al. (Epoch AI, 2026) — *Inference cost panel*
-- [19] Crawford (2021) — *Atlas of AI*
-- [20] Hao (2025) — *Empire of AI*
-- [21] CSIS Wadhwani (2026) — *Token Bill*
-- [22] Patel (SemiAnalysis) — *AI Cloud TCO*
-- [27] David (1990) — *The Computer and the Dynamo* (AER)
-
-Plus Brynjolfsson 2025-12 dashboards prediction, Brynjolfsson-Rock-Syverson 2021 Productivity J-curve, Hulten 1978, Bresnahan-Trajtenberg 1995, Acemoglu-Restrepo 2018, Shannon 1948, Landauer 1961.
+See `paper/references.bib` for 47 entries; 32 used in main.tex cite calls.

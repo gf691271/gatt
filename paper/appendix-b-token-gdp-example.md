@@ -1,6 +1,8 @@
-# Appendix B. Token GDP Worked Example (May 9, 2026)
+# Appendix B. Token GDP Worked Example (May 9, 2026 — v1.0 publication-state)
 
-This appendix walks through the Token GDP calculation in full, demonstrating how regional aggregations are derived from per-vendor estimates and how the headline $95.8 billion annualized figure is obtained.
+This appendix walks through the Token GDP calculation in full, demonstrating how regional aggregations are derived from per-vendor estimates and how the v1.0 headline $95.8 billion annualized figure was obtained.
+
+**v1.4 update note (2026-05-11):** The worked example below is preserved as the v1.0 reproducible tutorial anchored to the immutable snapshot `data/snapshots/2026-05-09.json` (21 vendors, $95.8B annualized). The v1.3 vendor expansion added Apple Intelligence Private Cloud Compute (US, +2T, ~+$3M/day at $1.50/M), Cohere (CA, +0.10T, ~+$0.15M/day at $1.50/M), and Sarvam AI (IN, +0.05T, ~+$0.025M/day at $0.50/M), shifting the v1.4 headline to **$97.0 billion annualized** ($265.8M/day on 311T/day across 24 vendors). Readers wishing to reproduce the v1.4 headline should apply these three additions to the v1.0 base below; readers wishing to follow the worked-example pedagogy intact should use the v1.0 numbers as published.
 
 ## B.1 Per-Vendor Volume by Region
 

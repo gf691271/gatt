@@ -6,7 +6,7 @@ In February 2026, Litowitz, Polson, and Sokolov constructed a thermodynamics-gro
 
 In May 2026 — eighteen months ahead of that 2028 projection — the empirical Global AI Token Tracker (GATT) measures US per-capita token throughput at **459,700 tokens per resident per day**, or 2.04× the paper's 2028 ceiling.
 
-This paper takes the discrepancy seriously. It cannot be that an AI ecosystem in 2026 is exceeding a 2028 *physical* ceiling. Yet both numbers are derived carefully — one from peer-track-record physics, the other from twenty-one vendor-level disclosures aggregated daily. The most useful interpretation is not that one is wrong, but that they measure different quantities, or that one of the constituent assumptions is loose.
+This paper takes the discrepancy seriously. It cannot be that an AI ecosystem in 2026 is exceeding a 2028 *physical* ceiling. Yet both numbers are derived carefully — one from peer-track-record physics, the other from twenty-four vendor-level disclosures aggregated daily. The most useful interpretation is not that one is wrong, but that they measure different quantities, or that one of the constituent assumptions is loose.
 
 We propose three reconciliations:
 
@@ -47,7 +47,7 @@ GATT fills the gap as a global, all-sources, daily-updated, per-vendor index. It
 
 This paper makes four contributions:
 
-1. We **introduce GATT** — a daily empirical index of global AI inference token throughput across 21 vendors and 12 countries, with full revision history and confidence ratings. This work directly operationalizes Brynjolfsson's [17] December 2025 prediction that 2026 will see "the emergence of high-frequency AI economic dashboards that track, at the task and occupation level, where AI is boosting productivity, displacing workers, or creating new roles."
+1. We **introduce GATT** — a daily empirical index of global AI inference token throughput across 24 vendors and 12 countries, with full revision history and confidence ratings. This work directly operationalizes Brynjolfsson's [17] December 2025 prediction that 2026 will see "the emergence of high-frequency AI economic dashboards that track, at the task and occupation level, where AI is boosting productivity, displacing workers, or creating new roles."
 2. We **document an all-sources scope methodology** that distinguishes external enterprise API calls from internal first-party usage, and reconcile our scope with IDC's narrower external-MaaS-only methodology.
 3. We **surface and reconcile the 2× discrepancy** with the physics-ceiling literature, proposing a synthesis that is informative for both empirical measurement and physical-bound modeling.
 4. We **propose "Token GDP"** — a vendor-volume × regional-blended-pricing metric — as a regional-comparable economic-value indicator for the Token Economy. This addresses a gap noted by Xing [6], who argues for a "Token Performance Index" as essential infrastructure for an emerging token futures market, and complements the USD-side analysis of Patel [22] and SemiAnalysis.

@@ -16,7 +16,7 @@
 
 > Dear Alec, Nick, and Vadim,
 >
-> I just posted the empirical companion paper to your *Photons = Tokens* (arXiv:2603.06630) on arXiv: **[ARXIV_URL]**. It builds the daily 21-vendor index (Global AI Token Tracker, GATT) needed to test your physical-ceiling projection against measured 2026 reality.
+> I just posted the empirical companion paper to your *Photons = Tokens* (arXiv:2603.06630) on arXiv: **[ARXIV_URL]**. It builds the daily 24-vendor index (Global AI Token Tracker, GATT) needed to test your physical-ceiling projection against measured 2026 reality.
 >
 > Headline: GATT measures **459,700 tokens per US resident per day** in May 2026, against your 2028 ceiling of 225,000 — a **2.04× discrepancy**. Section 5 proposes three reconciliation interpretations and Appendix C runs a 10K-draw Bayesian Monte Carlo over the inference-stack efficiency multipliers (MoE 1.05–1.20×, 4-bit quantization 2.0–4.0×, speculative decoding + ASIC blended 1.25–1.65×, ρ=0.4). Honest finding: even at the upper joint posterior, the decomposition is partial — a fourth factor (likely 30–50% theoretical-vs-empirical hardware utilization) is needed to close the gap. We do **not** add an ad-hoc /4 correction.
 >
@@ -36,10 +36,10 @@
 
 > Dear Professor Brynjolfsson,
 >
-> In December 2025 you forecast that 2026 would see *"high-frequency AI economic dashboards tracking AI's economic impact in near real-time."* I built one: the **Global AI Token Tracker (GATT)** — 21 vendors, 12 countries, daily updated since February 2026. The methodology paper is now live on arXiv: **[ARXIV_URL]**.
+> In December 2025 you forecast that 2026 would see *"high-frequency AI economic dashboards tracking AI's economic impact in near real-time."* I built one: the **Global AI Token Tracker (GATT)** — 24 vendors, 12 countries, daily updated since February 2026. The methodology paper is now live on arXiv: **[ARXIV_URL]**.
 >
 > A few findings I think you'll find consequential:
-> - Global daily output: **310 trillion tokens**; annualized "Token GDP" $95.8B
+> - Global daily output: **311 trillion tokens**; annualized "Token GDP" $97.0B
 > - **China and the US are tied at 50% volume** — but the US captures **88% of Token GDP** (15× pricing asymmetry)
 > - **US–India per-capita gap: 597×**, widened from 448× in five weeks
 > - The paper documents a productive **2.04× tension** with the Litowitz/Polson/Sokolov 2028 physical ceiling, with three reconciliation interpretations + Bayesian sensitivity analysis
@@ -64,9 +64,9 @@
 
 > Dear Professor Xing,
 >
-> Your *AI Token Futures* paper (arXiv:2603.21690) called for a **Token Performance Index** as essential market infrastructure. I posted a working prototype to arXiv today: **[ARXIV_URL]**. The paper documents the methodology behind the **Global AI Token Tracker (GATT)** — 21 vendors, daily updated, open data.
+> Your *AI Token Futures* paper (arXiv:2603.21690) called for a **Token Performance Index** as essential market infrastructure. I posted a working prototype to arXiv today: **[ARXIV_URL]**. The paper documents the methodology behind the **Global AI Token Tracker (GATT)** — 24 vendors, daily updated, open data.
 >
-> GATT measures 310T tokens/day globally, with vendor-level transparency, snapshot-based reproducibility, and a "Token GDP" weighted variant that addresses the regional-pricing-asymmetry problem TPI specifications need to solve. Section 6.5 explicitly positions GATT against your TPI specification.
+> GATT measures 311T tokens/day globally, with vendor-level transparency, snapshot-based reproducibility, and a "Token GDP" weighted variant that addresses the regional-pricing-asymmetry problem TPI specifications need to solve. Section 6.5 explicitly positions GATT against your TPI specification.
 >
 > If a TPI standard is being developed, would you be open to GATT contributing the empirical reference layer? I'd value your reactions to §3 (methodology) and Appendix A (vendor-by-vendor confidence classification).
 >
@@ -86,7 +86,7 @@
 >
 > Epoch's "inference cost halves every two months" panel and GATT's empirical token-volume index are complementary measurements of the same phenomenon. Today I posted GATT's methodology paper on arXiv: **[ARXIV_URL]**.
 >
-> GATT measures 310T tokens/day across 21 vendors, with **99.7% price decline + 3× spend increase** (the price-volume paradox documented in §4.4). When combined with your cost trajectory, the implied real-output growth is order-of-magnitude larger than headline numbers suggest.
+> GATT measures 311T tokens/day across 24 vendors, with **99.7% price decline + 3× spend increase** (the price-volume paradox documented in §4.4). When combined with your cost trajectory, the implied real-output growth is order-of-magnitude larger than headline numbers suggest.
 >
 > Two ideas:
 > 1. **Cross-citation** in the next Epoch Brief — happy to provide a clean one-paragraph methodology summary
@@ -107,7 +107,7 @@
 
 > Hi Andrej — saw your tweets about token-throughput as a personal-productivity metric. I built the global-scale version: GATT, daily index of all 21 major vendors, just hit arXiv today: **[ARXIV_URL]** · live: https://gf691271.github.io/gatt/
 >
-> Highlight: **310T tokens/day globally, 459K/US-resident/day, US-India gap 597×**. Paper proposes "Token GDP" as a new economic metric and documents a 2.04× tension with Litowitz/Polson/Sokolov's physical ceiling — Appendix C is a Bayesian MC that's pretty fun.
+> Highlight: **311T tokens/day globally, 459K/US-resident/day, US-India gap 597×**. Paper proposes "Token GDP" as a new economic metric and documents a 2.04× tension with Litowitz/Polson/Sokolov's physical ceiling — Appendix C is a Bayesian MC that's pretty fun.
 >
 > No ask other than "if it's interesting, take a look." Source + raw data fully open. Cheers.
 
@@ -116,15 +116,15 @@
 ### T1.6 — Anjney Midha (a16z; arXiv:2601.10088 co-author)
 
 **To:** anjney@a16z.com (cc as appropriate)
-**Subject:** GATT — extends your 100T Token Study methodology to all 21 vendors
+**Subject:** GATT — extends your 100T Token Study methodology to all 24 vendors
 
 > Dear Anjney,
 >
 > Your **100T Token Study** with OpenRouter was the most rigorous slice-level token-economy data point of 2026. I extended the methodology to all 21 major vendors globally — daily updated, fully open. The paper hit arXiv today: **[ARXIV_URL]**.
 >
 > Three findings that should land at a16z:
-> - **310T tokens/day** (vs OpenRouter's slice; methodology contrasts in §2.4)
-> - **Token GDP $95.8B/year**, with US–China 88/6 value-share split despite 50/50 volume
+> - **311T tokens/day** (vs OpenRouter's slice; methodology contrasts in §2.4)
+> - **Token GDP $97.0B/year**, with US–China 88/6 value-share split despite 50/50 volume
 > - **2.04× tension** with the Litowitz/Polson/Sokolov physical ceiling — direct relevance to a16z's "AI as commodity" thesis
 >
 > If a16z's AI-infra content track is interested, I can supply ready-made charts, vendor-by-vendor breakdowns, or a customized one-pager. Endorsement for arXiv cs.CY would also be very welcome.
@@ -141,7 +141,7 @@
 
 > Dear Martin,
 >
-> a16z's recent infra writing positions AI as the next-generation commodity layer. GATT operationalizes that thesis with a daily Token GDP measurement: **$95.8B/year run-rate, 310T tokens/day across 21 vendors, 12 countries**. Methodology paper just hit arXiv: **[ARXIV_URL]**.
+> a16z's recent infra writing positions AI as the next-generation commodity layer. GATT operationalizes that thesis with a daily Token GDP measurement: **$97.0B/year run-rate, 311T tokens/day across 24 vendors, 12 countries**. Methodology paper just hit arXiv: **[ARXIV_URL]**.
 >
 > Most a16z-relevant findings:
 > - **Volcengine at 49.5% China public-cloud MaaS share** (IDC-confirmed) — concentration story
@@ -162,7 +162,7 @@
 
 > Dear Dylan,
 >
-> SemiAnalysis's **AI Cloud TCO** is the canonical USD-side / capacity-side measurement. **GATT** is the token-side / output-side complement — daily index, 21 vendors, 12 countries. Methodology paper on arXiv as of today: **[ARXIV_URL]**.
+> SemiAnalysis's **AI Cloud TCO** is the canonical USD-side / capacity-side measurement. **GATT** is the token-side / output-side complement — daily index, 24 vendors, 12 countries. Methodology paper on arXiv as of today: **[ARXIV_URL]**.
 >
 > Most interesting if you write about it:
 > - Direct GATT-to-TCO crosswalk in §6.4 — divides Token GDP by your $/H100-hour to derive implied utilization
@@ -208,8 +208,8 @@
 >
 > A Hard Fork-shaped finding from a paper I just put on arXiv: **AI token prices fell 99.7% in two years while total spending grew 3×.** Demand isn't elastic — it's hyper-elastic.
 >
-> Full paper here: **[ARXIV_URL]** — *Measuring the Token Economy*, an empirical 21-vendor daily index project (GATT). Other Hard Fork-friendly numbers:
-> - **310 trillion tokens generated globally per day**
+> Full paper here: **[ARXIV_URL]** — *Measuring the Token Economy*, an empirical 24-vendor daily index project (GATT). Other Hard Fork-friendly numbers:
+> - **311 trillion tokens generated globally per day**
 > - **United States: 459,000 tokens per resident per day**
 > - **US–India per-capita gap: 597×**
 > - **2.04× discrepancy** between empirical use and the most-cited physical ceiling — story angle: "AI is using more tokens than physics says it should"
@@ -231,7 +231,7 @@
 > No Priors's investor-strategic lens fits cleanly with what I've been measuring at GATT. I just posted the methodology paper on arXiv: **[ARXIV_URL]**.
 >
 > Most VC-relevant findings:
-> - **Token GDP $95.8B/year run-rate** — bigger than the headlines suggest
+> - **Token GDP $97.0B/year run-rate** — bigger than the headlines suggest
 > - **Volcengine 49.5% China MaaS share** (IDC-confirmed) — concentration is faster than US analysts assume
 > - **15× US/China pricing arbitrage** — open question: arbitrage or quality gap?
 > - **Bayesian MC** in Appendix C: even the most conservative inference-efficiency assumptions point to a 4th factor (~30-50% theoretical-vs-actual hardware utilization) — investment thesis: who closes that gap wins
@@ -250,7 +250,7 @@
 
 > Ben,
 >
-> Stratechery's analytical mode — strategic-economic framings of the platform layer — fits a project I just put on arXiv: **[ARXIV_URL]**. *Measuring the Token Economy*: a daily 21-vendor index (GATT) with a "Token GDP" $95.8B/year metric.
+> Stratechery's analytical mode — strategic-economic framings of the platform layer — fits a project I just put on arXiv: **[ARXIV_URL]**. *Measuring the Token Economy*: a daily 24-vendor index (GATT) with a "Token GDP" $97.0B/year metric.
 >
 > Stratechery-shaped angles:
 > - **Token GDP** as economic-value frame (vs raw volume) — surfaces a 88/6 US/China value split despite 50/50 volume parity
@@ -273,7 +273,7 @@
 >
 > Your AI commentary has consistently pulled at the inequality thread. I have a measurement that may be useful: **the per-capita AI token consumption gap between the US and India is 597×**, and it widened from 448× in just five weeks.
 >
-> Full paper on arXiv: **[ARXIV_URL]** — *Measuring the Token Economy*, daily 21-vendor index (GATT), open dataset.
+> Full paper on arXiv: **[ARXIV_URL]** — *Measuring the Token Economy*, daily 24-vendor index (GATT), open dataset.
 >
 > The inequality is not just a usage gap — it's compounding (Section 4.5 shows the rate of widening). If an Ezra Klein Show segment, NYT Opinion piece, or background briefing would be useful, happy to make any of them work.
 >
@@ -295,7 +295,7 @@
 >
 > The paper explicitly cites CAICT (§4.6) and acknowledges a v0.90 retraction where my prior interpretation of the 4.12T figure was incorrect. I'd value:
 >
-> 1. CAICT's reaction to GATT's 21-vendor methodology and the China-side numbers
+> 1. CAICT's reaction to GATT's 24-vendor methodology and the China-side numbers
 > 2. Possible joint methodology note clarifying the relationship between the two measurement frames
 > 3. Any contact with the CAICT team that produced the 4.12T figure
 >
@@ -313,7 +313,7 @@
 
 > Dear [Author Name],
 >
-> Your April 2026 analysis introduced the **"Token Bill"** framing for AI governance. GATT's methodology paper (just posted: **[ARXIV_URL]**) operationalizes that concept — daily 21-vendor / 12-country token index, with a "Token GDP" economic-value variant that gives policymakers a comparable cross-jurisdictional metric.
+> Your April 2026 analysis introduced the **"Token Bill"** framing for AI governance. GATT's methodology paper (just posted: **[ARXIV_URL]**) operationalizes that concept — daily 24-vendor / 12-country token index, with a "Token GDP" economic-value variant that gives policymakers a comparable cross-jurisdictional metric.
 >
 > Most CSIS-relevant findings:
 > - **US/China 88/6 Token GDP split** despite 50/50 volume — sovereignty-vs-value framing
@@ -354,9 +354,9 @@
 
 > *Measuring the Token Economy* is live on arXiv: **[ARXIV_URL]**
 >
-> 21 vendors. 12 countries. Daily updated since Feb 2026.
+> 24 vendors. 12 countries. Daily updated since Feb 2026.
 >
-> 310T tokens/day · $95.8B Token GDP/yr · US captures 88% of value at 50% of volume
+> 311T tokens/day · $97.0B Token GDP/yr · US captures 88% of value at 50% of volume
 >
 > 2.04× tension with @vsokolov et al's physical ceiling — Bayesian MC in App. C
 >
@@ -366,10 +366,10 @@
 
 > Today I published *Measuring the Token Economy: An Empirical Companion to Physical-Ceiling Models of Global AI Inference* on arXiv ([ARXIV_URL]).
 >
-> The paper documents the methodology behind GATT (Global AI Token Tracker) — the first global, all-sources, daily index of AI inference token throughput, covering 21 vendors and 12 countries since February 2026.
+> The paper documents the methodology behind GATT (Global AI Token Tracker) — the first global, all-sources, daily index of AI inference token throughput, covering 24 vendors and 12 countries since February 2026.
 >
 > Three findings:
-> 1. Global daily output is **310 trillion tokens**; "Token GDP" runs at **$95.8B/year**.
+> 1. Global daily output is **311 trillion tokens**; "Token GDP" runs at **$97.0B/year**.
 > 2. China and the US are tied at **50% of volume** — but the US captures **88% of Token GDP** because of a 15× pricing asymmetry.
 > 3. The empirical 459.7K tokens/US-resident/day is **2.04× higher** than the leading 2028 physical ceiling. The paper proposes three reconciliation interpretations and runs a 10K-draw Bayesian Monte Carlo (Appendix C) showing the gap is real and identifies the missing factor.
 >
@@ -379,11 +379,11 @@
 
 ## Hacker News submission
 
-**Title:** *Measuring the Token Economy: A 21-vendor Daily Index of AI Inference (arXiv)*
+**Title:** *Measuring the Token Economy: A 24-vendor Daily Index of AI Inference (arXiv)*
 **URL:** [ARXIV_URL]
 **First comment** (from author, posted immediately):
 
-> Author here. Quick context: GATT has been daily-updated since February 2026, covering 21 vendors and 12 countries. The paper documents how I get the numbers, how I treat low-confidence vendors (see Appendix A — Gemini was downgraded from High to Medium between v0.91 and v1.0 after a peer review), and a 2.04× tension with the most-cited physical ceiling (Litowitz / Polson / Sokolov, arXiv:2603.06630).
+> Author here. Quick context: GATT has been daily-updated since February 2026, covering 24 vendors and 12 countries. The paper documents how I get the numbers, how I treat low-confidence vendors (see Appendix A — Gemini was downgraded from High to Medium between v0.91 and v1.0 after a peer review), and a 2.04× tension with the most-cited physical ceiling (Litowitz / Polson / Sokolov, arXiv:2603.06630).
 >
 > The tension is real: Bayesian MC in Appendix C with 10K draws and ρ=0.4 correlated priors shows even the optimistic posterior leaves a 30-50% gap. Honest answer: the §5.5 efficiency decomposition is partial. Happy to take HN's questions on methodology, gaps, or the Token GDP framing.
 

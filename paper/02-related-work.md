@@ -94,6 +94,6 @@ Each of the four traditions covers part of the measurement problem. None covers 
 | Vendor disclosures | Vendor-specific | One at a time | Irregular | Heterogeneous |
 | Physics-ceiling models | Global | None | Static | Theoretical capacity |
 | User surveys | Global | All major platforms | Periodic | Satisfaction scores |
-| **GATT** | **Global** | **21 vendors, 12 countries** | **Daily** | **Tokens per day, all-sources** |
+| **GATT** | **Global** | **24 vendors, 12 countries** | **Daily** | **Tokens per day, all-sources** |
 
 GATT does not replace any of these. It complements them: the empirical companion to physics-ceiling modeling (Litowitz et al.), the global counterpart to IDC's China-only token report, the all-vendor extension of OpenRouter's single-platform study, and the daily-frequency partner to the quarterly USD trackers. Section 5 develops the most consequential of these complementary relationships — with the Litowitz/Polson/Sokolov physical ceiling — in detail.

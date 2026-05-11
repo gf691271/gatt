@@ -19,7 +19,7 @@ Each vendor entry carries a confidence rating drawn from four levels:
 - **Medium** — multiple converging indirect signals (ARR plus pricing plus user count) without a direct throughput number.
 - **Low** — single proxy signal, often months old.
 
-The current distribution of confidence across the 21 vendors is: 4 High, 2 Medium-High, 5 Medium, 10 Low. This skew reflects the disclosure asymmetry between US and Chinese vendors: US vendors typically disclose ARR but not throughput; Chinese vendors increasingly disclose throughput but rarely ARR. Both kinds of signal are usable, but at different confidence levels.
+The current distribution of confidence across the 24 vendors (post-v1.3 expansion) is: 3 High, 2 Medium-High, 8 Medium, 11 Low. This skew reflects the disclosure asymmetry between US and Chinese vendors: US vendors typically disclose ARR but not throughput; Chinese vendors increasingly disclose throughput but rarely ARR. Both kinds of signal are usable, but at different confidence levels.
 
 This taxonomy is a working approximation. The Inference Bottleneck paper (arXiv:2604.17431) provides a more rigorous template — distinguishing observed, inferred, and judgment-based parameters, with explicit sensitivity analysis showing which conclusions are robust to perturbations [12]. GATT v0.83 will adopt this structure, augmenting (not replacing) the four-level confidence field.
 
@@ -37,7 +37,7 @@ IDC's *China Public Cloud Large Model Services* report [4] explicitly excludes c
 
 The two scopes can be reconciled with arithmetic. IDC's 2025 China total of 1,944 trillion tokens for the full year averages to approximately 5.32 trillion tokens per day. Volcengine's IDC market share of 49.5% for full-year 2025 yields approximately 2.64 trillion tokens per day in external MaaS volume. Volcengine's officially disclosed 120 trillion tokens per day, dated April 1, 2026, is a factor of 45 larger. No plausible growth path between January and April closes this gap; the only interpretation is that more than 95% of Volcengine's measured throughput is internal first-party usage that lies outside IDC's scope.
 
-GATT therefore reports Doubao (Volcengine's flagship model) at 132 trillion tokens per day for May 9, 2026, with a `scope_note` field explicitly marking this as all-sources. The IDC validation block in `data/tci-latest.json` documents that GATT and IDC agree on Volcengine's #1 position in China while disagreeing on the absolute volume, with the scope difference fully accounting for the gap.
+GATT therefore reports Doubao (Volcengine's flagship model) at 129 trillion tokens per day for May 11, 2026, with a `scope_note` field explicitly marking this as all-sources. The IDC validation block in `data/tci-latest.json` documents that GATT and IDC agree on Volcengine's #1 position in China while disagreeing on the absolute volume, with the scope difference fully accounting for the gap.
 
 For non-Chinese vendors, the all-sources scope is generally less consequential because the largest internal first-party deployments are smaller relative to external API. Gemini's "All Surfaces" estimate (Search AI Overviews + Gemini App + Workspace + Cloud API) uses a 3.2× multiplier on the disclosed direct-API number; this is an attribution choice rather than a scope expansion, and Section 5 discusses its potential overestimation.
 
@@ -67,7 +67,7 @@ The extrapolation engine runs in the browser when readers load the dashboard, re
 
 ### 3.4.1 Anchor Age and Backtest
 
-The honest framing of GATT's "daily" headline requires reporting the underlying anchor age. Table 1 summarizes the volume-weighted anchor age and growth rate for the top 10 vendors (which collectively cover 88% of global volume) as of May 9, 2026:
+The honest framing of GATT's "daily" headline requires reporting the underlying anchor age. Table 1 summarizes the volume-weighted anchor age and growth rate for the top 10 vendors (which collectively cover approximately 97% of global volume) as of May 11, 2026:
 
 | Vendor | Daily T | Anchor date | Anchor age (days) | g_v (%/mo) | Volume × age |
 |---|---:|:---:|---:|---:|---:|
@@ -103,7 +103,7 @@ where `r(v)` is the region of vendor `v` and `p_{r(v)}` is the regional blended 
 
 These are vendor-volume-weighted blends across input and output token rates and across the model lineup typical for each region. They are intentionally point-in-time. Xing [6] documents that GPT-4-equivalent pricing fell from approximately $60 per million tokens in early 2023 to under $1.50 per million in early 2025 — a 40-fold compression in 24 months. Epoch AI [18] reports a complementary finding from a longitudinal inference-cost panel: cost at fixed performance level halves every two months across the 2024-2026 window. SemiAnalysis [22] independently reports a 1200× compression for GPT-3-class inference cost over a similar window. The three measurements agree in direction and magnitude. Any analysis quoting Token GDP must accompany the figure with an as-of date and a note that the implicit pricing assumptions may have shifted by the time of citation.
 
-For May 9, 2026, GATT computes daily Token GDP at $262.6 million, or $95.8 billion annualized. The regional breakdown is striking: the United States contributes $231 million per day (88% of the total) on 154 trillion tokens; China contributes $15.4 million per day (6%) on 154 trillion tokens. The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference.
+For May 11, 2026, GATT computes daily Token GDP at $265.8 million, or $97.0 billion annualized. The regional breakdown is striking: the United States contributes $234 million per day (88% of the total) on 156 trillion tokens (post-v1.3 Apple Intelligence cloud-routed addition of 2T); China contributes $15.4 million per day (6%) on 154 trillion tokens. The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference.
 
 ### 3.5.1 What "Token GDP" Is and Is Not
 
@@ -119,7 +119,7 @@ We retain the "Token GDP" label because the construct is parallel to GDP in spir
 
 **Illustrative value-added correction.** A first-order estimate of how Token GDP would shift under value-added accounting is informative. Volcengine's all-sources Doubao volume includes substantial intermediate-input usage: Douyin AI Search recommendation calls, Doubao consumer chat, Jimeng image-generation prompt expansion, internal Volcengine pipeline workflows. Even if intermediate-input tokens represent half of all Chinese vendor volume (a conservative estimate, given the IDC arithmetic implies >95% of Volcengine throughput is internal first-party), netting them out would reduce China's value-added token volume by roughly 50%. US vendors are more modular — token sales between OpenAI/Anthropic and downstream API customers are arms-length transactions and would survive value-added netting more intact — though some intermediate-input volume exists (Microsoft Copilot's internal Azure usage, for instance). Applying a conservative 0.4-0.6× value-added scalar to gross Token GDP yields the following illustrative correction:
 
-| Region | Gross Token GDP (% of $95.8B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
+| Region | Gross Token GDP (% of $97.0B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
 |---|:---:|:---:|:---:|
 | United States | 88% | ~0.7× | ~75-82% |
 | China | 6% | ~0.4× | ~3-4% |

@@ -7,6 +7,8 @@
 源代码：<https://github.com/gf691271/gatt>
 
 > **译者说明**：本文为 GATT v1.2 论文（英文原版见 PAPER-FULL.md）的简体中文翻译。所有数学公式、引用编号、URL、数字和单位与英文版完全一致；技术术语遵循中英混合风格——核心新概念（Token GDP / Token Velocity / Token Gini / Empirical Tokeneconomy）保留英文便于国际对话，标准学术术语用中文。
+>
+> **⚠️ v1.4 更新提示**：英文 PAPER-FULL.md 已升级到 v1.4（24 vendors / 311T/day / $97.0B Token GDP，加入 NVIDIA GTC 2026 + TokenOps 对话），本中文版仍为 v1.2 翻译（21 vendors / 310T / $95.8B），不含 §1.2 disambiguation、§2.6 NVIDIA、§2.7 TokenOps 三个新章节。后续将重新翻译。引用建议以英文 main.tex / PAPER-FULL.md v1.4 为准。
 
 ---
 

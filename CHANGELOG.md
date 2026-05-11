@@ -1,5 +1,50 @@
 # GATT Data Changelog
 
+## 2026-05-11 (v1.4.1 — Paper-Data Headline Consistency Fix)
+
+Resolves paper-data drift discovered via first-principles audit. v1.4 had added new sections (§1.2 / §2.6 / §2.7) but inherited stale v1.0/v1.2 headline numbers (21 vendors / 310T / $95.8B) in abstract, §1.4 contributions, §3 methodology examples, §4 findings, §7 conclusion, and Appendix A vendor table footer. v1.4.1 brings the paper into full alignment with v1.4 data state.
+
+### Headline updates (paper now matches data)
+
+| Location | Was (v1.0/v1.2) | Now (v1.4) |
+|---|---|---|
+| abstract | 21 vendors, 310T, May 9 | **24 vendors, 311T, May 11** |
+| §1.1 | twenty-one vendor disclosures | twenty-four vendor disclosures |
+| §1.4 Contributions | 21 vendors | 24 vendors |
+| §2.8 GATT positioning table | 21 vendors | 24 vendors |
+| §3.2 confidence distribution | 4/2/5/10 across 21 | **3/2/8/11 across 24** |
+| §3.3 Doubao value | 132T | 129T (matches data) |
+| §3.4.1 top-10 coverage | 88% | 97% (math correction) |
+| §3.5 Token GDP | $262.6M/day, $95.8B/yr | **$265.8M/day, $97.0B/yr** |
+| §3.5.1 value-added table | % of $95.8B/yr | % of $97.0B/yr |
+| §4.1 global volume | 310T | 311T (+v1.3 expansion context) |
+| §4.1.1 sensitivity table | 310 best estimate, v0.86 | 311, v1.4 |
+| §4.2 volume parity | China 50.0 / US 49.7 | China 49.5 / US 50.2 (Apple shift) |
+| §4.3 Token GDP regional | US $231M on 49.7% vol | US $234M on 50.2% vol |
+| §4.5 top-4 coverage | 88% of global | 87% of global |
+| §5.1 twenty-one estimates | — | twenty-four estimates |
+| §7 conclusion | 21 vendors, 310T, $95.8B | **24 vendors, 311T, $97.0B** |
+| Appendix A | May 9, 2026, GATT v0.82, 21 vendors | **May 11, 2026, GATT v1.4, 24 vendors** (re-ranked; +Apple #11, +Cohere #23, +Sarvam #24) |
+| Appendix A footer | 4 H / 2 MH / 6 M / 10 L = 21; 10 US/10 CN/1 FR; 309.28T | **3 H / 2 MH / 8 M / 11 L = 24; 11 US/10 CN/1 FR/1 CA/1 IN; 311.43T** |
+| Appendix B | (kept as v1.0 worked example, anchored to 2026-05-09 snapshot) | Header note added explaining v1.0 vs v1.4 deltas |
+| OUTREACH-TEMPLATES.md | 21 vendors / 310T / $95.8B | 24 / 311T / $97.0B |
+| PAPER-FULL.md | (regenerated from v1.4 sections) | now v1.4 (151,706 chars, 21K words) |
+| PAPER-FULL-zh.md | (kept as v1.2-era sonnet translation) | header note added flagging v1.4 staleness; re-translation pending |
+
+### Build integrity
+
+- main.tex: 149,727 → **151,708 chars** (+2K from §1.1 / §5.1 wording + Appendix A row additions + Appendix B header note)
+- Unique citation keys: 32 (unchanged from v1.4)
+- Total `\cite` calls: 87 (unchanged)
+- Brace balance: **753 / 753** (matched)
+- Math `$` events: 186 (balanced)
+
+### Why this commit matters
+
+Before v1.4.1, the abstract said "21 vendors" while the data said "24 vendors" — a fatal inconsistency that any arXiv reviewer would catch in 30 seconds. The previous v1.4 commit was honest about adding new sections but did not propagate the v1.3 vendor expansion through the paper. v1.4.1 is the actual "Empirical Tokeneconomy = paper + data mutually corroborate" state.
+
+---
+
 ## 2026-05-11 (v1.4 — Token Economy Vocabulary Disambiguation + Industry Framings Integration)
 
 Major paper + data revision triggered by two events on 2026-05-11:
