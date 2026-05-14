@@ -1,5 +1,40 @@
 # GATT Data Changelog
 
+## 2026-05-14 (v1.5 — Sovereign Resource Framing: The Salt-and-Iron Analog)
+
+Adds the eighth Related Work framing — *sovereign / strategic-resource* — and its policy-trajectory companion in §6. Triggered by 2026-05-14 public discourse signal (security researcher Yu Yang / "tombkeeper" weibo post conjecturing Sang Hongyang–style state-monopoly trajectory for AI tokens) plus first-principles audit finding that GATT v1.4's seven framings (§2.1–§2.7) collectively *omitted* the strategic-commodity / state-monopoly construct that is structurally analogous to oil (1970s), telecommunications (1980s), and salt-and-iron (Han dynasty, 81 BCE).
+
+### Paper additions
+
+- **§2.8 NEW — Sovereign Resource Framing: The Salt-and-Iron Analog.** Six-row structural-feature comparison table (Han salt/iron ↔ AI tokens 2026); three GATT empirical intersections (concentration metric, fiscal-extraction base, geopolitical-asymmetry vector); explicit note that this framing is *absent* from formal Western policy literature as of 2026-05-14, fragmentary in Chinese-government research (CAICT), and surfacing in informed public discourse (TK weibo).
+- **§2.9 RENAMED — Where GATT Fits** (was §2.8). The synthesis section is unchanged in content; only the numbering shifted to make room for §2.8.
+- **§6.4 NEW — Sovereign / Strategic-Resource Policy Trajectories.** Three policy trajectories (A: laissez-faire, B: regulated utility, C: state monopoly/anchor operator); GATT-observable signature for each; 36-month falsification window; **fiscal-extraction worked illustration** (5% token excise → $4.85B/year now → ~$36B by mid-2027 → >$200B by mid-2028 at projected growth, fuel-tax-comparable magnitude); **Sovereign Token Reserve hypothesis** (analog to Strategic Petroleum Reserve, but holding compute capacity + model weights rather than commodity tokens).
+- **§6.5 RENAMED — Future Work** (was §6.4). Content unchanged.
+
+### References added
+
+- [33] Huan Kuan — *Discourses on Salt and Iron* (盐铁论, ca. 81 BCE) — primary source for state-monopoly economics of universal strategic inputs. Cited from Esson M. Gale's 1931 Brill translation.
+- [34] Yu Yang (TK / "tombkeeper") — 2026-05-14 weibo post on sovereign-token-resource framing. Cited as external evidence of the framing entering informed public discourse ahead of formal academic / governmental literature.
+- [35] Margaret Levi (1988) — *Of Rule and Revenue* — foundational treatment of state-monopoly emergence under fiscal-revenue maximization with transaction-cost / bargaining constraints.
+
+### Build integrity
+
+- `paper/references.bib`: 32 entries → **35 entries** (3 new). All ASCII-safe (no CJK in bib body; CJK retained in markdown only, stripped at LaTeX-build time per existing `replace_unicode` pipeline).
+- `paper/build_tex.py` CITE_MAP: extended with `33: huankuan81bce, 34: yu2026sovereigntoken, 35: levi1988rule`.
+- `paper/main.tex`: 151,708 chars → **162,848 chars** (+11.1K from §2.8 + §6.4 prose and structural-feature table).
+- Brace balance: **791 / 791** (verified by `check_tex.py`).
+- Unique citation keys: 32 → 35. Total `\cite` calls: 87 → 93. Unresolved citations: 0.
+- `paper/PAPER-FULL.md` header: `GATT v1.4` → `GATT v1.5`.
+- `paper/outline.md`: §6.4/§6.5 entries updated to reflect new sovereign-policy section + renumbered Future Work.
+
+### Why this commit matters
+
+GATT v1.4 had assembled seven framings of the Token Economy — commercial research, token-volume research, physics & economics, empirical user studies, GPT macroeconomics, NVIDIA industry framing, enterprise TokenOps — covering everything from thermodynamic ceilings down to firm-level FinOps. What was missing, structurally, was the *oldest* framing: tokens as a sovereign strategic resource subject to state monopoly and fiscal extraction. The Han-dynasty *Discourses on Salt and Iron* is the 2100-year-old prior art for the policy debate that AI tokens will trigger this decade. v1.5 adds that framing as a structured §2.8/§6.4 pair so that policy researchers can engage GATT's empirical base on the strategic-commodity dimension rather than only on the consumption-measurement dimension. The TK 2026-05-14 weibo post is cited as the external anchor showing the framing has begun to enter informed public discourse — GATT documents it before it consolidates in formal literature.
+
+The data tier remains v1.4 (24 vendors / 311T/day / $97.0B Token GDP — unchanged). This is a *paper-only* version bump; `data/tci-latest.json` is not modified, and `index.html` dashboard headline remains synchronized to the v1.4 data state.
+
+---
+
 ## 2026-05-11 (v1.4.1 — Paper-Data Headline Consistency Fix)
 
 Resolves paper-data drift discovered via first-principles audit. v1.4 had added new sections (§1.2 / §2.6 / §2.7) but inherited stale v1.0/v1.2 headline numbers (21 vendors / 310T / $95.8B) in abstract, §1.4 contributions, §3 methodology examples, §4 findings, §7 conclusion, and Appendix A vendor table footer. v1.4.1 brings the paper into full alignment with v1.4 data state.

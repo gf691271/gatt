@@ -198,7 +198,13 @@ Ratio = 2.04×
 - Pricing volatility (40× decline in 24 months per Xing 2026)
 - Confidence still mostly "low"/"medium" outside top 5
 
-### 6.4 Future Work
+### 6.4 Sovereign / Strategic-Resource Policy Trajectories (v1.5 NEW)
+- Three trajectories: laissez-faire / regulated utility / state monopoly
+- GATT signature discriminates between them; 36-month falsification window
+- Fiscal-extraction worked illustration (5% token excise → $4.85B → $200B+)
+- Sovereign Token Reserve hypothesis (analog to Strategic Petroleum Reserve)
+
+### 6.5 Future Work
 - v0.83: observed/inferred/judgment parameter classification + sensitivity bands
 - v0.84: per-domain breakdowns (coding / chat / search / agent)
 - v1.0: peer-reviewed methodology with reproducible data pipeline

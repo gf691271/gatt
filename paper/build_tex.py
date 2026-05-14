@@ -61,6 +61,9 @@ CITE_MAP = {
     "30": "healthark2025tokenecon",
     "31": "inventivehq2025promptopt",
     "32": "tokenfinops2025survey",
+    "33": "huankuan81bce",
+    "34": "yu2026sovereigntoken",
+    "35": "levi1988rule",
 }
 
 PREAMBLE = r"""\documentclass[11pt,a4paper]{article}
@@ -165,6 +168,14 @@ def replace_unicode(text: str) -> str:
     # Clean up doubled spaces / spaces before punctuation
     text = re.sub(r"\s+([,.;:])", r"\1", text)
     text = re.sub(r"  +", " ", text)
+
+    # Clean up empty-paren artifacts left after CJK strip: "(, x)" → "(x)", "(x, )" → "(x)", "()" → ""
+    text = re.sub(r"\(\s*,\s*", "(", text)
+    text = re.sub(r"\s*,\s*\)", ")", text)
+    text = re.sub(r"\(\s*\)", "", text)
+    # Re-run space cleanup AFTER paren removal (name-followed-by-stripped-paren leaves doubled spaces and orphan space-before-punct)
+    text = re.sub(r"\s+([,.;:])", r"\1", text)
+    text = re.sub(r" {2,}", " ", text)
 
     return text
 

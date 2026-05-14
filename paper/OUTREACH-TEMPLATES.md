@@ -348,6 +348,28 @@
 
 ---
 
+### T2.9 — Yu Yang (TK / "tombkeeper") — Sovereign framing anchor
+
+**To:** Weibo @tombkeeper (DM) — or via mutual security-community contacts if DM is closed
+**Subject:** GATT §2.8 直接是您 2026-05-14 微博触发加进来的
+
+> 于老师，
+>
+> 您 5 月 14 日「各国政府还没想明白 Token… 桑弘羊…《Token 论》」那条微博，我看到后当天给 GATT 论文加了两节：
+>
+> - **§2.8 "Sovereign Resource Framing: The Salt-and-Iron Analog"** — 6 行结构特征对照表（汉代盐铁 ↔ 2026 AI tokens），您的微博作为 anchor citation 进了 references [34]
+> - **§6.4 "Sovereign / Strategic-Resource Policy Trajectories"** — 三条政策轨迹（A 放任 / B 监管公用事业 / C 桑弘羊式国营 anchor operator），每条给出 GATT 数据可证伪的 signature，36 月窗口
+> - 财政抽取量级测算：5% token excise → 现在 $4.85B/年 → 2028 年中 $200B+，达到 fuel-tax 量级
+> - Sovereign Token Reserve 假说（SPR 类比，储 compute capacity + 模型权重，而非 commodity tokens）
+>
+> 论文 v1.5：https://gf691271.github.io/gatt/  · 24 vendors / 311T tokens/day / $97B Token GDP/yr · CC BY 4.0
+>
+> 您这个角度让 paper 闭环了原 7 个 framings（commercial / volume / 物理上限 / 用户行为 / GPT 宏观 / NVIDIA / TokenOps）都没覆盖的一块。如果愿意读全文或指漏洞，非常欢迎。
+>
+> Frank Gao · gf691271@gmail.com
+
+---
+
 ## Day-0 announcement copy
 
 ### Tweet / X post (270 chars)
@@ -402,6 +424,6 @@
 9. **Day 1** — T1.5 (Karpathy DM), T1.6 (Midha), T1.7 (Casado)
 10. **Day 2-3** — T2.1 (Hao), T2.2 (Roose/Newton)
 11. **Day 4-7** — T2.3 (Guo/Gil), T2.4 (Thompson), T2.5 (Klein)
-12. **Week 2+** — T2.6 (CAICT), T2.7 (CSIS), T2.8 (CEIBS)
+12. **Week 2+** — T2.6 (CAICT), T2.7 (CSIS), T2.8 (CEIBS), T2.9 (TK / sovereign framing anchor)
 
 **Reply tracking:** maintain a simple log per email — sent date, reply received yes/no, follow-up needed yes/no. The `data/tci-latest.json` `outreach_targets` block can be updated with `last_contacted` and `response_status` fields after Day 7.
