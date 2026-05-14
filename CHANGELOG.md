@@ -1,5 +1,47 @@
 # GATT Data Changelog
 
+## 2026-05-15 (v1.5.1 — Adjacent-Literature Audit + Trajectory Refinement)
+
+Paper-only refinement triggered by a 2026-05-15 broad source sweep (9 parallel WebSearches across vendor disclosures, IDC/CAICT/Epoch aggregate reports, and post-2026-05-14 sovereign-AI policy literature). The sweep found no vendor-level headline changes since v1.4's May 11 source-sweep (24 vendors / 311T/day / $97.0B Token GDP — all top-tier disclosures still current), but surfaced a structurally important adjacent literature on sovereign AI that consolidated between v1.5's initial drafting (2026-05-14) and v1.5.1 (2026-05-15). v1.5 originally stated the sovereign-resource framing was "absent from formal Western policy literature" — the 4-day audit confirms this remains true for the *fiscal-sovereignty* layer GATT's salt-and-iron analog targets, but a substantial *capability-sovereignty* literature exists in parallel that v1.5 did not explicitly distinguish. v1.5.1 adds that distinction and a Trajectory D dimension to §6.4.
+
+### Paper additions
+
+- **§2.3 (Physics & Economics)** — One sentence added to the Epoch AI paragraph documenting non-uniform price decline (9× to 900× per year depending on benchmark, with GPT-4-quality inference at ~40×/yr) from the formal Epoch arXiv paper [36]. Clarifies that GATT's §2.3 +50%/month real-resource growth-rate inference is a global mean masking substantial cross-workload variance.
+- **§2.8 (Sovereign Resource Framing)** — New closing paragraph "Adjacent literature: capability sovereignty versus fiscal sovereignty" distinguishing the v1.5 framing (fiscal extraction on token throughput, salt-and-iron analog) from the adjacent sovereign-AI literature [37-40] (capability sovereignty: model training control, data localization, indigenous chip programs). The two layers are orthogonal and can co-occur in any combination.
+- **§6.4 (Policy Trajectories) — China diagnosis revised.** Changed from "A↔C unstable position in China" to "A↔B transitional position in China." Triggered by *China Minutes* 2026-05-12 reporting [41] of the operational instruments of current Chinese AI-computing policy: computing-power vouchers (算力券), the Hangzhou 200M-yuan computing-trading platform, revenue-sharing arrangements. These are utility-model (Trajectory B) instruments, not state-monopoly (Trajectory C). The v1.5 falsifiable hypothesis (Volcengine >60% → C) is sharpened: current signature is B, and B-vs-C is the 36-month test.
+- **§6.4 (Policy Trajectories) — Trajectory D added.** *Capability sovereignty*, orthogonal to A-B-C rather than competing with them. Empirical anchors: ~130 sovereign-AI projects across >50 countries by January 2026 [37], Gartner 35%-by-2027 [38]. Trajectory D combines with any of A, B, or C (US = A+D, current China = B+D, hypothetical Sang Hongyang state = C+D). Maps the existing sovereign-AI literature onto the GATT taxonomy without displacing the salt-and-iron framing's contribution.
+
+### References added (35 → 41)
+
+- **[36] priceprogress2025** — *The Price of Progress: Algorithmic Efficiency and the Falling Cost of AI Inference* (Epoch AI, arXiv:2511.23455). Formal write-up complementing the public Epoch trends dataset
+- **[37] mit2026sovereignty** — MIT Technology Review, 2026-05-14, *Establishing AI and data sovereignty in the age of autonomous systems*. EnterpriseDB 2050-executive survey; Jensen Huang capability-sovereignty quote
+- **[38] gartner2026regional** — Gartner press release 2026-01-29, 35% of countries → region-specific AI platforms by 2027; 75% European/Middle-Eastern enterprise geopatriation by 2030
+- **[39] wef2026sovereigntymyth** — World Economic Forum, April 2026, *The myth of AI sovereignty* (critical reading)
+- **[40] lawfare2026sovereigntygap** — Lawfare, *The Sovereignty Gap in U.S. AI Statecraft*
+- **[41] chinaminutes2026electricity** — China Minutes, 2026-05-12, *China Wants AI Computing to Flow Like Electricity*. Operational documentation of current Chinese AI-computing utility-model instruments; principal Trajectory-B evidence
+
+### Build integrity
+
+- `paper/references.bib`: 35 → **41 entries**
+- `paper/build_tex.py`: CITE_MAP extended 36-41
+- `paper/main.tex`: 162,826 → **168,990 chars** (+6.2K from §2.3 sentence + §2.8 paragraph + §6.4 China-diagnosis revision + §6.4 Trajectory D paragraph)
+- Brace balance: **815 / 815** (verified by check_tex.py)
+- Citation keys: 35 → 41. Total `\cite` calls: 93 → 105. Unresolved citations: 0
+- `paper/PAPER-FULL.md` header: `GATT v1.5` → `GATT v1.5.1`
+- `data/tci-latest.json`, `index.html`, vendor counts: **all unchanged** (24 vendors / 311T/day / $97.0B; this is a paper-only refinement, no data tier movement)
+
+### Why this commit matters
+
+v1.5 was the framing addition; v1.5.1 is the integrity-audit pass on that framing against fresh literature. Three observations made the audit necessary:
+
+1. **The sovereign-AI literature was not absent — it had a different framing.** v1.5's claim that the sovereign-resource framing was "absent from formal Western policy literature" needed sharpening: the *fiscal-sovereignty* construct is novel; the *capability-sovereignty* construct has substantial literature (MIT TR, Gartner, WEF, Lawfare). v1.5.1 makes the distinction explicit and credits the adjacent literature.
+2. **The China diagnosis was wrong direction in v1.5.** "Between A and C" implied the operational policy posture was sliding toward state monopoly. *China Minutes* 2026-05-12 evidence (computing-power vouchers, Hangzhou trading platform, revenue-sharing) is unambiguously utility-model (Trajectory B), not pre-monopoly (Trajectory C). v1.5.1 corrects to A↔B and keeps Trajectory C as the falsifiable tail-risk option.
+3. **Trajectory D was implicit but unstated.** The capability-sovereignty path runs parallel to the fiscal-sovereignty path; pretending it doesn't exist would have left the v1.5 framing vulnerable to "but what about Jensen Huang's sovereign AI?" pushback. v1.5.1 treats Trajectory D as orthogonal, not competing, which preserves the v1.5 framing's contribution while integrating the adjacent literature.
+
+The 4-day delta between v1.5 and v1.5.1 — same model, same project, same author — is also a methodology demonstration: GATT's revision discipline applies to its own framing, not just its vendor numbers.
+
+---
+
 ## 2026-05-14 (v1.5 — Sovereign Resource Framing: The Salt-and-Iron Analog)
 
 Adds the eighth Related Work framing — *sovereign / strategic-resource* — and its policy-trajectory companion in §6. Triggered by 2026-05-14 public discourse signal (security researcher Yu Yang / "tombkeeper" weibo post conjecturing Sang Hongyang–style state-monopoly trajectory for AI tokens) plus first-principles audit finding that GATT v1.4's seven framings (§2.1–§2.7) collectively *omitted* the strategic-commodity / state-monopoly construct that is structurally analogous to oil (1970s), telecommunications (1980s), and salt-and-iron (Han dynasty, 81 BCE).

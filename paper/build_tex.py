@@ -64,6 +64,12 @@ CITE_MAP = {
     "33": "huankuan81bce",
     "34": "yu2026sovereigntoken",
     "35": "levi1988rule",
+    "36": "priceprogress2025",
+    "37": "mit2026sovereignty",
+    "38": "gartner2026regional",
+    "39": "wef2026sovereigntymyth",
+    "40": "lawfare2026sovereigntygap",
+    "41": "chinaminutes2026electricity",
 }
 
 PREAMBLE = r"""\documentclass[11pt,a4paper]{article}
