@@ -1,16 +1,16 @@
 {
   "version": "1.0",
-  "gatt_version": "1.4",
-  "generated_at": "2026-05-11T16:02:00Z",
+  "gatt_version": "1.5.2",
+  "generated_at": "2026-05-20T18:00:00Z",
   "methodology_url": "https://gf691271.github.io/gatt/about.html",
   "cite_as": "Gao, F. (2026). GATT: Global AI Token Tracker. https://gf691271.github.io/gatt/",
   "license": "CC BY 4.0 — free to use with attribution",
   "global_summary": {
-    "total_daily_tokens_T": 311,
-    "as_of_date": "2026-05-11",
-    "confidence": "medium-high",
-    "last_updated": "2026-05-11",
-    "note": "May 4–11 source sweep for OpenAI / Google / Anthropic / ByteDance completed on top of the existing v1.4 model. No newer hard throughput disclosure beat the standing anchors, so the top-four estimates are held at OpenAI 45T, Gemini 73T, Claude 22T, Doubao 129T/day. Fresh signals incorporated into source metadata: OpenAI DeployCo + >1M business adopters (May 11), Gemini 3.1 Flash-Lite GA for high-volume workloads (May 7), Anthropic higher limits + SpaceX compute deal (May 6), China Daily Doubao paid-tier / enterprise depth report (May 6). Global headline remains 311T/day."
+    "total_daily_tokens_T": 345,
+    "as_of_date": "2026-05-20",
+    "confidence": "high",
+    "last_updated": "2026-05-20",
+    "note": "Google I/O 2026 keynote (May 19-20) triggered v1.5 data tier update. Pichai disclosed 3.2 quadrillion tokens/month across Google surfaces (7x YoY from ~480T/month at I/O 2025) + 19B tokens/min API throughput (up from 16B/min at Cloud Next April). 3.2Q/month = 107T/day all-surfaces (replaces v1.4's editorial 73T composite). Gemini confidence upgraded Medium -> High because the All-Surfaces multiplier (3.9x implied) is now directly disclosed, resolving the Sokolov v1.0 critique. OpenAI / Anthropic / Doubao held at v1.4 values (no fresh hard disclosure in the I/O week). Global headline: 311T/day -> 345T/day (+11%). Token GDP: $97.0B -> $115.6B (Gemini +34T at US $1.50/M)."
   },
   "academic_validation": {
     "as_of_date": "2026-05-09",
@@ -441,15 +441,17 @@
       },
       {
         "id": "volume-gdp-paradox",
-        "headline": "China and US tied at 50/50 on token volume but split 6%/88% on Token GDP — same volume, 15× different value capture.",
+        "headline": "Post-I/O 2026 (v1.5): US re-takes volume lead 55% / 45% AND captures 90% of Token GDP — pricing gap holds at 15x while volume parity breaks.",
         "data_points": [
-          "China: 154T tokens/day (50%) → $15.4M/day Token GDP (6%)",
-          "US: 154T tokens/day (50%) → $231M/day Token GDP (88%)",
+          "China: 154T tokens/day (45%) → $15.4M/day Token GDP (5%)",
+          "US: 190T tokens/day (55%) → $285M/day Token GDP (90%)",
           "Pricing gap: ~15× (US $1.50/M blended vs CN $0.10/M blended)"
         ],
-        "interpretation": "Volume parity does not mean economic parity. The 15× pricing gap reflects model capability tier (frontier US vs. fast-follower CN), enterprise willingness-to-pay, and absence of true price competition where capability gaps remain. Governance frameworks conflating volume with value will misread the situation.",
+        "interpretation": "Pichai's I/O 2026 keynote (May 19-20) added 34T/day to Gemini's all-surfaces estimate (73T -> 107T), pushing US 36T ahead of China and ending the 50/50 volume parity established at v0.81. The 15× pricing gap is unchanged; US now captures 90% of Token GDP. Note the dual reading: (a) volume parity was always fragile - a single Pichai disclosure broke it; (b) the underlying paradox (price-volume divergence by region) hardens rather than softens because US gains came at frontier pricing, not mid-tier.",
+        "v15_note": "Pre-I/O (v1.4) framing was 'China and US tied at 50/50 on token volume but split 6%/88% on Token GDP'. Post-I/O (v1.5) framing is 'US re-takes both volume and GDP lead'. Preserve v1.4 framing in historical references; v1.5+ headline numbers above are canonical.",
         "sources": [
-          "GATT v0.85 vendor estimates",
+          "GATT v1.5 vendor estimates post-Google-I/O 2026",
+          "Pichai Google I/O 2026 keynote (May 19-20)",
           "Vendor pricing pages (May 2026)"
         ]
       },
@@ -1192,33 +1194,36 @@
     ]
   },
   "token_gdp": {
-    "daily_usd_M": 265.8,
-    "annual_usd_B": 97.0,
-    "as_of_date": "2026-05-11",
+    "daily_usd_M": 316.7,
+    "annual_usd_B": 115.6,
+    "as_of_date": "2026-05-20",
     "methodology": "vendor_volume_x_blended_price",
-    "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M, ROW ~$0.90/M.",
+    "note": "Blended price per vendor region. US ~$1.50/M tokens, EU ~$1.20/M, CN ~$0.10/M, ROW ~$0.90/M. v1.5: Gemini +34T (73->107) lifted US region 156->190T, daily GDP $234M->$285M, total $265.8M->$316.7M, annual $97.0B->$115.6B.",
     "breakdown": [
       {
         "region": "United States",
-        "daily_tokens_T": 156.0,
+        "daily_tokens_T": 190.0,
         "price_per_M": 1.5,
-        "daily_gdp_M": 234.0,
-        "gdp_share_pct": 88,
-        "note_v13": "Apple Intelligence cloud +2T at $1.5/M added in v1.3"
+        "daily_gdp_M": 285.0,
+        "gdp_share_pct": 90,
+        "note_v13": "Apple Intelligence cloud +2T at $1.5/M added in v1.3",
+        "note_v15": "Gemini upgraded 73T -> 107T (Pichai I/O 2026 keynote: 3.2 quadrillion tokens/month all-surfaces). US region +34T -> 190T. US Token GDP share 88% -> 90% (China share contracts as US headline grows)."
       },
       {
         "region": "China",
         "daily_tokens_T": 154.0,
         "price_per_M": 0.1,
         "daily_gdp_M": 15.4,
-        "gdp_share_pct": 6
+        "gdp_share_pct": 5,
+        "note_v15": "Share contracts 6% -> 5% as US headline grows on Pichai I/O disclosure (volume unchanged at 154T)"
       },
       {
         "region": "Europe",
         "daily_tokens_T": 9.0,
         "price_per_M": 1.2,
         "daily_gdp_M": 10.8,
-        "gdp_share_pct": 4
+        "gdp_share_pct": 3,
+        "note_v15": "Share contracts 4% -> 3% post-Gemini upgrade (volume unchanged at 9T)"
       },
       {
         "region": "Rest of World",
@@ -1281,7 +1286,7 @@
       "demand_side": {
         "name": "Demand-Side Token GDP (this dataset)",
         "methodology": "sum_vendor(observed_daily_tokens × regional_blended_price)",
-        "value_annual_usd_B": 97.0,
+        "value_annual_usd_B": 115.6,
         "temporal_orientation": "backward-looking; anchored to dated vendor disclosures",
         "strengths": [
           "Realized values not assumed",
@@ -1419,20 +1424,20 @@
   ],
   "key_stats": {
     "us_vs_india_per_capita_ratio": 597,
-    "china_token_volume_share_pct": 49,
-    "china_token_gdp_share_pct": 6,
-    "us_token_volume_share_pct": 50,
-    "us_token_gdp_share_pct": 88,
+    "china_token_volume_share_pct": 45,
+    "china_token_gdp_share_pct": 5,
+    "us_token_volume_share_pct": 55,
+    "us_token_gdp_share_pct": 90,
     "pricing_gap_us_vs_cn": "15x",
-    "headline": "v1.3 expansion: 24 vendors (was 21). US 50% / CN 49% volume; US 88% Token GDP. US-India per-capita gap 597x held (Apple 2T cloud-only attribution does not flow to per-capita; pending customer-geography work in v1.3.x).",
-    "great_divergence": "China: 50% of tokens, 6% of Token GDP. US: 50% of tokens, 88% of Token GDP. Volume parity confirmed in v0.81 with OpenRouter + Perplexity uplift; pricing gap unchanged at 15×.",
+    "headline": "v1.5 (post-Google-I/O 2026): 24 vendors. US 55% / CN 45% volume; US 90% Token GDP. Volume parity BROKEN by Pichai's 3.2 quadrillion tokens/month disclosure: Gemini 73T -> 107T lifted US 156T -> 190T while China held at 154T. US-India per-capita gap 597x held.",
+    "great_divergence": "China: 45% of tokens, 5% of Token GDP. US: 55% of tokens, 90% of Token GDP. Volume parity (50/50, established v0.81) broken at I/O 2026 (May 19-20): Pichai's all-surfaces disclosure put Gemini at 107T/day (+34T over v1.4), pushing US 36T ahead of China. Pricing gap unchanged at 15×.",
     "doubao_global_share_pct": 41,
     "doubao_note": "Doubao remains #1 globally (129T/day, all-sources scope including external MaaS + internal Douyin AI / Doubao App / Jimeng). IDC May 7 report independently confirms Volcengine #1 in China at 49.5% external MaaS market share.",
     "openrouter_milestone": "v0.81 upgrade: OpenRouter 1.27T → 3.0T/day. Validated by a16z 'State of AI' 100T Token Study (Jan 15, 2026) and OpenRouter's April 2026 disclosure of 20T tokens/week (4× YoY). NOTE: OpenRouter is an aggregator — its volume overlaps with vendor totals (e.g., Kimi K2.6 routes 1.85T weekly through OR, counted in both Kimi and OpenRouter rows).",
     "perplexity_milestone": "v0.81 upgrade: Perplexity 0.09T → 0.35T/day. 45M MAU, 30M+ queries/day (May 2025), $200M ARR Sep 2025, projected $656M for 2026.",
     "xiaomi_milestone": "v0.81 NEW VENDOR: Xiaomi MiMo-V2-Pro at 0.30T/day. Launched as anonymous 'Hunter Alpha' on OpenRouter Mar 11, 2026; accumulated 1T tokens before Mar 18 official reveal; ~500B tokens/week on OR alone post-launch. 1T params total, 1M context, $1/$3 per M.",
     "openai_api_milestone": "OpenAI APIs at 15 billion tokens/minute (Mar 31 official, held). GPT-5.5 launched Apr 23, GPT-5.5 Instant May 5.",
-    "gemini_api_milestone": "Pichai disclosed Gemini hit 16B tokens/min via direct API at Cloud Next 2026 / Q1 2026 earnings, up from 10B in Q4 2025 — +60% in one quarter. Gemini 3.x line: 3 Pro (Nov 2025), 3.1 Flash-Lite preview (Mar 2026), 3.1 Pro (May 2026), 3.2 Flash spotted. Google I/O 2026: May 19-20.",
+    "gemini_api_milestone": "Google I/O 2026 keynote (May 19-20): Pichai disclosed 3.2 quadrillion tokens/month across all Google surfaces (7x YoY from ~480T/month at I/O 2025; ~9.7T/month at I/O 2024) + API throughput 19B tokens/min (up from 16B/min at Cloud Next April, 10B/min Q4 2025). 3.2 quadrillion/30 = 107T/day all-surfaces. Internal Gemini 3.5 Flash >3T/day (doubled every few weeks from 0.5T/day in March). Top companies 'about 1 trillion tokens a day' framing introduced. 8.5M developers monthly. Gemini 3.5 Flash GA across all Google products and APIs.",
     "microsoft_milestone": "Q3 FY2026 (Apr 29): AI business ARR $37B (+123% YoY), Microsoft 365 Copilot crossed 20M paid seats (vs 15M Jan), Microsoft-OpenAI partnership restructured Apr 27 to non-exclusive.",
     "anthropic_milestone": "Opus 4.7 launched April 16 (new tokenizer +35% tokens for same input). Claude MAU +44% Mar→Apr to 23M — biggest growth among top AI apps in April. SimilarWeb Mar 2026: claude.ai 613.7M monthly visits (vs 176M Dec 2025, +3.5× in 3 months).",
     "kimi_milestone": "K2.6 launched April 20 (1T params, 262K context, ties GPT-5.5 on SWE-Bench Pro at 80% lower cost). ARR doubled $100M → $200M Mar → Apr. $2B funding round closing May 6 at $20B valuation.",
@@ -1452,9 +1457,9 @@
       "source": "China Daily’s May 6 report on Doubao’s paid-tier test reiterates the latest official scale anchor: 120T tokens/day as of March, with 140 enterprise clients above 1T cumulative tokens. No newer hard throughput figure surfaced, so GATT holds Doubao at 129T/day extrapolated from the April official anchor.",
       "source_url": "https://global.chinadaily.com.cn/a/202605/06/WS69fa79bea310d6866eb46f3e.html",
       "source_date": "2026-05-06",
-      "extrapolated_to": "2026-05-11",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 5,
+      "data_freshness_days": 14,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -1506,17 +1511,17 @@
       "rank": 2,
       "name": "Google Gemini (All Surfaces)",
       "country": "US",
-      "daily_tokens_T": 73,
-      "confidence": "Medium",
+      "daily_tokens_T": 107,
+      "confidence": "High",
       "tier": 1,
-      "source": "Google’s May 7 Gemini 3.1 Flash-Lite GA post reinforces Gemini’s high-volume production footprint with ultra-low-latency positioning and customer examples at million-call scale, but it does not beat the existing 16B tokens/min API anchor disclosed by Pichai in April. GATT therefore holds Gemini at 73T/day all-surfaces.",
-      "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available",
-      "source_date": "2026-05-07",
-      "extrapolated_to": "2026-05-11",
+      "source": "Google I/O 2026 keynote (May 19-20): Sundar Pichai disclosed token processing has reached 3.2 quadrillion tokens/month across Google surfaces (7x growth YoY from ~480T/month at I/O 2025), and API throughput is now 19 billion tokens/minute (up from 16B/min at Cloud Next April). 3.2 quadrillion/month = ~107T/day all-surfaces. API only = 19B × 60 × 24 = 27.4T/day. Implied All-Surfaces multiplier = 107/27.4 = 3.9x (vs. v1.4's editorial 3.2x). Pichai also disclosed internal Gemini 3.5 Flash processes >3T/day, doubled every few weeks from 0.5T/day in March.",
+      "source_url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "source_date": "2026-05-20",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 4,
-      "is_extrapolated": true,
-      "note": "May 7 Flash-Lite GA is a fresh high-volume demand signal, but no harder figure than the 16B tokens/min API anchor appeared. Gemini stays at 73T/day all-surfaces.",
+      "data_freshness_days": 0,
+      "is_extrapolated": false,
+      "note": "I/O 2026 keynote replaces editorial multiplier with directly-disclosed all-surfaces total. Composite confidence upgraded Medium -> High because the 3.2x multiplier flagged by Sokolov peer review (v1.0) is no longer judgment-based - Pichai backed out a 3.9x multiplier himself via the 3.2 quadrillion/month + 19B tokens/min twin disclosures.",
       "revision_history": [
         {
           "date": "2026-04-06",
@@ -1548,12 +1553,18 @@
           "value_T": 73,
           "reason": "MAJOR UPGRADE: Pichai disclosed 16B tokens/min via direct API at Cloud Next 2026 (April), up from 10B in Q4 2025 — +60% in one quarter. 16B × 60 × 24 = 23T/day API only. All Surfaces revised to 73T using 3.2× multiplier (down from 4×). Confidence upgraded medium-high → high.",
           "source": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/"
+        },
+        {
+          "date": "2026-05-20",
+          "value_T": 107,
+          "reason": "MAJOR UPGRADE (I/O 2026 keynote): Pichai disclosed 3.2 quadrillion tokens/month across Google surfaces (7x YoY from ~480T/month at I/O 2025) + API throughput 19B tokens/min (up from 16B/min at Cloud Next). 3.2 quadrillion/30 = 107T/day all-surfaces (observed, not inferred). API portion 19B × 60 × 24 = 27.4T/day. Implied All-Surfaces multiplier 3.9x is now disclosed not editorial; Sokolov v1.0 critique resolved. Composite confidence Medium -> High.",
+          "source": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/"
         }
       ],
-      "source_value_T": 73,
+      "source_value_T": 107,
       "parameter_classification": {
         "category": "observed",
-        "rationale": "Pichai disclosed 'more than 16 billion tokens per minute via direct API' at Cloud Next 2026 / Q1 2026 earnings (+60% QoQ). API portion (~23T) is fully observed. NOTE: composite 73T applies a 3.2x All-Surfaces multiplier (Search AI Overviews + Gemini App + Workspace) which is judgment-based; this is why the composite confidence is Medium even though the underlying signal is observed (downgraded High->Medium in v1.0 per Sokolov)."
+        "rationale": "I/O 2026 keynote (May 19-20): Pichai disclosed 3.2 quadrillion tokens/month all-surfaces + 19B tokens/min API. Both the API anchor (27.4T/day) AND the all-surfaces composite (107T/day) are now directly observed - no editorial multiplier required. The Sokolov v1.0 critique that flagged the 3.2x All-Surfaces multiplier as judgment-based is resolved: Pichai's 3.2Q/month + 19B/min twin disclosures back out a 3.9x multiplier from data, not editorial."
       }
     },
     {
@@ -1567,9 +1578,9 @@
       "source": "OpenAI’s May 11 Deployment Company announcement says more than 1 million businesses have adopted OpenAI products and APIs, alongside 9M+ paying business users and 4M+ developers. It still does not publish a harder throughput figure than the standing >15B API tokens/min anchor, so GATT holds OpenAI at 45T/day.",
       "source_url": "https://openai.com/index/openai-launches-the-deployment-company/",
       "source_date": "2026-05-11",
-      "extrapolated_to": "2026-05-11",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 0,
+      "data_freshness_days": 9,
       "is_extrapolated": true,
       "note": "Fresh May 11 enterprise-adoption signal (>1M business adopters) supports demand staying elevated, but no harder throughput figure surfaced. OpenAI stays at 45T/day.",
       "revision_history": [
@@ -1622,9 +1633,9 @@
       "source": "Anthropic’s May 6 compute update doubles Claude Code five-hour limits, removes peak-hour reductions, raises Claude Opus API limits, and adds 300MW / 220,000 NVIDIA GPUs via the SpaceX Colossus 1 deal. Strong demand-and-capacity signal, but still no direct throughput disclosure; GATT holds Claude at 22T/day.",
       "source_url": "https://www.anthropic.com/news/higher-limits-spacex",
       "source_date": "2026-05-06",
-      "extrapolated_to": "2026-05-11",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.18,
-      "data_freshness_days": 5,
+      "data_freshness_days": 14,
       "is_extrapolated": true,
       "note": "May 6 higher-limits + compute expansion confirms Claude demand is still outrunning supply, but without a hard token print. Claude stays at 22T/day.",
       "revision_history": [
@@ -1710,9 +1721,9 @@
       "source": "Q3 FY2026 earnings (Apr 29, 2026): AI business ARR $37 billion, +123% YoY. Microsoft 365 Copilot crossed 20M paid seats (vs 15M in Jan). Azure +40% growth. GitHub Copilot 4.7M+ paid subs. Microsoft-OpenAI partnership restructured Apr 27 to non-exclusive license through 2032 (no more revenue share to OpenAI). Capex $190B for FY26.",
       "source_url": "https://news.microsoft.com/source/2026/04/29/microsoft-cloud-and-ai-strength-fuels-third-quarter-results/",
       "source_date": "2026-04-29",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 10,
+      "data_freshness_days": 21,
       "is_extrapolated": true,
       "note": "Confidence upgraded low → medium. AI business ARR scale ($37B) is now disclosed quarterly — strongest enterprise AI signal in the index. Copilot seat count nearly tripled YoY. New non-exclusive structure with OpenAI may shift Microsoft toward more own-model inference.",
       "revision_history": [
@@ -1745,9 +1756,9 @@
       "source": "DeepSeek V4 Pro / V4 Flash launched April 24 — 1M token context, 1.6T params MoE / 49B active (V4 Pro), 284B / 13B (V4 Flash). #3 enterprise market share (behind Anthropic, OpenAI). 130M MAU. Pricing $0.145/M input, $1.74/M output (~7× cheaper than GPT-5.5).",
       "source_url": "https://api-docs.deepseek.com/news/news260424",
       "source_date": "2026-04-24",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 15,
+      "data_freshness_days": 26,
       "is_extrapolated": true,
       "note": "V4 launch (Apr 24) is significant: 1M context window doubles V3, MoE efficiency improvements likely accelerate adoption. #3 in enterprise dev SDK usage. v0.79 had 8.2T held; v0.80 bumps to 9.2T to incorporate V4 Pro/Flash launch.",
       "revision_history": [
@@ -1780,9 +1791,9 @@
       "source": "Qwen 3.6-Plus released April 2 with enhanced coding (Caixin Apr 2). Alibaba reorganized into 'Alibaba Token Hub' — consolidating Qwen, Tongyi Lab, and Wukong enterprise unit under CEO Eddie Wu. 13.9% China market share. IDC May 7 report places Alibaba Bailian #2 in China external MaaS at 27% (H1 2025).",
       "source_url": "https://www.caixinglobal.com/2026-04-02/alibaba-releases-qwen-36-plus-ai-model-with-enhanced-coding-capabilities-102430395.html",
       "source_date": "2026-04-02",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 37,
+      "data_freshness_days": 48,
       "is_extrapolated": true,
       "note": "Alibaba Token Hub reorg (Apr 2026) consolidating five separately operating units suggests serious enterprise AI commitment. Qwen 3.6-Plus coding upgrade aligns with developer market push.",
       "revision_history": [
@@ -1816,9 +1827,9 @@
       "source": "April 2026: 20 trillion tokens/week = 2.86T/day on OpenRouter (4× YoY from 5T/week April 2025). Validated by a16z 'State of AI: An Empirical 100 Trillion Token Study' (arXiv 2601.10088, Jan 15, 2026). OpenRouter passed 1T tokens/day in December 2025. Top traffic May 2026: Kimi K2.6 (1.85T weekly), DeepSeek V4 Pro/Flash, Claude Sonnet 4, Tencent Hy3 preview, Xiaomi MiMo-V2-Pro.",
       "source_url": "https://openrouter.ai/state-of-ai",
       "source_date": "2026-04-30",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 9,
+      "data_freshness_days": 20,
       "is_extrapolated": true,
       "note": "v0.81 MAJOR REVISION: Bumped 1.27T → 3.0T/day based on OpenRouter's April 2026 20T/week disclosure and a16z 100T Token Study. Previous estimate was based on stale Feb 2026 data and missed the Mar-Apr 2026 4× YoY growth.",
       "revision_history": [
@@ -1856,9 +1867,9 @@
       "source": "Hy3 (Hunyuan 3.0) open-sourced April 23, 2026 — 295B total params / 21B activated MoE, 256K context, 80 transformer layers, fast-and-slow-thinking fused. Available on Tencent Cloud TokenHub + OpenRouter (free 2-week trial). Led by Shunyu Yao (ex-OpenAI, appointed Tencent chief AI scientist Dec 2025). Yuanbao 50M DAU peak (Spring Festival 2026). Yuanbao image gen via DeepSeek integration (May 7). 900 internal Tencent apps.",
       "source_url": "https://huggingface.co/tencent/Hy3-preview",
       "source_date": "2026-04-23",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.12,
-      "data_freshness_days": 16,
+      "data_freshness_days": 27,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -1890,9 +1901,9 @@
       "source": "Kimi K2.6 launched April 20, 2026 — 1T params total / 32B active MoE, 262K context, ties GPT-5.5 on SWE-Bench Pro at 80% lower cost. ARR doubled in one month: $100M (Mar) → $200M (Apr). $2B funding round closing May 6, $20B post-money valuation. Weekly OpenRouter volume 1.85T tokens (#2 globally on OR).",
       "source_url": "https://miraflow.ai/blog/kimi-k2-6-explained-moonshot-ai-open-source-model-ties-gpt-5-5-coding",
       "source_date": "2026-04-20",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.3,
-      "data_freshness_days": 19,
+      "data_freshness_days": 30,
       "is_extrapolated": true,
       "note": "Fastest-growing vendor in v0.80 update. ARR doubled in 30 days. K2.6 ties GPT-5.5 on coding at ~80% discount. OpenRouter 1.85T weekly = 0.264T/day from OR alone. With agent + Kimi Code adoption, total estimated 2.5T/day. Growth rate raised 25% → 30%/mo.",
       "revision_history": [
@@ -1926,9 +1937,9 @@
       "source": "Conservative cloud-routing estimate: 2.2B active devices x ~15% Apple Intelligence-active users x ~600 cloud tokens/active-user/day = ~2T/day. Awaiting WWDC 2026 for direct disclosure.",
       "source_url": "https://www.apple.com/apple-intelligence/",
       "source_date": "2026-05-11",
-      "extrapolated_to": "2026-05-11",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.15,
-      "data_freshness_days": 0,
+      "data_freshness_days": 9,
       "is_extrapolated": false,
       "revision_history": [
         {
@@ -1956,9 +1967,9 @@
       "source": "Ernie 5.0 launched Jan 22, 2026 (2.4T params MoE, native omni-modal). 202M MAU (Feb 2026). Q2 2024 baseline: 1T tokens/day, 600M API calls/day; Feb 2025: 16.5B daily API calls. IDC May 7 report places Baidu Qianfan #3 in China external MaaS at 17%.",
       "source_url": "https://www.scmp.com/tech/tech-trends/article/3340866/baidu-launches-ernie-50-firms-ai-assistant-users-reach-200-million-month",
       "source_date": "2026-01-25",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.05,
-      "data_freshness_days": 104,
+      "data_freshness_days": 115,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -1988,9 +1999,9 @@
       "tier": 1,
       "source": "iFlytek Q4 2025 earnings",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.06,
-      "data_freshness_days": 129,
+      "data_freshness_days": 186,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2020,9 +2031,9 @@
       "tier": 2,
       "source": "$400M ARR ÷ blended token price",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 129,
+      "data_freshness_days": 186,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2053,9 +2064,9 @@
       "source": "DOWNGRADE: Grok MAU dropped 12.5% Mar→Apr to 12.2M (Similarweb). Tumbled from 2nd to 5th place in global mobile app rankings. Claude (+44% to 23M) and Gemini (+19%) gained share. 80+ staff (incl. several co-founders) left xAI in recent months per Fast Company. Grok 4.1 launched but adoption lagging.",
       "source_url": "https://finance.biggo.com/news/dlxZ-50BrAZSr0oSEq2c",
       "source_date": "2026-04-15",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": -0.05,
-      "data_freshness_days": 24,
+      "data_freshness_days": 35,
       "is_extrapolated": true,
       "note": "First vendor in GATT history with negative growth rate. MAU down 12.5%, brain drain (80+ staff incl co-founders), feature paywalling, regulatory scrutiny. Conservative hold at 0.55T (vs theoretical 0.6T).",
       "revision_history": [
@@ -2087,9 +2098,9 @@
       "tier": 1,
       "source": "OpenRouter + HuggingFace",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 91,
+      "data_freshness_days": 108,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2120,9 +2131,9 @@
       "source": "v0.81 MAJOR REVISION. 45M MAU (early 2026, vs 22M start of 2025 = +105% YoY). 170M monthly visits. 30M+ search queries/day (May 2025 baseline; estimated 50M+/day by May 2026). $200M ARR Sep 2025 (vs $100M March 2025 = doubled in 6 months); projected $656M ARR for 2026. Comet browser + Pro Search + mobile growth. Math: 50M queries × ~6K tokens/grounded answer ≈ 0.30T/day search-side + Pro/Comet additions ≈ 0.35T total.",
       "source_url": "https://www.demandsage.com/perplexity-ai-statistics/",
       "source_date": "2026-04-30",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.2,
-      "data_freshness_days": 9,
+      "data_freshness_days": 20,
       "is_extrapolated": true,
       "note": "v0.81 confidence upgrade low → medium. Previous estimate (0.09T) was based on stale 2025-Q4 ARR back-calc; new estimate uses MAU + queries/day primary signals corroborated by ARR trajectory. SimilarWeb traffic share (~2.4%) ranks Perplexity #4 in US gen AI chatbot market.",
       "revision_history": [
@@ -2159,9 +2170,9 @@
       "tier": 2,
       "source": "2.5M devs × usage + LPU capacity back-calc",
       "source_date": "2026-01",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.12,
-      "data_freshness_days": 123,
+      "data_freshness_days": 139,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2192,9 +2203,9 @@
       "source": "v0.81 NEW VENDOR. MiMo-V2-Pro launched as anonymous 'Hunter Alpha' on OpenRouter March 11, 2026 — accumulated 1T cumulative tokens before official Xiaomi reveal on March 18. Currently ~500B tokens/week (~70B/day) on OR alone. 1T total params MoE, 1M context, agentic-optimized. Pricing $1/M input, $3/M output. Available via Xiaomi cloud + OpenRouter.",
       "source_url": "https://mimo.xiaomi.com/mimo-v2-pro",
       "source_date": "2026-03-18",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.2,
-      "data_freshness_days": 52,
+      "data_freshness_days": 63,
       "is_extrapolated": true,
       "note": "Conservative 0.30T/day estimate based on: (1) ~70B/day on OpenRouter alone (validated by ~500B tokens/week), (2) Xiaomi enterprise + on-device deployments add ~3-5× OR volume, (3) early-stage adoption curve suggests 20%/mo growth. Confidence low — first vendor entry, no enterprise revenue disclosure yet.",
       "revision_history": [
@@ -2222,9 +2233,9 @@
       "source": "Meta AI distributed across 4B+ MAU apps. 'Virtually no standalone AI users vs OpenAI' (247WallSt, Mar 15 2026).",
       "source_url": "https://247wallst.com/investing/2026/03/15/meta-has-virtually-no-ai-users-compared-to-openais-900m-says-big-technologys-kantrowitz/",
       "source_date": "2026-03-15",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.1,
-      "data_freshness_days": 55,
+      "data_freshness_days": 66,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2254,9 +2265,9 @@
       "tier": 2,
       "source": "AWS revenue ÷ price estimate",
       "source_date": "2025-Q4",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 129,
+      "data_freshness_days": 186,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2286,9 +2297,9 @@
       "tier": 1,
       "source": "OpenRouter data",
       "source_date": "2026-02",
-      "extrapolated_to": "2026-05-09",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.05,
-      "data_freshness_days": 91,
+      "data_freshness_days": 108,
       "is_extrapolated": true,
       "revision_history": [
         {
@@ -2320,9 +2331,9 @@
       "source": "~$80M ARR estimate (mid-2026, mixed Series D + post-D revenue signals) / ~$2/M blended enterprise price ~= 110B tokens/day. Conservative round to 0.10T/day.",
       "source_url": "https://cohere.com/",
       "source_date": "2026-05-11",
-      "extrapolated_to": "2026-05-11",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.08,
-      "data_freshness_days": 0,
+      "data_freshness_days": 9,
       "is_extrapolated": false,
       "revision_history": [
         {
@@ -2350,9 +2361,9 @@
       "source": "Conservative estimate from limited public signals: estimated ~$10M ARR (mid-2026 post-launch) / ~$1.5/M (Indian-rupee-discounted enterprise + government pricing) ~= 20B tokens/day. Rounded up to 0.05T for headroom on rapid post-IndiaAI-Mission growth.",
       "source_url": "https://www.sarvam.ai/",
       "source_date": "2026-05-11",
-      "extrapolated_to": "2026-05-11",
+      "extrapolated_to": "2026-05-20",
       "growth_rate_monthly": 0.25,
-      "data_freshness_days": 0,
+      "data_freshness_days": 9,
       "is_extrapolated": false,
       "revision_history": [
         {
@@ -2479,9 +2490,9 @@
       "confidence": "low"
     }
   ],
-  "global_total_T": 310,
-  "year_end_projection_T": "1100-1500",
-  "last_updated": "2026-05-11",
+  "global_total_T": 345,
+  "year_end_projection_T": "1100-1400",
+  "last_updated": "2026-05-20",
   "correction_log": [
     {
       "date": "2026-05-09",

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GATT — Global AI Token Tracker</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23171715'/><text x='50' y='68' font-size='54' font-family='Georgia,serif' font-weight='900' fill='white' text-anchor='middle'>G</text></svg>">
-<meta name="description" content="GATT tracks daily AI token consumption across 24 vendors, 12 countries. China 50% volume vs US 88% Token GDP — the Token Economy gap measured daily.">
+<meta name="description" content="GATT tracks daily AI token consumption across 24 vendors, 12 countries. Post-Google-I/O 2026: US 55% volume vs US 90% Token GDP — volume parity broken, pricing gap holds.">
 <meta name="keywords" content="AI token consumption, global AI usage, token economy, ByteDance Doubao, OpenAI tokens, AI inference data, China AI, US AI, AI compute">
 <meta name="author" content="Frank Gao">
 <meta name="robots" content="index, follow">
@@ -23,13 +23,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="GATT — Global AI Token Tracker | Token Economy Index">
-<meta property="og:description" content="China and the US are tied at 50/50 on AI token volume. But in Token GDP, the US captures 88% to China's 6%. Daily estimates from 24 vendors. The most complete open dataset.">
+<meta property="og:description" content="Volume parity broken at Google I/O 2026: Pichai disclosed 3.2 quadrillion Gemini tokens/month = 107T/day all-surfaces. US re-takes lead 55% / CN 45% of 345T/day globally. US still captures 90% of $115.6B Token GDP. Daily estimates from 24 vendors.">
 <meta property="og:url" content="https://gf691271.github.io/gatt/">
 <meta property="og:site_name" content="GATT — Global AI Token Tracker">
 <meta property="og:image" content="https://gf691271.github.io/gatt/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="GATT Token Economy Index: China 50% volume, US 88% Token GDP, 311T daily tokens — $97.0B annual Token GDP. IDC May 7 confirms Volcengine #1 at 49.5%. US vendors charge 15× more per token.">
+<meta property="og:image:alt" content="GATT Token Economy Index v1.5.2 (post-Google-I/O 2026): US 55% volume, China 45% volume, US 90% Token GDP. 345T daily tokens — $115.6B annual Token GDP. Pichai I/O 2026 keynote: 3.2 quadrillion Google tokens/month. US vendors charge 15× more per token.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@goghxiang">
@@ -680,10 +680,22 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
+      <span style="font-size:1.1rem;flex-shrink:0;">🚀</span>
+      <div>
+        <div style="font-size:0.78rem;font-weight:700;color:var(--text);">v1.5.2 Google I/O 2026 (May 19-20) — Gemini 73T → 107T, Global 311T → 345T, Token GDP $97.0B → $115.6B, volume parity broken</div>
+        <div style="font-size:0.65rem;color:var(--muted);line-height:1.5;margin-top:3px;">
+          Pichai disclosed <strong>3.2 quadrillion tokens/month</strong> all-surfaces (7× YoY from ~480T/month at I/O 2025) AND <strong>19B tokens/min</strong> via API (up from 16B/min Cloud Next). 3.2Q/30 = <strong>107T/day all-surfaces</strong> (replaces v1.4's 73T editorial composite). Implied All-Surfaces multiplier 3.9× is now disclosed not editorial — <strong>Sokolov v1.0 critique resolved</strong>, Gemini confidence upgraded Medium → High. ·
+          Internal Gemini 3.5 Flash <strong>&gt;3T/day</strong> (doubled every few weeks from 0.5T/day in March). 8.5M developers monthly. ·
+          <strong>Volume parity broken</strong> US 50% / CN 49% (v1.4) → <strong>US 55% / CN 45%</strong> (v1.5.2): Gemini +34T puts US 36T ahead of China. <strong>US Token GDP share 88% → 90%</strong>. ·
+          OpenAI / Anthropic / Doubao held at v1.4 values (no I/O-grade disclosures elsewhere). 23 non-Gemini vendor freshness rolled to 2026-05-20.
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="font-size:0.85rem;flex-shrink:0;">🌟</span>
       <div>
         <div style="font-size:0.78rem;font-weight:600;color:var(--text);">Gemini upgraded 61T → 73T — Pichai discloses 16B tokens/min via API at Cloud Next 2026 Q1 (+60% QoQ)</div>
-        <div style="font-size:0.65rem;color:var(--muted);">Single biggest US-side disclosure since GATT launch. API throughput jumped from 10B (Q4 2025) to 16B tokens/min in one quarter = 23T/day API only. All Surfaces estimate revised to 73T using 3.2× multiplier (down from 4× since API outpaced consumer surface attach). 330 organizations now process &gt;1T tokens each annually on Google Cloud.</div>
+        <div style="font-size:0.65rem;color:var(--muted);">Single biggest US-side disclosure since GATT launch. API throughput jumped from 10B (Q4 2025) to 16B tokens/min in one quarter = 23T/day API only. All Surfaces estimate revised to 73T using 3.2× multiplier (down from 4× since API outpaced consumer surface attach). 330 organizations now process &gt;1T tokens each annually on Google Cloud. <em style="color:var(--accent);">→ superseded by v1.5.2 (I/O 2026 above)</em></div>
       </div>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
@@ -783,7 +795,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
         The <strong>Token Economy</strong> is the global system of AI inference production, distribution, and consumption — measured in daily token throughput across models, regions, and use cases.
       </blockquote>
       <p style="font-size:0.78rem;color:var(--muted);margin:0 0 10px 0;line-height:1.6;">
-        As of May 11, 2026, the Token Economy processes an estimated <strong>311 trillion tokens per day</strong> across <strong>24 tracked vendors</strong> — roughly $265.8M in daily economic value (<strong>$97.0B annualized Token GDP</strong>) — with the United States edging past China (50.2/49.5) on volume after Apple Intelligence cloud-routed inference enters v1.3, but the US still commanding 88% of Token GDP due to a 15× pricing asymmetry. China's Doubao remains #1 globally at 129T tokens/day (~41% of all global AI tokens).
+        As of May 20, 2026 (post-Google-I/O 2026), the Token Economy processes an estimated <strong>345 trillion tokens per day</strong> across <strong>24 tracked vendors</strong> — roughly $316.7M in daily economic value (<strong>$115.6B annualized Token GDP</strong>) — with the United States re-taking the volume lead (US 55% / CN 45%) after Pichai's I/O 2026 keynote disclosed 3.2 quadrillion Gemini tokens/month across Google surfaces (107T/day, replacing v1.4's 73T editorial composite). US commands 90% of Token GDP due to a 15× pricing asymmetry. China's Doubao remains #1 single-vendor globally at 129T tokens/day; Google Gemini #2 at 107T/day.
       </p>
       <div style="font-size:0.7rem;color:var(--subtle);border-top:1px solid var(--border);padding-top:8px;margin-top:8px;">
         <strong>Disambiguation:</strong> Not to be confused with (1) behavioral psychology's token economy (1960s reward systems) or (2) cryptocurrency tokenomics (2017+). GATT uses <em>Token Economy</em> exclusively to mean <strong>AI inference at scale</strong>.
@@ -816,12 +828,12 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;">
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Daily Token Volume</div>
-      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">311T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
+      <div id="gatt-live-global" style="font-size:1.5rem;font-weight:700;color:#60a5fa;">345T <span style="font-size:0.6rem;color:#34d399;font-weight:500;vertical-align:middle;">⟳ live</span></div>
       <div style="font-size:0.65rem;color:#64748b;">tokens/day · global aggregate</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
       <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:#94a3b8;margin-bottom:4px;">Token GDP (annualized)</div>
-      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$97.0B</div>
+      <div style="font-size:1.5rem;font-weight:700;color:#a3e635;">$115.6B</div>
       <div style="font-size:0.65rem;color:#64748b;">retail-priced inference value</div>
     </div>
     <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px;">
@@ -838,7 +850,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
     <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:6px;padding:12px;">
       <div style="font-size:0.65rem;font-weight:700;color:#fca5a5;margin-bottom:6px;">⚡ Q2 Headline Finding</div>
-      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">China <strong style="color:#f87171;">50%</strong> volume vs <strong style="color:#fbbf24;">6%</strong> Token GDP. US <strong style="color:#60a5fa;">50%</strong> volume vs <strong style="color:#a3e635;">88%</strong> GDP. Volume gap closed in five weeks (was 58/35 on Apr 6) as US disclosures (Gemini 16B/min, GPT-5.5, MS $37B AI ARR, Opus 4.7) accumulated. The 15× pricing gap remains.</div>
+      <div style="font-size:0.75rem;color:#e2e8f0;line-height:1.5;">US <strong style="color:#60a5fa;">55%</strong> volume vs <strong style="color:#a3e635;">90%</strong> Token GDP. China <strong style="color:#f87171;">45%</strong> volume vs <strong style="color:#fbbf24;">5%</strong> GDP. Volume parity (50/50, v1.3–v1.4) broken at I/O 2026: Pichai disclosed 3.2 quadrillion Gemini tokens/month (107T/day all-surfaces, up from v1.4's 73T). The 15× pricing gap remains; US Token GDP share climbed 88% → 90%.</div>
     </div>
     <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:6px;padding:12px;">
       <div style="font-size:0.65rem;font-weight:700;color:#93c5fd;margin-bottom:6px;">📊 Validation & Framework Adoption (v0.85)</div>
@@ -846,7 +858,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     </div>
   </div>
   <div style="font-size:0.62rem;color:#475569;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;">
-    📌 How to cite: <em>"According to GATT v1.4 (May 11, 2026), global AI inference reached 311 trillion tokens/day across 24 vendors — equivalent to $97.0 billion/year in economic value (Token GDP)."</em> · Source: <a href="https://gf691271.github.io/gatt/" style="color:#60a5fa;">gf691271.github.io/gatt</a> · CC BY 4.0
+    📌 How to cite: <em>"According to GATT v1.5.2 (May 20, 2026), global AI inference reached 345 trillion tokens/day across 24 vendors — equivalent to $115.6 billion/year in economic value (Token GDP). Pichai disclosed 3.2 quadrillion tokens/month across Google surfaces at I/O 2026."</em> · Source: <a href="https://gf691271.github.io/gatt/" style="color:#60a5fa;">gf691271.github.io/gatt</a> · CC BY 4.0
   </div>
 </div>
 
@@ -943,7 +955,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     <div class="hl-label">Month-on-month growth</div>
     <div class="hl-number" style="color:#166534;">+<span id="hl-growth">12</span>%</div>
     <div class="hl-sub">Jan → Feb 2026 (est.)</div>
-    <div class="hl-badge">driven by Doubao 129T (official) + Gemini 73T + OpenAI 45T + Claude 22T</div>
+    <div class="hl-badge">driven by Doubao 129T (official) + Gemini 107T (Pichai I/O 2026: 3.2Q/mo) + OpenAI 45T + Claude 22T</div>
     <div style="font-size:.63rem;color:var(--muted);margin-top:4px;">Source: GATT interpolation model · revenue proxies</div>
   </div>
 
@@ -1014,7 +1026,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     <div style="font-size:0.66rem;color:#64748b;margin-bottom:12px;">China generates <strong style="color:#f87171;">50%</strong> of global AI tokens but captures only <strong style="color:#fbbf24;">6%</strong> of Token GDP — because Chinese AI pricing is 15× cheaper than US.</div>
     <canvas id="gdpDivergenceChart" width="600" height="160" style="width:100%;max-width:600px;display:block;border-radius:6px;"></canvas>
     <div style="display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;">
-      <div style="display:flex;align-items:center;gap:5px;font-size:0.62rem;color:#bfdbfe;"><span style="width:10px;height:10px;background:#3b82f6;border-radius:2px;display:inline-block;"></span>Volume Share (% of 311T tokens/day)</div>
+      <div style="display:flex;align-items:center;gap:5px;font-size:0.62rem;color:#bfdbfe;"><span style="width:10px;height:10px;background:#3b82f6;border-radius:2px;display:inline-block;"></span>Volume Share (% of 345T tokens/day)</div>
       <div style="display:flex;align-items:center;gap:5px;font-size:0.62rem;color:#bfdbfe;"><span style="width:10px;height:10px;background:#fbbf24;border-radius:2px;display:inline-block;"></span>GDP Share (% of $263M/day)</div>
     </div>
   </div>
@@ -1283,7 +1295,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
         <span id="live-eq-text" style="text-align:right;"></span>
       </div>
       <div id="live-rate-text" style="font-family:'Courier New',monospace;font-size:0.68rem;color:#2a4a2a;margin-top:8px;letter-spacing:0.06em;">
-        3,599,537 tokens/sec · 311T
+        3,993,056 tokens/sec · 345T
       </div>
     </div>
   </div>
@@ -1542,7 +1554,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
     <div class="proj-badge">At current +18%/mo growth rate</div>
     <button class="show-method" onclick="toggleProjMethod('proj-global')" title="Projection logic" style="margin-top:8px;display:block;">ⓘ See projection logic</button>
     <div class="proj-method-panel" id="proj-global" style="display:none">
-      At +18%/mo compounded from May 2026 (311T/day), Dec 2026 ≈ 311 × 1.18^7 ≈ 993T. At +22%/mo (upper) ≈ 1.26PT. Growth driven by Doubao 129T anchor (May 2026), Gemini 16B/min API (+60% QoQ), Microsoft AI ARR $37B (+123% YoY). Key risk: actual growth could decelerate to +10%/mo → ~600T/day.
+      At +18%/mo compounded from May 2026 (345T/day, post-I/O 2026), Dec 2026 ≈ 345 × 1.18^7 ≈ 1,101T (1.1 PT). At +22%/mo (upper) ≈ 1.40 PT. Growth driven by Pichai I/O 2026 disclosure (3.2 quadrillion Gemini tokens/month = 107T/day), Doubao 129T anchor, Microsoft AI ARR $37B (+123% YoY). Key risk: actual growth could decelerate to +10%/mo → ~672T/day.
     </div>
   </div>
 
@@ -1560,7 +1572,7 @@ html, body { background: var(--bg); color: var(--text); font-family: Georgia, 'T
   <div class="proj-card">
     <div class="proj-label">China vs US Gap</div>
     <div class="proj-number" style="font-size:1.3rem;color:var(--text);">Narrowing vol · Widening val</div>
-    <div class="proj-sub">CN: 50% vol / US: 88% GDP → projected CN: 50% / US: 85%+</div>
+    <div class="proj-sub">v1.5.2 (post-I/O 2026): CN: 45% vol / US: 90% GDP → projected CN: 40% / US: 92%+ as US frontier disclosures continue</div>
     <div class="proj-badge">DEC gap persists — premium pricing advantage</div>
     <button class="show-method" onclick="toggleProjMethod('proj-gap')" title="Projection logic" style="margin-top:8px;display:block;">ⓘ See projection logic</button>
     <div class="proj-method-panel" id="proj-gap" style="display:none">
@@ -2269,7 +2281,7 @@ GET https://gf691271.github.io/gatt/data/tci-latest.json
   <div>
     <div style="font-size:0.72rem;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">Data badge (small):</div>
     <div style="background:var(--chip);padding:10px 14px;border-radius:6px;font-family:monospace;font-size:0.75rem;color:var(--muted);word-break:break-all;cursor:pointer;" onclick="copyEmbed('badge')" title="Click to copy">
-      &lt;a href="https://gf691271.github.io/gatt/" target="_blank"&gt;&lt;img src="https://img.shields.io/badge/Token_Economy-311T%2Fday-c0392b?style=flat-square&amp;logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn4iH8J+UujwvdGV4dD48L3N2Zz4=" alt="GATT Token Economy: 311T/day"&gt;&lt;/a&gt;
+      &lt;a href="https://gf691271.github.io/gatt/" target="_blank"&gt;&lt;img src="https://img.shields.io/badge/Token_Economy-345T%2Fday-c0392b?style=flat-square&amp;logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn4iH8J+UujwvdGV4dD48L3N2Zz4=" alt="GATT Token Economy: 345T/day"&gt;&lt;/a&gt;
     </div>
     <div style="font-size:0.68rem;color:var(--subtle);margin-top:3px;">Click to copy · Works in GitHub README, docs, and websites</div>
   </div>
@@ -2280,7 +2292,7 @@ GET https://gf691271.github.io/gatt/data/tci-latest.json
 function copyEmbed(type) {
   const texts = {
     full: '<iframe src="https://gf691271.github.io/gatt/" width="100%" height="800" frameborder="0" style="border-radius:8px" title="GATT Global AI Token Tracker"></iframe>',
-    badge: '<a href="https://gf691271.github.io/gatt/" target="_blank"><img src="https://img.shields.io/badge/Token_Economy-311T%2Fday-c0392b?style=flat-square" alt="GATT Token Economy: 311T/day"></a>'
+    badge: '<a href="https://gf691271.github.io/gatt/" target="_blank"><img src="https://img.shields.io/badge/Token_Economy-345T%2Fday-c0392b?style=flat-square" alt="GATT Token Economy: 345T/day"></a>'
   };
   navigator.clipboard.writeText(texts[type]).then(() => {
     const msg = document.getElementById('embed-copy-msg');
@@ -2347,7 +2359,7 @@ function copyEmbed(type) {
       <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#166534;margin-bottom:6px;">May 2026 ← NOW</div>
       <div style="font-size:1.5rem;font-weight:700;color:#16a34a;">~4.6 min</div>
       <div style="font-size:0.7rem;color:#166534;margin-top:4px;">to produce 1T tokens</div>
-      <div style="font-size:0.65rem;color:#166534;margin-top:2px;">~311T/day global</div>
+      <div style="font-size:0.65rem;color:#166534;margin-top:2px;">~345T/day global</div>
     </div>
   </div>
   <div style="background:var(--chip);border-radius:6px;padding:12px 16px;font-size:0.82rem;line-height:1.6;">
@@ -3400,7 +3412,7 @@ function toggleProjMethod(id) {
 // mom: month-on-month growth estimate (Jan→Feb 2026), null = unknown
 const vendors = [
   {rank:1,  flag:'🇨🇳', name:'Doubao',        co:'ByteDance',    tokens:'129T',  tokNum:129,  conf:3, src:'OFFICIAL: Volcengine May 2026 anchor (re-verified vs Apr 1 Wuhan AI Expo 120T baseline + IDC May 7).', country:'CN', mom:8,  fresh:1,  extrap:false},
-  {rank:2,  flag:'🇺🇸', name:'Google Gemini', co:'Google',       tokens:'~73T',  tokNum:73,   conf:3, src:'Pichai: 16B tokens/min API at Cloud Next 2026 (+60% QoQ)',   country:'US', mom:12, fresh:4,  extrap:true},
+  {rank:2,  flag:'🇺🇸', name:'Google Gemini', co:'Google',       tokens:'~107T', tokNum:107,  conf:3, src:'Pichai I/O 2026: 3.2 quadrillion tokens/month all-surfaces (= 107T/day) + 19B tokens/min API (+19% from Cloud Next)', country:'US', mom:12, fresh:0,  extrap:false},
   {rank:3,  flag:'🇺🇸', name:'ChatGPT / API', co:'OpenAI',       tokens:'~45T',  tokNum:45,   conf:3, src:'OFFICIAL: 15B tokens/min API (Mar 31, 2026) + ChatGPT WAU 900M', country:'US', mom:15, fresh:14, extrap:false},
   {rank:4,  flag:'🇨🇳', name:'Qwen',          co:'Alibaba Cloud',tokens:'5.3T',  tokNum:5.3,  conf:2, src:'Earnings + extrapolation', country:'CN', mom:8,  fresh:75, extrap:true},
   {rank:5,  flag:'🇨🇳', name:'ERNIE',         co:'Baidu',        tokens:'1.7T',  tokNum:1.7,  conf:3, src:'Earnings + extrapolation', country:'CN', mom:5,  fresh:75, extrap:true},
@@ -3647,7 +3659,7 @@ function buildCountryRank() {
 
 // ── SHARE ──
 function shareStats() {
-  const text = `Global AI Token Tracker — May 11, 2026 (v1.4)\n\n🌍 ~311T tokens/day globally across 24 vendors (Doubao 129T + Gemini 73T + OpenAI 45T + Anthropic 22T OFFICIAL anchors)\n🇨🇳 China: 49% by volume (Doubao 129T/day · #1 globally)\n🇺🇸 US: 50% volume + Apple Intelligence cloud-routed, captures 88% of Token GDP\n💰 Global Token GDP: ~$97.0B/year (15× US/China pricing gap)\n\nhttps://gf691271.github.io/gatt/`;
+  const text = `Global AI Token Tracker — May 20, 2026 (v1.5.2 · post-Google-I/O 2026)\n\n🌍 ~345T tokens/day globally across 24 vendors (Doubao 129T + Gemini 107T + OpenAI 45T + Anthropic 22T)\n🇺🇸 US re-takes volume lead 55% (Pichai I/O 2026: 3.2 quadrillion Gemini tokens/month = 107T/day all-surfaces)\n🇨🇳 China: 45% volume — 50/50 parity broken on I/O disclosure\n💰 Global Token GDP: $115.6B/year · US captures 90% (15× US/China pricing gap holds)\n\nhttps://gf691271.github.io/gatt/`;
   if (navigator.share) {
     navigator.share({ title: 'Global AI Token Tracker', text, url: 'https://gf691271.github.io/ai-token-tracker/' });
   } else {
@@ -3767,7 +3779,7 @@ function handleCorrect() {
 
 // ── COPY SHARE TEXT ──
 function copyShareText() {
-  const text = `China and US essentially tied at 50/49 on AI token volume — 311T/day globally across 24 vendors. But US still captures 88% of Token GDP. The 15× pricing gap is the persistent asymmetry. IDC May 7 independently validates Volcengine #1 in China at 49.5%.\n\nGATT Token Economy Index → https://gf691271.github.io/gatt/ #TokenEconomy #AIdata`;
+  const text = `Volume parity broken at Google I/O 2026: Pichai disclosed 3.2 quadrillion Gemini tokens/month = 107T/day all-surfaces (was 73T). US now 55% / CN 45% of 345T/day globally. US captures 90% of $115.6B Token GDP. 15× pricing gap holds.\n\nGATT v1.5.2 → https://gf691271.github.io/gatt/ #TokenEconomy #AIdata`;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('btn-copy-share');
     btn.textContent = '✓ Copied!';
@@ -3807,7 +3819,7 @@ function downloadCSV() {
 
 function downloadMD() {
   const allRanked = [...vendors, ...tier2].sort((a,b) => b.tokNum - a.tokNum);
-  let md = `# GATT Global AI Token Tracker\n**Source:** https://gf691271.github.io/gatt/ by Frank Gao — CC BY 4.0  \n**Updated:** 2026-05-11 (v1.4) | **Global Total:** ~311T tokens/day across 24 vendors\n\n## Key Numbers\n- 🌍 Global daily tokens: **~311T/day** (May 11, 2026)\n- 🇨🇳 China share: **~49% volume** / ~6% Token GDP (Doubao 129T OFFICIAL)\n- 🇺🇸 US share: **~50% volume** / ~88% Token GDP (post-Apple Intelligence v1.3)\n- 💰 Token GDP: **$97.0B/yr** annualized\n- 🥇 Top vendor: **Doubao** (ByteDance) 129T/day\n\n## Vendor Ranking\n\n| # | Vendor | Company | Country | T Tokens/day | Confidence | Source |\n|---|--------|---------|---------|--------------|------------|--------|\n`;
+  let md = `# GATT Global AI Token Tracker\n**Source:** https://gf691271.github.io/gatt/ by Frank Gao — CC BY 4.0  \n**Updated:** 2026-05-20 (v1.5.2, post-Google-I/O 2026) | **Global Total:** ~345T tokens/day across 24 vendors\n\n## Key Numbers\n- 🌍 Global daily tokens: **~345T/day** (May 20, 2026)\n- 🇺🇸 US share: **~55% volume** / ~90% Token GDP (Pichai I/O 2026: 3.2Q Gemini tokens/month = 107T/day)\n- 🇨🇳 China share: **~45% volume** / ~5% Token GDP (Doubao 129T OFFICIAL; volume parity broken)\n- 💰 Token GDP: **$115.6B/yr** annualized\n- 🥇 Top single-vendor: **Doubao** (ByteDance) 129T/day | **Gemini** (Google) #2 at 107T/day\n\n## Vendor Ranking\n\n| # | Vendor | Company | Country | T Tokens/day | Confidence | Source |\n|---|--------|---------|---------|--------------|------------|--------|\n`;
   allRanked.forEach((v,i) => {
     const conf = v.conf===3?'✓ Verified':v.conf===2?'~ Media':'≈ Estimated';
     md += `| ${i+1} | ${v.flag} ${v.name} | ${v.co} | ${v.country} | ${v.tokens} | ${conf} | ${v.src} |\n`;

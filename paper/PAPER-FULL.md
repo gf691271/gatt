@@ -2,9 +2,11 @@
 
 ### An Empirical Companion to Physical-Ceiling Models of Global AI Inference
 
-**Frank Gao** · May 2026 · GATT v1.5.1 · CC BY 4.0
+**Frank Gao** · May 2026 · GATT v1.5.1 (paper tier) / v1.5.2 (data tier · post-Google-I/O 2026) · CC BY 4.0
 Live data: <https://gf691271.github.io/gatt/>
 Source: <https://github.com/gf691271/gatt>
+
+> **Data-tier note (v1.5.2, May 20, 2026):** This paper's numbers — 311T tokens/day, $97.0B Token GDP, Gemini 73T, US/CN volume parity at 50/49 — reflect the v1.4 dataset frozen for paper coherence. On May 19-20, 2026, the Google I/O keynote disclosed 3.2 quadrillion Gemini tokens/month all-surfaces (= 107T/day, +34T over the value cited in this paper) plus 19B tokens/min API throughput. The data tier was updated accordingly: global headline 311T → **345T/day**, Token GDP $97.0B → **$115.6B/year**, volume parity broken to US 55% / CN 45%, US Token GDP share 88% → 90%. See `CHANGELOG.md` v1.5.2 entry and `data/tci-latest.json` for the post-I/O 2026 values. Paper rev v1.6 will incorporate the I/O 2026 framing (3.2 quadrillion / month + Pichai's "top companies process about 1 trillion tokens a day" framing) into §2.8 / §6.4. The qualitative claims of this paper — China-US gap, US Token GDP dominance, per-capita inequality, 2× physics-ceiling tension — all strengthen under the v1.5.2 numbers.
 
 ---
 

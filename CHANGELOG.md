@@ -1,5 +1,51 @@
 # GATT Data Changelog
 
+## 2026-05-20 (v1.5.2 — Google I/O 2026 Data Tier Update: Gemini 73T → 107T, Global 311T → 345T, Token GDP $97.0B → $115.6B)
+
+Data tier update triggered by Google I/O 2026 keynote (May 19-20). Sundar Pichai's opening keynote disclosed two twin numbers that for the first time eliminate the editorial-multiplier dependency in GATT's Gemini All-Surfaces composite: (1) **3.2 quadrillion tokens/month** across all Google surfaces (7x YoY growth from ~480T/month at I/O 2025; ~9.7T/month at I/O 2024), and (2) **19 billion tokens/minute** via direct API (up from 16B/min at Cloud Next April). 3.2Q/month / 30 = ~107T/day all-surfaces. 19B × 60 × 24 = ~27.4T/day API only. The implied All-Surfaces multiplier (107/27.4 = 3.9×) is now directly disclosed rather than editorial — resolving the Sokolov v1.0 peer-review critique that downgraded Gemini composite confidence from High to Medium.
+
+Paper tier remains v1.5.1 (no paper changes in v1.5.2). Future paper rev (v1.6) may incorporate the post-I/O numbers + Pichai's "top companies process about 1 trillion tokens a day" framing as a §2.8 / §6.4 update.
+
+### Vendor headlines
+
+- **google-gemini** — `daily_tokens_T` 73 → **107** (+47%). Confidence **Medium → High**. API anchor 16B/min → 19B/min. All-Surfaces multiplier 3.2× (editorial) → 3.9× (disclosed). source_date 2026-05-07 → 2026-05-20. Revision history entry added with full keynote citation. Source URL: blog.google/innovation-and-ai/sundar-pichai-io-2026/
+- **All other vendors (23)** — daily_tokens_T held at v1.4 values; `extrapolated_to` rolled forward to 2026-05-20; `data_freshness_days` recomputed. No fresh hard disclosures from OpenAI / Anthropic / ByteDance / Microsoft / DeepSeek / Qwen / etc. during the I/O 2026 week. OpenAI / Anthropic specifically had nothing matching Pichai's keynote-grade disclosure.
+
+### Global headline movement
+
+- `total_daily_tokens_T`: **311 → 345** (+11%). Driver: Gemini +34T; all other vendors unchanged
+- `confidence`: medium-high → **high** (composite raised because Gemini moved from editorial multiplier to disclosed multiplier)
+- `as_of_date` / `last_updated` / `generated_at`: 2026-05-11 → 2026-05-20
+
+### Token GDP recalculation (volume +11%, pricing unchanged)
+
+- **United States**: 156T → **190T** (Gemini +34T). Daily GDP $234M → **$285M**. GDP share **88% → 90%**
+- **China**: 154T unchanged. Daily GDP $15.4M. GDP share **6% → 5%** (denominator-only effect)
+- **Europe**: 9T unchanged. Daily GDP $10.8M. GDP share **4% → 3%**
+- **Rest of World**: 6.15T unchanged. Daily GDP $5.5M. Share 2%
+- **Daily total**: $265.8M → **$316.7M**. **Annual**: **$97.0B → $115.6B** (+19%)
+- Token GDP grew faster than volume (+19% vs +11%) because Gemini's incremental 34T all flow through the US frontier-pricing tier ($1.50/M)
+
+### Headline narrative shift
+
+- **Volume parity BROKEN**: US 50% / CN 49% (v1.3+) → **US 55% / CN 45%** (v1.5.2). The 50/50 volume parity established at v0.81 (Jan 2026) and held through v1.4 (May 11) ended at I/O 2026 (May 19-20). US re-takes a 36T/day volume lead over China on a single keynote disclosure
+- **Sokolov critique resolved**: v1.0 (May 10) downgraded Gemini composite from High to Medium because the 3.2× All-Surfaces multiplier was editorial. Pichai's twin disclosures (3.2Q/month total + 19B/min API portion) jointly back out a 3.9× multiplier from observed data, not editorial judgment. Composite upgraded back to High
+- **"1T/day club" framing introduced**: Pichai's "top companies process about 1 trillion tokens a day" framing aligns with GATT's vendor-tier-1 cutoff (24 vendors of which 7 are >=1T/day in the dataset). Adoptable as a §2.8 / §6.4 supplement in v1.6 paper
+
+### Files changed in v1.5.2
+
+- `data/tci-latest.json` — Gemini block rewritten (daily_tokens_T, confidence, source, source_url, source_date, extrapolated_to, data_freshness_days, is_extrapolated, note, source_value_T, revision_history +1 entry, parameter_classification.rationale); global_summary.total_daily_tokens_T / as_of_date / last_updated / generated_at / note rewritten; token_gdp.daily_usd_M / annual_usd_B / breakdown rewritten; deeper_insights headline / great_divergence / china_token_volume_share_pct / us_token_volume_share_pct / us_token_gdp_share_pct / china_token_gdp_share_pct + gemini_api_milestone rewritten; volume-gdp-paradox key_paradox rewritten with v15_note preserving v1.4 framing; dual_accounting.demand_side.value_annual_usd_B updated; 23 non-Gemini vendor `extrapolated_to` rolled to 2026-05-20 with recomputed `data_freshness_days`
+- `index.html` — headline 311T → 345T; Token GDP $97.0B → $115.6B; Gemini row 73T → 107T; share band labels; recent-updates timeline +1 entry (I/O 2026)
+- `CHANGELOG.md` — this entry
+
+### Why this commit matters
+
+v1.4 was the last point at which Gemini's composite was editorial. Pichai's I/O 2026 keynote put a hard ceiling on that editorial: the 3.2 quadrillion/month figure is a directly-reported total, not a back-of-envelope multiplier on the API anchor. This is the **first I/O-grade disclosure that lets a third-party tracker eliminate an editorial multiplier from a top-3 vendor's all-surfaces estimate**. Prior to v1.5.2, GATT's Gemini composite was disclosed-API × judgment-multiplier; after v1.5.2, it is disclosed-total (with the multiplier as a derived check, not an input).
+
+The narrative consequence is large: the 50/50 China-US volume parity — established at v0.81 (January 2026), surviving five months of source sweeps including v1.4 (May 11) — broke on a single keynote. Future versions should expect that **a single hard vendor disclosure can move the global headline by 10-15% in a week**. This is the central operational risk of running a daily-updated index against a quarterly-disclosing supply side.
+
+---
+
 ## 2026-05-15 (v1.5.1 — Adjacent-Literature Audit + Trajectory Refinement)
 
 Paper-only refinement triggered by a 2026-05-15 broad source sweep (9 parallel WebSearches across vendor disclosures, IDC/CAICT/Epoch aggregate reports, and post-2026-05-14 sovereign-AI policy literature). The sweep found no vendor-level headline changes since v1.4's May 11 source-sweep (24 vendors / 311T/day / $97.0B Token GDP — all top-tier disclosures still current), but surfaced a structurally important adjacent literature on sovereign AI that consolidated between v1.5's initial drafting (2026-05-14) and v1.5.1 (2026-05-15). v1.5 originally stated the sovereign-resource framing was "absent from formal Western policy literature" — the 4-day audit confirms this remains true for the *fiscal-sovereignty* layer GATT's salt-and-iron analog targets, but a substantial *capability-sovereignty* literature exists in parallel that v1.5 did not explicitly distinguish. v1.5.1 adds that distinction and a Trajectory D dimension to §6.4.
