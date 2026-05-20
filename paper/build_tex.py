@@ -70,6 +70,7 @@ CITE_MAP = {
     "39": "wef2026sovereigntymyth",
     "40": "lawfare2026sovereigntygap",
     "41": "chinaminutes2026electricity",
+    "42": "pichai2026io",
 }
 
 PREAMBLE = r"""\documentclass[11pt,a4paper]{article}

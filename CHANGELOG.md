@@ -1,5 +1,48 @@
 # GATT Data Changelog
 
+## 2026-05-20 (v1.6 — Paper Tier Sync to v1.5.2 Data Tier: Pichai I/O 2026 numbers fully integrated)
+
+Paper-tier revision synchronizing chapter sources, references, and `main.tex` to the v1.5.2 data tier shipped earlier on 2026-05-20. The v1.5.2 data tier commit (e6311fc) explicitly held paper at v1.5.1 and added a data-overlay footnote to PAPER-FULL.md; v1.6 closes that gap by propagating the post-Google-I/O 2026 numbers into the canonical chapter sources and rebuilding `main.tex`.
+
+### Paper changes
+
+- **abstract.md** — Headline rewritten to v1.5.2 numbers: 561,200 tokens per US resident per day (was 459,700), 2.49× physics-ceiling ratio (was 2.04×), 345T/day global (was 311T), 55%/45% US/CN volume (was 50.2/49.5), 90% US Token GDP share (was 88%), $115.6B Token GDP (was $97.0B), 729× US-India gap (was 597×), Gini 0.698 (was 0.674). Interpretation 1 in the three-reconciliation list updated to flag that the Gemini All-Surfaces multiplier is now disclosed (not editorial) following Pichai's I/O 2026 twin disclosures [42].
+- **01-introduction.md §1.1** — Per-capita ratio updated to 561,200 / 225,000 = 2.49×. Interpretation 1 explicitly references the v1.5.2 closure for Gemini; Doubao remains the live candidate over-estimate target.
+- **02-related-work.md §2.8** — Fiscal-extraction base updated to $115.6B/yr (was $97.0B/yr); geopolitical-asymmetry vector updated to 90/5 Token GDP split with the 55/45 volume split that the v1.5.2 disclosure produced. New post-script paragraph documents how Pichai's "top companies process about 1 trillion tokens a day" framing aligns with §2.8's threshold-based scoping requirement.
+- **03-methodology.md** — Top-ten vendor list shows Gemini at 107T (was 73T) with v1.5.2 explanation; confidence example for High includes Pichai's I/O 2026 twin disclosure; confidence distribution updated to 4 High (was 3); §3.3 multiplier discussion rewritten to disclosed-not-editorial; §3.5 Token GDP example uses v1.5.2 regional split ($285M US, $316.7M global, $115.6B annual; US share 90%); illustrative value-added correction table updated; per-capita US 561,200 with v1.4 → v1.5.2 transition annotation.
+- **04-findings.md** — §4.1 global volume 345T with full v0.79 → v0.80 → v0.81 → v1.4 → v1.5.2 history; §4.1.1 sensitivity table updated (conservative 285T, best 345T, aggressive 450T); §4.2 retitled "Volume Parity Between China and the United States — Broken at I/O 2026" with full break narrative; §4.3 Token GDP asymmetry rewritten to 90/5; §4.4 per-capita table updated US 561,200 and US-India 729×; §4.4.1 Gini table shows v1.4 vs v1.5.2 columns; §4.5 Gemini row rewritten with I/O 2026 disclosure details and confidence upgrade.
+- **05-tension.md §5.1** — Preamble paragraph added explaining the moving observable (G/L from 2.04 to 2.49). §5.5 decomposition arithmetic retained at v1.4 numbers as a structural argument with parameter refits flagged for v1.6.1. Headline rewritten to 561,200 / 2.49×.
+- **06-discussion.md §6.1, §6.2, §6.3.1, §6.4** — All percentages and dollar figures updated (88% → 90%, 50/50 → 55/45, $97.0B → $115.6B, 597× → 729×). §6.4 fiscal-extraction worked illustration recomputed at v1.5.2 base: $V \approx 126 \times 10^{15}$ tokens/year, $p \approx \$0.92$/M, 5% excise = $5.78B/year (up from $4.85B/year at v1.4); 2027 projection $42B/year, 2028 projection $230B/year. v1.4 figures retained inline for historical comparison.
+- **07-conclusion.md** — Opening paragraph and 2.49× headline updated; Interpretation 1 narrowed (Gemini multiplier closure now documented).
+- **appendix-a-vendors.md** — Title and date updated; Gemini row v1.5.2 (107T, High confidence, source date 2026-05-20, full I/O 2026 disclosure note); confidence distribution 4 High (was 3); vendor sum 345.43T (was 311.43T); regional Token GDP base 359T (was 325T).
+- **appendix-b-token-gdp-example.md** — Header annualized headline $115.6B; volume / GDP / sensitivity tables fully recomputed to v1.5.2 numbers; pricing multiples updated to 1.70× / 0.11× / 1.36× / 1.00×.
+- **appendix-c-bayesian-sensitivity.md** — Unchanged in this revision; ratio 2.04× retained as the v1.4 observable against which the Bayesian sensitivity model was calibrated. v1.6.1 will refit against the v1.5.2 ratio of 2.49×.
+- **references.bib** — Added entry [42] `pichai2026io` for the Google I/O 2026 opening keynote, including the 3.2 quadrillion tokens/month + 19 billion tokens/minute twin disclosures and the "top companies process about 1 trillion tokens a day" framing.
+- **build_tex.py** — `CITE_MAP` extended with `"42": "pichai2026io"`.
+- **main.tex** — Auto-built from updated chapter sources (`paper/build_tex.py`). New length: 182,336 chars (was 168,990 at v1.5.1; +13.3K from v1.5.2-era number swaps and §2.8 / §5.1 / §6.4 expansions). Brace balance 877/877 (verified by `check_tex.py`). 132 `\cite` calls (was 105 at v1.5.1; +27 from new I/O 2026 citations across abstract / §1.1 / §2.8 / §3.x / §4.x / §5.1 / §6.x / §7 / Appendix A / Appendix B). 42 unique citation keys.
+- **PAPER-FULL.md** — Header version line updated to v1.6 with new paper-rev note replacing the v1.5.2 data-overlay footnote. Body content beyond header partially stale relative to chapter sources; auto-mirror script for full body sync flagged as v1.6.1 work item.
+
+### Files explicitly NOT changed at v1.6
+
+- **paper/PAPER-FULL-zh.md** — Already stale since v1.2 per v1.4.1 changelog note; v1.5 widened the gap, v1.6 widens it further. Targeted batch translation sync queued for v1.7 paper rev.
+- **paper/02-related-work-additions-v1.3.md** — v1.3 additions document, historical artifact.
+- **paper/RESPONSE-TO-REVIEWERS-v1.0.md** — v1.0 review response, historical artifact.
+- **paper/OUTREACH-TEMPLATES.md** — 12 stale numbers identified; queued for v1.6.1 outreach hygiene pass.
+- **paper/ARXIV_SUBMISSION.md** — Submission-time numbers; updated only if/when a new arXiv revision is submitted.
+- **paper/outline.md** — Working outline document, may be updated lazily.
+
+### Why v1.6 ships as a paper-only rev (data tier already on v1.5.2)
+
+GATT's layer-separated commit history (v1.4 data + v1.4.1 paper hygiene + v1.4.2 dashboard sync + v1.5 paper-only framing + v1.5.1 paper-only audit + v1.5.2 data-only) treats paper and data as independent layers that synchronize at named version milestones. The v1.5.2 commit deliberately deferred paper sync because (a) the data update was a single-day breaking event (I/O 2026) and shipping data immediately was more valuable than waiting for the paper rev, and (b) paper synchronization touches 64+ hardcoded numbers across 13 chapter / appendix files plus a LaTeX rebuild. v1.6 is the paper-tier catch-up commit that closes the data-paper gap and re-establishes the paper-data invariant: at any commit tagged `vX.Y` where Y is a major release, paper headline numbers equal `data/tci-latest.json` headline numbers.
+
+### Verification
+
+- `data/tci-latest.json` headline numbers (`global_summary.total_daily_tokens_T = 345`, `token_gdp.annual_usd_B = 115.6`, `vendors[google-gemini].daily_tokens_T = 107`, `key_stats.us_token_gdp_share_pct = 90`, `key_stats.us_token_volume_share_pct = 55`) match paper headline numbers across abstract, §4.x, §7, Appendix A, Appendix B.
+- `paper/main.tex` builds cleanly via `build_tex.py`. `check_tex.py` reports 0 unresolved citations, brace balance 877/877.
+- `paper/references.bib` validates against 42 `\cite` keys with no missing entries.
+
+---
+
 ## 2026-05-20 (v1.5.2 — Google I/O 2026 Data Tier Update: Gemini 73T → 107T, Global 311T → 345T, Token GDP $97.0B → $115.6B)
 
 Data tier update triggered by Google I/O 2026 keynote (May 19-20). Sundar Pichai's opening keynote disclosed two twin numbers that for the first time eliminate the editorial-multiplier dependency in GATT's Gemini All-Surfaces composite: (1) **3.2 quadrillion tokens/month** across all Google surfaces (7x YoY growth from ~480T/month at I/O 2025; ~9.7T/month at I/O 2024), and (2) **19 billion tokens/minute** via direct API (up from 16B/min at Cloud Next April). 3.2Q/month / 30 = ~107T/day all-surfaces. 19B × 60 × 24 = ~27.4T/day API only. The implied All-Surfaces multiplier (107/27.4 = 3.9×) is now directly disclosed rather than editorial — resolving the Sokolov v1.0 peer-review critique that downgraded Gemini composite confidence from High to Medium.

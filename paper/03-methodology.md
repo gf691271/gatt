@@ -6,7 +6,7 @@ GATT measures global AI inference token throughput as the sum of vendor-level es
 
 GATT v0.82 (May 9, 2026) tracks 21 vendors selected by three criteria: (a) demonstrated daily token throughput exceeding 0.05 trillion (50 billion); (b) availability of at least one credible volume signal — official disclosure, ARR-and-pricing back-calculation, or platform aggregator data; and (c) representation across vendor types, including frontier closed models, open-weight foundation models, cloud-hosted aggregators, and consumer-facing chat assistants. The current list spans Chinese vendors (Doubao, Qwen, DeepSeek, Hy3/Hunyuan, Kimi, ERNIE, Spark, MiniMax, GLM, Xiaomi MiMo), United States vendors (Gemini, OpenAI, Anthropic, Microsoft Azure, OpenRouter, Grok, Groq, Meta Llama API, Amazon Bedrock, Perplexity), and one European vendor (Mistral).
 
-Vendors are ordered by `daily_tokens_T` (total daily token throughput in trillions). The top ten in v0.82 are: Doubao (129T), Gemini (73T), OpenAI (45T), Anthropic (22T), DeepSeek (9.2T), Microsoft (10T), Qwen (6.2T), OpenRouter (3.0T), Hy3 (2.7T), and Kimi (2.5T). Several vendors known to operate at non-trivial scale are excluded — including most enterprise-only inference platforms and academic infrastructure — pending publishable signals.
+Vendors are ordered by `daily_tokens_T` (total daily token throughput in trillions). The top ten in v1.5.2 (post-Google-I/O 2026, May 20, 2026) are: Doubao (129T), Gemini (**107T**, upgraded from 73T in v1.4 following Pichai's I/O 2026 disclosure of 3.2 quadrillion tokens/month all-surfaces [42]), OpenAI (45T), Anthropic (22T), Microsoft (10T), DeepSeek (9.2T), Qwen (6.2T), OpenRouter (3.0T), Hy3 (2.7T), and Kimi (2.5T). Several vendors known to operate at non-trivial scale are excluded — including most enterprise-only inference platforms and academic infrastructure — pending publishable signals.
 
 Two structural caveats apply to vendor coverage. First, OpenRouter is an *aggregator*: tokens routed through it are also counted under their underlying vendor (Kimi, Anthropic, DeepSeek, etc.). The OpenRouter row is reported alongside an explicit `scope_note` flagging this overlap, and the global total nets the overlap out. Second, the boundary between "vendor" and "model" is occasionally blurry — for example, Xiaomi's MiMo-V2-Pro initially appeared anonymously on OpenRouter as "Hunter Alpha" before being reattributed [15]. GATT enters new vendors as soon as a credible signal emerges, with confidence rated accordingly.
 
@@ -14,12 +14,12 @@ Two structural caveats apply to vendor coverage. First, OpenRouter is an *aggreg
 
 Each vendor entry carries a confidence rating drawn from four levels:
 
-- **High** — direct vendor disclosure within the past 90 days (e.g., OpenAI's 15 billion tokens per minute API throughput; Pichai's 16 billion tokens per minute via direct API at Cloud Next 2026; Volcengine's 120 trillion tokens per day at the Wuhan AI Innovation Expo).
+- **High** — direct vendor disclosure within the past 90 days (e.g., OpenAI's 15 billion tokens per minute API throughput; Pichai's I/O 2026 keynote disclosure of 3.2 quadrillion tokens/month across all Google surfaces and 19 billion tokens per minute via direct API [42], superseding the 16 billion tokens per minute Cloud Next disclosure of April 2026; Volcengine's 120 trillion tokens per day at the Wuhan AI Innovation Expo).
 - **Medium-high** — a strong indirect signal (e.g., quarterly earnings disclosing AI-business ARR plus paid-seat counts) corroborated by at least one independent data point.
 - **Medium** — multiple converging indirect signals (ARR plus pricing plus user count) without a direct throughput number.
 - **Low** — single proxy signal, often months old.
 
-The current distribution of confidence across the 24 vendors (post-v1.3 expansion) is: 3 High, 2 Medium-High, 8 Medium, 11 Low. This skew reflects the disclosure asymmetry between US and Chinese vendors: US vendors typically disclose ARR but not throughput; Chinese vendors increasingly disclose throughput but rarely ARR. Both kinds of signal are usable, but at different confidence levels.
+The current distribution of confidence across the 24 vendors (post-v1.5.2, May 20, 2026) is: **4 High** (Doubao, Gemini, OpenAI, Anthropic — Gemini upgraded from Medium to High at v1.5.2 because Pichai's I/O 2026 twin disclosures eliminated the editorial-multiplier dependency Sokolov's v1.0 peer review had flagged), 1 Medium-High, 8 Medium, 11 Low. This skew reflects the disclosure asymmetry between US and Chinese vendors: US vendors typically disclose ARR but not throughput; Chinese vendors increasingly disclose throughput but rarely ARR. Both kinds of signal are usable, but at different confidence levels.
 
 This taxonomy is a working approximation. The Inference Bottleneck paper (arXiv:2604.17431) provides a more rigorous template — distinguishing observed, inferred, and judgment-based parameters, with explicit sensitivity analysis showing which conclusions are robust to perturbations [12]. GATT v0.83 will adopt this structure, augmenting (not replacing) the four-level confidence field.
 
@@ -39,7 +39,7 @@ The two scopes can be reconciled with arithmetic. IDC's 2025 China total of 1,94
 
 GATT therefore reports Doubao (Volcengine's flagship model) at 129 trillion tokens per day for May 11, 2026, with a `scope_note` field explicitly marking this as all-sources. The IDC validation block in `data/tci-latest.json` documents that GATT and IDC agree on Volcengine's #1 position in China while disagreeing on the absolute volume, with the scope difference fully accounting for the gap.
 
-For non-Chinese vendors, the all-sources scope is generally less consequential because the largest internal first-party deployments are smaller relative to external API. Gemini's "All Surfaces" estimate (Search AI Overviews + Gemini App + Workspace + Cloud API) uses a 3.2× multiplier on the disclosed direct-API number; this is an attribution choice rather than a scope expansion, and Section 5 discusses its potential overestimation.
+For non-Chinese vendors, the all-sources scope is generally less consequential because the largest internal first-party deployments are smaller relative to external API. Gemini's "All Surfaces" estimate (Search AI Overviews + Gemini App + Workspace + Cloud API) uses a **3.9× implied multiplier** on the disclosed direct-API number — implied because Pichai's I/O 2026 keynote [42] disclosed *both* the all-surfaces total (3.2 quadrillion tokens/month = approximately 107 trillion/day) *and* the API portion (19 billion tokens/minute = 27.4 trillion/day), so the ratio 107/27.4 = 3.9× is back-calculated from disclosed twin numbers rather than chosen editorially. This twin-disclosure structure is the first of its kind in the GATT vendor set and resolves the Sokolov v1.0 peer-review critique of v1.4's editorial 3.2× multiplier. Section 5 retains the v1.4-era over-estimate discussion as it remains relevant for Doubao and other vendors whose all-sources composites have not been independently disclosed.
 
 ### 3.3.1 Gross vs. Value-Added: A Necessary Caveat
 
@@ -103,7 +103,7 @@ where `r(v)` is the region of vendor `v` and `p_{r(v)}` is the regional blended 
 
 These are vendor-volume-weighted blends across input and output token rates and across the model lineup typical for each region. They are intentionally point-in-time. Xing [6] documents that GPT-4-equivalent pricing fell from approximately $60 per million tokens in early 2023 to under $1.50 per million in early 2025 — a 40-fold compression in 24 months. Epoch AI [18] reports a complementary finding from a longitudinal inference-cost panel: cost at fixed performance level halves every two months across the 2024-2026 window. SemiAnalysis [22] independently reports a 1200× compression for GPT-3-class inference cost over a similar window. The three measurements agree in direction and magnitude. Any analysis quoting Token GDP must accompany the figure with an as-of date and a note that the implicit pricing assumptions may have shifted by the time of citation.
 
-For May 11, 2026, GATT computes daily Token GDP at $265.8 million, or $97.0 billion annualized. The regional breakdown is striking: the United States contributes $234 million per day (88% of the total) on 156 trillion tokens (post-v1.3 Apple Intelligence cloud-routed addition of 2T); China contributes $15.4 million per day (6%) on 154 trillion tokens. The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference.
+For May 20, 2026 (post-Google-I/O 2026), GATT computes daily Token GDP at $316.7 million, or **$115.6 billion annualized**. The regional breakdown is striking: the United States contributes $285 million per day (**90% of the total**) on **190 trillion tokens** (up from 156T at v1.4 following Pichai's Gemini disclosure of 3.2 quadrillion tokens/month all-surfaces [42], which added 34 trillion/day to the US side); China contributes $15.4 million per day (**5%**) on 154 trillion tokens (volume unchanged from v1.4). The pricing gap is approximately 15× and is the principal driver of the regional Token GDP asymmetry — not a volume difference. The 50/50 volume parity that held from v0.81 (January 2026) through v1.4 (May 11, 2026) broke at I/O 2026: US 55% / CN 45% post-keynote, with the United States 36 trillion tokens/day ahead.
 
 ### 3.5.1 What "Token GDP" Is and Is Not
 
@@ -119,14 +119,14 @@ We retain the "Token GDP" label because the construct is parallel to GDP in spir
 
 **Illustrative value-added correction.** A first-order estimate of how Token GDP would shift under value-added accounting is informative. Volcengine's all-sources Doubao volume includes substantial intermediate-input usage: Douyin AI Search recommendation calls, Doubao consumer chat, Jimeng image-generation prompt expansion, internal Volcengine pipeline workflows. Even if intermediate-input tokens represent half of all Chinese vendor volume (a conservative estimate, given the IDC arithmetic implies >95% of Volcengine throughput is internal first-party), netting them out would reduce China's value-added token volume by roughly 50%. US vendors are more modular — token sales between OpenAI/Anthropic and downstream API customers are arms-length transactions and would survive value-added netting more intact — though some intermediate-input volume exists (Microsoft Copilot's internal Azure usage, for instance). Applying a conservative 0.4-0.6× value-added scalar to gross Token GDP yields the following illustrative correction:
 
-| Region | Gross Token GDP (% of $97.0B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
+| Region | Gross Token GDP (% of $115.6B/yr) | Value-added scalar (illustrative) | VA Token GDP share |
 |---|:---:|:---:|:---:|
-| United States | 88% | ~0.7× | ~75-82% |
-| China | 6% | ~0.4× | ~3-4% |
-| Europe | 4% | ~0.6× | ~2-3% |
+| United States | 90% | ~0.7× | ~78-84% |
+| China | 5% | ~0.4× | ~2-3% |
+| Europe | 3% | ~0.6× | ~2% |
 | Rest of World | 2% | ~0.6× | ~1-2% |
 
-The qualitative finding — US Token GDP dominance — survives the value-added correction; the quantitative magnitude shifts modestly (88% → 75-82% US share). The China value-added share contracts further (6% → 3-4%) reflecting the heavily vertical-integrated structure of Chinese AI deployment. Readers citing GATT's headline 88/6 split for policy debates should note that under value-added accounting the gap widens, not narrows. The 0.4× and 0.7× scalars used here are illustrative; a rigorous decomposition awaits vendor cost-disclosure data we do not yet have.
+The qualitative finding — US Token GDP dominance — survives the value-added correction; the quantitative magnitude shifts modestly (90% → 78-84% US share). The China value-added share contracts further (5% → 2-3%) reflecting the heavily vertical-integrated structure of Chinese AI deployment. Readers citing GATT's headline 90/5 split for policy debates should note that under value-added accounting the gap widens, not narrows. The 0.4× and 0.7× scalars used here are illustrative; a rigorous decomposition awaits vendor cost-disclosure data we do not yet have.
 
 **The Zhuang et al. (2025) Inference Production Frontier [11]** is the most natural theoretical refinement: blended prices should ideally reflect observed production-cost curves and demand elasticities rather than retail menu prices. GATT v0.83+ will incorporate this where vendor cost data permits, alongside the value-added decomposition above.
 
@@ -140,7 +140,7 @@ Country tokens are computed by attributing each vendor's daily volume to its pri
 
 Twelve countries are currently tracked: United States, China, United Kingdom, France, Germany, Japan, South Korea, Canada, India, Brazil, Saudi Arabia, and Indonesia. Other geographies are aggregated into "Rest of World." Population figures are sourced from World Bank 2024 estimates.
 
-The headline per-capita statistic — 459,700 tokens per United States resident per day in May 2026 — is the figure that the Litowitz et al. paper's 2028 ceiling of 225,000 tokens per resident is most directly comparable with. Section 5 develops the comparison.
+The headline per-capita statistic — **561,200 tokens per United States resident per day** as of May 20, 2026 (post-Google-I/O 2026, up from 459,700 at v1.4 following the Gemini All-Surfaces upgrade documented in [42]) — is the figure that the Litowitz et al. paper's 2028 ceiling of 225,000 tokens per resident is most directly comparable with. The ratio is now **2.49×** the paper's 2028 physical ceiling, up from 2.04× at v1.4. Section 5 develops the comparison; the v1.6 update of the ratio (2.04 → 2.49) reflects observed-throughput growth, not changed physical bounds, and primarily strengthens Interpretation 3 (different units) of Section 5.4.
 
 ## 3.7 Revision Discipline
 
